@@ -8,8 +8,12 @@ group = 'fr.cnam.chatnoir76'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '17'
+	toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
+
+compileJava.options.encoding = 'UTF-8'
 
 repositories {
 	maven {
@@ -19,8 +23,12 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'	
 	implementation 'org.eclipse.emf:org.eclipse.emf.ecore:2.20.0'
+	
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
