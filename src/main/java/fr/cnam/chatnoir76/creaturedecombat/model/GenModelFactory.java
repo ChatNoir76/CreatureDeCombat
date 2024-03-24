@@ -22,6 +22,15 @@ public interface GenModelFactory extends EFactory {
 	GenModelFactory eINSTANCE = fr.cnam.chatnoir76.creaturedecombat.model.impl.GenModelFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Energie</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Energie</em>'.
+	 * @generated
+	 */
+	Energie createEnergie();
+
+	/**
 	 * Returns a new object of class '<em>Creature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -29,6 +38,24 @@ public interface GenModelFactory extends EFactory {
 	 * @generated
 	 */
 	Creature createCreature();
+
+	/**
+	 * Returns a new object of class '<em>Attaque</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attaque</em>'.
+	 * @generated
+	 */
+	Attaque createAttaque();
+
+	/**
+	 * Returns a new object of class '<em>Degat</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Degat</em>'.
+	 * @generated
+	 */
+	Degat createDegat();
 
 	/**
 	 * Returns the package supported by this factory.

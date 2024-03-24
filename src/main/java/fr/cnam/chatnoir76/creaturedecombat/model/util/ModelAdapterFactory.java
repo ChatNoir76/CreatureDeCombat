@@ -68,12 +68,24 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	protected ModelSwitch<Adapter> modelSwitch =
 		new ModelSwitch<Adapter>() {
 			@Override
+			public Adapter caseLabelled(Labelled object) {
+				return createLabelledAdapter();
+			}
+			@Override
+			public Adapter caseEnergie(Energie object) {
+				return createEnergieAdapter();
+			}
+			@Override
 			public Adapter caseCreature(Creature object) {
 				return createCreatureAdapter();
 			}
 			@Override
-			public Adapter caseLabelled(Labelled object) {
-				return createLabelledAdapter();
+			public Adapter caseAttaque(Attaque object) {
+				return createAttaqueAdapter();
+			}
+			@Override
+			public Adapter caseDegat(Degat object) {
+				return createDegatAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -96,6 +108,34 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenLabelled <em>Labelled</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenLabelled
+	 * @generated
+	 */
+	public Adapter createLabelledAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenEnergie <em>Energie</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenEnergie
+	 * @generated
+	 */
+	public Adapter createEnergieAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature <em>Creature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -110,16 +150,30 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenLabelled <em>Labelled</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque <em>Attaque</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenLabelled
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque
 	 * @generated
 	 */
-	public Adapter createLabelledAdapter() {
+	public Adapter createAttaqueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenDegat <em>Degat</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenDegat
+	 * @generated
+	 */
+	public Adapter createDegatAdapter() {
 		return null;
 	}
 

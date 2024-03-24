@@ -66,6 +66,19 @@ public class ModelSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case GenModelPackage.LABELLED: {
+				Labelled labelled = (Labelled)theEObject;
+				T result = caseLabelled(labelled);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.ENERGIE: {
+				Energie energie = (Energie)theEObject;
+				T result = caseEnergie(energie);
+				if (result == null) result = caseLabelled(energie);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case GenModelPackage.CREATURE: {
 				Creature creature = (Creature)theEObject;
 				T result = caseCreature(creature);
@@ -73,14 +86,51 @@ public class ModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GenModelPackage.LABELLED: {
-				Labelled labelled = (Labelled)theEObject;
-				T result = caseLabelled(labelled);
+			case GenModelPackage.ATTAQUE: {
+				Attaque attaque = (Attaque)theEObject;
+				T result = caseAttaque(attaque);
+				if (result == null) result = caseLabelled(attaque);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.DEGAT: {
+				Degat degat = (Degat)theEObject;
+				T result = caseDegat(degat);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Labelled</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Labelled</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLabelled(Labelled object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Energie</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Energie</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnergie(Energie object) {
+		return null;
 	}
 
 	/**
@@ -99,17 +149,32 @@ public class ModelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Labelled</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Attaque</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Labelled</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Attaque</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLabelled(Labelled object) {
+	public T caseAttaque(Attaque object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Degat</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Degat</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDegat(Degat object) {
 		return null;
 	}
 

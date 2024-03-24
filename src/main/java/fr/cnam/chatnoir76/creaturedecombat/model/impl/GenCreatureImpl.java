@@ -2,15 +2,29 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.model.impl;
 
+import fr.cnam.chatnoir76.creaturedecombat.model.Attaque;
+import fr.cnam.chatnoir76.creaturedecombat.model.Categorie;
 import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
+import fr.cnam.chatnoir76.creaturedecombat.model.Degat;
+import fr.cnam.chatnoir76.creaturedecombat.model.Energie;
 import fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage;
+import fr.cnam.chatnoir76.creaturedecombat.model.Niveau;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,32 +34,79 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getNom <em>Nom</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getCategorie <em>Categorie</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getPv <em>Pv</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getBase <em>Base</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getEvolution <em>Evolution</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getAttaques <em>Attaques</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getEnergies <em>Energies</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getDegatDefense <em>Degat Defense</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Creature {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getNom()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String NOM_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getNom()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String nom = NOM_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCategorie() <em>Categorie</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCategorie()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Categorie CATEGORIE_EDEFAULT = Categorie.ADORABLE;
+
+	/**
+	 * The cached value of the '{@link #getCategorie() <em>Categorie</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCategorie()
+	 * @generated
+	 * @ordered
+	 */
+	protected Categorie categorie = CATEGORIE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPv() <em>Pv</em>}' attribute.
@@ -66,6 +127,56 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	 * @ordered
 	 */
 	protected int pv = PV_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getBase() <em>Base</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBase()
+	 * @generated
+	 * @ordered
+	 */
+	protected Creature base;
+
+	/**
+	 * The cached value of the '{@link #getEvolution() <em>Evolution</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEvolution()
+	 * @generated
+	 * @ordered
+	 */
+	protected Creature evolution;
+
+	/**
+	 * The cached value of the '{@link #getAttaques() <em>Attaques</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttaques()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Attaque> attaques;
+
+	/**
+	 * The cached value of the '{@link #getEnergies() <em>Energies</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnergies()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Energie> energies;
+
+	/**
+	 * The cached value of the '{@link #getDegatDefense() <em>Degat Defense</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDegatDefense()
+	 * @generated
+	 * @ordered
+	 */
+	protected Degat degatDefense;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,8 +203,8 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
+	public String getNom() {
+		return nom;
 	}
 
 	/**
@@ -102,11 +213,57 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	 * @generated
 	 */
 	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setNom(String newNom) {
+		String oldNom = nom;
+		nom = newNom;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.CREATURE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.CREATURE__NOM, oldNom, nom));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.CREATURE__DESCRIPTION, oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCategorie(Categorie newCategorie) {
+		Categorie oldCategorie = categorie;
+		categorie = newCategorie == null ? CATEGORIE_EDEFAULT : newCategorie;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.CREATURE__CATEGORIE, oldCategorie, categorie));
 	}
 
 	/**
@@ -138,12 +295,223 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	 * @generated
 	 */
 	@Override
+	public Creature getBase() {
+		if (base != null && base.eIsProxy()) {
+			InternalEObject oldBase = (InternalEObject)base;
+			base = (Creature)eResolveProxy(oldBase);
+			if (base != oldBase) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GenModelPackage.CREATURE__BASE, oldBase, base));
+			}
+		}
+		return base;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Creature basicGetBase() {
+		return base;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBase(Creature newBase) {
+		Creature oldBase = base;
+		base = newBase;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.CREATURE__BASE, oldBase, base));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Creature getEvolution() {
+		if (evolution != null && evolution.eIsProxy()) {
+			InternalEObject oldEvolution = (InternalEObject)evolution;
+			evolution = (Creature)eResolveProxy(oldEvolution);
+			if (evolution != oldEvolution) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GenModelPackage.CREATURE__EVOLUTION, oldEvolution, evolution));
+			}
+		}
+		return evolution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Creature basicGetEvolution() {
+		return evolution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEvolution(Creature newEvolution) {
+		Creature oldEvolution = evolution;
+		evolution = newEvolution;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.CREATURE__EVOLUTION, oldEvolution, evolution));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Attaque> getAttaques() {
+		if (attaques == null) {
+			attaques = new EObjectResolvingEList<Attaque>(Attaque.class, this, GenModelPackage.CREATURE__ATTAQUES);
+		}
+		return attaques;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Energie> getEnergies() {
+		if (energies == null) {
+			energies = new EObjectResolvingEList<Energie>(Energie.class, this, GenModelPackage.CREATURE__ENERGIES);
+		}
+		return energies;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Degat getDegatDefense() {
+		if (degatDefense != null && degatDefense.eIsProxy()) {
+			InternalEObject oldDegatDefense = (InternalEObject)degatDefense;
+			degatDefense = (Degat)eResolveProxy(oldDegatDefense);
+			if (degatDefense != oldDegatDefense) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GenModelPackage.CREATURE__DEGAT_DEFENSE, oldDegatDefense, degatDefense));
+			}
+		}
+		return degatDefense;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Degat basicGetDegatDefense() {
+		return degatDefense;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDegatDefense(Degat newDegatDefense) {
+		Degat oldDegatDefense = degatDefense;
+		degatDefense = newDegatDefense;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.CREATURE__DEGAT_DEFENSE, oldDegatDefense, degatDefense));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean estCompatibleEvolution(Creature creature) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void faireEvoluer(Creature creature) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Niveau getNiveau() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean estMort() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GenModelPackage.CREATURE__NAME:
-				return getName();
+			case GenModelPackage.CREATURE__NOM:
+				return getNom();
+			case GenModelPackage.CREATURE__DESCRIPTION:
+				return getDescription();
+			case GenModelPackage.CREATURE__CATEGORIE:
+				return getCategorie();
 			case GenModelPackage.CREATURE__PV:
 				return getPv();
+			case GenModelPackage.CREATURE__BASE:
+				if (resolve) return getBase();
+				return basicGetBase();
+			case GenModelPackage.CREATURE__EVOLUTION:
+				if (resolve) return getEvolution();
+				return basicGetEvolution();
+			case GenModelPackage.CREATURE__ATTAQUES:
+				return getAttaques();
+			case GenModelPackage.CREATURE__ENERGIES:
+				return getEnergies();
+			case GenModelPackage.CREATURE__DEGAT_DEFENSE:
+				if (resolve) return getDegatDefense();
+				return basicGetDegatDefense();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -153,14 +521,38 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GenModelPackage.CREATURE__NAME:
-				setName((String)newValue);
+			case GenModelPackage.CREATURE__NOM:
+				setNom((String)newValue);
+				return;
+			case GenModelPackage.CREATURE__DESCRIPTION:
+				setDescription((String)newValue);
+				return;
+			case GenModelPackage.CREATURE__CATEGORIE:
+				setCategorie((Categorie)newValue);
 				return;
 			case GenModelPackage.CREATURE__PV:
 				setPv((Integer)newValue);
+				return;
+			case GenModelPackage.CREATURE__BASE:
+				setBase((Creature)newValue);
+				return;
+			case GenModelPackage.CREATURE__EVOLUTION:
+				setEvolution((Creature)newValue);
+				return;
+			case GenModelPackage.CREATURE__ATTAQUES:
+				getAttaques().clear();
+				getAttaques().addAll((Collection<? extends Attaque>)newValue);
+				return;
+			case GenModelPackage.CREATURE__ENERGIES:
+				getEnergies().clear();
+				getEnergies().addAll((Collection<? extends Energie>)newValue);
+				return;
+			case GenModelPackage.CREATURE__DEGAT_DEFENSE:
+				setDegatDefense((Degat)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -174,11 +566,32 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GenModelPackage.CREATURE__NAME:
-				setName(NAME_EDEFAULT);
+			case GenModelPackage.CREATURE__NOM:
+				setNom(NOM_EDEFAULT);
+				return;
+			case GenModelPackage.CREATURE__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case GenModelPackage.CREATURE__CATEGORIE:
+				setCategorie(CATEGORIE_EDEFAULT);
 				return;
 			case GenModelPackage.CREATURE__PV:
 				setPv(PV_EDEFAULT);
+				return;
+			case GenModelPackage.CREATURE__BASE:
+				setBase((Creature)null);
+				return;
+			case GenModelPackage.CREATURE__EVOLUTION:
+				setEvolution((Creature)null);
+				return;
+			case GenModelPackage.CREATURE__ATTAQUES:
+				getAttaques().clear();
+				return;
+			case GenModelPackage.CREATURE__ENERGIES:
+				getEnergies().clear();
+				return;
+			case GenModelPackage.CREATURE__DEGAT_DEFENSE:
+				setDegatDefense((Degat)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -192,12 +605,47 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GenModelPackage.CREATURE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case GenModelPackage.CREATURE__NOM:
+				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
+			case GenModelPackage.CREATURE__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case GenModelPackage.CREATURE__CATEGORIE:
+				return categorie != CATEGORIE_EDEFAULT;
 			case GenModelPackage.CREATURE__PV:
 				return pv != PV_EDEFAULT;
+			case GenModelPackage.CREATURE__BASE:
+				return base != null;
+			case GenModelPackage.CREATURE__EVOLUTION:
+				return evolution != null;
+			case GenModelPackage.CREATURE__ATTAQUES:
+				return attaques != null && !attaques.isEmpty();
+			case GenModelPackage.CREATURE__ENERGIES:
+				return energies != null && !energies.isEmpty();
+			case GenModelPackage.CREATURE__DEGAT_DEFENSE:
+				return degatDefense != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case GenModelPackage.CREATURE___EST_COMPATIBLE_EVOLUTION__GENCREATURE:
+				return estCompatibleEvolution((Creature)arguments.get(0));
+			case GenModelPackage.CREATURE___FAIRE_EVOLUER__GENCREATURE:
+				faireEvoluer((Creature)arguments.get(0));
+				return null;
+			case GenModelPackage.CREATURE___GET_NIVEAU:
+				return getNiveau();
+			case GenModelPackage.CREATURE___EST_MORT:
+				return estMort();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -210,8 +658,12 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (nom: ");
+		result.append(nom);
+		result.append(", description: ");
+		result.append(description);
+		result.append(", categorie: ");
+		result.append(categorie);
 		result.append(", pv: ");
 		result.append(pv);
 		result.append(')');

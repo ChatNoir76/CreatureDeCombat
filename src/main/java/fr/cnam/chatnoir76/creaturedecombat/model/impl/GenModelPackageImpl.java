@@ -2,14 +2,24 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.model.impl;
 
+import fr.cnam.chatnoir76.creaturedecombat.model.Attaque;
+import fr.cnam.chatnoir76.creaturedecombat.model.CalculDegat;
+import fr.cnam.chatnoir76.creaturedecombat.model.Categorie;
 import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
+import fr.cnam.chatnoir76.creaturedecombat.model.Degat;
+import fr.cnam.chatnoir76.creaturedecombat.model.Energie;
 import fr.cnam.chatnoir76.creaturedecombat.model.GenModelFactory;
 import fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage;
 import fr.cnam.chatnoir76.creaturedecombat.model.Labelled;
+import fr.cnam.chatnoir76.creaturedecombat.model.Niveau;
+import fr.cnam.chatnoir76.creaturedecombat.model.TypeDegat;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -25,6 +35,20 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass labelledEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass energieEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass creatureEClass = null;
 
 	/**
@@ -32,7 +56,42 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass labelledEClass = null;
+	private EClass attaqueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass degatEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum niveauEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum categorieEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum typeDegatEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum calculDegatEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -100,26 +159,6 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getCreature() {
-		return creatureEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCreature_Pv() {
-		return (EAttribute)creatureEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getLabelled() {
 		return labelledEClass;
 	}
@@ -130,8 +169,338 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLabelled_Name() {
+	public EAttribute getLabelled_Nom() {
 		return (EAttribute)labelledEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getLabelled_Description() {
+		return (EAttribute)labelledEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEnergie() {
+		return energieEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getEnergie__EstCompatibleCreature__GenCreature() {
+		return energieEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getCreature() {
+		return creatureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCreature_Categorie() {
+		return (EAttribute)creatureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCreature_Pv() {
+		return (EAttribute)creatureEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCreature_Base() {
+		return (EReference)creatureEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCreature_Evolution() {
+		return (EReference)creatureEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCreature_Attaques() {
+		return (EReference)creatureEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCreature_Energies() {
+		return (EReference)creatureEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCreature_DegatDefense() {
+		return (EReference)creatureEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreature__EstCompatibleEvolution__GenCreature() {
+		return creatureEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreature__FaireEvoluer__GenCreature() {
+		return creatureEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreature__GetNiveau() {
+		return creatureEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreature__EstMort() {
+		return creatureEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAttaque() {
+		return attaqueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAttaque_DegatAttaque() {
+		return (EReference)attaqueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAttaque_BesoinEnergieCategorie() {
+		return (EAttribute)attaqueEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAttaque_BesoinEnergieAutre() {
+		return (EAttribute)attaqueEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getAttaque__EstDisponible__GenCreature() {
+		return attaqueEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getAttaque__EstCompatible__GenCreature() {
+		return attaqueEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getAttaque__Attaque__GenCreature_GenCreature() {
+		return attaqueEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDegat() {
+		return degatEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDegat_Type() {
+		return (EAttribute)degatEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDegat_ModeCalcul() {
+		return (EAttribute)degatEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDegat_Degat() {
+		return (EAttribute)degatEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDegat_Incertitude() {
+		return (EAttribute)degatEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDegat_ChanceRattage() {
+		return (EAttribute)degatEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDegat__GetCalculDegat__GenCreature_GenCreature() {
+		return degatEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getNiveau() {
+		return niveauEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getCategorie() {
+		return categorieEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getTypeDegat() {
+		return typeDegatEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getCalculDegat() {
+		return calculDegatEEnum;
 	}
 
 	/**
@@ -163,11 +532,47 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		isCreated = true;
 
 		// Create classes and their features
-		creatureEClass = createEClass(CREATURE);
-		createEAttribute(creatureEClass, CREATURE__PV);
-
 		labelledEClass = createEClass(LABELLED);
-		createEAttribute(labelledEClass, LABELLED__NAME);
+		createEAttribute(labelledEClass, LABELLED__NOM);
+		createEAttribute(labelledEClass, LABELLED__DESCRIPTION);
+
+		energieEClass = createEClass(ENERGIE);
+		createEOperation(energieEClass, ENERGIE___EST_COMPATIBLE_CREATURE__GENCREATURE);
+
+		creatureEClass = createEClass(CREATURE);
+		createEAttribute(creatureEClass, CREATURE__CATEGORIE);
+		createEAttribute(creatureEClass, CREATURE__PV);
+		createEReference(creatureEClass, CREATURE__BASE);
+		createEReference(creatureEClass, CREATURE__EVOLUTION);
+		createEReference(creatureEClass, CREATURE__ATTAQUES);
+		createEReference(creatureEClass, CREATURE__ENERGIES);
+		createEReference(creatureEClass, CREATURE__DEGAT_DEFENSE);
+		createEOperation(creatureEClass, CREATURE___EST_COMPATIBLE_EVOLUTION__GENCREATURE);
+		createEOperation(creatureEClass, CREATURE___FAIRE_EVOLUER__GENCREATURE);
+		createEOperation(creatureEClass, CREATURE___GET_NIVEAU);
+		createEOperation(creatureEClass, CREATURE___EST_MORT);
+
+		attaqueEClass = createEClass(ATTAQUE);
+		createEReference(attaqueEClass, ATTAQUE__DEGAT_ATTAQUE);
+		createEAttribute(attaqueEClass, ATTAQUE__BESOIN_ENERGIE_CATEGORIE);
+		createEAttribute(attaqueEClass, ATTAQUE__BESOIN_ENERGIE_AUTRE);
+		createEOperation(attaqueEClass, ATTAQUE___EST_DISPONIBLE__GENCREATURE);
+		createEOperation(attaqueEClass, ATTAQUE___EST_COMPATIBLE__GENCREATURE);
+		createEOperation(attaqueEClass, ATTAQUE___ATTAQUE__GENCREATURE_GENCREATURE);
+
+		degatEClass = createEClass(DEGAT);
+		createEAttribute(degatEClass, DEGAT__TYPE);
+		createEAttribute(degatEClass, DEGAT__MODE_CALCUL);
+		createEAttribute(degatEClass, DEGAT__DEGAT);
+		createEAttribute(degatEClass, DEGAT__INCERTITUDE);
+		createEAttribute(degatEClass, DEGAT__CHANCE_RATTAGE);
+		createEOperation(degatEClass, DEGAT___GET_CALCUL_DEGAT__GENCREATURE_GENCREATURE);
+
+		// Create enums
+		niveauEEnum = createEEnum(NIVEAU);
+		categorieEEnum = createEEnum(CATEGORIE);
+		typeDegatEEnum = createEEnum(TYPE_DEGAT);
+		calculDegatEEnum = createEEnum(CALCUL_DEGAT);
 	}
 
 	/**
@@ -198,14 +603,86 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		energieEClass.getESuperTypes().add(this.getLabelled());
 		creatureEClass.getESuperTypes().add(this.getLabelled());
+		attaqueEClass.getESuperTypes().add(this.getLabelled());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(creatureEClass, Creature.class, "Creature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCreature_Pv(), ecorePackage.getEInt(), "pv", "0", 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(labelledEClass, Labelled.class, "Labelled", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLabelled_Name(), ecorePackage.getEString(), "name", null, 0, 1, Labelled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLabelled_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Labelled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLabelled_Description(), ecorePackage.getEString(), "description", null, 0, 1, Labelled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(energieEClass, Energie.class, "Energie", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = initEOperation(getEnergie__EstCompatibleCreature__GenCreature(), ecorePackage.getEBoolean(), "estCompatibleCreature", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCreature(), "creature", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(creatureEClass, Creature.class, "Creature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCreature_Categorie(), this.getCategorie(), "categorie", null, 1, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCreature_Pv(), ecorePackage.getEInt(), "pv", "0", 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCreature_Base(), this.getCreature(), null, "base", null, 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCreature_Evolution(), this.getCreature(), null, "evolution", null, 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCreature_Attaques(), this.getAttaque(), null, "attaques", null, 0, -1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCreature_Energies(), this.getEnergie(), null, "energies", null, 0, -1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCreature_DegatDefense(), this.getDegat(), null, "degatDefense", null, 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getCreature__EstCompatibleEvolution__GenCreature(), ecorePackage.getEBoolean(), "estCompatibleEvolution", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCreature(), "creature", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCreature__FaireEvoluer__GenCreature(), null, "faireEvoluer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCreature(), "creature", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getCreature__GetNiveau(), this.getNiveau(), "getNiveau", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getCreature__EstMort(), ecorePackage.getEBoolean(), "estMort", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(attaqueEClass, Attaque.class, "Attaque", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAttaque_DegatAttaque(), this.getDegat(), null, "degatAttaque", null, 0, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttaque_BesoinEnergieCategorie(), ecorePackage.getEInt(), "besoinEnergieCategorie", null, 0, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttaque_BesoinEnergieAutre(), ecorePackage.getEInt(), "besoinEnergieAutre", null, 0, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getAttaque__EstDisponible__GenCreature(), ecorePackage.getEBoolean(), "estDisponible", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCreature(), "creature", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getAttaque__EstCompatible__GenCreature(), ecorePackage.getEBoolean(), "estCompatible", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCreature(), "creature", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getAttaque__Attaque__GenCreature_GenCreature(), ecorePackage.getEBoolean(), "attaque", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCreature(), "lanceur", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCreature(), "receveur", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(degatEClass, Degat.class, "Degat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDegat_Type(), this.getTypeDegat(), "type", null, 0, 1, Degat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDegat_ModeCalcul(), this.getCalculDegat(), "modeCalcul", null, 0, 1, Degat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDegat_Degat(), ecorePackage.getEInt(), "degat", "0", 0, 1, Degat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDegat_Incertitude(), ecorePackage.getEInt(), "incertitude", "0", 0, 1, Degat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDegat_ChanceRattage(), ecorePackage.getEInt(), "chanceRattage", "0", 0, 1, Degat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getDegat__GetCalculDegat__GenCreature_GenCreature(), ecorePackage.getEInt(), "getCalculDegat", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCreature(), "attaquant", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCreature(), "defenseur", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(niveauEEnum, Niveau.class, "Niveau");
+		addEEnumLiteral(niveauEEnum, Niveau.BASE);
+		addEEnumLiteral(niveauEEnum, Niveau.EVOLUTION);
+		addEEnumLiteral(niveauEEnum, Niveau.MAITRE);
+
+		initEEnum(categorieEEnum, Categorie.class, "Categorie");
+		addEEnumLiteral(categorieEEnum, Categorie.ADORABLE);
+		addEEnumLiteral(categorieEEnum, Categorie.MALEFIQUE);
+		addEEnumLiteral(categorieEEnum, Categorie.MAJESTUEUX);
+		addEEnumLiteral(categorieEEnum, Categorie.WHAT_THE_FUCK);
+		addEEnumLiteral(categorieEEnum, Categorie.CLASSIQUE);
+
+		initEEnum(typeDegatEEnum, TypeDegat.class, "TypeDegat");
+		addEEnumLiteral(typeDegatEEnum, TypeDegat.ATTAQUE);
+		addEEnumLiteral(typeDegatEEnum, TypeDegat.DEFENSE);
+
+		initEEnum(calculDegatEEnum, CalculDegat.class, "CalculDegat");
+		addEEnumLiteral(calculDegatEEnum, CalculDegat.BASE);
+		addEEnumLiteral(calculDegatEEnum, CalculDegat.RATIO_ATTAQUANT);
+		addEEnumLiteral(calculDegatEEnum, CalculDegat.RATIO_DEFENSEUR);
 
 		// Create resource
 		createResource(eNS_URI);

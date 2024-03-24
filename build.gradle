@@ -7,6 +7,7 @@ plugins {
 
 group = 'fr.cnam.chatnoir76'
 version = '0.0.1-SNAPSHOT'
+compileJava.options.encoding = 'UTF-8'
 
 java {
 	toolchain {
@@ -20,6 +21,10 @@ repositories {
 	mavenCentral()
 }
 
+test {
+  useJUnitPlatform()
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'	
@@ -28,6 +33,9 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+	
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
