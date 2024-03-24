@@ -9,6 +9,7 @@ public class HelloWorldController {
 
 	@GetMapping("/")
 	public ModelAndView index() {
+		
 		return new ModelAndView("index");
 	}
 }
