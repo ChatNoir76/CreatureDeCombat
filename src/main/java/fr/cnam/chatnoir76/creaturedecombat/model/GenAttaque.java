@@ -15,6 +15,7 @@ package fr.cnam.chatnoir76.creaturedecombat.model;
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getDegatAttaque <em>Degat Attaque</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getBesoinEnergieCategorie <em>Besoin Energie Categorie</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getBesoinEnergieAutre <em>Besoin Energie Autre</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getCategorie <em>Categorie</em>}</li>
  * </ul>
  *
  * @see fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage#getAttaque()
@@ -89,6 +90,31 @@ public interface GenAttaque extends Labelled {
 	void setBesoinEnergieAutre(int value);
 
 	/**
+	 * Returns the value of the '<em><b>Categorie</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.cnam.chatnoir76.creaturedecombat.model.Categorie}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Categorie</em>' attribute.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.Categorie
+	 * @see #setCategorie(Categorie)
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage#getAttaque_Categorie()
+	 * @model
+	 * @generated
+	 */
+	Categorie getCategorie();
+
+	/**
+	 * Sets the value of the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getCategorie <em>Categorie</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Categorie</em>' attribute.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.Categorie
+	 * @see #getCategorie()
+	 * @generated
+	 */
+	void setCategorie(Categorie value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model
@@ -110,6 +136,6 @@ public interface GenAttaque extends Labelled {
 	 * @model
 	 * @generated
 	 */
-	boolean attaque(Creature lanceur, Creature receveur);
+	void attaque(Creature lanceur, Creature receveur);
 
 } // GenAttaque

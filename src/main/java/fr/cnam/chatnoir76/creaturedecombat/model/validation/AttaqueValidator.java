@@ -4,6 +4,7 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.model.validation;
 
+import fr.cnam.chatnoir76.creaturedecombat.model.Categorie;
 import fr.cnam.chatnoir76.creaturedecombat.model.Degat;
 
 /**
@@ -18,4 +19,6 @@ public interface AttaqueValidator {
 	boolean validateDegatAttaque(Degat value);
 	boolean validateBesoinEnergieCategorie(int value);
 	boolean validateBesoinEnergieAutre(int value);
+
+	boolean validateCategorie(Categorie value);
 }

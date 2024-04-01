@@ -38,8 +38,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getCategorie <em>Categorie</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getPv <em>Pv</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getPvInit <em>Pv Init</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getBase <em>Base</em>}</li>
- *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getEvolution <em>Evolution</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getAttaques <em>Attaques</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getEnergies <em>Energies</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getDegatDefense <em>Degat Defense</em>}</li>
@@ -129,6 +129,26 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	protected int pv = PV_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getPvInit() <em>Pv Init</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPvInit()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PV_INIT_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getPvInit() <em>Pv Init</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPvInit()
+	 * @generated
+	 * @ordered
+	 */
+	protected int pvInit = PV_INIT_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getBase() <em>Base</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,16 +157,6 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	 * @ordered
 	 */
 	protected Creature base;
-
-	/**
-	 * The cached value of the '{@link #getEvolution() <em>Evolution</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEvolution()
-	 * @generated
-	 * @ordered
-	 */
-	protected Creature evolution;
 
 	/**
 	 * The cached value of the '{@link #getAttaques() <em>Attaques</em>}' reference list.
@@ -295,6 +305,29 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	 * @generated
 	 */
 	@Override
+	public int getPvInit() {
+		return pvInit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPvInit(int newPvInit) {
+		int oldPvInit = pvInit;
+		pvInit = newPvInit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.CREATURE__PV_INIT, oldPvInit, pvInit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Creature getBase() {
 		if (base != null && base.eIsProxy()) {
 			InternalEObject oldBase = (InternalEObject)base;
@@ -327,46 +360,6 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 		base = newBase;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.CREATURE__BASE, oldBase, base));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Creature getEvolution() {
-		if (evolution != null && evolution.eIsProxy()) {
-			InternalEObject oldEvolution = (InternalEObject)evolution;
-			evolution = (Creature)eResolveProxy(oldEvolution);
-			if (evolution != oldEvolution) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GenModelPackage.CREATURE__EVOLUTION, oldEvolution, evolution));
-			}
-		}
-		return evolution;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Creature basicGetEvolution() {
-		return evolution;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setEvolution(Creature newEvolution) {
-		Creature oldEvolution = evolution;
-		evolution = newEvolution;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.CREATURE__EVOLUTION, oldEvolution, evolution));
 	}
 
 	/**
@@ -499,12 +492,11 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 				return getCategorie();
 			case GenModelPackage.CREATURE__PV:
 				return getPv();
+			case GenModelPackage.CREATURE__PV_INIT:
+				return getPvInit();
 			case GenModelPackage.CREATURE__BASE:
 				if (resolve) return getBase();
 				return basicGetBase();
-			case GenModelPackage.CREATURE__EVOLUTION:
-				if (resolve) return getEvolution();
-				return basicGetEvolution();
 			case GenModelPackage.CREATURE__ATTAQUES:
 				return getAttaques();
 			case GenModelPackage.CREATURE__ENERGIES:
@@ -537,11 +529,11 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 			case GenModelPackage.CREATURE__PV:
 				setPv((Integer)newValue);
 				return;
+			case GenModelPackage.CREATURE__PV_INIT:
+				setPvInit((Integer)newValue);
+				return;
 			case GenModelPackage.CREATURE__BASE:
 				setBase((Creature)newValue);
-				return;
-			case GenModelPackage.CREATURE__EVOLUTION:
-				setEvolution((Creature)newValue);
 				return;
 			case GenModelPackage.CREATURE__ATTAQUES:
 				getAttaques().clear();
@@ -578,11 +570,11 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 			case GenModelPackage.CREATURE__PV:
 				setPv(PV_EDEFAULT);
 				return;
+			case GenModelPackage.CREATURE__PV_INIT:
+				setPvInit(PV_INIT_EDEFAULT);
+				return;
 			case GenModelPackage.CREATURE__BASE:
 				setBase((Creature)null);
-				return;
-			case GenModelPackage.CREATURE__EVOLUTION:
-				setEvolution((Creature)null);
 				return;
 			case GenModelPackage.CREATURE__ATTAQUES:
 				getAttaques().clear();
@@ -613,10 +605,10 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 				return categorie != CATEGORIE_EDEFAULT;
 			case GenModelPackage.CREATURE__PV:
 				return pv != PV_EDEFAULT;
+			case GenModelPackage.CREATURE__PV_INIT:
+				return pvInit != PV_INIT_EDEFAULT;
 			case GenModelPackage.CREATURE__BASE:
 				return base != null;
-			case GenModelPackage.CREATURE__EVOLUTION:
-				return evolution != null;
 			case GenModelPackage.CREATURE__ATTAQUES:
 				return attaques != null && !attaques.isEmpty();
 			case GenModelPackage.CREATURE__ENERGIES:
@@ -666,6 +658,8 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 		result.append(categorie);
 		result.append(", pv: ");
 		result.append(pv);
+		result.append(", pvInit: ");
+		result.append(pvInit);
 		result.append(')');
 		return result.toString();
 	}

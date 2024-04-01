@@ -15,8 +15,8 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getCategorie <em>Categorie</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getPv <em>Pv</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getPvInit <em>Pv Init</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getBase <em>Base</em>}</li>
- *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getEvolution <em>Evolution</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getAttaques <em>Attaques</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getEnergies <em>Energies</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getDegatDefense <em>Degat Defense</em>}</li>
@@ -76,6 +76,29 @@ public interface GenCreature extends Labelled {
 	void setPv(int value);
 
 	/**
+	 * Returns the value of the '<em><b>Pv Init</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pv Init</em>' attribute.
+	 * @see #setPvInit(int)
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage#getCreature_PvInit()
+	 * @model default="0"
+	 * @generated
+	 */
+	int getPvInit();
+
+	/**
+	 * Sets the value of the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getPvInit <em>Pv Init</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pv Init</em>' attribute.
+	 * @see #getPvInit()
+	 * @generated
+	 */
+	void setPvInit(int value);
+
+	/**
 	 * Returns the value of the '<em><b>Base</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -96,28 +119,6 @@ public interface GenCreature extends Labelled {
 	 * @generated
 	 */
 	void setBase(Creature value);
-
-	/**
-	 * Returns the value of the '<em><b>Evolution</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Evolution</em>' reference.
-	 * @see #setEvolution(Creature)
-	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage#getCreature_Evolution()
-	 * @model
-	 * @generated
-	 */
-	Creature getEvolution();
-
-	/**
-	 * Sets the value of the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getEvolution <em>Evolution</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Evolution</em>' reference.
-	 * @see #getEvolution()
-	 * @generated
-	 */
-	void setEvolution(Creature value);
 
 	/**
 	 * Returns the value of the '<em><b>Attaques</b></em>' reference list.

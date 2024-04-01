@@ -5,7 +5,8 @@
     modelName="Model" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     testsDirectory="/creaturedecombat/src/test/java" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="17.0" copyrightFields="false" testsPluginID="creaturedecombat"
-    interfaceNamePattern="Gen{0}" classNamePattern="Gen{0}Impl" operationReflection="true">
+    interfaceNamePattern="Gen{0}" classNamePattern="Gen{0}Impl" operationReflection="true"
+    importOrganizing="true">
   <foreignModel>model.ecore</foreignModel>
   <genPackages prefix="Model" disposableProviderFactory="true" ecorePackage="model.ecore#/">
     <nestedGenPackages prefix="Cnam" basePackage="fr" disposableProviderFactory="true"
@@ -42,6 +43,7 @@
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//cnam/chatnoir76/creaturedecombat/model/Labelled/description"/>
             </genClasses>
             <genClasses ecoreClass="model.ecore#//cnam/chatnoir76/creaturedecombat/model/Energie">
+              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//cnam/chatnoir76/creaturedecombat/model/Energie/categorie"/>
               <genOperations ecoreOperation="model.ecore#//cnam/chatnoir76/creaturedecombat/model/Energie/estCompatibleCreature">
                 <genParameters ecoreParameter="model.ecore#//cnam/chatnoir76/creaturedecombat/model/Energie/estCompatibleCreature/creature"/>
               </genOperations>
@@ -49,10 +51,9 @@
             <genClasses ecoreClass="model.ecore#//cnam/chatnoir76/creaturedecombat/model/Creature">
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//cnam/chatnoir76/creaturedecombat/model/Creature/categorie"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//cnam/chatnoir76/creaturedecombat/model/Creature/pv"/>
+              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//cnam/chatnoir76/creaturedecombat/model/Creature/pvInit"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
                   ecoreFeature="ecore:EReference model.ecore#//cnam/chatnoir76/creaturedecombat/model/Creature/base"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                  ecoreFeature="ecore:EReference model.ecore#//cnam/chatnoir76/creaturedecombat/model/Creature/evolution"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
                   ecoreFeature="ecore:EReference model.ecore#//cnam/chatnoir76/creaturedecombat/model/Creature/attaques"/>
               <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -73,6 +74,7 @@
                   ecoreFeature="ecore:EReference model.ecore#//cnam/chatnoir76/creaturedecombat/model/Attaque/degatAttaque"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//cnam/chatnoir76/creaturedecombat/model/Attaque/besoinEnergieCategorie"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//cnam/chatnoir76/creaturedecombat/model/Attaque/besoinEnergieAutre"/>
+              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//cnam/chatnoir76/creaturedecombat/model/Attaque/categorie"/>
               <genOperations ecoreOperation="model.ecore#//cnam/chatnoir76/creaturedecombat/model/Attaque/estDisponible">
                 <genParameters ecoreParameter="model.ecore#//cnam/chatnoir76/creaturedecombat/model/Attaque/estDisponible/creature"/>
               </genOperations>

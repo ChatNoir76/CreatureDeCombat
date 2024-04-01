@@ -4,6 +4,8 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.model.validation;
 
+import fr.cnam.chatnoir76.creaturedecombat.model.Categorie;
+
 
 /**
  * A sample validator interface for {@link fr.cnam.chatnoir76.creaturedecombat.model.GenEnergie}.
@@ -13,5 +15,7 @@ package fr.cnam.chatnoir76.creaturedecombat.model.validation;
  */
 public interface EnergieValidator {
 	boolean validate();
+
+	boolean validateCategorie(Categorie value);
 
 }

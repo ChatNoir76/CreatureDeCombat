@@ -2,6 +2,7 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.model.impl;
 
+import fr.cnam.chatnoir76.creaturedecombat.model.Categorie;
 import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
 import fr.cnam.chatnoir76.creaturedecombat.model.Energie;
 import fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage;
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenEnergieImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenEnergieImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenEnergieImpl#getCategorie <em>Categorie</em>}</li>
  * </ul>
  *
  * @generated
@@ -71,6 +73,26 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCategorie() <em>Categorie</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCategorie()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Categorie CATEGORIE_EDEFAULT = Categorie.ADORABLE;
+
+	/**
+	 * The cached value of the '{@link #getCategorie() <em>Categorie</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCategorie()
+	 * @generated
+	 * @ordered
+	 */
+	protected Categorie categorie = CATEGORIE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,6 +165,29 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 	 * @generated
 	 */
 	@Override
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCategorie(Categorie newCategorie) {
+		Categorie oldCategorie = categorie;
+		categorie = newCategorie == null ? CATEGORIE_EDEFAULT : newCategorie;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ENERGIE__CATEGORIE, oldCategorie, categorie));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean estCompatibleCreature(Creature creature) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -161,6 +206,8 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 				return getNom();
 			case GenModelPackage.ENERGIE__DESCRIPTION:
 				return getDescription();
+			case GenModelPackage.ENERGIE__CATEGORIE:
+				return getCategorie();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -178,6 +225,9 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 				return;
 			case GenModelPackage.ENERGIE__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case GenModelPackage.ENERGIE__CATEGORIE:
+				setCategorie((Categorie)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -197,6 +247,9 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 			case GenModelPackage.ENERGIE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
+			case GenModelPackage.ENERGIE__CATEGORIE:
+				setCategorie(CATEGORIE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -213,6 +266,8 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 			case GenModelPackage.ENERGIE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case GenModelPackage.ENERGIE__CATEGORIE:
+				return categorie != CATEGORIE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -245,6 +300,8 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 		result.append(nom);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", categorie: ");
+		result.append(categorie);
 		result.append(')');
 		return result.toString();
 	}

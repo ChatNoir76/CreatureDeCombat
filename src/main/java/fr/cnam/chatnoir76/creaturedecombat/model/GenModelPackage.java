@@ -133,13 +133,22 @@ public interface GenModelPackage extends EPackage {
 	int ENERGIE__DESCRIPTION = LABELLED__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Categorie</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENERGIE__CATEGORIE = LABELLED_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Energie</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGIE_FEATURE_COUNT = LABELLED_FEATURE_COUNT + 0;
+	int ENERGIE_FEATURE_COUNT = LABELLED_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Est Compatible Creature</em>' operation.
@@ -206,22 +215,22 @@ public interface GenModelPackage extends EPackage {
 	int CREATURE__PV = LABELLED_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Pv Init</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATURE__PV_INIT = LABELLED_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Base</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE__BASE = LABELLED_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Evolution</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATURE__EVOLUTION = LABELLED_FEATURE_COUNT + 3;
+	int CREATURE__BASE = LABELLED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Attaques</b></em>' reference list.
@@ -360,13 +369,22 @@ public interface GenModelPackage extends EPackage {
 	int ATTAQUE__BESOIN_ENERGIE_AUTRE = LABELLED_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Categorie</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTAQUE__CATEGORIE = LABELLED_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Attaque</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTAQUE_FEATURE_COUNT = LABELLED_FEATURE_COUNT + 3;
+	int ATTAQUE_FEATURE_COUNT = LABELLED_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Est Disponible</em>' operation.
@@ -570,6 +588,17 @@ public interface GenModelPackage extends EPackage {
 	EClass getEnergie();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenEnergie#getCategorie <em>Categorie</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Categorie</em>'.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenEnergie#getCategorie()
+	 * @see #getEnergie()
+	 * @generated
+	 */
+	EAttribute getEnergie_Categorie();
+
+	/**
 	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenEnergie#estCompatibleCreature(fr.cnam.chatnoir76.creaturedecombat.model.GenCreature) <em>Est Compatible Creature</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -612,6 +641,17 @@ public interface GenModelPackage extends EPackage {
 	EAttribute getCreature_Pv();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getPvInit <em>Pv Init</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pv Init</em>'.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getPvInit()
+	 * @see #getCreature()
+	 * @generated
+	 */
+	EAttribute getCreature_PvInit();
+
+	/**
 	 * Returns the meta object for the reference '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getBase <em>Base</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -621,17 +661,6 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCreature_Base();
-
-	/**
-	 * Returns the meta object for the reference '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getEvolution <em>Evolution</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Evolution</em>'.
-	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getEvolution()
-	 * @see #getCreature()
-	 * @generated
-	 */
-	EReference getCreature_Evolution();
 
 	/**
 	 * Returns the meta object for the reference list '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getAttaques <em>Attaques</em>}'.
@@ -748,6 +777,17 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAttaque_BesoinEnergieAutre();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getCategorie <em>Categorie</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Categorie</em>'.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getCategorie()
+	 * @see #getAttaque()
+	 * @generated
+	 */
+	EAttribute getAttaque_Categorie();
 
 	/**
 	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#estDisponible(fr.cnam.chatnoir76.creaturedecombat.model.GenCreature) <em>Est Disponible</em>}' operation.
@@ -954,6 +994,14 @@ public interface GenModelPackage extends EPackage {
 		EClass ENERGIE = eINSTANCE.getEnergie();
 
 		/**
+		 * The meta object literal for the '<em><b>Categorie</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENERGIE__CATEGORIE = eINSTANCE.getEnergie_Categorie();
+
+		/**
 		 * The meta object literal for the '<em><b>Est Compatible Creature</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -988,20 +1036,20 @@ public interface GenModelPackage extends EPackage {
 		EAttribute CREATURE__PV = eINSTANCE.getCreature_Pv();
 
 		/**
+		 * The meta object literal for the '<em><b>Pv Init</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREATURE__PV_INIT = eINSTANCE.getCreature_PvInit();
+
+		/**
 		 * The meta object literal for the '<em><b>Base</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference CREATURE__BASE = eINSTANCE.getCreature_Base();
-
-		/**
-		 * The meta object literal for the '<em><b>Evolution</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CREATURE__EVOLUTION = eINSTANCE.getCreature_Evolution();
 
 		/**
 		 * The meta object literal for the '<em><b>Attaques</b></em>' reference list feature.
@@ -1092,6 +1140,14 @@ public interface GenModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ATTAQUE__BESOIN_ENERGIE_AUTRE = eINSTANCE.getAttaque_BesoinEnergieAutre();
+
+		/**
+		 * The meta object literal for the '<em><b>Categorie</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ATTAQUE__CATEGORIE = eINSTANCE.getAttaque_Categorie();
 
 		/**
 		 * The meta object literal for the '<em><b>Est Disponible</b></em>' operation.

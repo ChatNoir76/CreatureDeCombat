@@ -23,6 +23,8 @@ public interface CreatureValidator {
 
 	boolean validateCategorie(Categorie value);
 	boolean validatePv(int value);
+	boolean validatePvInit(int value);
+
 	boolean validateBase(Creature value);
 	boolean validateEvolution(Creature value);
 	boolean validateAttaques(EList<Attaque> value);

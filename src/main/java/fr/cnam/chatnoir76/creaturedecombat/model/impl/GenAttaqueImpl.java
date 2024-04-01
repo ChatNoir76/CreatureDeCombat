@@ -3,6 +3,7 @@
 package fr.cnam.chatnoir76.creaturedecombat.model.impl;
 
 import fr.cnam.chatnoir76.creaturedecombat.model.Attaque;
+import fr.cnam.chatnoir76.creaturedecombat.model.Categorie;
 import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
 import fr.cnam.chatnoir76.creaturedecombat.model.Degat;
 import fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAttaqueImpl#getDegatAttaque <em>Degat Attaque</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAttaqueImpl#getBesoinEnergieCategorie <em>Besoin Energie Categorie</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAttaqueImpl#getBesoinEnergieAutre <em>Besoin Energie Autre</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAttaqueImpl#getCategorie <em>Categorie</em>}</li>
  * </ul>
  *
  * @generated
@@ -126,6 +128,26 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 	 * @ordered
 	 */
 	protected int besoinEnergieAutre = BESOIN_ENERGIE_AUTRE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCategorie() <em>Categorie</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCategorie()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Categorie CATEGORIE_EDEFAULT = Categorie.ADORABLE;
+
+	/**
+	 * The cached value of the '{@link #getCategorie() <em>Categorie</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCategorie()
+	 * @generated
+	 * @ordered
+	 */
+	protected Categorie categorie = CATEGORIE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -284,6 +306,29 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 	 * @generated
 	 */
 	@Override
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCategorie(Categorie newCategorie) {
+		Categorie oldCategorie = categorie;
+		categorie = newCategorie == null ? CATEGORIE_EDEFAULT : newCategorie;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ATTAQUE__CATEGORIE, oldCategorie, categorie));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public boolean estDisponible(Creature creature) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -308,7 +353,7 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 	 * @generated
 	 */
 	@Override
-	public boolean attaque(Creature lanceur, Creature receveur) {
+	public void attaque(Creature lanceur, Creature receveur) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -333,6 +378,8 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 				return getBesoinEnergieCategorie();
 			case GenModelPackage.ATTAQUE__BESOIN_ENERGIE_AUTRE:
 				return getBesoinEnergieAutre();
+			case GenModelPackage.ATTAQUE__CATEGORIE:
+				return getCategorie();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -359,6 +406,9 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 				return;
 			case GenModelPackage.ATTAQUE__BESOIN_ENERGIE_AUTRE:
 				setBesoinEnergieAutre((Integer)newValue);
+				return;
+			case GenModelPackage.ATTAQUE__CATEGORIE:
+				setCategorie((Categorie)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -387,6 +437,9 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 			case GenModelPackage.ATTAQUE__BESOIN_ENERGIE_AUTRE:
 				setBesoinEnergieAutre(BESOIN_ENERGIE_AUTRE_EDEFAULT);
 				return;
+			case GenModelPackage.ATTAQUE__CATEGORIE:
+				setCategorie(CATEGORIE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -409,6 +462,8 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 				return besoinEnergieCategorie != BESOIN_ENERGIE_CATEGORIE_EDEFAULT;
 			case GenModelPackage.ATTAQUE__BESOIN_ENERGIE_AUTRE:
 				return besoinEnergieAutre != BESOIN_ENERGIE_AUTRE_EDEFAULT;
+			case GenModelPackage.ATTAQUE__CATEGORIE:
+				return categorie != CATEGORIE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -426,7 +481,8 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 			case GenModelPackage.ATTAQUE___EST_COMPATIBLE__GENCREATURE:
 				return estCompatible((Creature)arguments.get(0));
 			case GenModelPackage.ATTAQUE___ATTAQUE__GENCREATURE_GENCREATURE:
-				return attaque((Creature)arguments.get(0), (Creature)arguments.get(1));
+				attaque((Creature)arguments.get(0), (Creature)arguments.get(1));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -449,6 +505,8 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 		result.append(besoinEnergieCategorie);
 		result.append(", besoinEnergieAutre: ");
 		result.append(besoinEnergieAutre);
+		result.append(", categorie: ");
+		result.append(categorie);
 		result.append(')');
 		return result.toString();
 	}
