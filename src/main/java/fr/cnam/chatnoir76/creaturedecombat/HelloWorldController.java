@@ -4,14 +4,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import fr.cnam.chatnoir76.creaturedecombat.model.CalculDegat;
-import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
-import fr.cnam.chatnoir76.creaturedecombat.model.Degat;
-import fr.cnam.chatnoir76.creaturedecombat.model.ModelFactory;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.CalculDegat;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Creature;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Degat;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.ModelFactory;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.server.EntityLinks;
 
 @RestController
 public class HelloWorldController {
 
+	@Autowired
+	EntityLinks el;
+	
 	@GetMapping("/")
 	public ModelAndView index() {
 		

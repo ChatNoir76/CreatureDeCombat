@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/creaturedecombat/src/main/java" editDirectory="/creaturedecombat/src/main/java"
+    editorDirectory="/creaturedecombat/src/main/java" modelPluginID="creaturedecombat"
+    modelName="Utilisateur" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/creaturedecombat/src/test/java" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="17.0" copyrightFields="false" interfaceNamePattern="Gen{0}" classNamePattern="Gen{0}Impl"
+    operationReflection="true">
+  <foreignModel>utilisateur.ecore</foreignModel>
+  <genPackages prefix="Fr" disposableProviderFactory="true" ecorePackage="utilisateur.ecore#/">
+    <nestedGenPackages prefix="Cnam" basePackage="fr" disposableProviderFactory="true"
+        ecorePackage="utilisateur.ecore#//cnam">
+      <nestedGenPackages prefix="Chatnoir76" basePackage="fr.cnam" disposableProviderFactory="true"
+          ecorePackage="utilisateur.ecore#//cnam/chatnoir76">
+        <nestedGenPackages prefix="Creaturedecombat" basePackage="fr.cnam.chatnoir76"
+            disposableProviderFactory="true" ecorePackage="utilisateur.ecore#//cnam/chatnoir76/creaturedecombat">
+          <nestedGenPackages prefix="Domain" basePackage="fr.cnam.chatnoir76.creaturedecombat"
+              disposableProviderFactory="true" ecorePackage="utilisateur.ecore#//cnam/chatnoir76/creaturedecombat/domain">
+            <nestedGenPackages prefix="Utilisateur" basePackage="fr.cnam.chatnoir76.creaturedecombat.domain"
+                disposableProviderFactory="true" ecorePackage="utilisateur.ecore#//cnam/chatnoir76/creaturedecombat/domain/utilisateur">
+              <nestedGenPackages prefix="Model" basePackage="fr.cnam.chatnoir76.creaturedecombat.domain.utilisateur"
+                  disposableProviderFactory="true" ecorePackage="utilisateur.ecore#//cnam/chatnoir76/creaturedecombat/domain/utilisateur/model">
+                <genClasses ecoreClass="utilisateur.ecore#//cnam/chatnoir76/creaturedecombat/domain/utilisateur/model/Utilisateur">
+                  <genFeatures createChild="false" ecoreFeature="ecore:EAttribute utilisateur.ecore#//cnam/chatnoir76/creaturedecombat/domain/utilisateur/model/Utilisateur/nom"/>
+                  <genFeatures createChild="false" ecoreFeature="ecore:EAttribute utilisateur.ecore#//cnam/chatnoir76/creaturedecombat/domain/utilisateur/model/Utilisateur/password"/>
+                </genClasses>
+              </nestedGenPackages>
+            </nestedGenPackages>
+          </nestedGenPackages>
+        </nestedGenPackages>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

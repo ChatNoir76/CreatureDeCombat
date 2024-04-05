@@ -5,14 +5,28 @@
          point="org.eclipse.emf.ecore.factory_override">
       <factory
             uri="http://example.com/model"
-            class="fr.cnam.chatnoir76.creaturedecombat.model.impl.ModelFactoryImpl">
+            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.ModelFactoryImpl">
       </factory>
    </extension>
    <extension
          point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://example.com/model"
-            class="fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage">
+            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenModelPackage">
+      </package>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            uri="http://utilisateur/model"
+            class="fr.cnam.chatnoir76.creaturedecombat.domain.utilisateur.model.impl.ModelFactoryImpl">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://utilisateur/model"
+            class="fr.cnam.chatnoir76.creaturedecombat.domain.utilisateur.model.GenModelPackage">
       </package>
    </extension>
 

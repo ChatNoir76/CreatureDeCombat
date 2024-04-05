@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="fr" nsURI="http://utilisateur/fr" nsPrefix="fr">
+  <eSubpackages name="cnam" nsURI="http://utilisateur/cnam" nsPrefix="cnam">
+    <eSubpackages name="chatnoir76" nsURI="http://utilisateur/chatnoir76" nsPrefix="chatnoir76">
+      <eSubpackages name="creaturedecombat" nsURI="http://utilisateur/creaturedecombat"
+          nsPrefix="creaturedecombat">
+        <eSubpackages name="domain" nsURI="http://utilisateur/domain" nsPrefix="domain">
+          <eSubpackages name="utilisateur" nsURI="http://utilisateur/utilisateur"
+              nsPrefix="utilisateur">
+            <eSubpackages name="model" nsURI="http://utilisateur/model" nsPrefix="model">
+              <eClassifiers xsi:type="ecore:EClass" name="Utilisateur">
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </eClassifiers>
+            </eSubpackages>
+          </eSubpackages>
+        </eSubpackages>
+      </eSubpackages>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>

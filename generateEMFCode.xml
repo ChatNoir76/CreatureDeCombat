@@ -6,9 +6,9 @@
 	<taskdef name="emf.Ecore2Java" classname="org.eclipse.emf.importer.ecore.taskdefs.EcoreGeneratorTask"/>
 	<description> Build the javacode from ecore model   </description>
 	<target name="generateCode" description="description">
-	    <echo message="   --> Generate emf code for src/main/resources/model/model.ecore"/>
-		<emf.Ecore2Java genModel="src/main/resources/model/model.genmodel" 
-			model="src/main/resources/model/model.ecore" 
+	    <echo message="   --> Generate emf code for src/main/resources/domain/utilisateur/model/utilisateur.ecore"/>
+		<emf.Ecore2Java genModel="src/main/resources/domain/utilisateur/model/utilisateur.genmodel" 
+			model="src/main/resources/domain/utilisateur/model/utilisateur.ecore" 
 			generatemodelproject="true" 
 			generateeditorproject="false" 
 			generateeditproject="false" 

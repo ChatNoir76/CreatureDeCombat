@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="fr" nsURI="http://creature/fr" nsPrefix="fr">
+  <eSubpackages name="cnam" nsURI="http://creature/cnam" nsPrefix="cnam">
+    <eSubpackages name="chatnoir76" nsURI="http://creature/chatnoir76" nsPrefix="chatnoir76">
+      <eSubpackages name="creaturedecombat" nsURI="http://creature/creaturedecombat"
+          nsPrefix="creaturedecombat">
+        <eSubpackages name="domain" nsURI="http://creature/domain" nsPrefix="domain">
+          <eSubpackages name="creature" nsURI="http://creature/creature" nsPrefix="creature">
+            <eSubpackages name="model" nsURI="http://creature/model" nsPrefix="model">
+              <eClassifiers xsi:type="ecore:EClass" name="Labelled" abstract="true"
+                  interface="true">
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="description"
+                    eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </eClassifiers>
+              <eClassifiers xsi:type="ecore:EClass" name="Energie" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Labelled">
+                <eOperations name="estCompatibleCreature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+                  <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
+                </eOperations>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="categorie"
+                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Categorie"/>
+              </eClassifiers>
+              <eClassifiers xsi:type="ecore:EClass" name="Creature" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Labelled">
+                <eOperations name="estCompatibleEvolution" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+                  <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
+                </eOperations>
+                <eOperations name="faireEvoluer">
+                  <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
+                </eOperations>
+                <eOperations name="getNiveau" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Niveau"/>
+                <eOperations name="estMort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="categorie"
+                    lowerBound="1" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Categorie"/>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="pv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                    defaultValueLiteral="0"/>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="pvInit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                    defaultValueLiteral="0"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="attaques" upperBound="-1"
+                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Attaque"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="energies" upperBound="-1"
+                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Energie"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="degatDefense"
+                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Degat"/>
+              </eClassifiers>
+              <eClassifiers xsi:type="ecore:EClass" name="Attaque" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Labelled">
+                <eOperations name="estDisponible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+                  <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
+                </eOperations>
+                <eOperations name="estCompatible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+                  <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
+                </eOperations>
+                <eOperations name="attaque">
+                  <eParameters name="lanceur" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
+                  <eParameters name="receveur" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
+                </eOperations>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="degatAttaque"
+                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Degat"/>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="besoinEnergieCategorie"
+                    eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="besoinEnergieAutre"
+                    eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="categorie"
+                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Categorie"/>
+              </eClassifiers>
+              <eClassifiers xsi:type="ecore:EClass" name="Degat">
+                <eOperations name="getCalculDegat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+                  <eParameters name="attaquant" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
+                  <eParameters name="defenseur" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
+                </eOperations>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/TypeDegat"/>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="modeCalcul"
+                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CalculDegat"/>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="degat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                    defaultValueLiteral="0"/>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="incertitude"
+                    eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                    defaultValueLiteral="0"/>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="chanceRattage"
+                    eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                    defaultValueLiteral="0"/>
+              </eClassifiers>
+              <eClassifiers xsi:type="ecore:EEnum" name="Niveau">
+                <eLiterals name="Base"/>
+                <eLiterals name="Evolution" value="1"/>
+                <eLiterals name="Maitre" value="2"/>
+              </eClassifiers>
+              <eClassifiers xsi:type="ecore:EEnum" name="Categorie">
+                <eLiterals name="Classique" value="4"/>
+                <eLiterals name="Adorable"/>
+                <eLiterals name="Malefique" value="1"/>
+                <eLiterals name="Majestueux" value="2"/>
+                <eLiterals name="WhatTheFuck" value="3"/>
+              </eClassifiers>
+              <eClassifiers xsi:type="ecore:EEnum" name="TypeDegat">
+                <eLiterals name="Attaque" value="1"/>
+                <eLiterals name="Defense" value="-1"/>
+              </eClassifiers>
+              <eClassifiers xsi:type="ecore:EEnum" name="CalculDegat">
+                <eLiterals name="Base"/>
+                <eLiterals name="RatioAttaquant" value="1"/>
+                <eLiterals name="RatioDefenseur" value="2"/>
+              </eClassifiers>
+            </eSubpackages>
+          </eSubpackages>
+        </eSubpackages>
+      </eSubpackages>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>
