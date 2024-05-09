@@ -2,6 +2,8 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl;
 
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.*;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -10,8 +12,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,9 +58,16 @@ public class GenModelFactoryImpl extends EFactoryImpl implements GenModelFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case GenModelPackage.ENERGIE: return createEnergie();
-			case GenModelPackage.CREATURE: return createCreature();
 			case GenModelPackage.ATTAQUE: return createAttaque();
 			case GenModelPackage.DEGAT: return createDegat();
+			case GenModelPackage.OBJET: return createObjet();
+			case GenModelPackage.SUPPORTEUR: return createSupporteur();
+			case GenModelPackage.DECK: return createDeck();
+			case GenModelPackage.JEU: return createJeu();
+			case GenModelPackage.CREATURE: return createCreature();
+			case GenModelPackage.BASE: return createBase();
+			case GenModelPackage.EVOLUTION: return createEvolution();
+			case GenModelPackage.MAITRE: return createMaitre();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -125,17 +132,6 @@ public class GenModelFactoryImpl extends EFactoryImpl implements GenModelFactory
 	 * @generated
 	 */
 	@Override
-	public Creature createCreature() {
-		CreatureImpl creature = new CreatureImpl();
-		return creature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Attaque createAttaque() {
 		AttaqueImpl attaque = new AttaqueImpl();
 		return attaque;
@@ -150,6 +146,94 @@ public class GenModelFactoryImpl extends EFactoryImpl implements GenModelFactory
 	public Degat createDegat() {
 		DegatImpl degat = new DegatImpl();
 		return degat;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Objet createObjet() {
+		ObjetImpl objet = new ObjetImpl();
+		return objet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Supporteur createSupporteur() {
+		SupporteurImpl supporteur = new SupporteurImpl();
+		return supporteur;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Deck createDeck() {
+		DeckImpl deck = new DeckImpl();
+		return deck;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Jeu createJeu() {
+		JeuImpl jeu = new JeuImpl();
+		return jeu;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Creature createCreature() {
+		CreatureImpl creature = new CreatureImpl();
+		return creature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Base createBase() {
+		BaseImpl base = new BaseImpl();
+		return base;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Evolution createEvolution() {
+		EvolutionImpl evolution = new EvolutionImpl();
+		return evolution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Maitre createMaitre() {
+		MaitreImpl maitre = new MaitreImpl();
+		return maitre;
 	}
 
 	/**

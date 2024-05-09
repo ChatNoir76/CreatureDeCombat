@@ -27,6 +27,7 @@ public class DegatTest {
 	
 	private final static int DEGAT_30 = 30;
 	private final static int DEGAT_50 = 50;
+	private final static int DEGAT_5 = 5;
 	private final static int PV_ATTAQUANT = 100;
 	private final static int PV_DEFENSEUR = 10;
 	
@@ -43,7 +44,7 @@ public class DegatTest {
 	
 	private void calculDegat(Degat degat, int min, int max) {
 		int value = degat.getCalculDegat(creature_100, creature_10);
-		assertTrue(value >= min && value<=max, "GetDegat donne %d au d'être entre %d et %d".formatted(value, min,  max));
+		assertTrue(value >= min && value<=max, "GetDegat donne %d au lieu d'être entre %d et %d".formatted(value, min,  max));
 	}
 	
 	@Test
@@ -57,7 +58,7 @@ public class DegatTest {
 		calculDegat(stable, DEGAT_30);
 		
 		stable.setType(TypeDegat.DEFENSE);
-		calculDegat(stable, DEGAT_30 * -1);
+		calculDegat(stable, DEGAT_30);
 	}
 	
 	@Test
@@ -76,7 +77,7 @@ public class DegatTest {
 		
 		variable.setType(TypeDegat.DEFENSE);
 		for(int i = 0; i<20;i++) {
-			calculDegat(variable, DEGAT_30*-1-incertitude, DEGAT_30*-1+incertitude);
+			calculDegat(variable, DEGAT_30-incertitude, DEGAT_30+incertitude);
 		}
 	}
 	
@@ -97,12 +98,13 @@ public class DegatTest {
 		stable.setChanceRattage(0);
 		stable.setIncertitude(0);
 		stable.setDegat(DEGAT_50);
+		stable.setModeCalcul(CalculDegat.RATIO);
+		
 		stable.setType(TypeDegat.ATTAQUE);
-		stable.setModeCalcul(CalculDegat.RATIO_ATTAQUANT);
-		calculDegat(stable, 50);
+		calculDegat(stable, DEGAT_50);
 
-		stable.setModeCalcul(CalculDegat.RATIO_DEFENSEUR);
-		calculDegat(stable, 5);
+		stable.setType(TypeDegat.DEFENSE);
+		calculDegat(stable, DEGAT_5);
 		
 	}
 	
@@ -113,17 +115,16 @@ public class DegatTest {
 		variable.setChanceRattage(0);
 		variable.setIncertitude(incertitude);
 		variable.setDegat(DEGAT_50);
+		variable.setModeCalcul(CalculDegat.RATIO);
+		
 		variable.setType(TypeDegat.ATTAQUE);
-		variable.setModeCalcul(CalculDegat.RATIO_ATTAQUANT);
-		
-		
 		for(int i = 0; i<20;i++) {
 			calculDegat(variable, DEGAT_50-incertitude, DEGAT_50+incertitude);
 		}
 		
 		variable.setType(TypeDegat.DEFENSE);
 		for(int i = 0; i<20;i++) {
-			calculDegat(variable, DEGAT_50*-1-incertitude, DEGAT_50*-1+incertitude);
+			calculDegat(variable, DEGAT_5-incertitude, DEGAT_5+incertitude);
 		}
 		
 	}
@@ -135,7 +136,7 @@ public class DegatTest {
 		rattage.setIncertitude(0);
 		rattage.setDegat(DEGAT_30);
 		rattage.setType(TypeDegat.ATTAQUE);
-		rattage.setModeCalcul(CalculDegat.RATIO_ATTAQUANT);
+		rattage.setModeCalcul(CalculDegat.RATIO);
 		calculDegat(rattage, 0);
 	}
 

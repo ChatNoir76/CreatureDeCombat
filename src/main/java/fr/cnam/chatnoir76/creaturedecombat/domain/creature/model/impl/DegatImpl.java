@@ -3,6 +3,7 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.CalculDegat;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Creature;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Degat;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.TypeDegat;
 
 // This class overrides the generated class and will be instantiated by factory
 public class DegatImpl extends GenDegatImpl implements Degat
@@ -39,17 +40,18 @@ public class DegatImpl extends GenDegatImpl implements Degat
 			case BASE:
 				degat = this.getDegat();
 				break;
-			case RATIO_ATTAQUANT:
-				degat = this.getDegat()*attaquant.getPv()/100;
-				break;
-			case RATIO_DEFENSEUR:
-				degat = this.getDegat()*defenseur.getPv()/100;
+			case RATIO:
+				if(this.type == TypeDegat.ATTAQUE) {
+					degat = this.getDegat()*attaquant.getPv()/100;
+				}else {
+					degat = this.getDegat()*defenseur.getPv()/100;
+				}
 				break;
 			}
 			
 			degat = processPrecision(degat);
 		} 
 		
-		return degat * this.getType().getValue();
+		return degat;
 	}
 }

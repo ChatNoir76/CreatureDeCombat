@@ -4,6 +4,7 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.utilisateur.model;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -93,13 +94,22 @@ public interface GenModelPackage extends EPackage {
 	int UTILISATEUR_FEATURE_COUNT = 2;
 
 	/**
+	 * The operation id for the '<em>Check Password</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UTILISATEUR___CHECK_PASSWORD__STRING = 0;
+
+	/**
 	 * The number of operations of the '<em>Utilisateur</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UTILISATEUR_OPERATION_COUNT = 0;
+	int UTILISATEUR_OPERATION_COUNT = 1;
 
 
 	/**
@@ -133,6 +143,16 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUtilisateur_Password();
+
+	/**
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.utilisateur.model.GenUtilisateur#checkPassword(java.lang.String) <em>Check Password</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check Password</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.utilisateur.model.GenUtilisateur#checkPassword(java.lang.String)
+	 * @generated
+	 */
+	EOperation getUtilisateur__CheckPassword__String();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -182,6 +202,14 @@ public interface GenModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UTILISATEUR__PASSWORD = eINSTANCE.getUtilisateur_Password();
+
+		/**
+		 * The meta object literal for the '<em><b>Check Password</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation UTILISATEUR___CHECK_PASSWORD__STRING = eINSTANCE.getUtilisateur__CheckPassword__String();
 
 	}
 

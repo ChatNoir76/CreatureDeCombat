@@ -8,6 +8,7 @@ import fr.cnam.chatnoir76.creaturedecombat.domain.utilisateur.model.Utilisateur;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -122,6 +123,16 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
+	public EOperation getUtilisateur__CheckPassword__String() {
+		return utilisateurEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public GenModelFactory getModelFactory() {
 		return (GenModelFactory)getEFactoryInstance();
 	}
@@ -148,6 +159,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		utilisateurEClass = createEClass(UTILISATEUR);
 		createEAttribute(utilisateurEClass, UTILISATEUR__NOM);
 		createEAttribute(utilisateurEClass, UTILISATEUR__PASSWORD);
+		createEOperation(utilisateurEClass, UTILISATEUR___CHECK_PASSWORD__STRING);
 	}
 
 	/**
@@ -183,6 +195,9 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		initEClass(utilisateurEClass, Utilisateur.class, "Utilisateur", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUtilisateur_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Utilisateur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUtilisateur_Password(), ecorePackage.getEString(), "password", null, 0, 1, Utilisateur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = initEOperation(getUtilisateur__CheckPassword__String(), ecorePackage.getEBoolean(), "checkPassword", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "password", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

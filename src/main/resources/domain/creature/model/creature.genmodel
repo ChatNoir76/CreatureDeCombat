@@ -8,14 +8,18 @@
     operationReflection="true">
   <foreignModel>creature.ecore</foreignModel>
   <genPackages prefix="Fr" disposableProviderFactory="true" ecorePackage="creature.ecore#/">
-    <nestedGenPackages prefix="Cnam" disposableProviderFactory="true" ecorePackage="creature.ecore#//cnam">
-      <nestedGenPackages prefix="Chatnoir76" disposableProviderFactory="true" ecorePackage="creature.ecore#//cnam/chatnoir76">
-        <nestedGenPackages prefix="Creaturedecombat" disposableProviderFactory="true"
-            ecorePackage="creature.ecore#//cnam/chatnoir76/creaturedecombat">
-          <nestedGenPackages prefix="Domain" disposableProviderFactory="true" ecorePackage="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain">
-            <nestedGenPackages prefix="Creature" disposableProviderFactory="true"
-                ecorePackage="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature">
-              <nestedGenPackages prefix="Model" disposableProviderFactory="true" ecorePackage="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model">
+    <nestedGenPackages prefix="Cnam" basePackage="fr" disposableProviderFactory="true"
+        ecorePackage="creature.ecore#//cnam">
+      <nestedGenPackages prefix="Chatnoir76" basePackage="fr.cnam" disposableProviderFactory="true"
+          ecorePackage="creature.ecore#//cnam/chatnoir76">
+        <nestedGenPackages prefix="Creaturedecombat" basePackage="fr.cnam.chatnoir76"
+            disposableProviderFactory="true" ecorePackage="creature.ecore#//cnam/chatnoir76/creaturedecombat">
+          <nestedGenPackages prefix="Domain" basePackage="fr.cnam.chatnoir76.creaturedecombat"
+              disposableProviderFactory="true" ecorePackage="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain">
+            <nestedGenPackages prefix="Creature" basePackage="fr.cnam.chatnoir76.creaturedecombat.domain"
+                disposableProviderFactory="true" ecorePackage="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature">
+              <nestedGenPackages prefix="Model" basePackage="fr.cnam.chatnoir76.creaturedecombat.domain.creature"
+                  disposableProviderFactory="true" ecorePackage="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model">
                 <genEnums typeSafeEnumCompatible="false" ecoreEnum="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Niveau">
                   <genEnumLiterals ecoreEnumLiteral="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Niveau/Base"/>
                   <genEnumLiterals ecoreEnumLiteral="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Niveau/Evolution"/>
@@ -34,8 +38,7 @@
                 </genEnums>
                 <genEnums typeSafeEnumCompatible="false" ecoreEnum="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CalculDegat">
                   <genEnumLiterals ecoreEnumLiteral="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CalculDegat/Base"/>
-                  <genEnumLiterals ecoreEnumLiteral="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CalculDegat/RatioAttaquant"/>
-                  <genEnumLiterals ecoreEnumLiteral="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CalculDegat/RatioDefenseur"/>
+                  <genEnumLiterals ecoreEnumLiteral="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CalculDegat/Ratio"/>
                 </genEnums>
                 <genClasses image="false" ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Labelled">
                   <genFeatures createChild="false" ecoreFeature="ecore:EAttribute creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Labelled/nom"/>
@@ -46,27 +49,6 @@
                   <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Energie/estCompatibleCreature">
                     <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Energie/estCompatibleCreature/creature"/>
                   </genOperations>
-                </genClasses>
-                <genClasses ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature">
-                  <genFeatures createChild="false" ecoreFeature="ecore:EAttribute creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/categorie"/>
-                  <genFeatures createChild="false" ecoreFeature="ecore:EAttribute creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/pv"/>
-                  <genFeatures createChild="false" ecoreFeature="ecore:EAttribute creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/pvInit"/>
-                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/base"/>
-                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/attaques"/>
-                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/energies"/>
-                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/degatDefense"/>
-                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/estCompatibleEvolution">
-                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/estCompatibleEvolution/creature"/>
-                  </genOperations>
-                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/faireEvoluer">
-                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/faireEvoluer/creature"/>
-                  </genOperations>
-                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/getNiveau"/>
-                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/estMort"/>
                 </genClasses>
                 <genClasses ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Attaque">
                   <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -95,6 +77,78 @@
                     <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Degat/getCalculDegat/attaquant"/>
                     <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Degat/getCalculDegat/defenseur"/>
                   </genOperations>
+                </genClasses>
+                <genClasses image="false" ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte">
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte/estVisible"/>
+                </genClasses>
+                <genClasses ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Dresseur"/>
+                <genClasses ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Objet"/>
+                <genClasses ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Supporteur"/>
+                <genClasses ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Deck">
+                  <genFeatures property="None" children="true" createChild="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Deck/cartes"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Deck/piocher"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Deck/getCreatureBase"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Deck/getCreatureEvolution"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Deck/getEnergie"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Deck/getObjet"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Deck/getSupporteur"/>
+                </genClasses>
+                <genClasses ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu">
+                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu/deck"/>
+                  <genFeatures property="None" children="true" createChild="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu/pileDefausse"/>
+                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu/creatureActive"/>
+                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu/banc"/>
+                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu/carteRecompense"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu/finTour"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu/finOption"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu/abandonner"/>
+                </genClasses>
+                <genClasses ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature">
+                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/energies"/>
+                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/base"/>
+                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/evolution"/>
+                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/maitre"/>
+                  <genFeatures createChild="false" ecoreFeature="ecore:EAttribute creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/pv"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/estCompatibleEvolution">
+                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/estCompatibleEvolution/creature"/>
+                  </genOperations>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/faireEvoluer">
+                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/faireEvoluer/creature"/>
+                  </genOperations>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/getNiveau"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature/estMort"/>
+                </genClasses>
+                <genClasses ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Base">
+                  <genFeatures createChild="false" ecoreFeature="ecore:EAttribute creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Base/pvInit"/>
+                  <genFeatures createChild="false" ecoreFeature="ecore:EAttribute creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Base/categorie"/>
+                  <genFeatures property="None" children="true" createChild="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Base/attaques"/>
+                  <genFeatures property="None" children="true" createChild="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Base/degatDefense"/>
+                </genClasses>
+                <genClasses ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Evolution">
+                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Evolution/base"/>
+                </genClasses>
+                <genClasses ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Maitre">
+                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Maitre/evolution"/>
+                </genClasses>
+                <genClasses image="false" ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CreatureComponent">
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CreatureComponent/getPvInit"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CreatureComponent/getCategorie"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CreatureComponent/getAttaques"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CreatureComponent/getDegatDefense"/>
                 </genClasses>
               </nestedGenPackages>
             </nestedGenPackages>

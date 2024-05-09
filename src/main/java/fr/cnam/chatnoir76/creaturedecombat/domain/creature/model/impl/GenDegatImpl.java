@@ -2,6 +2,12 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl;
 
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.CalculDegat;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Creature;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Degat;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenModelPackage;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.TypeDegat;
+
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -12,12 +18,6 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.CalculDegat;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Creature;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Degat;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenModelPackage;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.TypeDegat;
 
 /**
  * <!-- begin-user-doc -->

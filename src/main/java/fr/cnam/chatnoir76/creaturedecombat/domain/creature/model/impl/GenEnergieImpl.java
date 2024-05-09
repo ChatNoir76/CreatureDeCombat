@@ -2,6 +2,12 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl;
 
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Categorie;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Creature;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Energie;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenModelPackage;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Labelled;
+
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -12,11 +18,6 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Categorie;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Creature;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Energie;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenModelPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -200,6 +201,18 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 	 * @generated
 	 */
 	@Override
+	public boolean estVisible() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GenModelPackage.ENERGIE__NOM:
@@ -278,10 +291,46 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Labelled.class) {
+			switch (derivedFeatureID) {
+				case GenModelPackage.ENERGIE__NOM: return GenModelPackage.LABELLED__NOM;
+				case GenModelPackage.ENERGIE__DESCRIPTION: return GenModelPackage.LABELLED__DESCRIPTION;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Labelled.class) {
+			switch (baseFeatureID) {
+				case GenModelPackage.LABELLED__NOM: return GenModelPackage.ENERGIE__NOM;
+				case GenModelPackage.LABELLED__DESCRIPTION: return GenModelPackage.ENERGIE__DESCRIPTION;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case GenModelPackage.ENERGIE___EST_COMPATIBLE_CREATURE__GENCREATURE:
 				return estCompatibleCreature((Creature)arguments.get(0));
+			case GenModelPackage.ENERGIE___EST_VISIBLE:
+				return estVisible();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

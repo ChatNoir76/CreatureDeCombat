@@ -2,14 +2,14 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.util;
 
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.*;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
-
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,16 +76,52 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 				return createEnergieAdapter();
 			}
 			@Override
-			public Adapter caseCreature(Creature object) {
-				return createCreatureAdapter();
-			}
-			@Override
 			public Adapter caseAttaque(Attaque object) {
 				return createAttaqueAdapter();
 			}
 			@Override
 			public Adapter caseDegat(Degat object) {
 				return createDegatAdapter();
+			}
+			@Override
+			public Adapter caseCarte(Carte object) {
+				return createCarteAdapter();
+			}
+			@Override
+			public Adapter caseDresseur(Dresseur object) {
+				return createDresseurAdapter();
+			}
+			@Override
+			public Adapter caseObjet(Objet object) {
+				return createObjetAdapter();
+			}
+			@Override
+			public Adapter caseSupporteur(Supporteur object) {
+				return createSupporteurAdapter();
+			}
+			@Override
+			public Adapter caseDeck(Deck object) {
+				return createDeckAdapter();
+			}
+			@Override
+			public Adapter caseJeu(Jeu object) {
+				return createJeuAdapter();
+			}
+			@Override
+			public Adapter caseCreature(Creature object) {
+				return createCreatureAdapter();
+			}
+			@Override
+			public Adapter caseBase(Base object) {
+				return createBaseAdapter();
+			}
+			@Override
+			public Adapter caseEvolution(Evolution object) {
+				return createEvolutionAdapter();
+			}
+			@Override
+			public Adapter caseMaitre(Maitre object) {
+				return createMaitreAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -136,20 +172,6 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCreature <em>Creature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCreature
-	 * @generated
-	 */
-	public Adapter createCreatureAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAttaque <em>Attaque</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -174,6 +196,146 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDegatAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCarte <em>Carte</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCarte
+	 * @generated
+	 */
+	public Adapter createCarteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenDresseur <em>Dresseur</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenDresseur
+	 * @generated
+	 */
+	public Adapter createDresseurAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenObjet <em>Objet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenObjet
+	 * @generated
+	 */
+	public Adapter createObjetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenSupporteur <em>Supporteur</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenSupporteur
+	 * @generated
+	 */
+	public Adapter createSupporteurAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenDeck <em>Deck</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenDeck
+	 * @generated
+	 */
+	public Adapter createDeckAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenJeu <em>Jeu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenJeu
+	 * @generated
+	 */
+	public Adapter createJeuAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCreature <em>Creature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCreature
+	 * @generated
+	 */
+	public Adapter createCreatureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenBase <em>Base</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenBase
+	 * @generated
+	 */
+	public Adapter createBaseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenEvolution <em>Evolution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenEvolution
+	 * @generated
+	 */
+	public Adapter createEvolutionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenMaitre <em>Maitre</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenMaitre
+	 * @generated
+	 */
+	public Adapter createMaitreAdapter() {
 		return null;
 	}
 

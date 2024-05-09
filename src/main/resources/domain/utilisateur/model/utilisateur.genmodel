@@ -23,6 +23,15 @@
                 <genClasses ecoreClass="utilisateur.ecore#//cnam/chatnoir76/creaturedecombat/domain/utilisateur/model/Utilisateur">
                   <genFeatures createChild="false" ecoreFeature="ecore:EAttribute utilisateur.ecore#//cnam/chatnoir76/creaturedecombat/domain/utilisateur/model/Utilisateur/nom"/>
                   <genFeatures createChild="false" ecoreFeature="ecore:EAttribute utilisateur.ecore#//cnam/chatnoir76/creaturedecombat/domain/utilisateur/model/Utilisateur/password"/>
+                  <genOperations ecoreOperation="utilisateur.ecore#//cnam/chatnoir76/creaturedecombat/domain/utilisateur/model/Utilisateur/checkPassword">
+                    <genParameters ecoreParameter="utilisateur.ecore#//cnam/chatnoir76/creaturedecombat/domain/utilisateur/model/Utilisateur/checkPassword/password"/>
+                  </genOperations>
+                </genClasses>
+                <genClasses ecoreClass="utilisateur.ecore#//cnam/chatnoir76/creaturedecombat/domain/utilisateur/model/Salle">
+                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                      ecoreFeature="ecore:EReference utilisateur.ecore#//cnam/chatnoir76/creaturedecombat/domain/utilisateur/model/Salle/joueur1"/>
+                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                      ecoreFeature="ecore:EReference utilisateur.ecore#//cnam/chatnoir76/creaturedecombat/domain/utilisateur/model/Salle/joueur2"/>
                 </genClasses>
               </nestedGenPackages>
             </nestedGenPackages>

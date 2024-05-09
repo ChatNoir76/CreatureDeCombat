@@ -5,8 +5,10 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.utilisateur.model.impl;
 import fr.cnam.chatnoir76.creaturedecombat.domain.utilisateur.model.GenModelPackage;
 import fr.cnam.chatnoir76.creaturedecombat.domain.utilisateur.model.Utilisateur;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -138,6 +140,18 @@ public class GenUtilisateurImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
+	public boolean checkPassword(String password) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GenModelPackage.UTILISATEUR__NOM:
@@ -198,6 +212,20 @@ public class GenUtilisateurImpl extends MinimalEObjectImpl.Container implements 
 				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case GenModelPackage.UTILISATEUR___CHECK_PASSWORD__STRING:
+				return checkPassword((String)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -4,13 +4,15 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.validation;
 
-import org.eclipse.emf.common.util.EList;
-
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Attaque;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Base;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Categorie;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Creature;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Degat;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Energie;
+
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Evolution;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Maitre;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * A sample validator interface for {@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCreature}.
@@ -21,11 +23,24 @@ import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Energie;
 public interface CreatureValidator {
 	boolean validate();
 
-	boolean validateCategorie(Categorie value);
+	boolean validateBase(Base value);
+	boolean validateEvolution(Evolution value);
+
+	boolean validateMaitre(Maitre value);
+
 	boolean validatePv(int value);
+
 	boolean validatePvInit(int value);
-	boolean validateBase(Creature value);
+
+	boolean validateNom(String value);
+
+	boolean validateDescription(String value);
+
+	boolean validateCategorie(Categorie value);
+
 	boolean validateAttaques(EList<Attaque> value);
-	boolean validateEnergies(EList<Energie> value);
+
 	boolean validateDegatDefense(Degat value);
+
+	boolean validateEnergies(EList<Energie> value);
 }

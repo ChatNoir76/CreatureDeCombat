@@ -2,9 +2,16 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl;
 
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Attaque;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Categorie;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Creature;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Degat;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenModelPackage;
+
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -13,12 +20,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Attaque;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Categorie;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Creature;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Degat;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenModelPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,7 +81,7 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDegatAttaque() <em>Degat Attaque</em>}' reference.
+	 * The cached value of the '{@link #getDegatAttaque() <em>Degat Attaque</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDegatAttaque()
@@ -221,14 +222,6 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 	 */
 	@Override
 	public Degat getDegatAttaque() {
-		if (degatAttaque != null && degatAttaque.eIsProxy()) {
-			InternalEObject oldDegatAttaque = (InternalEObject)degatAttaque;
-			degatAttaque = (Degat)eResolveProxy(oldDegatAttaque);
-			if (degatAttaque != oldDegatAttaque) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GenModelPackage.ATTAQUE__DEGAT_ATTAQUE, oldDegatAttaque, degatAttaque));
-			}
-		}
 		return degatAttaque;
 	}
 
@@ -237,8 +230,14 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Degat basicGetDegatAttaque() {
-		return degatAttaque;
+	public NotificationChain basicSetDegatAttaque(Degat newDegatAttaque, NotificationChain msgs) {
+		Degat oldDegatAttaque = degatAttaque;
+		degatAttaque = newDegatAttaque;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GenModelPackage.ATTAQUE__DEGAT_ATTAQUE, oldDegatAttaque, newDegatAttaque);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -248,10 +247,17 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 	 */
 	@Override
 	public void setDegatAttaque(Degat newDegatAttaque) {
-		Degat oldDegatAttaque = degatAttaque;
-		degatAttaque = newDegatAttaque;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ATTAQUE__DEGAT_ATTAQUE, oldDegatAttaque, degatAttaque));
+		if (newDegatAttaque != degatAttaque) {
+			NotificationChain msgs = null;
+			if (degatAttaque != null)
+				msgs = ((InternalEObject)degatAttaque).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GenModelPackage.ATTAQUE__DEGAT_ATTAQUE, null, msgs);
+			if (newDegatAttaque != null)
+				msgs = ((InternalEObject)newDegatAttaque).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GenModelPackage.ATTAQUE__DEGAT_ATTAQUE, null, msgs);
+			msgs = basicSetDegatAttaque(newDegatAttaque, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ATTAQUE__DEGAT_ATTAQUE, newDegatAttaque, newDegatAttaque));
 	}
 
 	/**
@@ -365,6 +371,20 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case GenModelPackage.ATTAQUE__DEGAT_ATTAQUE:
+				return basicSetDegatAttaque(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GenModelPackage.ATTAQUE__NOM:
@@ -372,8 +392,7 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 			case GenModelPackage.ATTAQUE__DESCRIPTION:
 				return getDescription();
 			case GenModelPackage.ATTAQUE__DEGAT_ATTAQUE:
-				if (resolve) return getDegatAttaque();
-				return basicGetDegatAttaque();
+				return getDegatAttaque();
 			case GenModelPackage.ATTAQUE__BESOIN_ENERGIE_CATEGORIE:
 				return getBesoinEnergieCategorie();
 			case GenModelPackage.ATTAQUE__BESOIN_ENERGIE_AUTRE:

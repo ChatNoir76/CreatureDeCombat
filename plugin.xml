@@ -5,15 +5,53 @@
          point="org.eclipse.emf.ecore.factory_override">
       <factory
             uri="http://example.com/model"
-            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.ModelFactoryImpl">
+            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model2.impl.ModelFactoryImpl">
       </factory>
    </extension>
    <extension
          point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://example.com/model"
-            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenModelPackage">
+            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model2.GenModelPackage">
       </package>
+   </extension>
+   <extension
+         point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://creature/model"
+            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.provider.ModelItemProviderAdapterFactory"
+            supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category">
+      </category>
+      <wizard
+            id="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.presentation.ModelModelWizardID"
+            name="%_UI_ModelModelWizard_label"
+            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.presentation.ModelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ModelModelFile.gif">
+         <description>
+         </description>
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            id="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.presentation.ModelEditorID"
+            name="%_UI_ModelEditor_label"
+            icon="icons/full/obj16/ModelModelFile.gif"
+            extensions="model"
+            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.presentation.ModelEditor"
+            contributorClass="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.presentation.ModelActionBarContributor">
+      </editor>
    </extension>
    <extension
          point="org.eclipse.emf.ecore.factory_override">
@@ -27,6 +65,20 @@
       <package
             uri="http://utilisateur/model"
             class="fr.cnam.chatnoir76.creaturedecombat.domain.utilisateur.model.GenModelPackage">
+      </package>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            uri="http://creature/model"
+            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.ModelFactoryImpl">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://creature/model"
+            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenModelPackage">
       </package>
    </extension>
 

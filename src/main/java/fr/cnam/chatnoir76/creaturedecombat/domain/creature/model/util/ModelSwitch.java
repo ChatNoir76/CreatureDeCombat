@@ -2,12 +2,12 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.util;
 
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.*;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -75,14 +75,8 @@ public class ModelSwitch<T> extends Switch<T> {
 			case GenModelPackage.ENERGIE: {
 				Energie energie = (Energie)theEObject;
 				T result = caseEnergie(energie);
+				if (result == null) result = caseCarte(energie);
 				if (result == null) result = caseLabelled(energie);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GenModelPackage.CREATURE: {
-				Creature creature = (Creature)theEObject;
-				T result = caseCreature(creature);
-				if (result == null) result = caseLabelled(creature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -96,6 +90,82 @@ public class ModelSwitch<T> extends Switch<T> {
 			case GenModelPackage.DEGAT: {
 				Degat degat = (Degat)theEObject;
 				T result = caseDegat(degat);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.CARTE: {
+				Carte carte = (Carte)theEObject;
+				T result = caseCarte(carte);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.DRESSEUR: {
+				Dresseur dresseur = (Dresseur)theEObject;
+				T result = caseDresseur(dresseur);
+				if (result == null) result = caseCarte(dresseur);
+				if (result == null) result = caseLabelled(dresseur);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.OBJET: {
+				Objet objet = (Objet)theEObject;
+				T result = caseObjet(objet);
+				if (result == null) result = caseDresseur(objet);
+				if (result == null) result = caseCarte(objet);
+				if (result == null) result = caseLabelled(objet);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.SUPPORTEUR: {
+				Supporteur supporteur = (Supporteur)theEObject;
+				T result = caseSupporteur(supporteur);
+				if (result == null) result = caseDresseur(supporteur);
+				if (result == null) result = caseCarte(supporteur);
+				if (result == null) result = caseLabelled(supporteur);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.DECK: {
+				Deck deck = (Deck)theEObject;
+				T result = caseDeck(deck);
+				if (result == null) result = caseLabelled(deck);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.JEU: {
+				Jeu jeu = (Jeu)theEObject;
+				T result = caseJeu(jeu);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.CREATURE: {
+				Creature creature = (Creature)theEObject;
+				T result = caseCreature(creature);
+				if (result == null) result = caseCarte(creature);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.BASE: {
+				Base base = (Base)theEObject;
+				T result = caseBase(base);
+				if (result == null) result = caseLabelled(base);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.EVOLUTION: {
+				Evolution evolution = (Evolution)theEObject;
+				T result = caseEvolution(evolution);
+				if (result == null) result = caseBase(evolution);
+				if (result == null) result = caseLabelled(evolution);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.MAITRE: {
+				Maitre maitre = (Maitre)theEObject;
+				T result = caseMaitre(maitre);
+				if (result == null) result = caseEvolution(maitre);
+				if (result == null) result = caseBase(maitre);
+				if (result == null) result = caseLabelled(maitre);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -134,21 +204,6 @@ public class ModelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Creature</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Creature</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCreature(Creature object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Attaque</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -175,6 +230,156 @@ public class ModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDegat(Degat object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Carte</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Carte</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCarte(Carte object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Dresseur</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Dresseur</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDresseur(Dresseur object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Objet</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Objet</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseObjet(Objet object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Supporteur</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Supporteur</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupporteur(Supporteur object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Deck</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Deck</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDeck(Deck object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Jeu</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Jeu</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseJeu(Jeu object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Creature</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Creature</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCreature(Creature object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Base</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Base</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBase(Base object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Evolution</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Evolution</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEvolution(Evolution object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Maitre</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Maitre</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMaitre(Maitre object) {
 		return null;
 	}
 

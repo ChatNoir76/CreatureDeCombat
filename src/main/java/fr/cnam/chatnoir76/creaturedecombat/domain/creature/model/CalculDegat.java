@@ -29,24 +29,14 @@ public enum CalculDegat implements Enumerator {
 	BASE(0, "Base", "Base"),
 
 	/**
-	 * The '<em><b>Ratio Attaquant</b></em>' literal object.
+	 * The '<em><b>Ratio</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #RATIO_ATTAQUANT_VALUE
+	 * @see #RATIO_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	RATIO_ATTAQUANT(1, "RatioAttaquant", "RatioAttaquant"),
-
-	/**
-	 * The '<em><b>Ratio Defenseur</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #RATIO_DEFENSEUR_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	RATIO_DEFENSEUR(2, "RatioDefenseur", "RatioDefenseur");
+	RATIO(1, "Ratio", "Ratio");
 
 	/**
 	 * The '<em><b>Base</b></em>' literal value.
@@ -60,26 +50,15 @@ public enum CalculDegat implements Enumerator {
 	public static final int BASE_VALUE = 0;
 
 	/**
-	 * The '<em><b>Ratio Attaquant</b></em>' literal value.
+	 * The '<em><b>Ratio</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #RATIO_ATTAQUANT
-	 * @model name="RatioAttaquant"
+	 * @see #RATIO
+	 * @model name="Ratio"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RATIO_ATTAQUANT_VALUE = 1;
-
-	/**
-	 * The '<em><b>Ratio Defenseur</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #RATIO_DEFENSEUR
-	 * @model name="RatioDefenseur"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int RATIO_DEFENSEUR_VALUE = 2;
+	public static final int RATIO_VALUE = 1;
 
 	/**
 	 * An array of all the '<em><b>Calcul Degat</b></em>' enumerators.
@@ -90,8 +69,7 @@ public enum CalculDegat implements Enumerator {
 	private static final CalculDegat[] VALUES_ARRAY =
 		new CalculDegat[] {
 			BASE,
-			RATIO_ATTAQUANT,
-			RATIO_DEFENSEUR,
+			RATIO,
 		};
 
 	/**
@@ -149,8 +127,7 @@ public enum CalculDegat implements Enumerator {
 	public static CalculDegat get(int value) {
 		switch (value) {
 			case BASE_VALUE: return BASE;
-			case RATIO_ATTAQUANT_VALUE: return RATIO_ATTAQUANT;
-			case RATIO_DEFENSEUR_VALUE: return RATIO_DEFENSEUR;
+			case RATIO_VALUE: return RATIO;
 		}
 		return null;
 	}

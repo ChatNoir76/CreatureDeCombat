@@ -19,7 +19,7 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model;
  * @model
  * @generated
  */
-public interface GenEnergie extends Labelled {
+public interface GenEnergie extends Carte, Labelled {
 	/**
 	 * Returns the value of the '<em><b>Categorie</b></em>' attribute.
 	 * The literals are from the enumeration {@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Categorie}.

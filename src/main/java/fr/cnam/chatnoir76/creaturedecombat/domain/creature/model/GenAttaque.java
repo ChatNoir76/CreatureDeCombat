@@ -24,22 +24,22 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model;
  */
 public interface GenAttaque extends Labelled {
 	/**
-	 * Returns the value of the '<em><b>Degat Attaque</b></em>' reference.
+	 * Returns the value of the '<em><b>Degat Attaque</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Degat Attaque</em>' reference.
+	 * @return the value of the '<em>Degat Attaque</em>' containment reference.
 	 * @see #setDegatAttaque(Degat)
 	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenModelPackage#getAttaque_DegatAttaque()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	Degat getDegatAttaque();
 
 	/**
-	 * Sets the value of the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAttaque#getDegatAttaque <em>Degat Attaque</em>}' reference.
+	 * Sets the value of the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAttaque#getDegatAttaque <em>Degat Attaque</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Degat Attaque</em>' reference.
+	 * @param value the new value of the '<em>Degat Attaque</em>' containment reference.
 	 * @see #getDegatAttaque()
 	 * @generated
 	 */

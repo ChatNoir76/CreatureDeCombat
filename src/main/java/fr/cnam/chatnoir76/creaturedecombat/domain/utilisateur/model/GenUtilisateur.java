@@ -66,4 +66,12 @@ public interface GenUtilisateur extends EObject {
 	 */
 	void setPassword(String value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean checkPassword(String password);
+
 } // GenUtilisateur
