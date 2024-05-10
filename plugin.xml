@@ -5,23 +5,15 @@
          point="org.eclipse.emf.ecore.factory_override">
       <factory
             uri="http://example.com/model"
-            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model2.impl.ModelFactoryImpl">
+            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.ModelFactoryImpl">
       </factory>
    </extension>
    <extension
          point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://example.com/model"
-            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model2.GenModelPackage">
+            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenModelPackage">
       </package>
-   </extension>
-   <extension
-         point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <factory
-            uri="http://creature/model"
-            class="fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.provider.ModelItemProviderAdapterFactory"
-            supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource">
-      </factory>
    </extension>
    <extension
          point="org.eclipse.ui.newWizards">

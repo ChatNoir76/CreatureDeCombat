@@ -8,5 +8,9 @@ public interface Creature extends GenCreature
 	//
 	// For instance : 
 	// default public void addSomething(Something foo) {} ;
-
+	
+	default public boolean hasInitialized() {
+		return this.getBase() != null || this.getEvolution() != null || this.getMaitre() != null;
+	}
+	
 }

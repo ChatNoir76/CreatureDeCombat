@@ -142,12 +142,15 @@ public class ModelSwitch<T> extends Switch<T> {
 				Creature creature = (Creature)theEObject;
 				T result = caseCreature(creature);
 				if (result == null) result = caseCarte(creature);
+				if (result == null) result = caseCreatureComponent(creature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case GenModelPackage.BASE: {
 				Base base = (Base)theEObject;
 				T result = caseBase(base);
+				if (result == null) result = caseAbstractCreatureComponent(base);
+				if (result == null) result = caseCreatureComponent(base);
 				if (result == null) result = caseLabelled(base);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -155,7 +158,8 @@ public class ModelSwitch<T> extends Switch<T> {
 			case GenModelPackage.EVOLUTION: {
 				Evolution evolution = (Evolution)theEObject;
 				T result = caseEvolution(evolution);
-				if (result == null) result = caseBase(evolution);
+				if (result == null) result = caseAbstractCreatureComponent(evolution);
+				if (result == null) result = caseCreatureComponent(evolution);
 				if (result == null) result = caseLabelled(evolution);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -163,9 +167,23 @@ public class ModelSwitch<T> extends Switch<T> {
 			case GenModelPackage.MAITRE: {
 				Maitre maitre = (Maitre)theEObject;
 				T result = caseMaitre(maitre);
-				if (result == null) result = caseEvolution(maitre);
-				if (result == null) result = caseBase(maitre);
+				if (result == null) result = caseAbstractCreatureComponent(maitre);
+				if (result == null) result = caseCreatureComponent(maitre);
 				if (result == null) result = caseLabelled(maitre);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.CREATURE_COMPONENT: {
+				CreatureComponent creatureComponent = (CreatureComponent)theEObject;
+				T result = caseCreatureComponent(creatureComponent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT: {
+				AbstractCreatureComponent abstractCreatureComponent = (AbstractCreatureComponent)theEObject;
+				T result = caseAbstractCreatureComponent(abstractCreatureComponent);
+				if (result == null) result = caseCreatureComponent(abstractCreatureComponent);
+				if (result == null) result = caseLabelled(abstractCreatureComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -380,6 +398,36 @@ public class ModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMaitre(Maitre object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Creature Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Creature Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCreatureComponent(CreatureComponent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Creature Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Creature Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractCreatureComponent(AbstractCreatureComponent object) {
 		return null;
 	}
 

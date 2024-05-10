@@ -2,6 +2,7 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl;
 
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.AbstractCreatureComponent;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Attaque;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Base;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.CalculDegat;
@@ -137,6 +138,20 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	private EClass maitreEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass creatureComponentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractCreatureComponentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -672,6 +687,16 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getCreature_Energies() {
+		return (EReference)creatureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getCreature_Base() {
 		return (EReference)creatureEClass.getEStructuralFeatures().get(1);
 	}
@@ -712,76 +737,6 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCreature_PvInit() {
-		return (EAttribute)creatureEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCreature_Nom() {
-		return (EAttribute)creatureEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCreature_Description() {
-		return (EAttribute)creatureEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCreature_Categorie() {
-		return (EAttribute)creatureEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getCreature_Attaques() {
-		return (EReference)creatureEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getCreature_DegatDefense() {
-		return (EReference)creatureEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getCreature_Energies() {
-		return (EReference)creatureEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EOperation getCreature__EstCompatibleEvolution__GenCreature() {
 		return creatureEClass.getEOperations().get(0);
 	}
@@ -802,7 +757,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getCreature__GetNiveau() {
+	public EOperation getCreature__EstMort() {
 		return creatureEClass.getEOperations().get(2);
 	}
 
@@ -812,8 +767,28 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getCreature__EstMort() {
+	public EOperation getCreature__Initialize__GenCreatureComponent() {
 		return creatureEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreature__RecoitDegat__int() {
+		return creatureEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreature__RecoitSoin__int() {
+		return creatureEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -824,46 +799,6 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	@Override
 	public EClass getBase() {
 		return baseEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getBase_PvInit() {
-		return (EAttribute)baseEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getBase_Categorie() {
-		return (EAttribute)baseEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBase_Attaques() {
-		return (EReference)baseEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBase_DegatDefense() {
-		return (EReference)baseEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -904,6 +839,166 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	@Override
 	public EReference getMaitre_Evolution() {
 		return (EReference)maitreEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getCreatureComponent() {
+		return creatureComponentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreatureComponent__GetPvInit() {
+		return creatureComponentEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreatureComponent__GetCategorie() {
+		return creatureComponentEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreatureComponent__GetAttaques() {
+		return creatureComponentEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreatureComponent__GetDegatDefense() {
+		return creatureComponentEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreatureComponent__GetNiveau() {
+		return creatureComponentEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreatureComponent__GetNom() {
+		return creatureComponentEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreatureComponent__GetDescription() {
+		return creatureComponentEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreatureComponent__GetBaseEvolution() {
+		return creatureComponentEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreatureComponent__GetActiveCreatureComponent() {
+		return creatureComponentEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAbstractCreatureComponent() {
+		return abstractCreatureComponentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAbstractCreatureComponent_PvInit() {
+		return (EAttribute)abstractCreatureComponentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAbstractCreatureComponent_Categorie() {
+		return (EAttribute)abstractCreatureComponentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAbstractCreatureComponent_Attaques() {
+		return (EReference)abstractCreatureComponentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAbstractCreatureComponent_DegatDefense() {
+		return (EReference)abstractCreatureComponentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAbstractCreatureComponent_Niveau() {
+		return (EAttribute)abstractCreatureComponentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1034,28 +1129,38 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		createEReference(creatureEClass, CREATURE__EVOLUTION);
 		createEReference(creatureEClass, CREATURE__MAITRE);
 		createEAttribute(creatureEClass, CREATURE__PV);
-		createEAttribute(creatureEClass, CREATURE__PV_INIT);
-		createEAttribute(creatureEClass, CREATURE__NOM);
-		createEAttribute(creatureEClass, CREATURE__DESCRIPTION);
-		createEAttribute(creatureEClass, CREATURE__CATEGORIE);
-		createEReference(creatureEClass, CREATURE__ATTAQUES);
-		createEReference(creatureEClass, CREATURE__DEGAT_DEFENSE);
 		createEOperation(creatureEClass, CREATURE___EST_COMPATIBLE_EVOLUTION__GENCREATURE);
 		createEOperation(creatureEClass, CREATURE___FAIRE_EVOLUER__GENCREATURE);
-		createEOperation(creatureEClass, CREATURE___GET_NIVEAU);
 		createEOperation(creatureEClass, CREATURE___EST_MORT);
+		createEOperation(creatureEClass, CREATURE___INITIALIZE__GENCREATURECOMPONENT);
+		createEOperation(creatureEClass, CREATURE___RECOIT_DEGAT__INT);
+		createEOperation(creatureEClass, CREATURE___RECOIT_SOIN__INT);
 
 		baseEClass = createEClass(BASE);
-		createEAttribute(baseEClass, BASE__PV_INIT);
-		createEAttribute(baseEClass, BASE__CATEGORIE);
-		createEReference(baseEClass, BASE__ATTAQUES);
-		createEReference(baseEClass, BASE__DEGAT_DEFENSE);
 
 		evolutionEClass = createEClass(EVOLUTION);
 		createEReference(evolutionEClass, EVOLUTION__BASE);
 
 		maitreEClass = createEClass(MAITRE);
 		createEReference(maitreEClass, MAITRE__EVOLUTION);
+
+		creatureComponentEClass = createEClass(CREATURE_COMPONENT);
+		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_PV_INIT);
+		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_CATEGORIE);
+		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_ATTAQUES);
+		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_DEGAT_DEFENSE);
+		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_NIVEAU);
+		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_NOM);
+		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_DESCRIPTION);
+		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_BASE_EVOLUTION);
+		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_ACTIVE_CREATURE_COMPONENT);
+
+		abstractCreatureComponentEClass = createEClass(ABSTRACT_CREATURE_COMPONENT);
+		createEAttribute(abstractCreatureComponentEClass, ABSTRACT_CREATURE_COMPONENT__PV_INIT);
+		createEAttribute(abstractCreatureComponentEClass, ABSTRACT_CREATURE_COMPONENT__CATEGORIE);
+		createEReference(abstractCreatureComponentEClass, ABSTRACT_CREATURE_COMPONENT__ATTAQUES);
+		createEReference(abstractCreatureComponentEClass, ABSTRACT_CREATURE_COMPONENT__DEGAT_DEFENSE);
+		createEAttribute(abstractCreatureComponentEClass, ABSTRACT_CREATURE_COMPONENT__NIVEAU);
 
 		// Create enums
 		niveauEEnum = createEEnum(NIVEAU);
@@ -1101,9 +1206,12 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		supporteurEClass.getESuperTypes().add(this.getDresseur());
 		deckEClass.getESuperTypes().add(this.getLabelled());
 		creatureEClass.getESuperTypes().add(this.getCarte());
-		baseEClass.getESuperTypes().add(this.getLabelled());
-		evolutionEClass.getESuperTypes().add(this.getBase());
-		maitreEClass.getESuperTypes().add(this.getEvolution());
+		creatureEClass.getESuperTypes().add(this.getCreatureComponent());
+		baseEClass.getESuperTypes().add(this.getAbstractCreatureComponent());
+		evolutionEClass.getESuperTypes().add(this.getAbstractCreatureComponent());
+		maitreEClass.getESuperTypes().add(this.getAbstractCreatureComponent());
+		abstractCreatureComponentEClass.getESuperTypes().add(this.getCreatureComponent());
+		abstractCreatureComponentEClass.getESuperTypes().add(this.getLabelled());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(labelledEClass, Labelled.class, "Labelled", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1183,38 +1291,62 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 
 		initEClass(creatureEClass, Creature.class, "Creature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCreature_Energies(), this.getEnergie(), null, "energies", null, 0, -1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCreature_Base(), this.getBase(), null, "base", null, 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCreature_Evolution(), this.getEvolution(), null, "evolution", null, 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCreature_Maitre(), this.getMaitre(), null, "maitre", null, 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCreature_Base(), this.getCreatureComponent(), null, "base", null, 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCreature_Evolution(), this.getCreatureComponent(), null, "evolution", null, 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCreature_Maitre(), this.getCreatureComponent(), null, "maitre", null, 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCreature_Pv(), ecorePackage.getEInt(), "pv", "0", 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCreature_PvInit(), ecorePackage.getEInt(), "pvInit", "0", 0, 1, Creature.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCreature_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Creature.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCreature_Description(), ecorePackage.getEString(), "description", null, 0, 1, Creature.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCreature_Categorie(), this.getCategorie(), "categorie", null, 1, 1, Creature.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCreature_Attaques(), this.getAttaque(), null, "attaques", null, 0, -1, Creature.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCreature_DegatDefense(), this.getDegat(), null, "degatDefense", null, 0, 1, Creature.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getCreature__EstCompatibleEvolution__GenCreature(), ecorePackage.getEBoolean(), "estCompatibleEvolution", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getCreature(), "creature", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getCreature__FaireEvoluer__GenCreature(), null, "faireEvoluer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getCreature__FaireEvoluer__GenCreature(), ecorePackage.getEBoolean(), "faireEvoluer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getCreature(), "creature", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getCreature__GetNiveau(), this.getNiveau(), "getNiveau", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getCreature__EstMort(), ecorePackage.getEBoolean(), "estMort", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getCreature__Initialize__GenCreatureComponent(), null, "initialize", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCreatureComponent(), "creatureComponent", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCreature__RecoitDegat__int(), null, "recoitDegat", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "degat", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCreature__RecoitSoin__int(), null, "recoitSoin", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "soin", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(baseEClass, Base.class, "Base", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBase_PvInit(), ecorePackage.getEInt(), "pvInit", "0", 0, 1, Base.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBase_Categorie(), this.getCategorie(), "categorie", null, 1, 1, Base.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBase_Attaques(), this.getAttaque(), null, "attaques", null, 0, -1, Base.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBase_DegatDefense(), this.getDegat(), null, "degatDefense", null, 0, 1, Base.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(evolutionEClass, Evolution.class, "Evolution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEvolution_Base(), this.getBase(), null, "base", null, 0, 1, Evolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(maitreEClass, Maitre.class, "Maitre", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMaitre_Evolution(), this.getEvolution(), null, "evolution", null, 0, 1, Maitre.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(creatureComponentEClass, CreatureComponent.class, "CreatureComponent", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getCreatureComponent__GetPvInit(), ecorePackage.getEInt(), "getPvInit", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getCreatureComponent__GetCategorie(), this.getCategorie(), "getCategorie", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getCreatureComponent__GetAttaques(), this.getAttaque(), "getAttaques", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getCreatureComponent__GetDegatDefense(), this.getDegat(), "getDegatDefense", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getCreatureComponent__GetNiveau(), this.getNiveau(), "getNiveau", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getCreatureComponent__GetNom(), ecorePackage.getEString(), "getNom", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getCreatureComponent__GetDescription(), ecorePackage.getEString(), "getDescription", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getCreatureComponent__GetBaseEvolution(), this.getCreatureComponent(), "getBaseEvolution", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getCreatureComponent__GetActiveCreatureComponent(), this.getCreatureComponent(), "getActiveCreatureComponent", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(abstractCreatureComponentEClass, AbstractCreatureComponent.class, "AbstractCreatureComponent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAbstractCreatureComponent_PvInit(), ecorePackage.getEInt(), "pvInit", "0", 0, 1, AbstractCreatureComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractCreatureComponent_Categorie(), this.getCategorie(), "categorie", null, 1, 1, AbstractCreatureComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractCreatureComponent_Attaques(), this.getAttaque(), null, "attaques", null, 0, -1, AbstractCreatureComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractCreatureComponent_DegatDefense(), this.getDegat(), null, "degatDefense", null, 0, 1, AbstractCreatureComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractCreatureComponent_Niveau(), this.getNiveau(), "niveau", null, 0, 1, AbstractCreatureComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(niveauEEnum, Niveau.class, "Niveau");

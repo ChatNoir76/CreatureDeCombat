@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class GenMaitreImpl extends EvolutionImpl implements Maitre {
+public class GenMaitreImpl extends AbstractCreatureComponentImpl implements Maitre {
 	/**
 	 * The cached value of the '{@link #getEvolution() <em>Evolution</em>}' reference.
 	 * <!-- begin-user-doc -->

@@ -124,6 +124,14 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 				return createMaitreAdapter();
 			}
 			@Override
+			public Adapter caseCreatureComponent(CreatureComponent object) {
+				return createCreatureComponentAdapter();
+			}
+			@Override
+			public Adapter caseAbstractCreatureComponent(AbstractCreatureComponent object) {
+				return createAbstractCreatureComponentAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -336,6 +344,34 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMaitreAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCreatureComponent <em>Creature Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCreatureComponent
+	 * @generated
+	 */
+	public Adapter createCreatureComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAbstractCreatureComponent <em>Abstract Creature Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAbstractCreatureComponent
+	 * @generated
+	 */
+	public Adapter createAbstractCreatureComponentAdapter() {
 		return null;
 	}
 

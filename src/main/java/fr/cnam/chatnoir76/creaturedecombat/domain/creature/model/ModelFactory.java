@@ -10,5 +10,11 @@ public interface ModelFactory extends GenModelFactory
 	  * (overridden in the override_factory extension)
 	*/
 	ModelFactory eINSTANCE = ModelFactoryImpl.init();
+	
+	default public Creature createCreature(CreatureComponent creatureComp) {
+		Creature creature = this.createCreature();
+		creature.initialize(creatureComp);
+		return creature;
+	}
 				
 }

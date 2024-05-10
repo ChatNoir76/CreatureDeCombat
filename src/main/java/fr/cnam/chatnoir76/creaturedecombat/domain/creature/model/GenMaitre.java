@@ -19,7 +19,7 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model;
  * @model
  * @generated
  */
-public interface GenMaitre extends Evolution {
+public interface GenMaitre extends AbstractCreatureComponent {
 	/**
 	 * Returns the value of the '<em><b>Evolution</b></em>' reference.
 	 * <!-- begin-user-doc -->

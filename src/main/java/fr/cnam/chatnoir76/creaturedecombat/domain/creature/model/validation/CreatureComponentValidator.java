@@ -4,11 +4,6 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.validation;
 
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Attaque;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Categorie;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Degat;
-
-import org.eclipse.emf.common.util.EList;
 
 /**
  * A sample validator interface for {@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCreatureComponent}.
@@ -19,9 +14,4 @@ import org.eclipse.emf.common.util.EList;
 public interface CreatureComponentValidator {
 	boolean validate();
 
-	boolean validatePv(int value);
-	boolean validatePvInit(int value);
-	boolean validateCategorie(Categorie value);
-	boolean validateAttaques(EList<Attaque> value);
-	boolean validateDegatDefense(Degat value);
 }

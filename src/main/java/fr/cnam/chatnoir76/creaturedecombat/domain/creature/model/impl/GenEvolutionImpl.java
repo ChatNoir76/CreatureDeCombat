@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class GenEvolutionImpl extends BaseImpl implements Evolution {
+public class GenEvolutionImpl extends AbstractCreatureComponentImpl implements Evolution {
 	/**
 	 * The cached value of the '{@link #getBase() <em>Base</em>}' reference.
 	 * <!-- begin-user-doc -->

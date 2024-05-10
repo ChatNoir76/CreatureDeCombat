@@ -2,7 +2,11 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Base;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Evolution;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Maitre;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.ModelFactory;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Niveau;
 
 
 // This factory  renames the generated factory interface to use it as an overriden factory
@@ -21,6 +25,27 @@ public class ModelFactoryImpl extends GenModelFactoryImpl implements ModelFactor
 		}
 		return new ModelFactoryImpl(); 
 		 }
+
+	@Override
+	public Base createBase() {
+		Base base = super.createBase();
+		base.setNiveau(Niveau.BASE);
+		return base;
+	}
+
+	@Override
+	public Evolution createEvolution() {
+		Evolution evolution = super.createEvolution();
+		evolution.setNiveau(Niveau.EVOLUTION);
+		return evolution;
+	}
+
+	@Override
+	public Maitre createMaitre() {
+		Maitre maitre = super.createMaitre();
+		maitre.setNiveau(Niveau.MAITRE);
+		return maitre;
+	}
 	
 
 }

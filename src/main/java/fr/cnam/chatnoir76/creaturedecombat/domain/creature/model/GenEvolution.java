@@ -19,7 +19,7 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model;
  * @model
  * @generated
  */
-public interface GenEvolution extends Base {
+public interface GenEvolution extends AbstractCreatureComponent {
 	/**
 	 * Returns the value of the '<em><b>Base</b></em>' reference.
 	 * <!-- begin-user-doc -->

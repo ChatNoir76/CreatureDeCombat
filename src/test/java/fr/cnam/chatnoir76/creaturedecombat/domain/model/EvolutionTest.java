@@ -1,5 +1,6 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.model;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -17,9 +18,10 @@ import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.ModelFactory;
 @SpringBootTest(webEnvironment = WebEnvironment.MOCK)
 public class EvolutionTest {
 	
-	private Base base;
-	private Evolution evolution;
-	private Maitre maitre;
+	private Creature cBase;
+	private Creature cEvolution;
+	private Creature cMaitre;
+	private Creature cNonCompatible;
 	
 	private final static String BASE_NOM = "Creature_Base_Nom";
 	private final static String BASE_DESCRIPTION = "Creature_Base_Description";
@@ -35,41 +37,68 @@ public class EvolutionTest {
 	
 	@BeforeEach
 	public void beforeEach() {
-		base = ModelFactory.eINSTANCE.createBase();
+		Base base = ModelFactory.eINSTANCE.createBase();
 		base.setNom(BASE_NOM);
 		base.setDescription(BASE_DESCRIPTION);
 		base.setPvInit(BASE_PV_INIT);
 		base.setCategorie(Categorie.ADORABLE);
 		
-		evolution = ModelFactory.eINSTANCE.createEvolution();
+		Evolution evolution = ModelFactory.eINSTANCE.createEvolution();
 		evolution.setNom(EVOLUTION_NOM);
 		evolution.setDescription(EVOLUTION_DESCRIPTION);
 		evolution.setPvInit(EVOLUTION_PV_INIT);
 		evolution.setCategorie(Categorie.ADORABLE);
+		evolution.setBase(base);
 		
-		maitre = ModelFactory.eINSTANCE.createMaitre();
+		Maitre maitre = ModelFactory.eINSTANCE.createMaitre();
 		maitre.setNom(MAITRE_NOM);
 		maitre.setDescription(MAITRE_DESCRIPTION);
 		maitre.setPvInit(MAITRE_PV_INIT);
 		maitre.setCategorie(Categorie.ADORABLE);
+		maitre.setEvolution(evolution);
 		
+		Evolution evolutionnc = ModelFactory.eINSTANCE.createEvolution();
+		evolutionnc.setNom(EVOLUTION_NOM);
+		evolutionnc.setDescription(EVOLUTION_DESCRIPTION);
+		evolutionnc.setPvInit(EVOLUTION_PV_INIT);
+		evolutionnc.setCategorie(Categorie.ADORABLE);
+		evolutionnc.setBase(ModelFactory.eINSTANCE.createBase());
+		
+		cBase = ModelFactory.eINSTANCE.createCreature(base.getActiveCreatureComponent());
+		cEvolution = ModelFactory.eINSTANCE.createCreature(evolution.getActiveCreatureComponent());
+		cMaitre = ModelFactory.eINSTANCE.createCreature(maitre.getActiveCreatureComponent());
+		cNonCompatible = ModelFactory.eINSTANCE.createCreature(evolutionnc.getActiveCreatureComponent());
 	}
 	
-	private void verificationAttributs(Creature creature, Base base) {
-		assertTrue(creature.getNom().equals(base.getNom()), "Le nom est %s au lieu de %s".formatted(creature.getNom(), base.getNom()));
-		assertTrue(creature.getDescription().equals(base.getDescription()), "La description est %s au lieu de %s".formatted(creature.getDescription(), base.getDescription()));		
-		assertTrue(creature.getPvInit() == base.getPvInit(), "Les PVinit sont de %d au lieu de %d".formatted(creature.getPv(), base.getPvInit()));
-		assertTrue(creature.getCategorie().equals(base.getCategorie()), "La catégorie est %s au lieu de %s".formatted(creature.getCategorie(), base.getCategorie()));
+	private void verificationAttributs(Creature creature, Creature cc) {
+		assertTrue(creature.getNiveau().equals(cc.getNiveau()), "Le niveau est %s au lieu de %s".formatted(creature.getNiveau(), cc.getNiveau()));
+		assertTrue(creature.getNom().equals(cc.getNom()), "Le nom est %s au lieu de %s".formatted(creature.getNom(), cc.getNom()));
+		assertTrue(creature.getDescription().equals(cc.getDescription()), "La description est %s au lieu de %s".formatted(creature.getDescription(), cc.getDescription()));		
+		assertTrue(creature.getPvInit() == cc.getPvInit(), "Les PVinit sont de %d au lieu de %d".formatted(creature.getPv(), cc.getPvInit()));
+		assertTrue(creature.getCategorie().equals(cc.getCategorie()), "La catégorie est %s au lieu de %s".formatted(creature.getCategorie(), cc.getCategorie()));
 		creature.getAttaques().forEach(a -> {
-			assertTrue(base.getAttaques().contains(a), "L'attaque est manquante : %s".formatted(a.getNom()));
+			assertTrue(cc.getAttaques().contains(a), "L'attaque est manquante : %s".formatted(a.getNom()));
 		});
 	}
 	
 	@Test
-	public void comportementInitialBaseTest() {
-		Creature c_base = ModelFactory.eINSTANCE.createCreature();
-		c_base.setBase(base);
-		verificationAttributs(c_base, base);
+	public void comportementInitialTest() {
+		Creature creature = cBase;
+		
+		assertFalse(creature.faireEvoluer(cNonCompatible));
+		assertFalse(creature.faireEvoluer(cMaitre));
+		verificationAttributs(creature, cBase);
+		
+		assertTrue(creature.faireEvoluer(cEvolution));
+		assertFalse(creature.faireEvoluer(cBase));
+		assertFalse(creature.faireEvoluer(cNonCompatible));
+		verificationAttributs(creature, cEvolution);
+		
+		assertTrue(creature.faireEvoluer(cMaitre));
+		assertFalse(creature.faireEvoluer(cBase));
+		assertFalse(creature.faireEvoluer(cEvolution));
+		assertFalse(creature.faireEvoluer(cNonCompatible));
+		verificationAttributs(creature, cMaitre);
 	}
 	
 }
