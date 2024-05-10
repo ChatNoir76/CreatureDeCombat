@@ -16,5 +16,20 @@ public interface ModelFactory extends GenModelFactory
 		creature.initialize(creatureComp);
 		return creature;
 	}
+	
+	default public Base createDefaultBase() {
+		Base base = ModelFactory.eINSTANCE.createBase();
+		base.setNom("Default_Nom");
+		base.setDescription("Default_Description");
+		base.setPvInit(0);
+		base.setCategorie(Categorie.CLASSIQUE);
+		return base;
+	}
+
+	default public Energie createEnergie(Categorie categorie) {
+		Energie energie = this.createEnergie();
+		energie.setCategorie(categorie);
+		return energie;
+	}
 				
 }

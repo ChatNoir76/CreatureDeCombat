@@ -297,7 +297,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getEnergie__EstCompatibleCreature__GenCreature() {
+	public EOperation getEnergie__EstCompatible__GenCreature() {
 		return energieEClass.getEOperations().get(0);
 	}
 
@@ -1076,7 +1076,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 
 		energieEClass = createEClass(ENERGIE);
 		createEAttribute(energieEClass, ENERGIE__CATEGORIE);
-		createEOperation(energieEClass, ENERGIE___EST_COMPATIBLE_CREATURE__GENCREATURE);
+		createEOperation(energieEClass, ENERGIE___EST_COMPATIBLE__GENCREATURE);
 
 		attaqueEClass = createEClass(ATTAQUE);
 		createEReference(attaqueEClass, ATTAQUE__DEGAT_ATTAQUE);
@@ -1219,9 +1219,9 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		initEAttribute(getLabelled_Description(), ecorePackage.getEString(), "description", null, 0, 1, Labelled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(energieEClass, Energie.class, "Energie", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEnergie_Categorie(), this.getCategorie(), "categorie", null, 0, 1, Energie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnergie_Categorie(), this.getCategorie(), "categorie", "Classique", 0, 1, Energie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getEnergie__EstCompatibleCreature__GenCreature(), ecorePackage.getEBoolean(), "estCompatibleCreature", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getEnergie__EstCompatible__GenCreature(), ecorePackage.getEBoolean(), "estCompatible", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getCreature(), "creature", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(attaqueEClass, Attaque.class, "Attaque", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

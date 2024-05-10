@@ -46,8 +46,8 @@
                 </genClasses>
                 <genClasses ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Energie">
                   <genFeatures createChild="false" ecoreFeature="ecore:EAttribute creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Energie/categorie"/>
-                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Energie/estCompatibleCreature">
-                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Energie/estCompatibleCreature/creature"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Energie/estCompatible">
+                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Energie/estCompatible/creature"/>
                   </genOperations>
                 </genClasses>
                 <genClasses ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Attaque">

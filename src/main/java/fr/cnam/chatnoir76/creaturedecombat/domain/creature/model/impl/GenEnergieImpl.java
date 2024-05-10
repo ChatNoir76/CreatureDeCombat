@@ -189,7 +189,7 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 	 * @generated
 	 */
 	@Override
-	public boolean estCompatibleCreature(Creature creature) {
+	public boolean estCompatible(Creature creature) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -327,8 +327,8 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case GenModelPackage.ENERGIE___EST_COMPATIBLE_CREATURE__GENCREATURE:
-				return estCompatibleCreature((Creature)arguments.get(0));
+			case GenModelPackage.ENERGIE___EST_COMPATIBLE__GENCREATURE:
+				return estCompatible((Creature)arguments.get(0));
 			case GenModelPackage.ENERGIE___EST_VISIBLE:
 				return estVisible();
 		}

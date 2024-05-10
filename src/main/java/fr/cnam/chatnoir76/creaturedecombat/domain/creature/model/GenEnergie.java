@@ -22,6 +22,7 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model;
 public interface GenEnergie extends Carte, Labelled {
 	/**
 	 * Returns the value of the '<em><b>Categorie</b></em>' attribute.
+	 * The default value is <code>"Classique"</code>.
 	 * The literals are from the enumeration {@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Categorie}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -29,7 +30,7 @@ public interface GenEnergie extends Carte, Labelled {
 	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Categorie
 	 * @see #setCategorie(Categorie)
 	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenModelPackage#getEnergie_Categorie()
-	 * @model
+	 * @model default="Classique"
 	 * @generated
 	 */
 	Categorie getCategorie();
@@ -51,6 +52,6 @@ public interface GenEnergie extends Carte, Labelled {
 	 * @model
 	 * @generated
 	 */
-	boolean estCompatibleCreature(Creature creature);
+	boolean estCompatible(Creature creature);
 
 } // GenEnergie

@@ -7,6 +7,7 @@ import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Categorie;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Creature;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.CreatureComponent;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Degat;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.ModelFactory;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Niveau;
 
 // This class overrides the generated class and will be instantiated by factory
@@ -81,16 +82,18 @@ public class CreatureImpl extends GenCreatureImpl implements Creature
 			return this.getMaitre();
 		} else if(this.getEvolution() != null) {
 			return this.getEvolution();
-		} else {
+		} else if(this.getBase() != null) {
 			return this.getBase();
+		} else {
+			return ModelFactory.eINSTANCE.createDefaultBase();
 		}
 	}
 	
 	@Override
 	public boolean estCompatibleEvolution(Creature creature) {
-		CreatureComponent baseEvolution = creature.getActiveCreatureComponent().getBaseEvolution();
+		CreatureComponent creature_base = creature.getActiveCreatureComponent().getBaseEvolution();
 		CreatureComponent base = getActiveCreatureComponent();
-		return base.equals(baseEvolution);
+		return base.equals(creature_base);
 	}
 
 	@Override

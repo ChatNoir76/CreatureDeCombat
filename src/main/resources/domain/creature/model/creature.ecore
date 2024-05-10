@@ -15,11 +15,12 @@
                     eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               </eClassifiers>
               <eClassifiers xsi:type="ecore:EClass" name="Energie" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte #//cnam/chatnoir76/creaturedecombat/domain/creature/model/Labelled">
-                <eOperations name="estCompatibleCreature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+                <eOperations name="estCompatible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
                   <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
                 </eOperations>
                 <eStructuralFeatures xsi:type="ecore:EAttribute" name="categorie"
-                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Categorie"/>
+                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Categorie"
+                    defaultValueLiteral="Classique"/>
               </eClassifiers>
               <eClassifiers xsi:type="ecore:EClass" name="Attaque" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Labelled">
                 <eOperations name="estDisponible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">

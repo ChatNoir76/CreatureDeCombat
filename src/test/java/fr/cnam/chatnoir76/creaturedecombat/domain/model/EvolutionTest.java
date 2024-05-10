@@ -22,45 +22,34 @@ public class EvolutionTest {
 	private Creature cEvolution;
 	private Creature cMaitre;
 	private Creature cNonCompatible;
-	
-	private final static String BASE_NOM = "Creature_Base_Nom";
-	private final static String BASE_DESCRIPTION = "Creature_Base_Description";
-	private final static int BASE_PV_INIT = 30;
-	
-	private final static String EVOLUTION_NOM = "Creature_Evolution_Nom";
-	private final static String EVOLUTION_DESCRIPTION = "Creature_Evolution_Description";
-	private final static int EVOLUTION_PV_INIT = 100;
-	
-	private final static String MAITRE_NOM = "Creature_Maitre_Nom";
-	private final static String MAITRE_DESCRIPTION = "Creature_Maitre_Description";
-	private final static int MAITRE_PV_INIT = 180;
+	private Creature cEmpty;
 	
 	@BeforeEach
 	public void beforeEach() {
 		Base base = ModelFactory.eINSTANCE.createBase();
-		base.setNom(BASE_NOM);
-		base.setDescription(BASE_DESCRIPTION);
-		base.setPvInit(BASE_PV_INIT);
+		base.setNom("Creature_Base_Nom");
+		base.setDescription("Creature_Base_Description");
+		base.setPvInit(30);
 		base.setCategorie(Categorie.ADORABLE);
 		
 		Evolution evolution = ModelFactory.eINSTANCE.createEvolution();
-		evolution.setNom(EVOLUTION_NOM);
-		evolution.setDescription(EVOLUTION_DESCRIPTION);
-		evolution.setPvInit(EVOLUTION_PV_INIT);
+		evolution.setNom("Creature_Evolution_Nom");
+		evolution.setDescription("Creature_Evolution_Description");
+		evolution.setPvInit(100);
 		evolution.setCategorie(Categorie.ADORABLE);
 		evolution.setBase(base);
 		
 		Maitre maitre = ModelFactory.eINSTANCE.createMaitre();
-		maitre.setNom(MAITRE_NOM);
-		maitre.setDescription(MAITRE_DESCRIPTION);
-		maitre.setPvInit(MAITRE_PV_INIT);
+		maitre.setNom("Creature_Maitre_Nom");
+		maitre.setDescription("Creature_Maitre_Description");
+		maitre.setPvInit(180);
 		maitre.setCategorie(Categorie.ADORABLE);
 		maitre.setEvolution(evolution);
 		
 		Evolution evolutionnc = ModelFactory.eINSTANCE.createEvolution();
-		evolutionnc.setNom(EVOLUTION_NOM);
-		evolutionnc.setDescription(EVOLUTION_DESCRIPTION);
-		evolutionnc.setPvInit(EVOLUTION_PV_INIT);
+		evolutionnc.setNom("Creature_autre_Nom");
+		evolutionnc.setDescription("Creature_autre_Description");
+		evolutionnc.setPvInit(200);
 		evolutionnc.setCategorie(Categorie.ADORABLE);
 		evolutionnc.setBase(ModelFactory.eINSTANCE.createBase());
 		
@@ -68,6 +57,7 @@ public class EvolutionTest {
 		cEvolution = ModelFactory.eINSTANCE.createCreature(evolution.getActiveCreatureComponent());
 		cMaitre = ModelFactory.eINSTANCE.createCreature(maitre.getActiveCreatureComponent());
 		cNonCompatible = ModelFactory.eINSTANCE.createCreature(evolutionnc.getActiveCreatureComponent());
+		cEmpty = ModelFactory.eINSTANCE.createCreature(ModelFactory.eINSTANCE.createDefaultBase().getActiveCreatureComponent());
 	}
 	
 	private void verificationAttributs(Creature creature, Creature cc) {
@@ -82,23 +72,85 @@ public class EvolutionTest {
 	}
 	
 	@Test
-	public void comportementInitialTest() {
+	public void InitializationTest() {
+		assertFalse(ModelFactory.eINSTANCE.createCreature().hasInitialized());
+		assertTrue(cEmpty.hasInitialized());
+		assertTrue(cBase.hasInitialized());
+		assertTrue(cEvolution.hasInitialized());
+		assertTrue(cMaitre.hasInitialized());
+		assertTrue(cNonCompatible.hasInitialized());
+	}
+	
+	@Test
+	public void baseVersEvolutionTest() {
 		Creature creature = cBase;
+		verificationAttributs(creature, cBase);
+		
+		assertFalse(creature.faireEvoluer(cEmpty));
+		verificationAttributs(creature, cBase);
 		
 		assertFalse(creature.faireEvoluer(cNonCompatible));
+		verificationAttributs(creature, cBase);
+		
+		assertFalse(creature.faireEvoluer(cBase));
+		verificationAttributs(creature, cBase);
+		
 		assertFalse(creature.faireEvoluer(cMaitre));
 		verificationAttributs(creature, cBase);
 		
 		assertTrue(creature.faireEvoluer(cEvolution));
-		assertFalse(creature.faireEvoluer(cBase));
+		verificationAttributs(creature, cEvolution);
+	}
+	
+	@Test
+	public void evolutionVersMaitreTest() {
+		Creature creature = cEvolution;
+		verificationAttributs(creature, cEvolution);
+		
+		assertFalse(creature.faireEvoluer(cEmpty));
+		verificationAttributs(creature, cEvolution);
+		
 		assertFalse(creature.faireEvoluer(cNonCompatible));
 		verificationAttributs(creature, cEvolution);
 		
-		assertTrue(creature.faireEvoluer(cMaitre));
 		assertFalse(creature.faireEvoluer(cBase));
+		verificationAttributs(creature, cEvolution);
+		
 		assertFalse(creature.faireEvoluer(cEvolution));
-		assertFalse(creature.faireEvoluer(cNonCompatible));
+		verificationAttributs(creature, cEvolution);
+		
+		assertFalse(creature.faireEvoluer(cMaitre));
+		verificationAttributs(creature, cEvolution);
+	}
+	
+	@Test
+	public void baseVersMaitreTest() {
+		Creature creature = cBase;
+		verificationAttributs(creature, cBase);
+		
+		assertTrue(creature.faireEvoluer(cEvolution));
+		verificationAttributs(creature, cEvolution);
+		
+		assertTrue(creature.faireEvoluer(cMaitre));
 		verificationAttributs(creature, cMaitre);
+	}
+	
+	@Test
+	public void notInitializedVersMaitreTest() {
+		Creature creature = ModelFactory.eINSTANCE.createCreature();
+		verificationAttributs(creature, cEmpty);
+		
+		assertFalse(creature.faireEvoluer(cNonCompatible));
+		verificationAttributs(creature, cEmpty);
+		
+		assertFalse(creature.faireEvoluer(cBase));
+		verificationAttributs(creature, cEmpty);
+		
+		assertFalse(creature.faireEvoluer(cMaitre));
+		verificationAttributs(creature, cEmpty);
+		
+		assertFalse(creature.faireEvoluer(cEvolution));
+		verificationAttributs(creature, cEmpty);
 	}
 	
 }

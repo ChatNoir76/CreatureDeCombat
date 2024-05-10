@@ -197,13 +197,13 @@ public interface GenModelPackage extends EPackage {
 	int ENERGIE___EST_VISIBLE = CARTE___EST_VISIBLE;
 
 	/**
-	 * The operation id for the '<em>Est Compatible Creature</em>' operation.
+	 * The operation id for the '<em>Est Compatible</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGIE___EST_COMPATIBLE_CREATURE__GENCREATURE = CARTE_OPERATION_COUNT + 0;
+	int ENERGIE___EST_COMPATIBLE__GENCREATURE = CARTE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Energie</em>' class.
@@ -1906,14 +1906,14 @@ public interface GenModelPackage extends EPackage {
 	EAttribute getEnergie_Categorie();
 
 	/**
-	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenEnergie#estCompatibleCreature(fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCreature) <em>Est Compatible Creature</em>}' operation.
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenEnergie#estCompatible(fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCreature) <em>Est Compatible</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Est Compatible Creature</em>' operation.
-	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenEnergie#estCompatibleCreature(fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCreature)
+	 * @return the meta object for the '<em>Est Compatible</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenEnergie#estCompatible(fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCreature)
 	 * @generated
 	 */
-	EOperation getEnergie__EstCompatibleCreature__GenCreature();
+	EOperation getEnergie__EstCompatible__GenCreature();
 
 	/**
 	 * Returns the meta object for class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAttaque <em>Attaque</em>}'.
@@ -2750,12 +2750,12 @@ public interface GenModelPackage extends EPackage {
 		EAttribute ENERGIE__CATEGORIE = eINSTANCE.getEnergie_Categorie();
 
 		/**
-		 * The meta object literal for the '<em><b>Est Compatible Creature</b></em>' operation.
+		 * The meta object literal for the '<em><b>Est Compatible</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ENERGIE___EST_COMPATIBLE_CREATURE__GENCREATURE = eINSTANCE.getEnergie__EstCompatibleCreature__GenCreature();
+		EOperation ENERGIE___EST_COMPATIBLE__GENCREATURE = eINSTANCE.getEnergie__EstCompatible__GenCreature();
 
 		/**
 		 * The meta object literal for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.GenAttaqueImpl <em>Attaque</em>}' class.
