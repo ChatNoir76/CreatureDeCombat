@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -39,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.GenJeuImpl#getCreatureActive <em>Creature Active</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.GenJeuImpl#getBanc <em>Banc</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.GenJeuImpl#getCarteRecompense <em>Carte Recompense</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.GenJeuImpl#getMain <em>Main</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,6 +95,16 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 	 * @ordered
 	 */
 	protected EList<Carte> carteRecompense;
+
+	/**
+	 * The cached value of the '{@link #getMain() <em>Main</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMain()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Carte> main;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,6 +260,19 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 	 * @generated
 	 */
 	@Override
+	public EList<Carte> getMain() {
+		if (main == null) {
+			main = new EObjectResolvingEList<Carte>(Carte.class, this, GenModelPackage.JEU__MAIN);
+		}
+		return main;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public void finTour() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -273,6 +298,90 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 	 */
 	@Override
 	public void abandonner() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Carte piocher() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean ajoutCarteBase(Carte carteCreatureBase) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean faireEvoluer(Carte carteCreatureInf, Carte carteCreatureSup) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean ajoutEnergie(Carte carteEnergie) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean utiliserCarteDresseur(Carte carteDresseur) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean battreRetraite(Carte carteCreatureRemplaçante) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Integer> attaquer() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -318,6 +427,8 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 				return getBanc();
 			case GenModelPackage.JEU__CARTE_RECOMPENSE:
 				return getCarteRecompense();
+			case GenModelPackage.JEU__MAIN:
+				return getMain();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -349,6 +460,10 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 				getCarteRecompense().clear();
 				getCarteRecompense().addAll((Collection<? extends Carte>)newValue);
 				return;
+			case GenModelPackage.JEU__MAIN:
+				getMain().clear();
+				getMain().addAll((Collection<? extends Carte>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -376,6 +491,9 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 			case GenModelPackage.JEU__CARTE_RECOMPENSE:
 				getCarteRecompense().clear();
 				return;
+			case GenModelPackage.JEU__MAIN:
+				getMain().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -398,6 +516,8 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 				return banc != null && !banc.isEmpty();
 			case GenModelPackage.JEU__CARTE_RECOMPENSE:
 				return carteRecompense != null && !carteRecompense.isEmpty();
+			case GenModelPackage.JEU__MAIN:
+				return main != null && !main.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -419,6 +539,20 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 			case GenModelPackage.JEU___ABANDONNER:
 				abandonner();
 				return null;
+			case GenModelPackage.JEU___PIOCHER:
+				return piocher();
+			case GenModelPackage.JEU___AJOUT_CARTE_BASE__GENCARTE:
+				return ajoutCarteBase((Carte)arguments.get(0));
+			case GenModelPackage.JEU___FAIRE_EVOLUER__GENCARTE_GENCARTE:
+				return faireEvoluer((Carte)arguments.get(0), (Carte)arguments.get(1));
+			case GenModelPackage.JEU___AJOUT_ENERGIE__GENCARTE:
+				return ajoutEnergie((Carte)arguments.get(0));
+			case GenModelPackage.JEU___UTILISER_CARTE_DRESSEUR__GENCARTE:
+				return utiliserCarteDresseur((Carte)arguments.get(0));
+			case GenModelPackage.JEU___BATTRE_RETRAITE__GENCARTE:
+				return battreRetraite((Carte)arguments.get(0));
+			case GenModelPackage.JEU___ATTAQUER:
+				return attaquer();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

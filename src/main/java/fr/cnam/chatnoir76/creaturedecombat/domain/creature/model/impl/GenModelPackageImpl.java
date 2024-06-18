@@ -3,6 +3,7 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl;
 
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.AbstractCreatureComponent;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Action;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Attaque;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Base;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.CalculDegat;
@@ -152,6 +153,13 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	private EClass abstractCreatureComponentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass actionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -647,6 +655,16 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getJeu_Main() {
+		return (EReference)jeuEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EOperation getJeu__FinTour() {
 		return jeuEClass.getEOperations().get(0);
 	}
@@ -1007,6 +1025,106 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
+	public EClass getAction() {
+		return actionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getAction__Piocher() {
+		return actionEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getAction__AjoutCarteBase__GenCarte() {
+		return actionEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getAction__FaireEvoluer__GenCarte_GenCarte() {
+		return actionEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getAction__AjoutEnergie__GenCarte() {
+		return actionEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getAction__UtiliserCarteDresseur__GenCarte() {
+		return actionEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getAction__BattreRetraite__GenCarte() {
+		return actionEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getAction__Attaquer() {
+		return actionEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getAction__FinTour() {
+		return actionEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getAction__Abandonner() {
+		return actionEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getNiveau() {
 		return niveauEEnum;
 	}
@@ -1119,6 +1237,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		createEReference(jeuEClass, JEU__CREATURE_ACTIVE);
 		createEReference(jeuEClass, JEU__BANC);
 		createEReference(jeuEClass, JEU__CARTE_RECOMPENSE);
+		createEReference(jeuEClass, JEU__MAIN);
 		createEOperation(jeuEClass, JEU___FIN_TOUR);
 		createEOperation(jeuEClass, JEU___FIN_OPTION);
 		createEOperation(jeuEClass, JEU___ABANDONNER);
@@ -1161,6 +1280,17 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		createEReference(abstractCreatureComponentEClass, ABSTRACT_CREATURE_COMPONENT__ATTAQUES);
 		createEReference(abstractCreatureComponentEClass, ABSTRACT_CREATURE_COMPONENT__DEGAT_DEFENSE);
 		createEAttribute(abstractCreatureComponentEClass, ABSTRACT_CREATURE_COMPONENT__NIVEAU);
+
+		actionEClass = createEClass(ACTION);
+		createEOperation(actionEClass, ACTION___PIOCHER);
+		createEOperation(actionEClass, ACTION___AJOUT_CARTE_BASE__GENCARTE);
+		createEOperation(actionEClass, ACTION___FAIRE_EVOLUER__GENCARTE_GENCARTE);
+		createEOperation(actionEClass, ACTION___AJOUT_ENERGIE__GENCARTE);
+		createEOperation(actionEClass, ACTION___UTILISER_CARTE_DRESSEUR__GENCARTE);
+		createEOperation(actionEClass, ACTION___BATTRE_RETRAITE__GENCARTE);
+		createEOperation(actionEClass, ACTION___ATTAQUER);
+		createEOperation(actionEClass, ACTION___FIN_TOUR);
+		createEOperation(actionEClass, ACTION___ABANDONNER);
 
 		// Create enums
 		niveauEEnum = createEEnum(NIVEAU);
@@ -1205,6 +1335,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		objetEClass.getESuperTypes().add(this.getDresseur());
 		supporteurEClass.getESuperTypes().add(this.getDresseur());
 		deckEClass.getESuperTypes().add(this.getLabelled());
+		jeuEClass.getESuperTypes().add(this.getAction());
 		creatureEClass.getESuperTypes().add(this.getCarte());
 		creatureEClass.getESuperTypes().add(this.getCreatureComponent());
 		baseEClass.getESuperTypes().add(this.getAbstractCreatureComponent());
@@ -1237,8 +1368,8 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		addEParameter(op, this.getCreature(), "creature", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getAttaque__Attaque__GenCreature_GenCreature(), null, "attaque", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getCreature(), "lanceur", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getCreature(), "receveur", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCreature(), "attaquant", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCreature(), "defenseur", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(degatEClass, Degat.class, "Degat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDegat_Type(), this.getTypeDegat(), "type", null, 0, 1, Degat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1282,6 +1413,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		initEReference(getJeu_CreatureActive(), this.getCreature(), null, "creatureActive", null, 0, 1, Jeu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJeu_Banc(), this.getCreature(), null, "banc", null, 0, -1, Jeu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJeu_CarteRecompense(), this.getCarte(), null, "carteRecompense", null, 0, -1, Jeu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJeu_Main(), this.getCarte(), null, "main", null, 0, -1, Jeu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getJeu__FinTour(), null, "finTour", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1347,6 +1479,32 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		initEReference(getAbstractCreatureComponent_Attaques(), this.getAttaque(), null, "attaques", null, 0, -1, AbstractCreatureComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractCreatureComponent_DegatDefense(), this.getDegat(), null, "degatDefense", null, 0, 1, AbstractCreatureComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractCreatureComponent_Niveau(), this.getNiveau(), "niveau", null, 0, 1, AbstractCreatureComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(actionEClass, Action.class, "Action", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getAction__Piocher(), this.getCarte(), "piocher", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getAction__AjoutCarteBase__GenCarte(), ecorePackage.getEBoolean(), "ajoutCarteBase", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCarte(), "carteCreatureBase", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getAction__FaireEvoluer__GenCarte_GenCarte(), ecorePackage.getEBoolean(), "faireEvoluer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCarte(), "carteCreatureInf", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCarte(), "carteCreatureSup", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getAction__AjoutEnergie__GenCarte(), ecorePackage.getEBoolean(), "ajoutEnergie", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCarte(), "carteEnergie", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getAction__UtiliserCarteDresseur__GenCarte(), ecorePackage.getEBoolean(), "utiliserCarteDresseur", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCarte(), "carteDresseur", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getAction__BattreRetraite__GenCarte(), ecorePackage.getEBoolean(), "battreRetraite", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCarte(), "carteCreatureRemplaçante", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getAction__Attaquer(), ecorePackage.getEInt(), "attaquer", 2, 2, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getAction__FinTour(), null, "finTour", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getAction__Abandonner(), null, "abandonner", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(niveauEEnum, Niveau.class, "Niveau");

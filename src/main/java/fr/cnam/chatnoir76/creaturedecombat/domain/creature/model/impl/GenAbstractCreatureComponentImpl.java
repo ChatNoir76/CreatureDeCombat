@@ -194,6 +194,52 @@ public abstract class GenAbstractCreatureComponentImpl extends MinimalEObjectImp
 	 * @generated
 	 */
 	@Override
+	public String getNom() {
+		return nom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setNom(String newNom) {
+		String oldNom = nom;
+		nom = newNom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ABSTRACT_CREATURE_COMPONENT__NOM, oldNom, nom));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ABSTRACT_CREATURE_COMPONENT__DESCRIPTION, oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public int getPvInit() {
 		return pvInit;
 	}
@@ -313,52 +359,6 @@ public abstract class GenAbstractCreatureComponentImpl extends MinimalEObjectImp
 		niveau = newNiveau == null ? NIVEAU_EDEFAULT : newNiveau;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ABSTRACT_CREATURE_COMPONENT__NIVEAU, oldNiveau, niveau));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getNom() {
-		return nom;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setNom(String newNom) {
-		String oldNom = nom;
-		nom = newNom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ABSTRACT_CREATURE_COMPONENT__NOM, oldNom, nom));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ABSTRACT_CREATURE_COMPONENT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**

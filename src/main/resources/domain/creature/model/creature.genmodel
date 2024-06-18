@@ -64,8 +64,8 @@
                     <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Attaque/estCompatible/creature"/>
                   </genOperations>
                   <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Attaque/attaque">
-                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Attaque/attaque/lanceur"/>
-                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Attaque/attaque/receveur"/>
+                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Attaque/attaque/attaquant"/>
+                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Attaque/attaque/defenseur"/>
                   </genOperations>
                 </genClasses>
                 <genClasses ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Degat">
@@ -106,6 +106,8 @@
                       ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu/banc"/>
                   <genFeatures notify="false" createChild="false" propertySortChoices="true"
                       ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu/carteRecompense"/>
+                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                      ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu/main"/>
                   <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu/finTour"/>
                   <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu/finOption"/>
                   <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Jeu/abandonner"/>
@@ -165,6 +167,28 @@
                   <genFeatures property="None" children="true" createChild="true"
                       ecoreFeature="ecore:EReference creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/AbstractCreatureComponent/degatDefense"/>
                   <genFeatures createChild="false" ecoreFeature="ecore:EAttribute creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/AbstractCreatureComponent/niveau"/>
+                </genClasses>
+                <genClasses image="false" ecoreClass="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action">
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/piocher"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/ajoutCarteBase">
+                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/ajoutCarteBase/carteCreatureBase"/>
+                  </genOperations>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/faireEvoluer">
+                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/faireEvoluer/carteCreatureInf"/>
+                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/faireEvoluer/carteCreatureSup"/>
+                  </genOperations>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/ajoutEnergie">
+                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/ajoutEnergie/carteEnergie"/>
+                  </genOperations>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/utiliserCarteDresseur">
+                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/utiliserCarteDresseur/carteDresseur"/>
+                  </genOperations>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/battreRetraite">
+                    <genParameters ecoreParameter="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/battreRetraite/carteCreatureRemplaçante"/>
+                  </genOperations>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/attaquer"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/finTour"/>
+                  <genOperations ecoreOperation="creature.ecore#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action/abandonner"/>
                 </genClasses>
               </nestedGenPackages>
             </nestedGenPackages>

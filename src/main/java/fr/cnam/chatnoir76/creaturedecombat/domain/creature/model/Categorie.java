@@ -26,7 +26,7 @@ public enum Categorie implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CLASSIQUE(4, "Classique", "Classique"),
+	CLASSIQUE(-1, "Classique", "Classique"),
 
 	/**
 	 * The '<em><b>Adorable</b></em>' literal object.
@@ -77,7 +77,7 @@ public enum Categorie implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CLASSIQUE_VALUE = 4;
+	public static final int CLASSIQUE_VALUE = -1;
 
 	/**
 	 * The '<em><b>Adorable</b></em>' literal value.

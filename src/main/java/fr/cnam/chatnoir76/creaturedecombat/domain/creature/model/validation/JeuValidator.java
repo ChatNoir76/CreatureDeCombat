@@ -24,4 +24,5 @@ public interface JeuValidator {
 	boolean validateCreatureActive(Creature value);
 	boolean validateBanc(EList<Creature> value);
 	boolean validateCarteRecompense(EList<Carte> value);
+	boolean validateMain(EList<Carte> value);
 }

@@ -135,6 +135,7 @@ public class ModelSwitch<T> extends Switch<T> {
 			case GenModelPackage.JEU: {
 				Jeu jeu = (Jeu)theEObject;
 				T result = caseJeu(jeu);
+				if (result == null) result = caseAction(jeu);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -184,6 +185,12 @@ public class ModelSwitch<T> extends Switch<T> {
 				T result = caseAbstractCreatureComponent(abstractCreatureComponent);
 				if (result == null) result = caseCreatureComponent(abstractCreatureComponent);
 				if (result == null) result = caseLabelled(abstractCreatureComponent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GenModelPackage.ACTION: {
+				Action action = (Action)theEObject;
+				T result = caseAction(action);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -428,6 +435,21 @@ public class ModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAbstractCreatureComponent(AbstractCreatureComponent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAction(Action object) {
 		return null;
 	}
 

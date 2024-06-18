@@ -1,6 +1,6 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.model;
 
-import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -69,6 +69,8 @@ public class EvolutionTest {
 		creature.getAttaques().forEach(a -> {
 			assertTrue(cc.getAttaques().contains(a), "L'attaque est manquante : %s".formatted(a.getNom()));
 		});
+		assertTrue(creature.getAttaques().equals(cc.getAttaques()));
+		assertTrue(creature.getEnergies().equals(cc.getEnergies()));
 	}
 	
 	@Test

@@ -132,6 +132,10 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 				return createAbstractCreatureComponentAdapter();
 			}
 			@Override
+			public Adapter caseAction(Action object) {
+				return createActionAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -372,6 +376,20 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAbstractCreatureComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction
+	 * @generated
+	 */
+	public Adapter createActionAdapter() {
 		return null;
 	}
 

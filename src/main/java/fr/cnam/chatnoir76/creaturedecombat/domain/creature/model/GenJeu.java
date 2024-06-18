@@ -4,8 +4,6 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.creature.model;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Jeu</b></em>'.
@@ -20,13 +18,14 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenJeu#getCreatureActive <em>Creature Active</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenJeu#getBanc <em>Banc</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenJeu#getCarteRecompense <em>Carte Recompense</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenJeu#getMain <em>Main</em>}</li>
  * </ul>
  *
  * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenModelPackage#getJeu()
  * @model
  * @generated
  */
-public interface GenJeu extends EObject {
+public interface GenJeu extends Action {
 	/**
 	 * Returns the value of the '<em><b>Deck</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -106,6 +105,18 @@ public interface GenJeu extends EObject {
 	 * @generated
 	 */
 	EList<Carte> getCarteRecompense();
+
+	/**
+	 * Returns the value of the '<em><b>Main</b></em>' reference list.
+	 * The list contents are of type {@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Carte}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Main</em>' reference list.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenModelPackage#getJeu_Main()
+	 * @model
+	 * @generated
+	 */
+	EList<Carte> getMain();
 
 	/**
 	 * <!-- begin-user-doc -->

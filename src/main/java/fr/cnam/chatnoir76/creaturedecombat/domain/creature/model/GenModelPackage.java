@@ -680,6 +680,115 @@ public interface GenModelPackage extends EPackage {
 	int DECK_OPERATION_COUNT = LABELLED_OPERATION_COUNT + 6;
 
 	/**
+	 * The meta object id for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction <em>Action</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.GenModelPackageImpl#getAction()
+	 * @generated
+	 */
+	int ACTION = 16;
+
+	/**
+	 * The number of structural features of the '<em>Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Piocher</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___PIOCHER = 0;
+
+	/**
+	 * The operation id for the '<em>Ajout Carte Base</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___AJOUT_CARTE_BASE__GENCARTE = 1;
+
+	/**
+	 * The operation id for the '<em>Faire Evoluer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___FAIRE_EVOLUER__GENCARTE_GENCARTE = 2;
+
+	/**
+	 * The operation id for the '<em>Ajout Energie</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___AJOUT_ENERGIE__GENCARTE = 3;
+
+	/**
+	 * The operation id for the '<em>Utiliser Carte Dresseur</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___UTILISER_CARTE_DRESSEUR__GENCARTE = 4;
+
+	/**
+	 * The operation id for the '<em>Battre Retraite</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___BATTRE_RETRAITE__GENCARTE = 5;
+
+	/**
+	 * The operation id for the '<em>Attaquer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___ATTAQUER = 6;
+
+	/**
+	 * The operation id for the '<em>Fin Tour</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___FIN_TOUR = 7;
+
+	/**
+	 * The operation id for the '<em>Abandonner</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___ABANDONNER = 8;
+
+	/**
+	 * The number of operations of the '<em>Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_OPERATION_COUNT = 9;
+
+	/**
 	 * The meta object id for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.GenJeuImpl <em>Jeu</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -696,7 +805,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU__DECK = 0;
+	int JEU__DECK = ACTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Pile Defausse</b></em>' containment reference list.
@@ -705,7 +814,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU__PILE_DEFAUSSE = 1;
+	int JEU__PILE_DEFAUSSE = ACTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Creature Active</b></em>' containment reference.
@@ -714,7 +823,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU__CREATURE_ACTIVE = 2;
+	int JEU__CREATURE_ACTIVE = ACTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Banc</b></em>' containment reference list.
@@ -723,7 +832,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU__BANC = 3;
+	int JEU__BANC = ACTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Carte Recompense</b></em>' containment reference list.
@@ -732,7 +841,16 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU__CARTE_RECOMPENSE = 4;
+	int JEU__CARTE_RECOMPENSE = ACTION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Main</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JEU__MAIN = ACTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Jeu</em>' class.
@@ -741,7 +859,70 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU_FEATURE_COUNT = 5;
+	int JEU_FEATURE_COUNT = ACTION_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Piocher</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JEU___PIOCHER = ACTION___PIOCHER;
+
+	/**
+	 * The operation id for the '<em>Ajout Carte Base</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JEU___AJOUT_CARTE_BASE__GENCARTE = ACTION___AJOUT_CARTE_BASE__GENCARTE;
+
+	/**
+	 * The operation id for the '<em>Faire Evoluer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JEU___FAIRE_EVOLUER__GENCARTE_GENCARTE = ACTION___FAIRE_EVOLUER__GENCARTE_GENCARTE;
+
+	/**
+	 * The operation id for the '<em>Ajout Energie</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JEU___AJOUT_ENERGIE__GENCARTE = ACTION___AJOUT_ENERGIE__GENCARTE;
+
+	/**
+	 * The operation id for the '<em>Utiliser Carte Dresseur</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JEU___UTILISER_CARTE_DRESSEUR__GENCARTE = ACTION___UTILISER_CARTE_DRESSEUR__GENCARTE;
+
+	/**
+	 * The operation id for the '<em>Battre Retraite</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JEU___BATTRE_RETRAITE__GENCARTE = ACTION___BATTRE_RETRAITE__GENCARTE;
+
+	/**
+	 * The operation id for the '<em>Attaquer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JEU___ATTAQUER = ACTION___ATTAQUER;
 
 	/**
 	 * The operation id for the '<em>Fin Tour</em>' operation.
@@ -750,7 +931,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU___FIN_TOUR = 0;
+	int JEU___FIN_TOUR = ACTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Fin Option</em>' operation.
@@ -759,7 +940,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU___FIN_OPTION = 1;
+	int JEU___FIN_OPTION = ACTION_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Abandonner</em>' operation.
@@ -768,7 +949,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU___ABANDONNER = 2;
+	int JEU___ABANDONNER = ACTION_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Jeu</em>' class.
@@ -777,7 +958,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU_OPERATION_COUNT = 3;
+	int JEU_OPERATION_COUNT = ACTION_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.GenCreatureImpl <em>Creature</em>}' class.
@@ -1819,7 +2000,7 @@ public interface GenModelPackage extends EPackage {
 	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.GenModelPackageImpl#getNiveau()
 	 * @generated
 	 */
-	int NIVEAU = 16;
+	int NIVEAU = 17;
 
 	/**
 	 * The meta object id for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Categorie <em>Categorie</em>}' enum.
@@ -1829,7 +2010,7 @@ public interface GenModelPackage extends EPackage {
 	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.GenModelPackageImpl#getCategorie()
 	 * @generated
 	 */
-	int CATEGORIE = 17;
+	int CATEGORIE = 18;
 
 	/**
 	 * The meta object id for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.TypeDegat <em>Type Degat</em>}' enum.
@@ -1839,7 +2020,7 @@ public interface GenModelPackage extends EPackage {
 	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.GenModelPackageImpl#getTypeDegat()
 	 * @generated
 	 */
-	int TYPE_DEGAT = 18;
+	int TYPE_DEGAT = 19;
 
 	/**
 	 * The meta object id for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.CalculDegat <em>Calcul Degat</em>}' enum.
@@ -1849,7 +2030,7 @@ public interface GenModelPackage extends EPackage {
 	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.GenModelPackageImpl#getCalculDegat()
 	 * @generated
 	 */
-	int CALCUL_DEGAT = 19;
+	int CALCUL_DEGAT = 20;
 
 
 	/**
@@ -2271,6 +2452,17 @@ public interface GenModelPackage extends EPackage {
 	EReference getJeu_CarteRecompense();
 
 	/**
+	 * Returns the meta object for the reference list '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenJeu#getMain <em>Main</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Main</em>'.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenJeu#getMain()
+	 * @see #getJeu()
+	 * @generated
+	 */
+	EReference getJeu_Main();
+
+	/**
 	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenJeu#finTour() <em>Fin Tour</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2641,6 +2833,106 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAbstractCreatureComponent_Niveau();
+
+	/**
+	 * Returns the meta object for class '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Action</em>'.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction
+	 * @generated
+	 */
+	EClass getAction();
+
+	/**
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#piocher() <em>Piocher</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Piocher</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#piocher()
+	 * @generated
+	 */
+	EOperation getAction__Piocher();
+
+	/**
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#ajoutCarteBase(fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCarte) <em>Ajout Carte Base</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Ajout Carte Base</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#ajoutCarteBase(fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCarte)
+	 * @generated
+	 */
+	EOperation getAction__AjoutCarteBase__GenCarte();
+
+	/**
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#faireEvoluer(fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCarte, fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCarte) <em>Faire Evoluer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Faire Evoluer</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#faireEvoluer(fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCarte, fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCarte)
+	 * @generated
+	 */
+	EOperation getAction__FaireEvoluer__GenCarte_GenCarte();
+
+	/**
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#ajoutEnergie(fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCarte) <em>Ajout Energie</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Ajout Energie</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#ajoutEnergie(fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCarte)
+	 * @generated
+	 */
+	EOperation getAction__AjoutEnergie__GenCarte();
+
+	/**
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#utiliserCarteDresseur(fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCarte) <em>Utiliser Carte Dresseur</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Utiliser Carte Dresseur</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#utiliserCarteDresseur(fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCarte)
+	 * @generated
+	 */
+	EOperation getAction__UtiliserCarteDresseur__GenCarte();
+
+	/**
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#battreRetraite(fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCarte) <em>Battre Retraite</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Battre Retraite</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#battreRetraite(fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenCarte)
+	 * @generated
+	 */
+	EOperation getAction__BattreRetraite__GenCarte();
+
+	/**
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#attaquer() <em>Attaquer</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Attaquer</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#attaquer()
+	 * @generated
+	 */
+	EOperation getAction__Attaquer();
+
+	/**
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#finTour() <em>Fin Tour</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Fin Tour</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#finTour()
+	 * @generated
+	 */
+	EOperation getAction__FinTour();
+
+	/**
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#abandonner() <em>Abandonner</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Abandonner</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction#abandonner()
+	 * @generated
+	 */
+	EOperation getAction__Abandonner();
 
 	/**
 	 * Returns the meta object for enum '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Niveau <em>Niveau</em>}'.
@@ -3046,6 +3338,14 @@ public interface GenModelPackage extends EPackage {
 		EReference JEU__CARTE_RECOMPENSE = eINSTANCE.getJeu_CarteRecompense();
 
 		/**
+		 * The meta object literal for the '<em><b>Main</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JEU__MAIN = eINSTANCE.getJeu_Main();
+
+		/**
 		 * The meta object literal for the '<em><b>Fin Tour</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3344,6 +3644,88 @@ public interface GenModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ABSTRACT_CREATURE_COMPONENT__NIVEAU = eINSTANCE.getAbstractCreatureComponent_Niveau();
+
+		/**
+		 * The meta object literal for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction <em>Action</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.GenAction
+		 * @see fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.impl.GenModelPackageImpl#getAction()
+		 * @generated
+		 */
+		EClass ACTION = eINSTANCE.getAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Piocher</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACTION___PIOCHER = eINSTANCE.getAction__Piocher();
+
+		/**
+		 * The meta object literal for the '<em><b>Ajout Carte Base</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACTION___AJOUT_CARTE_BASE__GENCARTE = eINSTANCE.getAction__AjoutCarteBase__GenCarte();
+
+		/**
+		 * The meta object literal for the '<em><b>Faire Evoluer</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACTION___FAIRE_EVOLUER__GENCARTE_GENCARTE = eINSTANCE.getAction__FaireEvoluer__GenCarte_GenCarte();
+
+		/**
+		 * The meta object literal for the '<em><b>Ajout Energie</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACTION___AJOUT_ENERGIE__GENCARTE = eINSTANCE.getAction__AjoutEnergie__GenCarte();
+
+		/**
+		 * The meta object literal for the '<em><b>Utiliser Carte Dresseur</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACTION___UTILISER_CARTE_DRESSEUR__GENCARTE = eINSTANCE.getAction__UtiliserCarteDresseur__GenCarte();
+
+		/**
+		 * The meta object literal for the '<em><b>Battre Retraite</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACTION___BATTRE_RETRAITE__GENCARTE = eINSTANCE.getAction__BattreRetraite__GenCarte();
+
+		/**
+		 * The meta object literal for the '<em><b>Attaquer</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACTION___ATTAQUER = eINSTANCE.getAction__Attaquer();
+
+		/**
+		 * The meta object literal for the '<em><b>Fin Tour</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACTION___FIN_TOUR = eINSTANCE.getAction__FinTour();
+
+		/**
+		 * The meta object literal for the '<em><b>Abandonner</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACTION___ABANDONNER = eINSTANCE.getAction__Abandonner();
 
 		/**
 		 * The meta object literal for the '{@link fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Niveau <em>Niveau</em>}' enum.

@@ -359,7 +359,7 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 	 * @generated
 	 */
 	@Override
-	public void attaque(Creature lanceur, Creature receveur) {
+	public void attaque(Creature attaquant, Creature defenseur) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

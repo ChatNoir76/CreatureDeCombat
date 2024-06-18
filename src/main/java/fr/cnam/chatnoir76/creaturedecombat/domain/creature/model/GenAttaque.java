@@ -136,6 +136,6 @@ public interface GenAttaque extends Labelled {
 	 * @model
 	 * @generated
 	 */
-	void attaque(Creature lanceur, Creature receveur);
+	void attaque(Creature attaquant, Creature defenseur);
 
 } // GenAttaque
