@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 	<head>
 	    <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <title>Ma Page d'Accueil</title>
+	    <th:block th:replace="fragments/general :: header">
+	        <title>Yet another Pet Store</title>        
+	    </th:block>
 	</head>
 	<body>
-	    <h1>Bienvenue sur ma page d'accueil</h1>
-	    <p>Bonjour [[${creature.nom}]]</p>
-	    <div>Tes points de vie s'élève à [[${creature.pv}]] pv</div>
+		<p><th:block th:insert="fragments/general :: navbar"></th:block></p>
+		
+	    <p><th:block th:insert="fragments/dto-fragment :: creature(${creature})"></th:block></p>
+		
+		<div class="form-check">
+		  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+		  <label class="form-check-label" for="flexCheckDefault">
+		    Default checkbox
+		  </label>
+		</div>
+		<div class="form-check">
+		  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+		  <label class="form-check-label" for="flexCheckChecked">
+		    Checked checkbox
+		  </label>
+		</div>
+
+	    <p><th:block th:insert="fragments/general :: footer"></th:block></p>
 	</body>
 </html>

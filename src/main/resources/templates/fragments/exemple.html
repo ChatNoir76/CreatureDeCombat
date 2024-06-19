@@ -1,0 +1,32 @@
+<div th:fragment="creature(creature)">
+	<div class="border rounded p-3 my-3">
+        <h5 th:text="${creature.nom}">Task Name</h5>
+        <p th:text="${creature.description}">Task Description</p>
+    </div>
+    
+    <div class="card my-3">
+	    <div class="row no-gutters">
+	        <!--<div class="col-md-4">
+	            <img th:src="@{${creature.image}}" class="card-img" alt="Image of ${creature.nom}">
+	        </div>-->
+	        <div class="col-md-8">
+	            <div class="card-body">
+	                <h5 class="card-title" th:text="${creature.nom}">creature Nom</h5>
+	                <p class="card-text">
+	                    <strong>Points de vie: </strong>
+	                    <span th:text="${creature.pv}">100</span>
+	                    <span>/</span>
+	                    <span th:text="${creature.pvInit}">100</span>
+	                </p>
+	                <p class="card-text" th:text="${creature.description}">creature Description</p>
+	                <h6>Attaques:</h6>
+	                <ul class="list-group list-group-flush">
+	                    <li class="list-group-item" th:each="attaque : ${creature.attaques}">
+	                        <span th:text="${attaque.nom}">nom de l'attaque</span>
+	                    </li>
+	                </ul>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</div>
