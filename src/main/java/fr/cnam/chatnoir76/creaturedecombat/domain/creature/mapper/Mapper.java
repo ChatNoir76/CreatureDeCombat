@@ -1,35 +1,42 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.mapper;
 
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto.AttaqueDto;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto.CreatureDto;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Attaque;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Creature;
+import fr.cnam.chatnoir76.creaturedecombat.domain.carte.dto.CarteDTO;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto.CreatureDTO;
+import fr.cnam.chatnoir76.creaturedecombat.domain.degat.dto.DegatDTO;
+import fr.cnam.chatnoir76.creaturedecombat.model.Carte;
+import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
+import fr.cnam.chatnoir76.creaturedecombat.model.Degat;
 
 public class Mapper {
+	
+	public final static CarteDTO toDTO(Carte carte) {
+		return null;
+	}
 
-	public final static CreatureDto toDTO(Creature creature) {
-		CreatureDto cc = new CreatureDto();
+	public final static CreatureDTO toDTO(Creature creature) {
+		CreatureDTO cc = new CreatureDTO();
 		cc.setNom(creature.getNom());
 		cc.setDescription(creature.getDescription());
 		cc.setCategorie(creature.getCategorie().getLiteral());
 		cc.setNiveau(creature.getNiveau().getLiteral());
 		cc.setPv(creature.getPv());
 		cc.setPvInit(creature.getPvInit());
-		cc.setImage("img/1.png");
-		creature.getAttaques().forEach(a -> {
-			cc.getAttaques().add(Mapper.toDTO(a));
-		});
+		cc.setImage("img/1.jfif");
+//		creature.getAttaques().forEach(a -> {
+//			cc.getAttaques().add(Mapper.toDTO(a));
+//		});
 		
 		return cc;
 	}
 	
-	public final static AttaqueDto toDTO(Attaque attaque) {
-		AttaqueDto att = new AttaqueDto();
-		att.setNom(attaque.getNom());
-		att.setDescription(attaque.getDescription());
-		att.setEnergiePrimaire(attaque.getBesoinEnergieCategorie());
-		att.setEnergieSecondaire(attaque.getBesoinEnergieAutre());
-		return att;
+	public final static DegatDTO toDTO(Degat degat) {
+		DegatDTO deg = new DegatDTO();
+		deg.setDegat(degat.getDegat());
+		deg.setMode(degat.getModeCalcul().getLiteral());
+		deg.setPrecision(degat.getIncertitude());
+		deg.setRattage(degat.getChanceRattage());
+		deg.setType(degat.getType().getLiteral());
+		return deg;
 	}
 	
 }

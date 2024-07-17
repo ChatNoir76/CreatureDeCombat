@@ -5,209 +5,187 @@
     <eSubpackages name="chatnoir76" nsURI="http://creature/chatnoir76" nsPrefix="chatnoir76">
       <eSubpackages name="creaturedecombat" nsURI="http://creature/creaturedecombat"
           nsPrefix="creaturedecombat">
-        <eSubpackages name="domain" nsURI="http://creature/domain" nsPrefix="domain">
-          <eSubpackages name="creature" nsURI="http://creature/creature" nsPrefix="creature">
-            <eSubpackages name="model" nsURI="http://creature/model" nsPrefix="model">
-              <eClassifiers xsi:type="ecore:EClass" name="Labelled" abstract="true"
-                  interface="true">
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="description"
-                    eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EClass" name="Energie" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte #//cnam/chatnoir76/creaturedecombat/domain/creature/model/Labelled">
-                <eOperations name="estCompatible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-                  <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
-                </eOperations>
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="categorie"
-                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Categorie"
-                    defaultValueLiteral="Classique"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EClass" name="Attaque" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Labelled">
-                <eOperations name="estDisponible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-                  <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
-                </eOperations>
-                <eOperations name="estCompatible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-                  <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
-                </eOperations>
-                <eOperations name="attaque">
-                  <eParameters name="attaquant" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
-                  <eParameters name="defenseur" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
-                </eOperations>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="degatAttaque"
-                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Degat"
-                    containment="true"/>
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="besoinEnergieCategorie"
-                    eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="besoinEnergieAutre"
-                    eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="categorie"
-                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Categorie"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EClass" name="Degat">
-                <eOperations name="getCalculDegat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
-                  <eParameters name="attaquant" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
-                  <eParameters name="defenseur" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
-                </eOperations>
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/TypeDegat"/>
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="modeCalcul"
-                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CalculDegat"/>
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="degat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-                    defaultValueLiteral="0"/>
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="incertitude"
-                    eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-                    defaultValueLiteral="0"/>
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="chanceRattage"
-                    eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-                    defaultValueLiteral="0"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EEnum" name="Niveau">
-                <eLiterals name="Base"/>
-                <eLiterals name="Evolution" value="1"/>
-                <eLiterals name="Maitre" value="2"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EEnum" name="Categorie">
-                <eLiterals name="Classique" value="-1"/>
-                <eLiterals name="Adorable"/>
-                <eLiterals name="Malefique" value="1"/>
-                <eLiterals name="Majestueux" value="2"/>
-                <eLiterals name="WhatTheFuck" value="3"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EEnum" name="TypeDegat">
-                <eLiterals name="Attaque" value="1"/>
-                <eLiterals name="Defense" value="-1"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EEnum" name="CalculDegat">
-                <eLiterals name="Base"/>
-                <eLiterals name="Ratio" value="1"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EClass" name="Carte" abstract="true" interface="true">
-                <eOperations name="estVisible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EClass" name="Dresseur" abstract="true"
-                  eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte #//cnam/chatnoir76/creaturedecombat/domain/creature/model/Labelled"/>
-              <eClassifiers xsi:type="ecore:EClass" name="Objet" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Dresseur"/>
-              <eClassifiers xsi:type="ecore:EClass" name="Supporteur" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Dresseur"/>
-              <eClassifiers xsi:type="ecore:EClass" name="Deck" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Labelled">
-                <eOperations name="piocher" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"/>
-                <eOperations name="getCreatureBase" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"/>
-                <eOperations name="getCreatureEvolution" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"/>
-                <eOperations name="getEnergie" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"/>
-                <eOperations name="getObjet" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"/>
-                <eOperations name="getSupporteur" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="cartes" upperBound="-1"
-                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"
-                    containment="true"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EClass" name="Jeu" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Action">
-                <eOperations name="finTour"/>
-                <eOperations name="finOption"/>
-                <eOperations name="abandonner"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="deck" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Deck"
-                    containment="true"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="pileDefausse"
-                    upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"
-                    containment="true"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="creatureActive"
-                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"
-                    containment="true"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="banc" upperBound="-1"
-                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"
-                    containment="true"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="carteRecompense"
-                    upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"
-                    containment="true"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="main" upperBound="-1"
-                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EClass" name="Creature" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte #//cnam/chatnoir76/creaturedecombat/domain/creature/model/CreatureComponent">
-                <eOperations name="estCompatibleEvolution" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-                  <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
-                </eOperations>
-                <eOperations name="faireEvoluer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-                  <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Creature"/>
-                </eOperations>
-                <eOperations name="estMort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-                <eOperations name="initialize">
-                  <eParameters name="creatureComponent" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CreatureComponent"/>
-                </eOperations>
-                <eOperations name="recoitDegat">
-                  <eParameters name="degat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-                </eOperations>
-                <eOperations name="recoitSoin">
-                  <eParameters name="soin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-                </eOperations>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="energies" upperBound="-1"
-                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Energie"
-                    containment="true"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CreatureComponent"
-                    changeable="false" containment="true"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="evolution"
-                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CreatureComponent"
-                    changeable="false"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="maitre" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CreatureComponent"
-                    changeable="false"/>
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="pv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-                    defaultValueLiteral="0"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EClass" name="Base" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/AbstractCreatureComponent"/>
-              <eClassifiers xsi:type="ecore:EClass" name="Evolution" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/AbstractCreatureComponent">
-                <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Base"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EClass" name="Maitre" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/AbstractCreatureComponent">
-                <eStructuralFeatures xsi:type="ecore:EReference" name="evolution"
-                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Evolution"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EClass" name="CreatureComponent" abstract="true"
-                  interface="true">
-                <eOperations name="getPvInit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-                <eOperations name="getCategorie" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Categorie"/>
-                <eOperations name="getAttaques" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Attaque"/>
-                <eOperations name="getDegatDefense" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Degat"/>
-                <eOperations name="getNiveau" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Niveau"/>
-                <eOperations name="getNom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-                <eOperations name="getDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-                <eOperations name="getBaseEvolution" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CreatureComponent"/>
-                <eOperations name="getActiveCreatureComponent" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CreatureComponent"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EClass" name="AbstractCreatureComponent"
-                  abstract="true" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/CreatureComponent #//cnam/chatnoir76/creaturedecombat/domain/creature/model/Labelled">
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="pvInit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-                    defaultValueLiteral="0"/>
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="categorie"
-                    lowerBound="1" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Categorie"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="attaques" upperBound="-1"
-                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Attaque"
-                    containment="true"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="degatDefense"
-                    eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Degat"
-                    containment="true"/>
-                <eStructuralFeatures xsi:type="ecore:EAttribute" name="niveau" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Niveau"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true"
-                  interface="true">
-                <eOperations name="piocher" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"/>
-                <eOperations name="ajoutCarteBase" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-                  <eParameters name="carteCreatureBase" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"/>
-                </eOperations>
-                <eOperations name="faireEvoluer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-                  <eParameters name="carteCreatureInf" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"/>
-                  <eParameters name="carteCreatureSup" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"/>
-                </eOperations>
-                <eOperations name="ajoutEnergie" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-                  <eParameters name="carteEnergie" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"/>
-                </eOperations>
-                <eOperations name="utiliserCarteDresseur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-                  <eParameters name="carteDresseur" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"/>
-                </eOperations>
-                <eOperations name="battreRetraite" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-                  <eParameters name="carteCreatureRemplaçante" eType="#//cnam/chatnoir76/creaturedecombat/domain/creature/model/Carte"/>
-                </eOperations>
-                <eOperations name="attaquer" lowerBound="2" upperBound="2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-                <eOperations name="finTour"/>
-                <eOperations name="abandonner"/>
-              </eClassifiers>
-            </eSubpackages>
-          </eSubpackages>
+        <eSubpackages name="model" nsURI="http://creature/model" nsPrefix="model">
+          <eClassifiers xsi:type="ecore:EClass" name="Labelled" abstract="true" interface="true">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Energie" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/Carte #//cnam/chatnoir76/creaturedecombat/model/Labelled">
+            <eOperations name="estCompatible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/model/Creature"/>
+            </eOperations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="categorie" eType="#//cnam/chatnoir76/creaturedecombat/model/Categorie"
+                defaultValueLiteral="Classique"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Attaque" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/Labelled">
+            <eOperations name="estDisponible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/model/Creature"/>
+            </eOperations>
+            <eOperations name="estCompatible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/model/Creature"/>
+            </eOperations>
+            <eOperations name="attaque">
+              <eParameters name="attaquant" eType="#//cnam/chatnoir76/creaturedecombat/model/Creature"/>
+              <eParameters name="defenseur" eType="#//cnam/chatnoir76/creaturedecombat/model/Creature"/>
+            </eOperations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="degatAttaque" eType="#//cnam/chatnoir76/creaturedecombat/model/Degat"
+                containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="besoinEnergieCategorie"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="besoinEnergieAutre"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="categorie" eType="#//cnam/chatnoir76/creaturedecombat/model/Categorie"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Degat">
+            <eOperations name="getCalculDegat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+              <eParameters name="attaquant" eType="#//cnam/chatnoir76/creaturedecombat/model/Creature"/>
+              <eParameters name="defenseur" eType="#//cnam/chatnoir76/creaturedecombat/model/Creature"/>
+            </eOperations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//cnam/chatnoir76/creaturedecombat/model/TypeDegat"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="modeCalcul" eType="#//cnam/chatnoir76/creaturedecombat/model/CalculDegat"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="degat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                defaultValueLiteral="0"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="incertitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                defaultValueLiteral="0"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="chanceRattage"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                defaultValueLiteral="0"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="Niveau">
+            <eLiterals name="Base"/>
+            <eLiterals name="Evolution" value="1"/>
+            <eLiterals name="Maitre" value="2"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="Categorie">
+            <eLiterals name="Classique" value="-1"/>
+            <eLiterals name="Adorable"/>
+            <eLiterals name="Malefique" value="1"/>
+            <eLiterals name="Majestueux" value="2"/>
+            <eLiterals name="WhatTheFuck" value="3"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="TypeDegat">
+            <eLiterals name="Attaque" value="1"/>
+            <eLiterals name="Defense" value="-1"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EEnum" name="CalculDegat">
+            <eLiterals name="Base"/>
+            <eLiterals name="Ratio" value="1"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Carte" abstract="true" interface="true">
+            <eOperations name="estVisible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Dresseur" abstract="true" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/Carte #//cnam/chatnoir76/creaturedecombat/model/Labelled"/>
+          <eClassifiers xsi:type="ecore:EClass" name="Objet" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/Dresseur"/>
+          <eClassifiers xsi:type="ecore:EClass" name="Supporteur" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/Dresseur"/>
+          <eClassifiers xsi:type="ecore:EClass" name="Deck" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/Labelled">
+            <eOperations name="piocher" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+            <eOperations name="getCreatureBase" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+            <eOperations name="getCreatureEvolution" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+            <eOperations name="getEnergie" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+            <eOperations name="getObjet" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+            <eOperations name="getSupporteur" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="cartes" upperBound="-1"
+                eType="#//cnam/chatnoir76/creaturedecombat/model/Carte" containment="true"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Jeu" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/Action">
+            <eOperations name="finTour"/>
+            <eOperations name="finOption"/>
+            <eOperations name="abandonner"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="deck" eType="#//cnam/chatnoir76/creaturedecombat/model/Deck"
+                containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="pileDefausse" upperBound="-1"
+                eType="#//cnam/chatnoir76/creaturedecombat/model/Carte" containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="creatureActive"
+                eType="#//cnam/chatnoir76/creaturedecombat/model/Creature" containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="banc" upperBound="-1"
+                eType="#//cnam/chatnoir76/creaturedecombat/model/Creature" containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="carteRecompense"
+                upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"
+                containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="main" upperBound="-1"
+                eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Creature" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/Carte #//cnam/chatnoir76/creaturedecombat/model/CreatureComponent">
+            <eOperations name="estCompatibleEvolution" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/model/Creature"/>
+            </eOperations>
+            <eOperations name="faireEvoluer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="creature" eType="#//cnam/chatnoir76/creaturedecombat/model/Creature"/>
+            </eOperations>
+            <eOperations name="estMort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+            <eOperations name="initialize">
+              <eParameters name="creatureComponent" eType="#//cnam/chatnoir76/creaturedecombat/model/CreatureComponent"/>
+            </eOperations>
+            <eOperations name="recoitDegat">
+              <eParameters name="degat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            </eOperations>
+            <eOperations name="recoitSoin">
+              <eParameters name="soin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            </eOperations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="energies" upperBound="-1"
+                eType="#//cnam/chatnoir76/creaturedecombat/model/Energie" containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//cnam/chatnoir76/creaturedecombat/model/CreatureComponent"
+                changeable="false" containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="evolution" eType="#//cnam/chatnoir76/creaturedecombat/model/CreatureComponent"
+                changeable="false"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="maitre" eType="#//cnam/chatnoir76/creaturedecombat/model/CreatureComponent"
+                changeable="false"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="pv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                defaultValueLiteral="0"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Base" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/AbstractCreatureComponent"/>
+          <eClassifiers xsi:type="ecore:EClass" name="Evolution" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/AbstractCreatureComponent">
+            <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//cnam/chatnoir76/creaturedecombat/model/Base"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Maitre" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/AbstractCreatureComponent">
+            <eStructuralFeatures xsi:type="ecore:EReference" name="evolution" eType="#//cnam/chatnoir76/creaturedecombat/model/Evolution"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="CreatureComponent" abstract="true"
+              interface="true">
+            <eOperations name="getPvInit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            <eOperations name="getCategorie" eType="#//cnam/chatnoir76/creaturedecombat/model/Categorie"/>
+            <eOperations name="getAttaques" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/model/Attaque"/>
+            <eOperations name="getDegatDefense" eType="#//cnam/chatnoir76/creaturedecombat/model/Degat"/>
+            <eOperations name="getNiveau" eType="#//cnam/chatnoir76/creaturedecombat/model/Niveau"/>
+            <eOperations name="getNom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            <eOperations name="getDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            <eOperations name="getBaseEvolution" eType="#//cnam/chatnoir76/creaturedecombat/model/CreatureComponent"/>
+            <eOperations name="getActiveCreatureComponent" eType="#//cnam/chatnoir76/creaturedecombat/model/CreatureComponent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="AbstractCreatureComponent" abstract="true"
+              eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/CreatureComponent #//cnam/chatnoir76/creaturedecombat/model/Labelled">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="pvInit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                defaultValueLiteral="0"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="categorie" lowerBound="1"
+                eType="#//cnam/chatnoir76/creaturedecombat/model/Categorie"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="attaques" upperBound="-1"
+                eType="#//cnam/chatnoir76/creaturedecombat/model/Attaque" containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="degatDefense" eType="#//cnam/chatnoir76/creaturedecombat/model/Degat"
+                containment="true"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="niveau" eType="#//cnam/chatnoir76/creaturedecombat/model/Niveau"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true" interface="true">
+            <eOperations name="piocher" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+            <eOperations name="ajoutCarteBase" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="carteCreatureBase" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+            </eOperations>
+            <eOperations name="faireEvoluer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="carteCreatureInf" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+              <eParameters name="carteCreatureSup" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+            </eOperations>
+            <eOperations name="ajoutEnergie" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="carteEnergie" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+            </eOperations>
+            <eOperations name="utiliserCarteDresseur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="carteDresseur" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+            </eOperations>
+            <eOperations name="battreRetraite" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="carteCreatureRemplaçante" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+            </eOperations>
+            <eOperations name="attaquer" lowerBound="2" upperBound="2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            <eOperations name="finTour"/>
+            <eOperations name="abandonner"/>
+          </eClassifiers>
         </eSubpackages>
       </eSubpackages>
     </eSubpackages>

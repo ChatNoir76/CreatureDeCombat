@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Ma Page d'Accueil</title>
+	    <th:block th:replace="fragments/general :: header">
+	        <title>Yet another Pet Store</title>        
+	    </th:block>
+	</head>
+	<body>
+		<p><th:block th:insert="fragments/general :: navbar"></th:block></p>
+		
+		<div class="row">
+		  <div class="col-3"><th:block th:insert="fragments/creaturedto-fragment :: creatureFull(${creature})"></th:block></div>
+		  <div class="col-3"><th:block th:insert="fragments/creaturedto-fragment :: creatureFull(${creature})"></th:block></div>
+		</div>
+		
+	    <p><th:block th:insert="fragments/general :: footer"></th:block></p>
+	</body>
+</html>

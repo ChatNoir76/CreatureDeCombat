@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Base;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Categorie;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Creature;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Evolution;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Maitre;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.ModelFactory;
+import fr.cnam.chatnoir76.creaturedecombat.model.Base;
+import fr.cnam.chatnoir76.creaturedecombat.model.Categorie;
+import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
+import fr.cnam.chatnoir76.creaturedecombat.model.Evolution;
+import fr.cnam.chatnoir76.creaturedecombat.model.Maitre;
+import fr.cnam.chatnoir76.creaturedecombat.model.ModelFactory;
 
 @SpringBootTest(webEnvironment = WebEnvironment.MOCK)
 public class EvolutionTest {

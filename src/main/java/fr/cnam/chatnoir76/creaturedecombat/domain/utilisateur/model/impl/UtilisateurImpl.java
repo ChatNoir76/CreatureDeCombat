@@ -6,4 +6,9 @@ import fr.cnam.chatnoir76.creaturedecombat.domain.utilisateur.model.Utilisateur;
 public class UtilisateurImpl extends GenUtilisateurImpl implements Utilisateur
 {
 
+	@Override
+	public boolean checkPassword(String password) {
+		return true;
+	}
+
 }

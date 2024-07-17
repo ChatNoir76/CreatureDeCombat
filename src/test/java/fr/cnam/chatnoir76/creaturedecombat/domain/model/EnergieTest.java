@@ -11,10 +11,10 @@ import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Categorie;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Creature;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Energie;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.ModelFactory;
+import fr.cnam.chatnoir76.creaturedecombat.model.Categorie;
+import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
+import fr.cnam.chatnoir76.creaturedecombat.model.Energie;
+import fr.cnam.chatnoir76.creaturedecombat.model.ModelFactory;
 
 @SpringBootTest(webEnvironment = WebEnvironment.MOCK)
 public class EnergieTest {

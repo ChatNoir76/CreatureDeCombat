@@ -6,9 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto.CreatureDTO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.mapper.Mapper;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.model.Creature;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.provider.CreatureProvider;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.service.CreatureService;
+import fr.cnam.chatnoir76.creaturedecombat.domain.utilisateur.model.ModelFactory;
+import fr.cnam.chatnoir76.creaturedecombat.domain.utilisateur.model.Utilisateur;
+import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
+import fr.cnam.chatnoir76.creaturedecombat.provider.CreatureProvider;
 
 @RestController
 public class HelloWorldController {
@@ -19,9 +23,26 @@ public class HelloWorldController {
 	@Autowired
 	CreatureProvider provider;
 	
+	@Autowired
+	CreatureService creatureService;
+	
 	@GetMapping("/")
 	public ModelAndView index() {
 		Creature c = provider.getWorms();
 		return new ModelAndView("index", "creature", Mapper.toDTO(c));
+	}
+	
+	@GetMapping("/jeu")
+	public ModelAndView creationJeu() {
+		
+		Utilisateur joueur1 = ModelFactory.eINSTANCE.createUtilisateur();
+		joueur1.setNom("Joueur 1");
+		
+		Utilisateur joueur2 = ModelFactory.eINSTANCE.createUtilisateur();
+		joueur2.setNom("Joueur 2");
+		
+//		Salle salle = ModelFactory.eINSTANCE.create
+		CreatureDTO c = creatureService.findById(1).get();
+		return new ModelAndView("index", "creature", c);
 	}
 }

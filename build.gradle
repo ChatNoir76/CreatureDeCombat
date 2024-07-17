@@ -26,10 +26,16 @@ test {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'	
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.eclipse.emf:org.eclipse.emf.ecore:2.20.0'
+	implementation 'org.flywaydb:flyway-core'
+  	implementation "org.flywaydb:flyway-mysql"
+	
+	runtimeOnly 'mysql:mysql-connector-java:8.0.25'
 	
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	
@@ -41,4 +47,20 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+task distClean {
+  dependsOn('clean')
+    doLast {
+      delete 'bin'
+      delete '.classpath'
+      delete '.gradle'
+      delete '.nb-gradle'
+      delete '.project'
+      delete '.settings'
+      delete '.vscode'
+      delete '.DS_Store'
+      delete '.idea'
+    fileTree(dir: '.', include: ['*-correction', '*-sujet']).visit {f -> delete f.file}
+  }
 }

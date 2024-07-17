@@ -16,10 +16,6 @@
                 <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
                 <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               </eClassifiers>
-              <eClassifiers xsi:type="ecore:EClass" name="Salle">
-                <eStructuralFeatures xsi:type="ecore:EReference" name="joueur1" eType="#//cnam/chatnoir76/creaturedecombat/domain/utilisateur/model/Utilisateur"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="joueur2" eType="#//cnam/chatnoir76/creaturedecombat/domain/utilisateur/model/Utilisateur"/>
-              </eClassifiers>
             </eSubpackages>
           </eSubpackages>
         </eSubpackages>
