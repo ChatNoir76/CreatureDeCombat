@@ -7,7 +7,5 @@ import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto.CreatureDTO;
 public interface CreatureService {
 	
 	Optional<CreatureDTO> findById(int id);
-	
-	String save(CreatureDTO creatureDTO);
-	
+		
 }

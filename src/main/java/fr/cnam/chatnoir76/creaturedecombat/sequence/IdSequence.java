@@ -8,6 +8,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "sequence_id")
 public class IdSequence {
+	
     @Id
     @Column(name = "table_name", length = 10)
     private String tableName;

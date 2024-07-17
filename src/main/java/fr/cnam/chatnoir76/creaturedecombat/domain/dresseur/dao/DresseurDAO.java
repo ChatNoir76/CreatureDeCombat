@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.cnam.chatnoir76.creaturedecombat.domain.dresseur.entity.DresseurEntity;
 
-public interface DresseurDAO extends JpaRepository<DresseurEntity, String> {
+public interface DresseurDAO extends JpaRepository<DresseurEntity, Integer> {
 
 }

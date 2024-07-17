@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.cnam.chatnoir76.creaturedecombat.domain.attaque.entity.AttaqueEntity;
 
-public interface AttaqueDAO extends JpaRepository<AttaqueEntity, String> {
+public interface AttaqueDAO extends JpaRepository<AttaqueEntity, Integer> {
 
 }

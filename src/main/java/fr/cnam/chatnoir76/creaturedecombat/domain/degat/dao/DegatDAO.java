@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.cnam.chatnoir76.creaturedecombat.domain.degat.entity.DegatEntity;
 
-public interface DegatDAO extends JpaRepository<DegatEntity, String> {
+public interface DegatDAO extends JpaRepository<DegatEntity, Integer> {
 
 }

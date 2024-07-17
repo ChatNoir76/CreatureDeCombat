@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.cnam.chatnoir76.creaturedecombat.domain.deck.entity.DeckEntity;
 
-public interface DeckDAO extends JpaRepository<DeckEntity, String> {
+public interface DeckDAO extends JpaRepository<DeckEntity, Integer> {
 
 }

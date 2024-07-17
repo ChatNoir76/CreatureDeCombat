@@ -28,13 +28,4 @@ public class CreatureServiceImpl implements CreatureService {
 		return creatureDAO.findById(id).map(creatureEntity -> CreatureDTOMapper.toDTO(creatureEntity));
 	}
 
-	@Override
-	public String save(CreatureDTO creatureDTO) {
-		idSequenceService.nextCreatureId();
-		CreatureEntity entity = creatureDAO.save(CreatureDTOMapper.toEntity(creatureDTO));
-		return Integer.toString(entity.getId());
-	}
-	
-	
-
 }

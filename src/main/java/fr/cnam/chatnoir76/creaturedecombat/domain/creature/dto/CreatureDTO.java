@@ -8,7 +8,7 @@ import fr.cnam.chatnoir76.creaturedecombat.domain.carte.dto.CarteDTO;
 
 public class CreatureDTO extends CarteDTO {
 
-	private int id;
+	private int id = -1;
 	private int pv;
 	private int pvInit;
 	private String nom;

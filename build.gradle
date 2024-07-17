@@ -2,8 +2,8 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.2.5'
 	id 'io.spring.dependency-management' version '1.1.4'
+	id 'org.flywaydb.flyway' version '9.20.0'
 }
-
 
 group = 'fr.cnam.chatnoir76'
 version = '0.0.1-SNAPSHOT'
@@ -33,9 +33,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.eclipse.emf:org.eclipse.emf.ecore:2.20.0'
 	implementation 'org.flywaydb:flyway-core'
-  	implementation "org.flywaydb:flyway-mysql"
+  	implementation 'org.flywaydb:flyway-mysql'
 	
-	runtimeOnly 'mysql:mysql-connector-java:8.0.25'
+	runtimeOnly 'mysql:mysql-connector-java:8.0.27'
 	
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	
@@ -43,6 +43,13 @@ dependencies {
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
 	
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+ flyway {
+    url = 'jdbc:mariadb://localhost:3306/creaturedecombat'
+    user = 'root'
+    password = 'pokemon'
+    locations = ['filesystem:src/main/resources/db/migration']
 }
 
 tasks.named('test') {
@@ -63,4 +70,6 @@ task distClean {
       delete '.idea'
     fileTree(dir: '.', include: ['*-correction', '*-sujet']).visit {f -> delete f.file}
   }
+  
+
 }
