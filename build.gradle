@@ -15,8 +15,6 @@ java {
     }
 }
 
-compileJava.options.encoding = 'UTF-8'
-
 repositories {
 	mavenCentral()
 }
@@ -34,8 +32,8 @@ dependencies {
 	implementation 'org.eclipse.emf:org.eclipse.emf.ecore:2.20.0'
 	implementation 'org.flywaydb:flyway-core'
   	implementation 'org.flywaydb:flyway-mysql'
-	
-	runtimeOnly 'mysql:mysql-connector-java:8.0.27'
+  	
+  	runtimeOnly 'mysql:mysql-connector-java:8.0.27'
 	
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	
@@ -46,7 +44,7 @@ dependencies {
 }
 
  flyway {
-    url = 'jdbc:mariadb://localhost:3306/creaturedecombat'
+    url = 'jdbc:mariadb://localhost/creaturedecombat'
     user = 'root'
     password = 'pokemon'
     locations = ['filesystem:src/main/resources/db/migration']
