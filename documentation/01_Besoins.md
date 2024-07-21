@@ -151,7 +151,8 @@ Il s'agit de la principale fonctionnalité du jeu, elle sera donc plus détaill�
 | Ajouter énergie | *ajouter une carte énergie à une créature active ou de banc* |
 | joueur carte dresseur | *il est possible de jouer plusieurs cartes objets mais seulement une seul carte supporteur* |
 | retrait créature | *retrait de la créature active (le retrait à un coût d'énergie) au profil d'une créature présente sur le banc* |
-| Attaquer | *Lancer une attaque de la créature active* |
+| Fin actions optionnelles | *ouvre les possibilités d'attaque et de fin de tour* |
+| Attaquer | *lancer une attaque de la créature active* |
 | Terminer tour | *il est possible de terminer le tour sans attaquer* |
 | Abandonner | *abandonner la partie et donner son adversaire gagnant* |
 
