@@ -42,17 +42,13 @@ CREATE TABLE carte (
 CREATE TABLE dresseur (
     id VARCHAR(10),
     PRIMARY KEY(id),
-    fk_carte VARCHAR(10) NOT NULL, 
-    INDEX fk_carte_ind (fk_carte), 
-    FOREIGN KEY (fk_carte) REFERENCES carte(id) ON DELETE CASCADE
+    CONSTRAINT FK_Carte_dresseur FOREIGN KEY (id) REFERENCES carte(id)
 ) ENGINE=INNODB;
 
 CREATE TABLE energie (
     id VARCHAR(10),
     PRIMARY KEY(id),
-    fk_carte VARCHAR(10) NOT NULL, 
-    INDEX fk_carte_ind (fk_carte), 
-    FOREIGN KEY (fk_carte) REFERENCES carte(id) ON DELETE CASCADE,
+	CONSTRAINT FK_Carte_energie FOREIGN KEY (id) REFERENCES carte(id),
     fk_categorie VARCHAR(10) NOT NULL,
     INDEX fk_categorie_ind (fk_categorie), 
     FOREIGN KEY (fk_categorie) REFERENCES categorie(id)
@@ -61,9 +57,7 @@ CREATE TABLE energie (
 CREATE TABLE creature (
     id VARCHAR(10),
     PRIMARY KEY(id),
-    fk_carte VARCHAR(10) NOT NULL, 
-    INDEX fk_carte_ind (fk_carte), 
-    FOREIGN KEY (fk_carte) REFERENCES carte(id) ON DELETE CASCADE,
+    CONSTRAINT FK_Carte_creature FOREIGN KEY (id) REFERENCES carte(id),
     pv INT NOT NULL,
     fk_categorie VARCHAR(10) NOT NULL,
     INDEX fk_categorie_ind (fk_categorie), 

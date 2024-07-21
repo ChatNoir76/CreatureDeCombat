@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dao.CreatureDAO;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto.CreatureDTO;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto.CarteCreatureDTO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.entity.CreatureEntity;
 import fr.cnam.chatnoir76.creaturedecombat.model.Categorie;
 import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
@@ -16,10 +16,10 @@ public class CreatureDTOMapper {
 	@Autowired
 	CreatureDAO creatureDAO;
 	
-	public static final CreatureDTO toDTO(CreatureEntity creatureJpa) {
-		CreatureDTO cc = new CreatureDTO();
-		cc.setNom(creatureJpa.getNom());
-		cc.setDescription(creatureJpa.getDescription());
+	public static final CarteCreatureDTO toDTO(CreatureEntity creatureJpa) {
+		CarteCreatureDTO cc = new CarteCreatureDTO();
+//		cc.setNom(creatureJpa.getNom());
+//		cc.setDescription(creatureJpa.getDescription());
 		cc.setCategorie(Categorie.MAJESTUEUX.getLiteral());
 		cc.setNiveau(Niveau.BASE.getLiteral());
 		cc.setPv(creatureJpa.getPv());
@@ -28,8 +28,8 @@ public class CreatureDTOMapper {
 		return cc;
 	}
 	
-	public static final CreatureDTO toDTO(Creature creature) {
-		CreatureDTO cc = new CreatureDTO();
+	public static final CarteCreatureDTO toDTO(Creature creature) {
+		CarteCreatureDTO cc = new CarteCreatureDTO();
 		cc.setNom(creature.getNom());
 		cc.setDescription(creature.getDescription());
 		cc.setCategorie(creature.getCategorie().getLiteral());
@@ -44,8 +44,9 @@ public class CreatureDTOMapper {
 		return cc;
 	}
 	
-	public static final CreatureEntity toEntity(CreatureDTO creatureDTO) {
-		return new CreatureEntity(creatureDTO.getId(), creatureDTO.getNom(), creatureDTO.getDescription(), creatureDTO.getImage(), creatureDTO.getPv());
+	public static final CreatureEntity toEntity(CarteCreatureDTO creatureDTO) {
+		return null;
+//		return new CreatureEntity(creatureDTO.getId(), creatureDTO.getNom(), creatureDTO.getDescription(), creatureDTO.getImage(), creatureDTO.getPv());
 	}
 	
 }

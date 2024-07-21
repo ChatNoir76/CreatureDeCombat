@@ -1,7 +1,7 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.mapper;
 
 import fr.cnam.chatnoir76.creaturedecombat.domain.carte.dto.CarteDTO;
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto.CreatureDTO;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto.CarteCreatureDTO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.degat.dto.DegatDTO;
 import fr.cnam.chatnoir76.creaturedecombat.model.Carte;
 import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
@@ -13,8 +13,8 @@ public class Mapper {
 		return null;
 	}
 
-	public final static CreatureDTO toDTO(Creature creature) {
-		CreatureDTO cc = new CreatureDTO();
+	public final static CarteCreatureDTO toDTO(Creature creature) {
+		CarteCreatureDTO cc = new CarteCreatureDTO();
 		cc.setNom(creature.getNom());
 		cc.setDescription(creature.getDescription());
 		cc.setCategorie(creature.getCategorie().getLiteral());

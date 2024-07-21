@@ -1,22 +1,65 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.carte.entity;
 
+import java.util.Set;
+
+import fr.cnam.chatnoir76.creaturedecombat.domain.deck.entity.DeckEntity;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@Table(name= "creature")
-public class CarteEntity {
+@Table(name= CarteEntity.TABLE_NAME)
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class CarteEntity {
 
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	public final static String TABLE_NAME = "carte";
+	
+	@Id
 	@NotBlank
 	private int id;
 	@NotBlank
 	private String nom;
 	@NotBlank
 	private String description;
+	@NotBlank
+	private String image;
+	@ManyToMany(mappedBy = "cartes")
+	private Set<DeckEntity> decks;
+	
+	public void addDeck(DeckEntity deck) {
+		if(!decks.contains(deck)) {
+			decks.add(deck);
+			deck.addCarte(this);
+		}
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getNom() {
+		return nom;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	
 	
 }

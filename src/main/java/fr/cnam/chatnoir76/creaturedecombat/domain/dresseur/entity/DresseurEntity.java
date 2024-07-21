@@ -1,20 +1,14 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.dresseur.entity;
 
+import fr.cnam.chatnoir76.creaturedecombat.domain.carte.entity.CarteEntity;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@Table(name= "dresseur")
-public class DresseurEntity {
+@Table(name= DresseurEntity.TABLE_NAME)
+public class DresseurEntity extends CarteEntity {
 
-	@Id
-	@NotBlank
-	private int id;
-	@NotBlank
-	private String nom;
-	@NotBlank
-	private String description;
+	public final static String TABLE_NAME = "dresseur";
+	
 	
 }

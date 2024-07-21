@@ -1,15 +1,12 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.attaque.dto;
 
-import fr.cnam.chatnoir76.creaturedecombat.domain.degat.dto.DegatDTO;
-
 public class AttaqueDTO {
 
 	private String nom;
 	private String description;
-	private String degat = "10%";
 	private int energiePrimaire;
 	private int energieSecondaire;
-	private DegatDTO degatDto;
+	private String categorie;
 	
 	public String getNom() {
 		return nom;
@@ -32,20 +29,14 @@ public class AttaqueDTO {
 	public int getEnergieSecondaire() {
 		return energieSecondaire;
 	}
-	public String getDegat() {
-		return degat;
-	}
-	public void setDegat(String degat) {
-		this.degat = degat;
-	}
 	public void setEnergieSecondaire(int energieSecondaire) {
 		this.energieSecondaire = energieSecondaire;
 	}
-	public DegatDTO getDegatDto() {
-		return degatDto;
+	public String getCategorie() {
+		return categorie;
 	}
-	public void setDegatDto(DegatDTO degatDto) {
-		this.degatDto = degatDto;
+	public void setCategorie(String categorie) {
+		this.categorie = categorie;
 	}
-
+	
 }
