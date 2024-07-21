@@ -1,52 +1,27 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.mapstruct.InheritInverseConfiguration;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
 
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dao.CreatureDAO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto.CarteCreatureDTO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.entity.CreatureEntity;
-import fr.cnam.chatnoir76.creaturedecombat.model.Categorie;
-import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
-import fr.cnam.chatnoir76.creaturedecombat.model.Niveau;
 
-@Service
-public class CreatureDTOMapper {
+@Mapper
+public interface CreatureDTOMapper {
 
-	@Autowired
-	CreatureDAO creatureDAO;
+	CreatureDTOMapper INSTANCE = Mappers.getMapper(CreatureDTOMapper.class);
 	
-	public static final CarteCreatureDTO toDTO(CreatureEntity creatureJpa) {
-		CarteCreatureDTO cc = new CarteCreatureDTO();
-//		cc.setNom(creatureJpa.getNom());
-//		cc.setDescription(creatureJpa.getDescription());
-		cc.setCategorie(Categorie.MAJESTUEUX.getLiteral());
-		cc.setNiveau(Niveau.BASE.getLiteral());
-		cc.setPv(creatureJpa.getPv());
-		cc.setPvInit(creatureJpa.getPv());
-		cc.setImage("img/1.jfif");
-		return cc;
-	}
+	@Mapping(source = "pv", target = "pvInit")
+	@Mapping(source = "categorie.nom", target = "categorie")
+	@Mapping(source = "niveau.nom", target = "niveau")
+	@Mapping(source = "creatureBase.nom", target = "nomCreatureBase")
+	@Mapping(target = "visible", ignore = true)
+	@Mapping(target = "attaques", ignore = true)
+	public CarteCreatureDTO fromEntityToDTO(CreatureEntity entity);
 	
-	public static final CarteCreatureDTO toDTO(Creature creature) {
-		CarteCreatureDTO cc = new CarteCreatureDTO();
-		cc.setNom(creature.getNom());
-		cc.setDescription(creature.getDescription());
-		cc.setCategorie(creature.getCategorie().getLiteral());
-		cc.setNiveau(creature.getNiveau().getLiteral());
-		cc.setPv(creature.getPv());
-		cc.setPvInit(creature.getPvInit());
-		cc.setImage("img/1.jfif");
-//		creature.getAttaques().forEach(a -> {
-//			cc.getAttaques().add(Mapper.toDTO(a));
-//		});
-		
-		return cc;
-	}
-	
-	public static final CreatureEntity toEntity(CarteCreatureDTO creatureDTO) {
-		return null;
-//		return new CreatureEntity(creatureDTO.getId(), creatureDTO.getNom(), creatureDTO.getDescription(), creatureDTO.getImage(), creatureDTO.getPv());
-	}
+	@InheritInverseConfiguration
+	public CreatureEntity fromDTOToEntity(CarteCreatureDTO dto);
 	
 }

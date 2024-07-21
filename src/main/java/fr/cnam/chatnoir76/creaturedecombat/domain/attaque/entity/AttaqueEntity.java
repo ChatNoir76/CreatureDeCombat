@@ -42,7 +42,7 @@ public class AttaqueEntity {
 	private CategorieEntity categorie;
 	@ManyToMany(mappedBy = "attaques")
 	private Set<CreatureEntity> creatures;
-	
+	  
 	public void addCreature(CreatureEntity creature) {
 		if(!creatures.contains(creature)) {
 			creatures.add(creature);

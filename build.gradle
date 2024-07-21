@@ -3,6 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '3.2.5'
 	id 'io.spring.dependency-management' version '1.1.4'
 	id 'org.flywaydb.flyway' version '9.20.0'
+	id 'com.diffplug.eclipse.apt' version '3.37.2'
 }
 
 group = 'fr.cnam.chatnoir76'
@@ -32,15 +33,13 @@ dependencies {
 	implementation 'org.eclipse.emf:org.eclipse.emf.ecore:2.20.0'
 	implementation 'org.flywaydb:flyway-core'
   	implementation 'org.flywaydb:flyway-mysql'
-  	
+  	implementation 'org.mapstruct:mapstruct:1.5.5.Final'
   	runtimeOnly 'mysql:mysql-connector-java:8.0.27'
-	
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
-	
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 }
 
  flyway {
@@ -48,6 +47,11 @@ dependencies {
     user = 'root'
     password = 'pokemon'
     locations = ['filesystem:src/main/resources/db/migration']
+}
+
+tasks.withType(JavaCompile) {
+    options.annotationProcessorPath = configurations.annotationProcessor
+    sourceSets.main.java.srcDir 'build/generated/sources/annotationProcessor/java/main'
 }
 
 tasks.named('test') {

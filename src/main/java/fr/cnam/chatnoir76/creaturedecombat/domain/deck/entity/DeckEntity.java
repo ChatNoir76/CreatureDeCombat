@@ -54,8 +54,5 @@ public class DeckEntity {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Set<CarteEntity> getCartes() {
-		return cartes;
-	}
-	
+
 }

@@ -4,11 +4,21 @@ public abstract class CarteDTO {
 
 	private static final String imageDos = "__dosCarte.jfif";
 	
+	private int id;
 	private String nom;
 	private String description;
 	private String image;
 	private boolean visible;
 	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getNom() {
 		return nom;
 	}
@@ -30,7 +40,7 @@ public abstract class CarteDTO {
 	}
 
 	public String getImage() {
-		return image;
+		return "img/%s".formatted(image);
 	}
 	
 	public void setImage(String image) {

@@ -8,7 +8,7 @@ INSERT INTO attaque VALUES ('4', 1, "Boule de Terre", "description...", '0', '0'
 INSERT INTO attaque VALUES ('5', 3, "Coup de Tête", "description...", '0', '0', 1);
 
 -- ADORABLE
-INSERT INTO attaque VALUES ('6', 21, "Bisou Magique", "description...", '0', '0', 2);
+INSERT INTO attaque VALUES ('6', 21, "Bisou Magique", "ça va toujours mieux après un bisou magique", '0', '0', 2);
 INSERT INTO attaque VALUES ('7', 13, "Regard Attendrissant", "description...", '1', '0', 2);
 INSERT INTO attaque VALUES ('8', 1, "Gros Bisou", "description...", '1', '1', 2);
 INSERT INTO attaque VALUES ('9', 19, "Surcharge Affective", "description...", '3', '0', 2);

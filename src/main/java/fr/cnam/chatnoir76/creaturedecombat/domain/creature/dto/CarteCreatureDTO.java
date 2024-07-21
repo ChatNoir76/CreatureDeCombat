@@ -1,5 +1,8 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto;
 
+import java.util.List;
+
+import fr.cnam.chatnoir76.creaturedecombat.domain.attaque.dto.AttaqueDTO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.carte.dto.CarteDTO;
 
 public class CarteCreatureDTO extends CarteDTO {
@@ -9,7 +12,14 @@ public class CarteCreatureDTO extends CarteDTO {
 	private String niveau;
 	private String categorie;
 	private String nomCreatureBase;
+	private List<AttaqueDTO> attaques;
 	
+	public List<AttaqueDTO> getAttaques() {
+		return attaques;
+	}
+	public void setAttaques(List<AttaqueDTO> attaques) {
+		this.attaques = attaques;
+	}
 	public int getPv() {
 		return pv;
 	}
@@ -40,7 +50,10 @@ public class CarteCreatureDTO extends CarteDTO {
 	public void setNomCreatureBase(String nomCreatureBase) {
 		this.nomCreatureBase = nomCreatureBase;
 	}
-
+	public String getPourcentage() {
+		double value = Float.valueOf(pv)/Float.valueOf(pvInit)*100;
+		return String.format("%.0f",value) + '%';
+	}
 	
 	
 }

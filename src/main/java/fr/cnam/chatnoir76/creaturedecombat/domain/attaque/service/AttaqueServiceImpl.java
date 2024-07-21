@@ -1,11 +1,16 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.attaque.service;
 
-import java.util.Optional;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
+import fr.cnam.chatnoir76.creaturedecombat.domain.attaque.dao.AttaqueDAO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.attaque.dto.AttaqueDTO;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto.CarteCreatureDTO;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.service.CreatureDTOMapper;
+import fr.cnam.chatnoir76.creaturedecombat.sequence.IdSequenceService;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -13,9 +18,24 @@ import jakarta.transaction.Transactional;
 @Validated
 public class AttaqueServiceImpl implements AttaqueService {
 
+	@Autowired
+	AttaqueDAO dao;
+	
+	private final AttaqueDTOMapper mapper = AttaqueDTOMapper.INSTANCE;
+	
+	private final CreatureDTOMapper mapperCreature = CreatureDTOMapper.INSTANCE;
+	
+	@Autowired
+    IdSequenceService idSequenceService;
+	
 	@Override
-	public Optional<AttaqueDTO> findById(int id) {
-		return Optional.empty();
+	public AttaqueDTO getById(int id) {
+		return mapper.fromEntityToDTO(dao.getReferenceById(id));
+	}
+
+	@Override
+	public List<AttaqueDTO> getByCreature(CarteCreatureDTO creature) {
+		return dao.findAttaqueEntityByCreature(mapperCreature.fromDTOToEntity(creature)).stream().map(mapper::fromEntityToDTO).toList();
 	}
 
 }

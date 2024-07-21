@@ -2,12 +2,20 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.degat.dto;
 
 public class DegatDTO {
 	
+	private int id;
 	private int degat;
 	private String type;
 	private String mode;
 	private int precision;
 	private int rattage;
 	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public int getDegat() {
 		return degat;
 	}
@@ -38,13 +46,5 @@ public class DegatDTO {
 	public void setRattage(int rattage) {
 		this.rattage = rattage;
 	}
-	@Override
-	public String toString() {
-		StringBuilder s = new StringBuilder(type.equals("Attaque") ? "-" : "+");
-		s.append(degat);
-		s.append(mode.equals("Base") ? "pv" : "%");
-		return s.toString();
-	}
-	
-	
+
 }

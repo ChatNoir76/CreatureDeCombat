@@ -1,21 +1,33 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.attaque.service;
 
-import org.springframework.stereotype.Service;
+import org.mapstruct.InheritInverseConfiguration;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
 
 import fr.cnam.chatnoir76.creaturedecombat.domain.attaque.dto.AttaqueDTO;
-import fr.cnam.chatnoir76.creaturedecombat.model.Attaque;
+import fr.cnam.chatnoir76.creaturedecombat.domain.attaque.entity.AttaqueEntity;
 
-@Service
-public class AttaqueDTOMapper {
+@Mapper
+public interface AttaqueDTOMapper {
 
-	public final static AttaqueDTO toDTO(Attaque attaque) {
-		AttaqueDTO att = new AttaqueDTO();
-		att.setNom(attaque.getNom());
-		att.setDescription(attaque.getDescription());
-		att.setEnergiePrimaire(attaque.getBesoinEnergieCategorie());
-		att.setEnergieSecondaire(attaque.getBesoinEnergieAutre());
-//		att.setDegatDto(Mapper.toDTO(attaque.getDegatAttaque()));
-		return att;
+	AttaqueDTOMapper INSTANCE = Mappers.getMapper(AttaqueDTOMapper.class);
+	
+	@Mapping(source = "ePrimaire", target = "energiePrimaire")
+	@Mapping(source = "eSecondaire", target = "energieSecondaire")
+	@Mapping(source = "categorie.nom", target = "categorie")
+	@Mapping(target = "degat", expression = "java(getShortDegatDescription(entity.getDegat().getTypeDegat().getNom(), entity.getDegat().getDegat(), entity.getDegat().getCalculdegat().getNom()))")
+	public AttaqueDTO fromEntityToDTO(AttaqueEntity entity);
+	
+	@InheritInverseConfiguration
+	@Mapping(target = "degat", ignore = true)
+	public AttaqueEntity fromDTOToEntity(AttaqueDTO dto);
+	
+	default String getShortDegatDescription(String type, int degat, String mode) {
+		StringBuilder s = new StringBuilder(type.equals("ATTAQUE") ? "-" : "+");
+		s.append(degat);
+		s.append(mode.equals("BASE") ? "pv" : "%");
+		return s.toString();
 	}
 	
 }

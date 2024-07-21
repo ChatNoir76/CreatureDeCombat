@@ -16,7 +16,7 @@
 		<button type="button" class="btn btn-secondary">autre</button>
 		
 		<div class="row">
-		  <div class="col-3"><th:block th:insert="fragments/creaturedto-fragment :: creatureFull(${creature})"></th:block></div>
+		  <div class="col-3"><th:block th:insert="fragments/creaturedto-fragment :: creatureFull(${creature}, ${attaques})"></th:block></div>
 		</div>
 		
 	    <p><th:block th:insert="fragments/general :: footer"></th:block></p>
