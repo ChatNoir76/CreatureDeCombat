@@ -4,6 +4,6 @@ import fr.cnam.chatnoir76.creaturedecombat.domain.deck.dto.DeckDTO;
 
 public interface DeckService {
 
-	public DeckDTO getById(int id);
+	public DeckDTO getById(String id);
 	
 }

@@ -18,7 +18,6 @@ public interface CreatureDTOMapper {
 	@Mapping(source = "niveau.nom", target = "niveau")
 	@Mapping(source = "creatureBase.nom", target = "nomCreatureBase")
 	@Mapping(target = "visible", ignore = true)
-	@Mapping(target = "attaques", ignore = true)
 	public CarteCreatureDTO fromEntityToDTO(CreatureEntity entity);
 	
 	@InheritInverseConfiguration

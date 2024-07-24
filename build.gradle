@@ -51,6 +51,7 @@ dependencies {
 
 tasks.withType(JavaCompile) {
     options.annotationProcessorPath = configurations.annotationProcessor
+    options.compilerArgs += '-parameters'
     sourceSets.main.java.srcDir 'build/generated/sources/annotationProcessor/java/main'
 }
 

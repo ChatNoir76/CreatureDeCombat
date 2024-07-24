@@ -1,8 +1,10 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.degat.dto;
 
-public class DegatDTO {
+import org.springframework.hateoas.RepresentationModel;
+
+public class DegatDTO extends RepresentationModel<DegatDTO> {
 	
-	private int id;
+	private String id;
 	private int degat;
 	private String type;
 	private String mode;
@@ -10,10 +12,10 @@ public class DegatDTO {
 	private int rattage;
 	
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public int getDegat() {

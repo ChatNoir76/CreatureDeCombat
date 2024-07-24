@@ -4,6 +4,6 @@ import fr.cnam.chatnoir76.creaturedecombat.domain.dresseur.dto.CarteDresseurDTO;
 
 public interface DresseurService {
 
-	public CarteDresseurDTO getById(int id);
+	public CarteDresseurDTO getById(String id);
 	
 }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Voir une créature</title>
+	<th:block th:replace="fragments/general :: header"></th:block>
+	<th:block th:replace="fragments/general :: loadStyle('css/script.css')"></th:block>
+</head>
+
+<body>
+	<p>
+		<th:block th:insert="fragments/general :: navbar(null)"></th:block>
+	</p>
+
+	<div class="row">
+		<div class="col-3">
+			<th:block th:insert="fragments/viewer :: creatureFull(${creature}, ${attaques})"></th:block>
+		</div>
+	</div>
+
+	<p>
+		<th:block th:insert="fragments/general :: footer"></th:block>
+	</p>
+</body>
+
+</html>

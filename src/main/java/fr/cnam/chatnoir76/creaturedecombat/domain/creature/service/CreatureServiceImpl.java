@@ -1,5 +1,7 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.creature.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
@@ -23,8 +25,13 @@ public class CreatureServiceImpl implements CreatureService {
     IdSequenceService idSequenceService;
 
 	@Override
-	public CarteCreatureDTO getById(int id) {
-		return mapper.fromEntityToDTO(dao.getReferenceById(id));
+	public CarteCreatureDTO getById(String id) {
+		return mapper.fromEntityToDTO(dao.getReferenceById(Integer.valueOf(id)));
+	}
+
+	@Override
+	public List<CarteCreatureDTO> getAll() {
+		return dao.findAll().stream().map(entity -> mapper.fromEntityToDTO(entity)).toList();
 	}
 	
 }

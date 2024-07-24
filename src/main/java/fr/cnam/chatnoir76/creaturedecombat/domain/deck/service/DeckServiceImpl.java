@@ -19,8 +19,8 @@ public class DeckServiceImpl implements DeckService {
 	private final DeckDTOMapper mapper = DeckDTOMapper.INSTANCE;
 	
 	@Override
-	public DeckDTO getById(int id) {
-		return mapper.fromEntityToDTO(dao.getReferenceById(id));
+	public DeckDTO getById(String id) {
+		return mapper.fromEntityToDTO(dao.getReferenceById(Integer.valueOf(id)));
 	}
 
 }

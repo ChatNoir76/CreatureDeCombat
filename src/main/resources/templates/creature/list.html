@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Voir une créature</title>
+	<th:block th:replace="fragments/general :: header"></th:block>
+</head>
+
+<body>
+	<p>
+		<th:block th:insert="fragments/general :: navbar(null)"></th:block>
+	</p>
+	<div class="accordion" id="accordionExample">
+		<div class="col-6">
+			<div class="accordion center" id="accordionCreature">
+				<div th:each="creature : ${creatures}">
+					<div class="card">
+						<div class="card-header" id="headingOne">
+							<h5 class="mb-0">
+								<button class="btn btn-primary mx-auto" type="button" data-toggle="collapse"
+									data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									<span class="fw-bold ms-4" th:text="${creature.id}">ID</span>
+									<img class="ms-4" th:src="@{${creature.image}}" alt="Image of ${creature.nom}"
+										style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; margin-right: 10px;">
+									<span class="fw-bold fs-5 ms-2" th:text="${creature.nom}">Nom</span>
+									<span class="ms-4">[[${creature.pvInit}]]pv</span>
+									<span class="ms-4" th:text="${creature.niveau}">Niveau</span>
+									<span class="ms-4" th:text="${creature.categorie}">Categorie</span>
+									<span class="ms-4 description" th:text="${creature.description}">Description</span>
+								</button>
+							</h5>
+						</div>
+						<div id="collapseOne" class="collapse hide" aria-labelledby="headingOne"
+							data-parent="#accordionExample">
+							<div class="card-body">
+									<div th:each="link : ${creature.links}">
+										<a th:if="${creature.links}"
+											class="list-group-item list-group-item-action list-group-item-light"
+											th:href="${link.href}">[[${link.rel}]]</a>
+									</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<p>
+		<th:block th:insert="fragments/general :: footer"></th:block>
+	</p>
+</body>
+
+</html>

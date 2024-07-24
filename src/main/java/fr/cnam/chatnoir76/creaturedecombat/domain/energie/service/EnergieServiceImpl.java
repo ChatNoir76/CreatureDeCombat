@@ -19,8 +19,8 @@ public class EnergieServiceImpl implements EnergieService {
 	private final EnergieDTOMapper mapper = EnergieDTOMapper.INSTANCE;
 	
 	@Override
-	public CarteEnergieDTO getById(int id) {
-		return mapper.fromEntityToDTO(dao.getReferenceById(id));
+	public CarteEnergieDTO getById(String id) {
+		return mapper.fromEntityToDTO(dao.getReferenceById(Integer.valueOf(id)));
 	}
 
 }

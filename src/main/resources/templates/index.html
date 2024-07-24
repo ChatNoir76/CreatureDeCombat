@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-	    <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>Ma Page d'Accueil</title>
-	    <th:block th:replace="fragments/general :: header">
-	        <title>Yet another Pet Store</title>        
-	    </th:block>
-	</head>
-	<body>
-		<p><th:block th:insert="fragments/general :: navbar"></th:block></p>
-		
-		<a th:href="@{/jeu}" class="btn btn-primary">Créer une partie</a>
-		<button type="button" class="btn btn-primary">Créer une partie</button>
-		<button type="button" class="btn btn-secondary">autre</button>
-		
-		<div class="row">
-		  <div class="col-3"><th:block th:insert="fragments/creaturedto-fragment :: creatureFull(${creature}, ${attaques})"></th:block></div>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<th:block th:replace="fragments/general :: header"></th:block>
+</head>
+
+<body>
+	<p>
+		<th:block th:insert="fragments/general :: navbar(${root.links})"></th:block>
+	</p>
+	<h1>Hello, voici le site des Créatures de Combats</h1>
+	<div th:if="${jeux}">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Jouer une partie</h5>
+				<p class="card-text">Affrontement de deux joueurs sur le même navigateur</p>
+				<a th:href="${jeux}" class="btn btn-primary">Voir</a>
+			</div>
 		</div>
-		
-	    <p><th:block th:insert="fragments/general :: footer"></th:block></p>
-	</body>
+	</div>
+	<div th:if="${creatures}">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Liste des créatures</h5>
+				<p class="card-text">Il s'agit de la liste complète des créatures du site</p>
+				<a th:href="${creatures}" class="btn btn-primary">Voir</a>
+			</div>
+		</div>
+	</div>
+	<div th:if="${attaques}">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Liste des attaques</h5>
+				<p class="card-text">Il s'agit de la liste complète des attaques du site</p>
+				<a th:href="${attaques}" class="btn btn-primary">Voir</a>
+			</div>
+		</div>
+	</div>
+	<div th:if="${degats}">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Liste des dégats</h5>
+				<p class="card-text">Il s'agit de la liste complète des dégats du site</p>
+				<a th:href="${degats}" class="btn btn-primary">Voir</a>
+			</div>
+		</div>
+	</div>
+	<p>
+		<th:block th:insert=" fragments/general :: footer"></th:block>
+	</p>
+</body>
+
 </html>

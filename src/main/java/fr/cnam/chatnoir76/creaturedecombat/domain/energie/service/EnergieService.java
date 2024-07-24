@@ -4,6 +4,6 @@ import fr.cnam.chatnoir76.creaturedecombat.domain.energie.dto.CarteEnergieDTO;
 
 public interface EnergieService {
 
-	public CarteEnergieDTO getById(int id);
+	public CarteEnergieDTO getById(String id);
 	
 }

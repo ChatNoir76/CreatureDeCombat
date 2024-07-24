@@ -4,3 +4,7 @@
 INSERT INTO carte VALUES ('1', 'Louloup', "Le petit loup des forêts", '_dd52b226-b159-4fc0-8201-d1825a087e44.jfif');
 INSERT INTO creature VALUES ('1', '50', 2, 1, null);
 INSERT INTO creature_attaque VALUES (1, 6);
+
+
+
+INSERT INTO sequence_id VALUES ('carte', '1');

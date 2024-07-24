@@ -1,15 +1,17 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.deck.dto;
 
-public class DeckDTO {
+import org.springframework.hateoas.RepresentationModel;
 
-	private int id;
+public class DeckDTO extends RepresentationModel<DeckDTO> {
+
+	private String id;
 	private String nom;
 	private String Description;
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getNom() {

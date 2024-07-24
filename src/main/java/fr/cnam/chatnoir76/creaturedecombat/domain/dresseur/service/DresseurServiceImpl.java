@@ -19,8 +19,8 @@ public class DresseurServiceImpl implements DresseurService {
 	private final DresseurDTOMapper mapper = DresseurDTOMapper.INSTANCE;
 	
 	@Override
-	public CarteDresseurDTO getById(int id) {
-		return mapper.fromEntityToDTO(dao.getReferenceById(id));
+	public CarteDresseurDTO getById(String id) {
+		return mapper.fromEntityToDTO(dao.getReferenceById(Integer.valueOf(id)));
 	}
 
 }

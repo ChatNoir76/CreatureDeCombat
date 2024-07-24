@@ -1,21 +1,23 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.carte.dto;
 
-public abstract class CarteDTO {
+import org.springframework.hateoas.RepresentationModel;
+
+public abstract class CarteDTO extends RepresentationModel<CarteDTO> {
 
 	private static final String imageDos = "__dosCarte.jfif";
 	
-	private int id;
+	private String id;
 	private String nom;
 	private String description;
 	private String image;
 	private boolean visible;
 	
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -40,7 +42,7 @@ public abstract class CarteDTO {
 	}
 
 	public String getImage() {
-		return "img/%s".formatted(image);
+		return "/img/%s".formatted(image);
 	}
 	
 	public void setImage(String image) {
