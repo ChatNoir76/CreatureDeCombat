@@ -6,8 +6,8 @@
 </head>
 <body>
 	<div th:fragment="creatureFull(creature, attaques)">
-	    <div class="container my-4">
-	        <div class="card shadow-sm" style="width: 18rem;">
+	    <div class="container my-2">
+	        <div class="card shadow-sm" style="width: 30rem;">
 	            <div class="card-header">
 	                <div class="d-flex justify-content-between align-items-center">
 	                    <h3 class="card-title fw-bold fs-4 mb-0" th:text="${creature.nom}">Nom</h3>
@@ -32,7 +32,7 @@
 	                        <span th:text="${creature.pourcentage}"></span>
 	                    </div>
 	                </div>
-	                <p class="card-text fw-semibold fs-5 mb-1">Description</p>
+	                <h5 class="card-title fw-semibold fs-5 mb-2">Description</h5>
 	                <p class="card-text description mb-1" th:text="${creature.description}">description</p>
 	            </div>
 	            <div class="card-body pt-2">
@@ -40,11 +40,17 @@
 	                <ul class="attack-list">
 	                    <li class="attack-item" th:each="attaque : ${attaques}">
 	                        <span class="attack-name-degat">
-	                            <span th:text="${attaque.nom}">Attaque</span>
-	                            <span th:text="'(' + ${attaque.degat} + ')'"> (dégât) </span>
-	                            <span>[[${attaque.energiePrimaire}]]/[[${attaque.energieSecondaire}]]</span>
+								<div>
+									<span class="text-primary" th:text="${attaque.nom}">Attaque</span>
+								</div>
+								<div>
+									<span th:text="'(' + ${attaque.degat} + ')'"> (dégât) </span>
+									<span>[[${attaque.energiePrimaire}]]/[[${attaque.energieSecondaire}]]</span>
+								</div>
+								<div>
+									<span class="attack-details" th:text="${attaque.description}">Details</span>
+								</div>
 	                        </span>
-	                        <span class="attack-details" th:text="${attaque.description}">Details</span>
 	                    </li>
 	                </ul>
 	            </div>

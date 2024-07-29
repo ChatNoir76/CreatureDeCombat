@@ -6,12 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Voir une créature</title>
 	<th:block th:replace="fragments/general :: header"></th:block>
-	<th:block th:replace="fragments/general :: loadStyle('css/script.css')"></th:block>
+	<th:block th:insert="fragments/general :: loadStyle('css/viewer.css')"></th:block>
 </head>
 
 <body>
 	<p>
-		<th:block th:insert="fragments/general :: navbar(null)"></th:block>
+		<th:block th:insert="fragments/general :: navbar(${creature.links})"></th:block>
 	</p>
 
 	<div class="row">
@@ -19,7 +19,9 @@
 			<th:block th:insert="fragments/viewer :: creatureFull(${creature}, ${attaques})"></th:block>
 		</div>
 	</div>
-
+	<div>
+		[[${creature.idCreatureBase}]]
+	</div>
 	<p>
 		<th:block th:insert="fragments/general :: footer"></th:block>
 	</p>

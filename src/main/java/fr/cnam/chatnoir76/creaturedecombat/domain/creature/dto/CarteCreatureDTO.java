@@ -9,18 +9,8 @@ public class CarteCreatureDTO extends CarteDTO {
 	private String niveau;
 	private String categorie;
 	private String nomCreatureBase;
-//	private List<AttaqueDTO> attaques;
-//	
-//	public CarteCreatureDTO() {
-//		attaques = new ArrayList<AttaqueDTO>();
-//	}
-//	
-//	public List<AttaqueDTO> getAttaques() {
-//		return attaques;
-//	}
-//	public void setAttaques(List<AttaqueDTO> attaques) {
-//		this.attaques = attaques;
-//	}
+	private String idCreatureBase;
+
 	public int getPv() {
 		return pv;
 	}
@@ -50,6 +40,12 @@ public class CarteCreatureDTO extends CarteDTO {
 	}
 	public void setNomCreatureBase(String nomCreatureBase) {
 		this.nomCreatureBase = nomCreatureBase;
+	}
+	public String getIdCreatureBase() {
+		return idCreatureBase;
+	}
+	public void setIdCreatureBase(String idCreatureBase) {
+		this.idCreatureBase = idCreatureBase;
 	}
 	public String getPourcentage() {
 		double value = Float.valueOf(pv)/Float.valueOf(pvInit)*100;

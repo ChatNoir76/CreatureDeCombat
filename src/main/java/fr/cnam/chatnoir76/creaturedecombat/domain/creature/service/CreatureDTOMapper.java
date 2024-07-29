@@ -17,6 +17,7 @@ public interface CreatureDTOMapper {
 	@Mapping(source = "categorie.nom", target = "categorie")
 	@Mapping(source = "niveau.nom", target = "niveau")
 	@Mapping(source = "creatureBase.nom", target = "nomCreatureBase")
+	@Mapping(source = "creatureBase.id", target = "idCreatureBase")
 	@Mapping(target = "visible", ignore = true)
 	public CarteCreatureDTO fromEntityToDTO(CreatureEntity entity);
 	

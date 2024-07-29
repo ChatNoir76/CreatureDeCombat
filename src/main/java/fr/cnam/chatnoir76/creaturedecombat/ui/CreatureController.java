@@ -55,6 +55,15 @@ public class CreatureController {
 				creature.getId(),
 				"attaques")
 				);
+		if(creature.getIdCreatureBase()!=null) {
+			creature.add(hateoas.getRelLink(
+					CreatureController.class, 
+					"getCreatureById",  
+					creature.getIdCreatureBase(),
+					"créature de base")
+					);
+		}
+		
 		List<AttaqueDTO> attaquesDTO = attaqueService.getByCreature(creature);
 		return new ModelAndView("creature/view", Map.of("creature", creature, "attaques", attaquesDTO));
 	}
