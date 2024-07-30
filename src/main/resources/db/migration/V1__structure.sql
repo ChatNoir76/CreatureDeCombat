@@ -101,11 +101,12 @@ CREATE TABLE attaque (
 
 -- RELATION n / n
 CREATE TABLE deck_carte (
-    fk_deck VARCHAR(10) NOT NULL,
-    fk_carte VARCHAR(10) NOT NULL,
-    PRIMARY KEY(fk_deck, fk_carte),
-    FOREIGN KEY (fk_deck) REFERENCES deck(id),
-    FOREIGN KEY (fk_carte) REFERENCES carte(id)
+	count INT DEFAULT 0,
+    id_deck VARCHAR(10) NOT NULL,
+    id_carte VARCHAR(10) NOT NULL,
+    PRIMARY KEY(id_deck, id_carte),
+    FOREIGN KEY (id_deck) REFERENCES deck(id),
+    FOREIGN KEY (id_carte) REFERENCES carte(id)
 ) ENGINE=INNODB;
 
 CREATE TABLE creature_attaque (

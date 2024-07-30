@@ -2,12 +2,13 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.carte.entity;
 
 import java.util.Set;
 
-import fr.cnam.chatnoir76.creaturedecombat.domain.deck.entity.DeckEntity;
+import fr.cnam.chatnoir76.creaturedecombat.domain.deckcarte.entity.DeckCarteEntity;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
@@ -27,15 +28,16 @@ public abstract class CarteEntity {
 	private String description;
 	@NotBlank
 	private String image;
-	@ManyToMany(mappedBy = "cartes")
-	private Set<DeckEntity> decks;
 	
-	public void addDeck(DeckEntity deck) {
-		if(!decks.contains(deck)) {
-			decks.add(deck);
-			deck.addCarte(this);
-		}
-	}
+	@OneToMany(mappedBy = "carte", cascade = CascadeType.ALL)
+	private Set<DeckCarteEntity> deckVarte;
+	
+//	public void addDeck(DeckEntity deck) {
+//		if(!decks.contains(deck)) {
+//			decks.add(deck);
+//			deck.addCarte(this);
+//		}
+//	}
 	public int getId() {
 		return id;
 	}

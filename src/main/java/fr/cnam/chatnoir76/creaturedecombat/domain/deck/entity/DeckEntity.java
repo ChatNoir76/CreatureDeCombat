@@ -2,12 +2,11 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.deck.entity;
 
 import java.util.Set;
 
-import fr.cnam.chatnoir76.creaturedecombat.domain.carte.entity.CarteEntity;
+import fr.cnam.chatnoir76.creaturedecombat.domain.deckcarte.entity.DeckCarteEntity;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
@@ -24,18 +23,15 @@ public class DeckEntity {
 	private String nom;
 	@NotBlank
 	private String description;
-	@ManyToMany
-    @JoinTable(name ="deck_carte", 
-    	joinColumns = @JoinColumn(name = "fk_deck"),
-    	inverseJoinColumns = @JoinColumn(name = "fk_carte"))
-    private Set<CarteEntity> cartes;
+	@OneToMany(mappedBy = "deck", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<DeckCarteEntity> deckCarte;
 	
-	public void addCarte(CarteEntity carte) {
-		if(!cartes.contains(carte)) {
-			cartes.add(carte);
-			carte.addDeck(this);
-		}
-	}
+//	public void addCarte(CarteEntity carte) {
+//		if(!cartes.contains(carte)) {
+//			cartes.add(carte);
+//			carte.addDeck(this);
+//		}
+//	}
 	public int getId() {
 		return id;
 	}
