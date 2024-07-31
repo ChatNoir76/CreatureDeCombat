@@ -3,7 +3,9 @@ package fr.cnam.chatnoir76.creaturedecombat.ui;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.Link;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,26 +30,36 @@ public class CarteController {
 	public List<CarteDTO> getAllCarte() {
 		
 		List<CarteDTO> cartes = carteService.getAll();
-		cartes.forEach(carte -> {
-			if(carte instanceof CarteCreatureDTO) {
-				carte.add(hateoas.getSelfLink(
-						CreatureController.class, 
-						"getCreatureById",
-						carte.getId()));
-			} else if(carte instanceof CarteEnergieDTO) {
-				carte.add(hateoas.getSelfLink(
-						EnergieController.class, 
-						"getEnergieById",
-						carte.getId()));
-			} else if(carte instanceof CarteDresseurDTO) {
-				carte.add(hateoas.getSelfLink(
-						DresseurController.class, 
-						"getDresseurById",
-						carte.getId()));
-			}
-			
-		});
+		cartes.forEach(carte -> carte.add(getLink(carte)));
 		return cartes;
+	}
+	
+	@GetMapping(value = "/{carteId}")
+	public CarteDTO getCarteById(@PathVariable("carteId") String carteId) {
+		CarteDTO carte = carteService.getById(carteId);
+		carte.add(getLink(carte));
+		return carte;
+	}
+	
+	private Link getLink(CarteDTO carte) {
+		if(carte instanceof CarteCreatureDTO) {
+			return hateoas.getSelfLink(
+					CreatureController.class, 
+					"getCreatureById",
+					carte.getId());
+		} else if(carte instanceof CarteEnergieDTO) {
+			return hateoas.getSelfLink(
+					EnergieController.class, 
+					"getEnergieById",
+					carte.getId());
+		} else if(carte instanceof CarteDresseurDTO) {
+			return hateoas.getSelfLink(
+					DresseurController.class, 
+					"getDresseurById",
+					carte.getId());
+		} else {
+			return null;
+		}
 	}
 	
 }

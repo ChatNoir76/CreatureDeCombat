@@ -1,15 +1,12 @@
 package fr.cnam.chatnoir76.creaturedecombat.domain.model;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import fr.cnam.chatnoir76.creaturedecombat.provider.CreatureProvider;
 
 public class CombatTest {
 
-	@Autowired
-	CreatureProvider provider;
-	
+//	@Autowired
+//	CreatureProvider provider;
+//	
 	@Test
 	public void attaqueTest() {
 		

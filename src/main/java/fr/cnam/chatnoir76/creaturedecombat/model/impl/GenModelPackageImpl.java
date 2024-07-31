@@ -605,8 +605,8 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getJeu_Deck() {
-		return (EReference)jeuEClass.getEStructuralFeatures().get(0);
+	public EAttribute getJeu_Pseudo() {
+		return (EAttribute)jeuEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -615,7 +615,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getJeu_PileDefausse() {
+	public EReference getJeu_Deck() {
 		return (EReference)jeuEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -625,7 +625,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getJeu_CreatureActive() {
+	public EReference getJeu_PileDefausse() {
 		return (EReference)jeuEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -635,7 +635,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getJeu_Banc() {
+	public EReference getJeu_CreatureActive() {
 		return (EReference)jeuEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -645,7 +645,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getJeu_CarteRecompense() {
+	public EReference getJeu_Banc() {
 		return (EReference)jeuEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -655,8 +655,18 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getJeu_Main() {
+	public EReference getJeu_CarteRecompense() {
 		return (EReference)jeuEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getJeu_Main() {
+		return (EReference)jeuEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1232,6 +1242,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		createEOperation(deckEClass, DECK___GET_SUPPORTEUR);
 
 		jeuEClass = createEClass(JEU);
+		createEAttribute(jeuEClass, JEU__PSEUDO);
 		createEReference(jeuEClass, JEU__DECK);
 		createEReference(jeuEClass, JEU__PILE_DEFAUSSE);
 		createEReference(jeuEClass, JEU__CREATURE_ACTIVE);
@@ -1408,6 +1419,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		initEOperation(getDeck__GetSupporteur(), this.getCarte(), "getSupporteur", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(jeuEClass, Jeu.class, "Jeu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getJeu_Pseudo(), ecorePackage.getEString(), "pseudo", null, 0, 1, Jeu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJeu_Deck(), this.getDeck(), null, "deck", null, 0, 1, Jeu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJeu_PileDefausse(), this.getCarte(), null, "pileDefausse", null, 0, -1, Jeu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJeu_CreatureActive(), this.getCreature(), null, "creatureActive", null, 0, 1, Jeu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -14,6 +14,4 @@ public interface DeckCarteService {
 	
 	public List<DeckCarteDTO> getByDeckId(String deckId);
 	
-	
-	
 }

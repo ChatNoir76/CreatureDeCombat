@@ -2,7 +2,6 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.deck.service;
 
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 import fr.cnam.chatnoir76.creaturedecombat.domain.deck.dto.DeckDTO;

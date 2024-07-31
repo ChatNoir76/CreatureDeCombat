@@ -11,6 +11,7 @@ INSERT INTO degat VALUES ('7', '70', '10', '25', 1, 1);
 INSERT INTO degat VALUES ('8', '80', '10', '45', 1, 1);
 INSERT INTO degat VALUES ('9', '90', '10', '50', 1, 1);
 INSERT INTO degat VALUES ('10', '100', '10', '55', 1, 1);
+INSERT INTO degat VALUES ('29', '90', '10', '15', 1, 1);
 
 -- DEGAT RATIO ATTAQUE
 INSERT INTO degat VALUES ('11', '10', '1', '0', 1, 2);
@@ -23,6 +24,9 @@ INSERT INTO degat VALUES ('17', '40', '10', '10', 1, 2);
 INSERT INTO degat VALUES ('18', '45', '10', '25', 1, 2);
 INSERT INTO degat VALUES ('19', '50', '15', '25', 1, 2);
 INSERT INTO degat VALUES ('20', '80', '15', '40', 1, 2);
+INSERT INTO degat VALUES ('30', '65', '8', '15', 1, 2);
+INSERT INTO degat VALUES ('31', '70', '50', '20', 1, 2);
+INSERT INTO degat VALUES ('32', '45', '20', '40', 1, 2);
 
 -- DEGAT FIXE DEFENSE
 INSERT INTO degat VALUES ('21', '10', '0', '0', 2, 1);

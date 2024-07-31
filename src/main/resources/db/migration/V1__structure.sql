@@ -28,14 +28,14 @@ CREATE TABLE deck (
     id VARCHAR(10),
     PRIMARY KEY(id),
     nom VARCHAR(50) NOT NULL,
-    description VARCHAR(50) NOT NULL
+    description VARCHAR(250) NOT NULL
 ) ENGINE=INNODB;
 
 CREATE TABLE carte (
     id VARCHAR(10),
     PRIMARY KEY(id),
     nom VARCHAR(50) NOT NULL,
-    description VARCHAR(50) NOT NULL,
+    description VARCHAR(250) NOT NULL,
     image VARCHAR(50) NOT NULL
 ) ENGINE=INNODB;
 
@@ -91,7 +91,7 @@ CREATE TABLE attaque (
     INDEX fk_degat_ind (fk_degat), 
     FOREIGN KEY (fk_degat) REFERENCES degat(id),
     nom VARCHAR(50) NOT NULL,
-    description VARCHAR(50) NOT NULL,
+    description VARCHAR(250) NOT NULL,
     e_primaire INT NOT NULL,
     e_secondaire INT NOT NULL,
     fk_categorie VARCHAR(10) NOT NULL,

@@ -2,6 +2,7 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.model.util;
 
+import fr.cnam.chatnoir76.creaturedecombat.model.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;

@@ -2,6 +2,7 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.model.util;
 
+import fr.cnam.chatnoir76.creaturedecombat.model.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;

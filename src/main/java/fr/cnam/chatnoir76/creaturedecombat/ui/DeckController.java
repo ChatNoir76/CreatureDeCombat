@@ -48,10 +48,10 @@ public class DeckController {
 		
 		liste.forEach(dc -> {
 			dc.add(hateoas.getRelLink(
-					getClass(), 
-					deckId, 
-					liste, 
-					deckId));
+					CarteController.class, 
+					"getCarteById", 
+					dc.getId_carte(), 
+					"carte%s".formatted(dc.getId_carte())));
 		});
 		
 		

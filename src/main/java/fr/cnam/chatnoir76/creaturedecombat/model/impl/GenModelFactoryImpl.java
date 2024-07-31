@@ -2,6 +2,7 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.model.impl;
 
+import fr.cnam.chatnoir76.creaturedecombat.model.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;

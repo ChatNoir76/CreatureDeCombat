@@ -26,6 +26,7 @@ public class CreatureServiceImpl implements CreatureService {
 
 	@Override
 	public CarteCreatureDTO getById(String id) {
+		if(id == null) return null;
 		return mapper.fromEntityToDTO(dao.getReferenceById(Integer.valueOf(id)));
 	}
 

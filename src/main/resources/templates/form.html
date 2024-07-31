@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<th:block th:replace="fragments/general :: header"></th:block>
+</head>
+
+<body>
+	<p>
+		<th:block th:insert="fragments/general :: navbar(null)"></th:block>
+	</p>
+	<h1>Initialisation d'un combat</h1>
+
+	<form th:action="@{/validation}" method='post' class="box" th:object="${initForm}">
+		<div class="message is-danger" th:if="${#fields.hasGlobalErrors()}" th:errors="*{global}"></div>
+
+		<div class="field">
+			<div class="form-group">
+				<label class="label">Pseudo Joueur 1</label>
+				<input class="form-control" type="text" th:field="*{pseudo1}">
+				<div class="message is-danger" th:if="${#fields.hasErrors('pseudo1')}" th:errors="*{pseudo1}" />
+				<select class="form-control" th:field="*{deckId1}">
+					<option th:each="deck : ${decks}" th:value="${deck.id}" th:text="${deck.nom}">Deck Nom</option>
+				</select>
+				<div class="message is-danger" th:if="${#fields.hasErrors('deckId1')}" th:errors="*{deckId1}" />
+				<div class="field">
+					<div class="form-group">
+						<label class="label">Pseudo Joueur 2</label>
+						<input class="form-control" type="text" th:field="*{pseudo2}">
+						<div class="message is-danger" th:if="${#fields.hasErrors('pseudo2')}" th:errors="*{pseudo2}" />
+					</div>
+
+					<select class="form-control" th:field="*{deckId2}">
+						<option th:each="deck : ${decks}" th:value="${deck.id}" th:text="${deck.nom}">Deck Nom</option>
+					</select>
+					<div class="message is-danger" th:if="${#fields.hasErrors('deckId2')}" th:errors="*{deckId2}" />
+				</div>
+			</div>
+		</div>
+		<div class="field is-grouped">
+			<div class="control">
+				<button class="button is-link">Submit</button>
+			</div>
+		</div>
+	</form>
+	<p>
+		<th:block th:insert=" fragments/general :: footer"></th:block>
+	</p>
+</body>
+
+</html>

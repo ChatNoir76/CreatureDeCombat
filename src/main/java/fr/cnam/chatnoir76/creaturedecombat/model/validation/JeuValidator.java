@@ -19,6 +19,8 @@ import fr.cnam.chatnoir76.creaturedecombat.model.Deck;
 public interface JeuValidator {
 	boolean validate();
 
+	boolean validatePseudo(String value);
+
 	boolean validateDeck(Deck value);
 	boolean validatePileDefausse(EList<Carte> value);
 	boolean validateCreatureActive(Creature value);

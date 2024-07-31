@@ -35,6 +35,7 @@ import fr.cnam.chatnoir76.creaturedecombat.model.Jeu;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenJeuImpl#getPseudo <em>Pseudo</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenJeuImpl#getDeck <em>Deck</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenJeuImpl#getPileDefausse <em>Pile Defausse</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenJeuImpl#getCreatureActive <em>Creature Active</em>}</li>
@@ -46,6 +47,26 @@ import fr.cnam.chatnoir76.creaturedecombat.model.Jeu;
  * @generated
  */
 public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
+	/**
+	 * The default value of the '{@link #getPseudo() <em>Pseudo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPseudo()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PSEUDO_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPseudo() <em>Pseudo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPseudo()
+	 * @generated
+	 * @ordered
+	 */
+	protected String pseudo = PSEUDO_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getDeck() <em>Deck</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -123,6 +144,29 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 	@Override
 	protected EClass eStaticClass() {
 		return GenModelPackage.Literals.JEU;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getPseudo() {
+		return pseudo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPseudo(String newPseudo) {
+		String oldPseudo = pseudo;
+		pseudo = newPseudo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.JEU__PSEUDO, oldPseudo, pseudo));
 	}
 
 	/**
@@ -417,6 +461,8 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case GenModelPackage.JEU__PSEUDO:
+				return getPseudo();
 			case GenModelPackage.JEU__DECK:
 				return getDeck();
 			case GenModelPackage.JEU__PILE_DEFAUSSE:
@@ -442,6 +488,9 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case GenModelPackage.JEU__PSEUDO:
+				setPseudo((String)newValue);
+				return;
 			case GenModelPackage.JEU__DECK:
 				setDeck((Deck)newValue);
 				return;
@@ -476,6 +525,9 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case GenModelPackage.JEU__PSEUDO:
+				setPseudo(PSEUDO_EDEFAULT);
+				return;
 			case GenModelPackage.JEU__DECK:
 				setDeck((Deck)null);
 				return;
@@ -506,6 +558,8 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case GenModelPackage.JEU__PSEUDO:
+				return PSEUDO_EDEFAULT == null ? pseudo != null : !PSEUDO_EDEFAULT.equals(pseudo);
 			case GenModelPackage.JEU__DECK:
 				return deck != null;
 			case GenModelPackage.JEU__PILE_DEFAUSSE:
@@ -555,6 +609,22 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 				return attaquer();
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (pseudo: ");
+		result.append(pseudo);
+		result.append(')');
+		return result.toString();
 	}
 
 } //GenJeuImpl

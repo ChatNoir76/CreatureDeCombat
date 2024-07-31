@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenJeu#getPseudo <em>Pseudo</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenJeu#getDeck <em>Deck</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenJeu#getPileDefausse <em>Pile Defausse</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenJeu#getCreatureActive <em>Creature Active</em>}</li>
@@ -26,6 +27,28 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface GenJeu extends Action {
+	/**
+	 * Returns the value of the '<em><b>Pseudo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pseudo</em>' attribute.
+	 * @see #setPseudo(String)
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage#getJeu_Pseudo()
+	 * @model
+	 * @generated
+	 */
+	String getPseudo();
+
+	/**
+	 * Sets the value of the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenJeu#getPseudo <em>Pseudo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pseudo</em>' attribute.
+	 * @see #getPseudo()
+	 * @generated
+	 */
+	void setPseudo(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Deck</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

@@ -799,13 +799,22 @@ public interface GenModelPackage extends EPackage {
 	int JEU = 9;
 
 	/**
+	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JEU__PSEUDO = ACTION_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Deck</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JEU__DECK = ACTION_FEATURE_COUNT + 0;
+	int JEU__DECK = ACTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Pile Defausse</b></em>' containment reference list.
@@ -814,7 +823,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU__PILE_DEFAUSSE = ACTION_FEATURE_COUNT + 1;
+	int JEU__PILE_DEFAUSSE = ACTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Creature Active</b></em>' containment reference.
@@ -823,7 +832,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU__CREATURE_ACTIVE = ACTION_FEATURE_COUNT + 2;
+	int JEU__CREATURE_ACTIVE = ACTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Banc</b></em>' containment reference list.
@@ -832,7 +841,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU__BANC = ACTION_FEATURE_COUNT + 3;
+	int JEU__BANC = ACTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Carte Recompense</b></em>' containment reference list.
@@ -841,7 +850,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU__CARTE_RECOMPENSE = ACTION_FEATURE_COUNT + 4;
+	int JEU__CARTE_RECOMPENSE = ACTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Main</b></em>' reference list.
@@ -850,7 +859,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU__MAIN = ACTION_FEATURE_COUNT + 5;
+	int JEU__MAIN = ACTION_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Jeu</em>' class.
@@ -859,7 +868,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JEU_FEATURE_COUNT = ACTION_FEATURE_COUNT + 6;
+	int JEU_FEATURE_COUNT = ACTION_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Piocher</em>' operation.
@@ -2397,6 +2406,17 @@ public interface GenModelPackage extends EPackage {
 	EClass getJeu();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenJeu#getPseudo <em>Pseudo</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pseudo</em>'.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenJeu#getPseudo()
+	 * @see #getJeu()
+	 * @generated
+	 */
+	EAttribute getJeu_Pseudo();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenJeu#getDeck <em>Deck</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3296,6 +3316,14 @@ public interface GenModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass JEU = eINSTANCE.getJeu();
+
+		/**
+		 * The meta object literal for the '<em><b>Pseudo</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JEU__PSEUDO = eINSTANCE.getJeu_Pseudo();
 
 		/**
 		 * The meta object literal for the '<em><b>Deck</b></em>' containment reference feature.

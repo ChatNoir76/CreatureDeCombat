@@ -46,6 +46,5 @@ public class ModelFactoryImpl extends GenModelFactoryImpl implements ModelFactor
 		maitre.setNiveau(Niveau.MAITRE);
 		return maitre;
 	}
-	
 
 }

@@ -91,6 +91,7 @@
             <eOperations name="finTour"/>
             <eOperations name="finOption"/>
             <eOperations name="abandonner"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="pseudo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="deck" eType="#//cnam/chatnoir76/creaturedecombat/model/Deck"
                 containment="true"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="pileDefausse" upperBound="-1"
