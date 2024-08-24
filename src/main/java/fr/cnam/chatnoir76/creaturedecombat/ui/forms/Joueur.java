@@ -1,4 +1,4 @@
-package fr.cnam.chatnoir76.creaturedecombat.ui.service;
+package fr.cnam.chatnoir76.creaturedecombat.ui.forms;
 
 import org.springframework.hateoas.RepresentationModel;
 

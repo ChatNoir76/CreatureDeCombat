@@ -19,10 +19,10 @@ import fr.cnam.chatnoir76.creaturedecombat.domain.deck.dto.DeckDTO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.deck.service.DeckService;
 import fr.cnam.chatnoir76.creaturedecombat.domain.deckcarte.service.DeckCarteService;
 import fr.cnam.chatnoir76.creaturedecombat.domain.jeu.dto.JeuDTO;
+import fr.cnam.chatnoir76.creaturedecombat.ui.forms.Joueur;
 import fr.cnam.chatnoir76.creaturedecombat.ui.service.ApplicationFactory;
 import fr.cnam.chatnoir76.creaturedecombat.ui.service.CreatureDeCombat;
 import fr.cnam.chatnoir76.creaturedecombat.ui.service.HateoasService;
-import fr.cnam.chatnoir76.creaturedecombat.ui.service.Joueur;
 import fr.cnam.chatnoir76.creaturedecombat.ui.service.SalleBeanSession;
 import jakarta.validation.Valid;
 
@@ -73,6 +73,7 @@ public class ApplicationController {
             Model model,
             Principal principal) {
 		 if (bindingResult.hasErrors()) {
+			 model.addAttribute("decks", deckService.getAll());
             return "form";
         } else {     	
         	DeckDTO deck1 = deckService.getById(String.valueOf(initForm.getDeckId1()));

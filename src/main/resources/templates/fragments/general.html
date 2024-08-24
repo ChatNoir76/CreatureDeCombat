@@ -17,6 +17,9 @@
 	<th:block th:fragment="loadStyle(fichier)">
 		<link rel="stylesheet" th:href="@{${fichier}}">
 	</th:block>
+	<th:block th:fragment="loadJS(fichier)">
+		<script th:src="${fichier}"></script>
+	</th:block>
 </head>
 
 <body>

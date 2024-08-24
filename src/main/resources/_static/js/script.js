@@ -1,13 +1,19 @@
 $( document ).ready(function() {
-    var creature = window.creatureData;
+    var status = "javascript ok";
     
-    function updatePvProgressBar(percentage){
-		$("#pv_progress_bar").width(percentage + '%')
-		$("#pv_progress_bar").text(percentage + '%')
-	}
-
-    var p = Math.floor(creature.pv / creature.pvInit * 100)
+    function ajouterAttaque(id, value) {
+        var index = $('#attaqueList li').length;
+        var nouvelleAttaque = "<li class='list-group-item'><input style='display: none;' type='number' name='attaques[" + index + "]' value='" + id + "'/><span>" + value + "</span></li>";
+        $('#attaqueList').append(nouvelleAttaque);
+    }
     
-    updatePvProgressBar(p);
+    $("#ajouterAttaque").on("click", function() {
+        var id = $('#inputGroupSelectAttaque').val();
+        var value = $('#inputGroupSelectAttaque option:selected').text();
+        ajouterAttaque(id, value);
+    });
+    
+	
+    console.log(status)
 
 });

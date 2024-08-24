@@ -11,6 +11,7 @@ import jakarta.persistence.InheritanceType;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name= CarteEntity.TABLE_NAME)
@@ -20,7 +21,7 @@ public abstract class CarteEntity {
 	public final static String TABLE_NAME = "carte";
 	
 	@Id
-	@NotBlank
+	@NotNull
 	private int id;
 	@NotBlank
 	private String nom;
@@ -30,7 +31,7 @@ public abstract class CarteEntity {
 	private String image;
 	
 	@OneToMany(mappedBy = "carte", cascade = CascadeType.ALL)
-	private Set<DeckCarteEntity> deckVarte;
+	private Set<DeckCarteEntity> deckCarte;
 	
 //	public void addDeck(DeckEntity deck) {
 //		if(!decks.contains(deck)) {

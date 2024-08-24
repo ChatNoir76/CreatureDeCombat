@@ -3,8 +3,6 @@ package fr.cnam.chatnoir76.creaturedecombat.sequence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fr.cnam.chatnoir76.creaturedecombat.domain.creature.entity.CreatureEntity;
-
 @Service
 public class IdSequenceServiceImpl implements IdSequenceService {
 
@@ -13,7 +11,7 @@ public class IdSequenceServiceImpl implements IdSequenceService {
 
 	@Override
 	public int nextCreatureId() {
-		return nextIdForTable(CreatureEntity.TABLE_NAME);
+		return nextIdForTable("carte");
 	}
 	
 	private int nextIdForTable(String tableName) {

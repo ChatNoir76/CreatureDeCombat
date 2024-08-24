@@ -9,6 +9,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name= DeckCarteEntity.TABLE_NAME)
@@ -19,7 +20,7 @@ public class DeckCarteEntity {
 	@EmbeddedId
 	private DeckCarteId id;
 	
-	@NotBlank
+	@NotNull
 	private int count;
 	
 	@ManyToOne

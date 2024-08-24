@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Création d'une créature</title>
+	<th:block th:replace="fragments/general :: header"></th:block>
+	<th:block th:insert="fragments/general :: loadJS('/js/script.js')"></th:block>
+</head>
+
+<body>
+	<p>
+		<th:block th:insert="fragments/general :: navbar(null)"></th:block>
+	</p>
+
+	<div class="container">
+		<h2>Création d'un créature</h2>
+
+		<form th:action="@{/creatures/create}" method='post' class="box" th:object="${createCreatureForm}">
+			<div class="message is-danger" th:if="${#fields.hasGlobalErrors()}" th:errors="*{global}"></div>
+
+			<div class="field">
+				<label class="label">Nom</label>
+				<div class="control">
+					<input class="input" type="text" th:field="*{nom}">
+				</div>
+				<div class="message is-danger" th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}">
+				</div>
+			</div>
+
+			<div class="field">
+				<label class="label">Description</label>
+				<div class="control">
+					<input class="input" type="text" th:field="*{description}">
+				</div>
+				<div class="message is-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">
+				</div>
+			</div>
+
+
+			<div class="field">
+				<label class="label">Image</label>
+				<div class="control">
+					<input class="input" type="text" th:field="*{image}">
+				</div>
+				<div class="message is-danger" th:if="${#fields.hasErrors('image')}" th:errors="*{image}">
+				</div>
+			</div>
+
+
+			<div class="field">
+				<label class="label">Points de vie</label>
+				<div class="control">
+					<input class="input" type="text" th:field="*{pv}">
+				</div>
+				<div class="message is-danger" th:if="${#fields.hasErrors('pv')}" th:errors="*{pv}">
+				</div>
+			</div>
+
+			<div class="field">
+				<label class="label">Categorie</label>
+				<select class="form-control" th:field="*{categorie}">
+					<option th:each="categorie : ${categories}" th:value="${categorie.id}" th:text="${categorie.nom}">Catérorie</option>
+				</select>
+				<div class="message is-danger" th:if="${#fields.hasErrors('categorie')}" th:errors="*{categorie}" />
+			</div>
+			<br/>
+        
+        <ul class="list-group" id="attaqueList">Liste des attaques :
+        <li class='list-group-item' th:each="attaque, iterStat : *{attaques}">
+            <input style="display: none;" type="number" th:field="*{attaques[__${iterStat.index}__]}" value="*{attaque}" />
+        </li>
+    </ul>
+	<br/>
+    <!-- Section pour ajouter de nouvelles attaques -->
+    <div>
+		Liste des attaques disponibles :
+	</div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="button" id="ajouterAttaque">Ajouter une attaque</button>
+        </div>
+        <select class="custom-select" id="inputGroupSelectAttaque">
+            <option th:each="attaque : ${attaques}" th:value="${attaque.id}" th:text="${attaque.nom}">attaque</option>
+        </select>
+    </div>
+			
+
+			<div class="field is-grouped">
+				<div class="control">
+					<button class="button is-link">Submit</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<p>
+		<th:block th:insert="fragments/general :: footer"></th:block>
+	</p>
+</body>
+</html>

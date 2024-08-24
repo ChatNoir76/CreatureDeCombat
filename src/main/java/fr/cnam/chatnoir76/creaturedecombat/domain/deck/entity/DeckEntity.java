@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name= DeckEntity.TABLE_NAME)
@@ -17,7 +18,7 @@ public class DeckEntity {
 	public final static String TABLE_NAME = "deck";
 	
 	@Id
-	@NotBlank
+	@NotNull
 	private int id;
 	@NotBlank
 	private String nom;

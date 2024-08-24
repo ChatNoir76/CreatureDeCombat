@@ -21,13 +21,13 @@ public class DegatEntity {
 	public final static String TABLE_NAME = "degat";
 	
 	@Id
-	@NotBlank
+	@NotNull
 	private int id;
-	@NotBlank
+	@NotNull
 	private int degat;
-	@NotBlank
+	@NotNull
 	private int dprecision;
-	@NotBlank
+	@NotNull
 	private int drattage;
 	@ManyToOne
     @NotNull

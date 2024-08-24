@@ -9,5 +9,7 @@ public interface CreatureService {
 	CarteCreatureDTO getById(String id);
 	
 	List<CarteCreatureDTO> getAll();
-		
+	
+	CarteCreatureDTO save(CarteCreatureDTO dto);
+			
 }

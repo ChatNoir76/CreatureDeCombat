@@ -19,6 +19,8 @@ public interface DeckCarteDTOMapper {
 	public DeckCarteDTO fromEntityToDTO(DeckCarteEntity entity);
 	
 	@Mapping(target = "id", ignore = true)
+	@Mapping(target = "deck", ignore = true)
+	@Mapping(target = "carte", ignore = true)
 	public DeckCarteEntity fromDTOToEntity(DeckCarteDTO dto);
 	
 }

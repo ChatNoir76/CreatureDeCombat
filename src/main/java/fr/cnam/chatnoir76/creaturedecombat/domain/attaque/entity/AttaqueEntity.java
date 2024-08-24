@@ -22,7 +22,7 @@ public class AttaqueEntity {
 	public final static String TABLE_NAME = "attaque";
 	
 	@Id
-	@NotBlank
+	@NotNull
 	private int id;
 	@ManyToOne
     @NotNull

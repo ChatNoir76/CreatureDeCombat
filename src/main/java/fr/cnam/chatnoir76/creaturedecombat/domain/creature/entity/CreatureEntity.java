@@ -12,7 +12,6 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
@@ -21,7 +20,7 @@ public class CreatureEntity extends CarteEntity {
 
 	public final static String TABLE_NAME = "creature";
 	
-	@NotBlank
+	@NotNull
 	private int pv;
 	@ManyToOne
     @NotNull
@@ -69,6 +68,12 @@ public class CreatureEntity extends CarteEntity {
 	}
 	public void setNiveau(NiveauEntity niveau) {
 		this.niveau = niveau;
+	}
+	public Set<AttaqueEntity> getAttaques() {
+		return attaques;
+	}
+	public void setAttaques(Set<AttaqueEntity> attaques) {
+		this.attaques = attaques;
 	}
 
 }
