@@ -15,10 +15,12 @@
 	</p>
 
 	<div class="container">
-		<h2>Création d'un créature</h2>
+		<h2>Création d'une créature</h2>
 
-		<form th:action="@{/creatures/create}" method='post' class="box" th:object="${createCreatureForm}">
+		<form th:action="@{${formAction}}" method='post' class="box" th:object="${createCreatureForm}">
 			<div class="message is-danger" th:if="${#fields.hasGlobalErrors()}" th:errors="*{global}"></div>
+
+			<input class="input" type="hidden" th:field="*{id}">
 
 			<div class="field">
 				<label class="label">Nom</label>
@@ -37,8 +39,27 @@
 				<div class="message is-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">
 				</div>
 			</div>
-
-
+			
+			<div class="field">
+				<label class="label">Niveau</label>
+				<select class="form-control" th:field="*{niveauId}" id="niveauSelect">
+					<option th:each="niveau : ${niveaux}" th:value="${niveau.id}" th:text="${niveau.nom}">
+						Niveau</option>
+				</select>
+				<div class="message is-danger" th:if="${#fields.hasErrors('niveauId')}" th:errors="*{niveauId}" />
+			</div>
+			
+			<div class="field" id="creatureBaseDiv">
+				<label class="label">Creature de Base</label>
+				<select class="custom-select" th:field="*{creatureBaseId}" id="creatureBaseSelect">
+					<option th:each="creature : ${creatures}" th:value="${creature.id}"
+						th:data-niveau="${creature.niveauId}">
+						[[${creature.niveauId}]] [[${creature.nom}]] ([[${creature.pvInit}]]) :
+						[[${creature.description}]]</option>
+				</select>
+				<div class="message is-danger" th:if="${#fields.hasErrors('creatureBaseId')}" th:errors="*{creatureBaseId}" />
+			</div>
+			
 			<div class="field">
 				<label class="label">Image</label>
 				<div class="control">
@@ -60,32 +81,36 @@
 
 			<div class="field">
 				<label class="label">Categorie</label>
-				<select class="form-control" th:field="*{categorie}">
-					<option th:each="categorie : ${categories}" th:value="${categorie.id}" th:text="${categorie.nom}">Catérorie</option>
+				<select class="form-control" th:field="*{categorieId}" id="categorieSelect">
+					<option th:each="categorie : ${categories}" th:value="${categorie.id}" th:text="${categorie.nom}">
+						Catégorie</option>
 				</select>
-				<div class="message is-danger" th:if="${#fields.hasErrors('categorie')}" th:errors="*{categorie}" />
+				<div class="message is-danger" th:if="${#fields.hasErrors('categorieId')}" th:errors="*{categorieId}" />
 			</div>
-			<br/>
-        
-        <ul class="list-group" id="attaqueList">Liste des attaques :
-        <li class='list-group-item' th:each="attaque, iterStat : *{attaques}">
-            <input style="display: none;" type="number" th:field="*{attaques[__${iterStat.index}__]}" value="*{attaque}" />
-        </li>
-    </ul>
-	<br/>
-    <!-- Section pour ajouter de nouvelles attaques -->
-    <div>
-		Liste des attaques disponibles :
-	</div>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="button" id="ajouterAttaque">Ajouter une attaque</button>
-        </div>
-        <select class="custom-select" id="inputGroupSelectAttaque">
-            <option th:each="attaque : ${attaques}" th:value="${attaque.id}" th:text="${attaque.nom}">attaque</option>
-        </select>
-    </div>
-			
+			<br />
+
+			<ul class="list-group" id="attaqueList">Liste des attaques :
+				<li class='list-group-item' th:each="attaque, iterStat : ${currentAttaques}">
+					<input style='display: none;' type="number" th:name="attaques[__${iterStat.index}__]" th:value="${attaque.id}"/><span>[[${attaque}]]</span>
+					<button type="button" class="btn btn-danger btn-sm remove-attaque">Supprimer</button>
+				</li>
+			</ul>
+			<br />
+			<!-- Section pour ajouter de nouvelles attaques -->
+			<div>
+				Liste des attaques disponibles :
+			</div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<button class="btn btn-outline-secondary" type="button" id="ajouterAttaque">Ajouter une
+						attaque</button>
+				</div>
+				<select class="custom-select" id="attaqueSelect">
+					<option th:each="attaque : ${attaques}" th:value="${attaque.id}"
+						th:data-categorie="${attaque.categorieId}">
+						[[${attaque}]]</option>
+				</select>
+			</div>
 
 			<div class="field is-grouped">
 				<div class="control">
@@ -99,4 +124,5 @@
 		<th:block th:insert="fragments/general :: footer"></th:block>
 	</p>
 </body>
+
 </html>

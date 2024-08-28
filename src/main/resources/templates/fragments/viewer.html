@@ -25,7 +25,7 @@
 	                    </div>
 	                </div>
 	            </div>
-	            <img class="card-img-top img-fluid" th:src="@{${creature.image}}" alt="Image of ${creature.nom}">
+	            <img class="card-img-top img-fluid" th:src="@{${creature.imageURL}}" th:alt="'Image : ' + ${creature.nom} + ' (indisponible)'">
 	            <div class="card-body">
 	                <div class="progress mb-2" style="height: 25px;" role="progressbar" aria-label="Basic example" aria-valuenow="${creature.pv}" aria-valuemin="0" aria-valuemax="${creature.pvInit}">
 	                    <div id="pv_progress_bar" class="progress-bar bg-info" th:style="'width: ' + ${creature.pourcentage}">

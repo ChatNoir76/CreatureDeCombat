@@ -49,7 +49,10 @@ public class AttaqueServiceImpl implements AttaqueService {
 
 	@Override
 	public List<AttaqueDTO> getAll() {
-		return dao.findAll().stream().map(entity -> mapper.fromEntityToDTO(entity)).toList();
+		return dao.findAll().stream().map(entity -> {
+			return mapper.fromEntityToDTO(entity);
+		}).toList();
+		
 	}
 
 }

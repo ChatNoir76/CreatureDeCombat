@@ -56,7 +56,11 @@ public class CarteCreatureDTO extends CarteDTO {
 		return idCreatureBase;
 	}
 	public void setIdCreatureBase(String idCreatureBase) {
-		this.idCreatureBase = idCreatureBase;
+		if(Integer.valueOf(idCreatureBase) > 0) {
+			this.idCreatureBase = idCreatureBase;
+		} else {
+			this.idCreatureBase = null;
+		}
 	}
 	public String getCategorieId() {
 		return categorieId;

@@ -10,6 +10,8 @@ import jakarta.validation.constraints.Size;
 
 public class CreatureCreateForm {
 
+	private String id;
+	
 	@NotBlank(message = "champ obligatoire")
 	@Size(max=25)
 	private String nom;
@@ -18,7 +20,11 @@ public class CreatureCreateForm {
 	@Max(300)
 	private int pv;
 	
-	private String categorie;
+	private String categorieId;
+	
+	private String niveauId;
+	
+	private String creatureBaseId;
 	
 	@NotBlank(message = "champ obligatoire")
 	@Size(min=15, max=250)
@@ -33,6 +39,14 @@ public class CreatureCreateForm {
 		attaques = new ArrayList<Integer>();
 	}
 	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public String getNom() {
 		return nom;
 	}
@@ -49,12 +63,20 @@ public class CreatureCreateForm {
 		this.pv = pv;
 	}
 
-	public String getCategorie() {
-		return categorie;
+	public String getCategorieId() {
+		return categorieId;
 	}
 
-	public void setCategorie(String categorie) {
-		this.categorie = categorie;
+	public void setCategorieId(String categorieId) {
+		this.categorieId = categorieId;
+	}
+
+	public String getNiveauId() {
+		return niveauId;
+	}
+
+	public void setNiveauId(String niveauId) {
+		this.niveauId = niveauId;
 	}
 
 	public String getDescription() {
@@ -79,6 +101,14 @@ public class CreatureCreateForm {
 
 	public void setAttaques(List<Integer> attaques) {
 		this.attaques = attaques;
+	}
+
+	public String getCreatureBaseId() {
+		return creatureBaseId;
+	}
+
+	public void setCreatureBaseId(String creatureBaseId) {
+		this.creatureBaseId = creatureBaseId;
 	}
 	
 }

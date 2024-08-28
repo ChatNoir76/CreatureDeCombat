@@ -9,6 +9,7 @@ public class AttaqueDTO extends RepresentationModel<AttaqueDTO> {
 	private String description;
 	private int energiePrimaire;
 	private int energieSecondaire;
+	private String categorieId;
 	private String categorie;
 	private String degat;
 	
@@ -54,5 +55,18 @@ public class AttaqueDTO extends RepresentationModel<AttaqueDTO> {
 	public void setCategorie(String categorie) {
 		this.categorie = categorie;
 	}
+	public String getCategorieId() {
+		return categorieId;
+	}
+	public void setCategorieId(String categorieId) {
+		this.categorieId = categorieId;
+	}
+	
+	@Override
+	public String toString() {
+		return "%s (%s - %s) : %s]".formatted(nom, degat, categorie, description);
+	}
+	
+	
 	
 }

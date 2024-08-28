@@ -1,6 +1,7 @@
 package fr.cnam.chatnoir76.creaturedecombat.ui;
 
 import java.security.Principal;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +12,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import fr.cnam.chatnoir76.creaturedecombat.domain.carte.service.CarteService;
 import fr.cnam.chatnoir76.creaturedecombat.domain.common.FullDTOFactory;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto.CarteCreatureDTO;
+import fr.cnam.chatnoir76.creaturedecombat.domain.creature.service.CreatureService;
 import fr.cnam.chatnoir76.creaturedecombat.domain.deck.dto.DeckDTO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.deck.service.DeckService;
 import fr.cnam.chatnoir76.creaturedecombat.domain.deckcarte.service.DeckCarteService;
@@ -45,6 +49,9 @@ public class ApplicationController {
 	FullDTOFactory factory;
 	
 	@Autowired
+	CreatureService creatureService;
+	
+	@Autowired
 	@Lazy
 	SalleBeanSession salle;
 	
@@ -59,6 +66,24 @@ public class ApplicationController {
 		hateoas.linkWithModelAndView(mv, "jeux", cdc, hateoas.getRelLink(ApplicationController.class,"initialisation","jeux"));
 		return mv;
 	}
+	
+	@GetMapping("/search")
+    public ModelAndView search(@RequestParam("query") String query) {
+        List<CarteCreatureDTO> results = creatureService.getAll().stream().filter(c -> {
+											if(c.getNom().contains(query)) return true;
+											if(c.getDescription().contains(query)) return true;
+											if(c.getId().contains(query)) return true;
+											return false;
+										}).toList();
+        CreatureDeCombat cdc = ApplicationFactory.getAppDTO();
+        cdc.add(hateoas.getRelLink(
+				CreatureController.class, 
+				"getAllCreature",  
+				"Voir la liste complète des créatures")
+				);
+        
+        return new ModelAndView("creature/list", Map.of("creatures", results, "app", cdc));
+    }
 	
 	@GetMapping("/init")
 	public ModelAndView initialisation() {

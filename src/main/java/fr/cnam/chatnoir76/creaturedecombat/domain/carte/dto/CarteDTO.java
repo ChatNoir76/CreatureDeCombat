@@ -42,6 +42,10 @@ public abstract class CarteDTO extends RepresentationModel<CarteDTO> {
 	}
 
 	public String getImage() {
+		return image;
+	}
+	
+	public String getImageURL() {
 		return "/img/%s".formatted(image);
 	}
 	

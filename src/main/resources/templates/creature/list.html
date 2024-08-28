@@ -10,13 +10,13 @@
 
 <body>
 	<p>
-		<th:block th:insert="fragments/general :: navbar(null)"></th:block>
+		<th:block th:insert="fragments/general :: navbar(${app.links})"></th:block>
 	</p>
 	<ul class="list-group">
 		<div th:each="creature : ${creatures}">
 			<li class="list-group-item">
 				<div class="jumbotron">
-					<h1 class="display-4">[[${creature.id}]] <img class="ms-4" th:src="@{${creature.image}}" alt="Image of ${creature.nom}"
+					<h1 class="display-4">[[${creature.id}]] <img class="ms-4" th:src="@{${creature.imageURL}}" alt="Image of ${creature.nom}"
 							style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; margin-right: 10px;">[[${creature.nom}]]
 					</h1>
 					<p class="lead">[[${creature.description}]]</p>

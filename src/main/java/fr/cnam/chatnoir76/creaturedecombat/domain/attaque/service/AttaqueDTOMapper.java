@@ -16,6 +16,7 @@ public interface AttaqueDTOMapper {
 	@Mapping(source = "ePrimaire", target = "energiePrimaire")
 	@Mapping(source = "eSecondaire", target = "energieSecondaire")
 	@Mapping(source = "categorie.nom", target = "categorie")
+	@Mapping(source = "categorie.id", target = "categorieId")
 	@Mapping(target = "degat", expression = "java(getShortDegatDescription(entity.getDegat().getTypeDegat().getNom(), entity.getDegat().getDegat(), entity.getDegat().getCalculdegat().getNom()))")
 	public AttaqueDTO fromEntityToDTO(AttaqueEntity entity);
 	

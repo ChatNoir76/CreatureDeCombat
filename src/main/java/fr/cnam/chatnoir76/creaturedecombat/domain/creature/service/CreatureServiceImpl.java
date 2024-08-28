@@ -59,7 +59,35 @@ public class CreatureServiceImpl implements CreatureService {
 		entity.setCategorie(categorieDAO.findById(Integer.valueOf(dto.getCategorieId())).get());
 		entity.setNiveau(niveauDAO.findById(Integer.valueOf(dto.getNiveauId())).get());
 		entity.setAttaques(dto.getAttaqueIds().stream().map(id -> attaqueDAO.getReferenceById(id)).collect(Collectors.toSet()));
+		if(dto.getIdCreatureBase() != null ) {
+			entity.setCreatureBase(dao.getReferenceById(Integer.valueOf(dto.getIdCreatureBase())));
+		}
 		return mapper.fromEntityToDTO(dao.saveAndFlush(entity));
+	}
+
+	@Override
+	public CarteCreatureDTO update(CarteCreatureDTO dto) {
+		dto.setId(dto.getId());
+		CreatureEntity entity = mapper.fromDTOToEntity(dto);
+		entity.setCategorie(categorieDAO.findById(Integer.valueOf(dto.getCategorieId())).get());
+		entity.setNiveau(niveauDAO.findById(Integer.valueOf(dto.getNiveauId())).get());
+		entity.setAttaques(dto.getAttaqueIds().stream().map(id -> attaqueDAO.getReferenceById(id)).collect(Collectors.toSet()));
+		if(dto.getIdCreatureBase() != null ) {
+			entity.setCreatureBase(dao.getReferenceById(Integer.valueOf(dto.getIdCreatureBase())));
+		}
+		return mapper.fromEntityToDTO(dao.saveAndFlush(entity));
+	}
+
+	@Override
+	public boolean delete(CarteCreatureDTO dto) {
+		CreatureEntity entity = mapper.fromDTOToEntity(dto);
+		try {
+			dao.delete(entity);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+
 	}
 	
 }

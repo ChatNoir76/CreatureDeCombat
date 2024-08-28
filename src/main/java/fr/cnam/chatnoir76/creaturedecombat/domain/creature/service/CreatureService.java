@@ -11,5 +11,9 @@ public interface CreatureService {
 	List<CarteCreatureDTO> getAll();
 	
 	CarteCreatureDTO save(CarteCreatureDTO dto);
+	
+	CarteCreatureDTO update(CarteCreatureDTO dto);
+	
+	boolean delete(CarteCreatureDTO dto);
 			
 }
