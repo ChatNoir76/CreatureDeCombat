@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.cnam.chatnoir76.creaturedecombat.core.service.CoreService;
 import fr.cnam.chatnoir76.creaturedecombat.domain.attaque.service.AttaqueService;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.service.CreatureService;
 import fr.cnam.chatnoir76.creaturedecombat.domain.degat.service.DegatService;
+import fr.cnam.chatnoir76.creaturedecombat.modelcore.service.CoreService;
 import fr.cnam.chatnoir76.creaturedecombat.ui.service.HateoasService;
 import fr.cnam.chatnoir76.creaturedecombat.ui.service.SalleBeanSession;
 

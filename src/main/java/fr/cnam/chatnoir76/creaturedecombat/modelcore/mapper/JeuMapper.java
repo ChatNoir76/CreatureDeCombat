@@ -1,15 +1,15 @@
-package fr.cnam.chatnoir76.creaturedecombat.core.mapper;
+package fr.cnam.chatnoir76.creaturedecombat.modelcore.mapper;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fr.cnam.chatnoir76.creaturedecombat.core.factory.CoreModelFactory;
 import fr.cnam.chatnoir76.creaturedecombat.domain.carte.dto.CarteDTO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.jeu.dto.JeuDTO;
 import fr.cnam.chatnoir76.creaturedecombat.model.Carte;
 import fr.cnam.chatnoir76.creaturedecombat.model.Jeu;
+import fr.cnam.chatnoir76.creaturedecombat.modelcore.factory.CoreModelFactory;
 
 @Service
 public class JeuMapper {

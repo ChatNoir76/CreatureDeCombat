@@ -1,7 +1,7 @@
-package fr.cnam.chatnoir76.creaturedecombat.core.rule.impl;
+package fr.cnam.chatnoir76.creaturedecombat.modelcore.rule.impl;
 
-import fr.cnam.chatnoir76.creaturedecombat.core.rule.Rule;
 import fr.cnam.chatnoir76.creaturedecombat.model.Jeu;
+import fr.cnam.chatnoir76.creaturedecombat.modelcore.rule.Rule;
 
 public class AttaquerRule implements Rule {
 

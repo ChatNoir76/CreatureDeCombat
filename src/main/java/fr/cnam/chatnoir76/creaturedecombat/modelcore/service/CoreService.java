@@ -1,10 +1,10 @@
-package fr.cnam.chatnoir76.creaturedecombat.core.service;
+package fr.cnam.chatnoir76.creaturedecombat.modelcore.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fr.cnam.chatnoir76.creaturedecombat.core.mapper.JeuMapper;
 import fr.cnam.chatnoir76.creaturedecombat.model.Action;
+import fr.cnam.chatnoir76.creaturedecombat.modelcore.mapper.JeuMapper;
 import fr.cnam.chatnoir76.creaturedecombat.ui.service.SalleBeanSession;
 
 @Service

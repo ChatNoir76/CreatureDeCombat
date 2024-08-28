@@ -1,14 +1,14 @@
-package fr.cnam.chatnoir76.creaturedecombat.core.mapper;
+package fr.cnam.chatnoir76.creaturedecombat.modelcore.mapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fr.cnam.chatnoir76.creaturedecombat.core.factory.CoreModelFactory;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto.CarteCreatureDTOFull;
 import fr.cnam.chatnoir76.creaturedecombat.model.AbstractCreatureComponent;
 import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
 import fr.cnam.chatnoir76.creaturedecombat.model.Evolution;
 import fr.cnam.chatnoir76.creaturedecombat.model.Maitre;
+import fr.cnam.chatnoir76.creaturedecombat.modelcore.factory.CoreModelFactory;
 
 @Service
 public class CreatureMapper {

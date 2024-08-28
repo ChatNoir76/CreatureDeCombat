@@ -1,4 +1,4 @@
-package fr.cnam.chatnoir76.creaturedecombat.core.factory;
+package fr.cnam.chatnoir76.creaturedecombat.modelcore.factory;
 
 import fr.cnam.chatnoir76.creaturedecombat.domain.attaque.dto.AttaqueDTO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.creature.dto.CarteCreatureDTO;

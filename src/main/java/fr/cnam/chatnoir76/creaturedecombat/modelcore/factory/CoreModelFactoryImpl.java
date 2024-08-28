@@ -1,4 +1,4 @@
-package fr.cnam.chatnoir76.creaturedecombat.core.factory;
+package fr.cnam.chatnoir76.creaturedecombat.modelcore.factory;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
@@ -24,7 +24,7 @@ import fr.cnam.chatnoir76.creaturedecombat.model.Maitre;
 import fr.cnam.chatnoir76.creaturedecombat.model.Niveau;
 import fr.cnam.chatnoir76.creaturedecombat.model.TypeDegat;
 import fr.cnam.chatnoir76.creaturedecombat.model.impl.ModelFactoryImpl;
-import fr.cnam.chatnoir76.creaturedecombat.provider.DegatProvider;
+import fr.cnam.chatnoir76.creaturedecombat.modelcore.provider.DegatProvider;
 
 public class CoreModelFactoryImpl extends ModelFactoryImpl implements CoreModelFactory {
 	

@@ -1,4 +1,4 @@
-package fr.cnam.chatnoir76.creaturedecombat.provider;
+package fr.cnam.chatnoir76.creaturedecombat.modelcore.provider;
 
 import fr.cnam.chatnoir76.creaturedecombat.model.CalculDegat;
 import fr.cnam.chatnoir76.creaturedecombat.model.Degat;

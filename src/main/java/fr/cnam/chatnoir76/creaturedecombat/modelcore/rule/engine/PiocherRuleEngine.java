@@ -1,9 +1,9 @@
-package fr.cnam.chatnoir76.creaturedecombat.core.rule.engine;
+package fr.cnam.chatnoir76.creaturedecombat.modelcore.rule.engine;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import fr.cnam.chatnoir76.creaturedecombat.core.rule.AbstractRuleEngine;
-import fr.cnam.chatnoir76.creaturedecombat.core.rule.RuleService;
+import fr.cnam.chatnoir76.creaturedecombat.modelcore.rule.AbstractRuleEngine;
+import fr.cnam.chatnoir76.creaturedecombat.modelcore.rule.RuleService;
 
 public class PiocherRuleEngine extends AbstractRuleEngine {
 

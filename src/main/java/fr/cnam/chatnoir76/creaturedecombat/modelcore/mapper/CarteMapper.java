@@ -1,4 +1,4 @@
-package fr.cnam.chatnoir76.creaturedecombat.core.mapper;
+package fr.cnam.chatnoir76.creaturedecombat.modelcore.mapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

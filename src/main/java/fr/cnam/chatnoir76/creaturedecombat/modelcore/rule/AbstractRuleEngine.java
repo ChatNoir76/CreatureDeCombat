@@ -1,4 +1,4 @@
-package fr.cnam.chatnoir76.creaturedecombat.core.rule;
+package fr.cnam.chatnoir76.creaturedecombat.modelcore.rule;
 
 import java.util.ArrayList;
 import java.util.List;

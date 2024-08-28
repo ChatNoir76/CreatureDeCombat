@@ -1,10 +1,10 @@
-package fr.cnam.chatnoir76.creaturedecombat.core.mapper;
+package fr.cnam.chatnoir76.creaturedecombat.modelcore.mapper;
 
 import org.springframework.stereotype.Service;
 
-import fr.cnam.chatnoir76.creaturedecombat.core.factory.CoreModelFactory;
 import fr.cnam.chatnoir76.creaturedecombat.domain.degat.dto.DegatDTO;
 import fr.cnam.chatnoir76.creaturedecombat.model.Degat;
+import fr.cnam.chatnoir76.creaturedecombat.modelcore.factory.CoreModelFactory;
 
 @Service
 public class DegatMapper {
