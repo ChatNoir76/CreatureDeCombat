@@ -57,7 +57,7 @@ public class ApplicationController {
 	
 	@GetMapping("/")
 	public ModelAndView index() {
-		CreatureDeCombat cdc = ApplicationFactory.getAppDTO();
+		CreatureDeCombat cdc = ApplicationFactory.createAppDTO();
 		ModelAndView mv = new ModelAndView("index", "root", cdc);
 		hateoas.linkWithModelAndView(mv, "self", cdc, hateoas.getSelfLink(ApplicationController.class,"index"));
 		hateoas.linkWithModelAndView(mv, "creatures", cdc, hateoas.getRelLink(CreatureController.class,"getAllCreature","creatures"));
@@ -70,12 +70,12 @@ public class ApplicationController {
 	@GetMapping("/search")
     public ModelAndView search(@RequestParam("query") String query) {
         List<CarteCreatureDTO> results = creatureService.getAll().stream().filter(c -> {
-											if(c.getNom().contains(query)) return true;
-											if(c.getDescription().contains(query)) return true;
+											if(c.getNom().toLowerCase().contains(query.toLowerCase())) return true;
+											if(c.getDescription().toLowerCase().contains(query.toLowerCase())) return true;
 											if(c.getId().contains(query)) return true;
 											return false;
 										}).toList();
-        CreatureDeCombat cdc = ApplicationFactory.getAppDTO();
+        CreatureDeCombat cdc = ApplicationFactory.createAppDTO();
         cdc.add(hateoas.getRelLink(
 				CreatureController.class, 
 				"getAllCreature",  
@@ -87,7 +87,7 @@ public class ApplicationController {
 	
 	@GetMapping("/init")
 	public ModelAndView initialisation() {
-		ModelAndView mv = new ModelAndView("form", Map.of("initForm", ApplicationFactory.getJoueurDTO(), "decks", deckService.getAll()));
+		ModelAndView mv = new ModelAndView("form", Map.of("initForm", ApplicationFactory.createJoueurDTO(), "decks", deckService.getAll()));
 		return mv;
 	}
 	

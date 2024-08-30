@@ -8,20 +8,28 @@ public class ApplicationFactory {
 
 	private ApplicationFactory() {};
 	
-	public static final CreatureDeCombat getAppDTO() {
+	public static final CreatureDeCombat createAppDTO() {
 		return new CreatureDeCombat();
 	}
 	
-	public static final Joueur getJoueurDTO() {
+	public static final Joueur createJoueurDTO() {
 		return new Joueur();
 	}
 	
-	public static final CreatureCreateForm getCreatureCreateForm() {
-		return new CreatureCreateForm();
+	public static final CarteCreatureDTO createEmptyCreature() {
+		CarteCreatureDTO creature = new CarteCreatureDTO();
+		creature.setId("-1");
+		return creature;
 	}
 	
-	public static final CreatureCreateForm getCreatureCreateForm(CarteCreatureDTO creature) {
+	public static final CreatureCreateForm createCreatureCreateForm() {
 		CreatureCreateForm form = new CreatureCreateForm();
+		form.setPv(30);
+		return form;
+	}
+	
+	public static final CreatureCreateForm createCreatureCreateForm(CarteCreatureDTO creature) {
+		CreatureCreateForm form = ApplicationFactory.createCreatureCreateForm();
 		form.setId(creature.getId());
 		form.setNom(creature.getNom());
 		form.setDescription(creature.getDescription());

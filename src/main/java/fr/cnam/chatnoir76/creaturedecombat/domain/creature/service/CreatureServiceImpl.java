@@ -41,6 +41,8 @@ public class CreatureServiceImpl implements CreatureService {
 	@Override
 	public CarteCreatureDTO getById(String id) {
 		if(id == null) return null;
+		int creatureId = Integer.valueOf(id);
+		if(creatureId < 1) return null;
 		return mapper.fromEntityToDTO(dao.getReferenceById(Integer.valueOf(id)));
 	}
 
@@ -59,7 +61,7 @@ public class CreatureServiceImpl implements CreatureService {
 		entity.setCategorie(categorieDAO.findById(Integer.valueOf(dto.getCategorieId())).get());
 		entity.setNiveau(niveauDAO.findById(Integer.valueOf(dto.getNiveauId())).get());
 		entity.setAttaques(dto.getAttaqueIds().stream().map(id -> attaqueDAO.getReferenceById(id)).collect(Collectors.toSet()));
-		if(dto.getIdCreatureBase() != null ) {
+		if(dto.getIdCreatureBase() != null && Integer.valueOf(dto.getNiveauId()) != 1) {
 			entity.setCreatureBase(dao.getReferenceById(Integer.valueOf(dto.getIdCreatureBase())));
 		}
 		return mapper.fromEntityToDTO(dao.saveAndFlush(entity));
@@ -72,7 +74,7 @@ public class CreatureServiceImpl implements CreatureService {
 		entity.setCategorie(categorieDAO.findById(Integer.valueOf(dto.getCategorieId())).get());
 		entity.setNiveau(niveauDAO.findById(Integer.valueOf(dto.getNiveauId())).get());
 		entity.setAttaques(dto.getAttaqueIds().stream().map(id -> attaqueDAO.getReferenceById(id)).collect(Collectors.toSet()));
-		if(dto.getIdCreatureBase() != null ) {
+		if(dto.getIdCreatureBase() != null && Integer.valueOf(dto.getNiveauId()) != 1) {
 			entity.setCreatureBase(dao.getReferenceById(Integer.valueOf(dto.getIdCreatureBase())));
 		}
 		return mapper.fromEntityToDTO(dao.saveAndFlush(entity));

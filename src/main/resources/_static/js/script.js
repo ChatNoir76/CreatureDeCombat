@@ -1,6 +1,5 @@
 $( document ).ready(function() {
-    var status = "javascript ok";
-    
+
     function ajouterAttaque(id, value) {
         var index = $('#attaqueList li').length;
         var nouvelleAttaque = "<li class='list-group-item'><input style='display: none;' type='number' name='attaques[" + index + "]' value='" + id + "'/><span>" + value + "</span><button type='button' class='btn btn-danger btn-sm remove-attaque'>Supprimer</button></li>";
@@ -13,16 +12,9 @@ $( document ).ready(function() {
         ajouterAttaque(id, value);
     });
     
-    $("#attaqueSelect").on("change", function() {
-	    var selectedOption = $(this).find('option:selected');
-	    var optionCategorie = selectedOption.attr('data-categorie');
-	    console.log(optionCategorie);
-	});
-	
 	$("#niveauSelect").on("change", function() {
 		$('#creatureBaseDiv').show();
         var selectedNiveau = $(this).val() - 1;
-        console.log(selectedNiveau)
         if(selectedNiveau == 0){
 			$('#creatureBaseDiv').hide();
 		} else {
@@ -34,8 +26,12 @@ $( document ).ready(function() {
                 $(this).hide();
             }
         });
-
-        $('#creatureBaseSelect').val('');
+        var niveauSelectedOption = $('#creatureBaseSelect option[selected="selected"]').data('niveau');
+        if (niveauSelectedOption == selectedNiveau) {
+                $('#creatureBaseSelect').val($('#creatureBaseSelect option[selected="selected"]').val());
+            } else {
+                $('#creatureBaseSelect').val('');
+            }
 		}
         
     });
@@ -50,7 +46,6 @@ $( document ).ready(function() {
                 $(this).hide();
             }
         });
-
         $('#attaqueSelect').val('');
     });
     
@@ -58,9 +53,12 @@ $( document ).ready(function() {
         $(this).closest('li').remove();
     });
     
+    $('#pv').on("change", function() {
+		var pv = $(this).val()
+		$('#pvValue').text(pv);
+	});
+    
     $("#niveauSelect").trigger("change");
     $("#categorieSelect").trigger("change");
-	
-    console.log(status)
 
 });

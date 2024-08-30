@@ -56,7 +56,7 @@ public class CarteCreatureDTO extends CarteDTO {
 		return idCreatureBase;
 	}
 	public void setIdCreatureBase(String idCreatureBase) {
-		if(Integer.valueOf(idCreatureBase) > 0) {
+		if(idCreatureBase != null && Integer.valueOf(idCreatureBase) > 0) {
 			this.idCreatureBase = idCreatureBase;
 		} else {
 			this.idCreatureBase = null;

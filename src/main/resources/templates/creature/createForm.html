@@ -18,25 +18,25 @@
 		<h2>Création d'une créature</h2>
 
 		<form th:action="@{${formAction}}" method='post' class="box" th:object="${createCreatureForm}">
-			<div class="message is-danger" th:if="${#fields.hasGlobalErrors()}" th:errors="*{global}"></div>
+			<div class="alert alert-danger" th:if="${#fields.hasGlobalErrors()}" th:errors="*{global}"></div>
 
 			<input class="input" type="hidden" th:field="*{id}">
 
 			<div class="field">
 				<label class="label">Nom</label>
 				<div class="control">
-					<input class="input" type="text" th:field="*{nom}">
+					<input class="form-control" type="text" th:field="*{nom}">
 				</div>
-				<div class="message is-danger" th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}">
+				<div class="alert alert-danger" th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}">
 				</div>
 			</div>
 
 			<div class="field">
 				<label class="label">Description</label>
 				<div class="control">
-					<input class="input" type="text" th:field="*{description}">
+					<input class="form-control" type="text" th:field="*{description}">
 				</div>
-				<div class="message is-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">
+				<div class="alert alert-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">
 				</div>
 			</div>
 			
@@ -46,37 +46,37 @@
 					<option th:each="niveau : ${niveaux}" th:value="${niveau.id}" th:text="${niveau.nom}">
 						Niveau</option>
 				</select>
-				<div class="message is-danger" th:if="${#fields.hasErrors('niveauId')}" th:errors="*{niveauId}" />
+				<div class="alert alert-danger" th:if="${#fields.hasErrors('niveauId')}" th:errors="*{niveauId}" />
 			</div>
 			
 			<div class="field" id="creatureBaseDiv">
-				<label class="label">Creature de Base</label>
-				<select class="custom-select" th:field="*{creatureBaseId}" id="creatureBaseSelect">
-					<option th:each="creature : ${creatures}" th:value="${creature.id}"
-						th:data-niveau="${creature.niveauId}">
-						[[${creature.niveauId}]] [[${creature.nom}]] ([[${creature.pvInit}]]) :
-						[[${creature.description}]]</option>
-				</select>
-				<div class="message is-danger" th:if="${#fields.hasErrors('creatureBaseId')}" th:errors="*{creatureBaseId}" />
+			    <label class="label">Creature de Base</label>
+			    <select class="custom-select" th:field="*{creatureBaseId}" id="creatureBaseSelect">
+			        <option th:each="creature : ${creatures}" 
+			                th:value="${creature.id}"
+			                th:data-niveau="${creature.niveauId}"
+			                th:selected="${creature.id.equals(creatureBase.id)}">
+			            #[[${creature.id}]] [[${creature.nom}]] ([[${creature.pvInit}]]pv) :
+			            [[${creature.description}]]
+			        </option>
+			    </select>
+			    <div class="alert alert-danger" th:if="${#fields.hasErrors('creatureBaseId')}" th:errors="*{creatureBaseId}" />
 			</div>
-			
+		
 			<div class="field">
 				<label class="label">Image</label>
 				<div class="control">
-					<input class="input" type="text" th:field="*{image}">
+					<input class="form-control" type="text" th:field="*{image}">
 				</div>
-				<div class="message is-danger" th:if="${#fields.hasErrors('image')}" th:errors="*{image}">
+				<div class="alert alert-danger" th:if="${#fields.hasErrors('image')}" th:errors="*{image}">
 				</div>
 			</div>
-
-
-			<div class="field">
-				<label class="label">Points de vie</label>
-				<div class="control">
-					<input class="input" type="text" th:field="*{pv}">
-				</div>
-				<div class="message is-danger" th:if="${#fields.hasErrors('pv')}" th:errors="*{pv}">
-				</div>
+			
+			<div class="form-group">
+			    <label for="pv" class="form-label">Points de vie : </label><span id="pvValue">[[*{pv}]]</span>
+			    <input type="range" class="form-control-range" id="pv" th:field="*{pv}" min="30" max="300">
+			    <div class="invalid-feedback" th:if="${#fields.hasErrors('pv')}" th:errors="*{pv}">
+			    </div>
 			</div>
 
 			<div class="field">
@@ -85,7 +85,7 @@
 					<option th:each="categorie : ${categories}" th:value="${categorie.id}" th:text="${categorie.nom}">
 						Catégorie</option>
 				</select>
-				<div class="message is-danger" th:if="${#fields.hasErrors('categorieId')}" th:errors="*{categorieId}" />
+				<div class="alert alert-danger" th:if="${#fields.hasErrors('categorieId')}" th:errors="*{categorieId}" />
 			</div>
 			<br />
 
@@ -114,7 +114,7 @@
 
 			<div class="field is-grouped">
 				<div class="control">
-					<button class="button is-link">Submit</button>
+					<button class="btn btn-info">Submit</button>
 				</div>
 			</div>
 		</form>

@@ -63,7 +63,7 @@ public class CreatureController {
 					"getCreatureById",  
 					creature.getId()));
 		});
-		CreatureDeCombat cdc = ApplicationFactory.getAppDTO();
+		CreatureDeCombat cdc = ApplicationFactory.createAppDTO();
 		cdc.add(hateoas.getRelLink(
 				CreatureController.class, 
 				"createCarteCreature",  
@@ -74,8 +74,9 @@ public class CreatureController {
 	
 	@GetMapping("/create")
 	public ModelAndView createCarteCreature() {
-		CreatureCreateForm cf = ApplicationFactory.getCreatureCreateForm();
-		ModelAndView mv = new ModelAndView("creature/createForm", Map.of("formAction","/creatures/create", "createCreatureForm", cf, "categories", categorieService.getAll(), "attaques", attaqueService.getAll(), "niveaux", niveauService.getAll(), "creatures", creatureService.getAll()));
+		CreatureCreateForm cf = ApplicationFactory.createCreatureCreateForm();
+		ModelAndView mv = new ModelAndView("creature/createForm", generateAttributes("/creatures/create", ApplicationFactory.createEmptyCreature()));
+		mv.addObject("createCreatureForm", cf);	
 		return mv;
 	}
 	
@@ -86,11 +87,7 @@ public class CreatureController {
             Model model,
             Principal principal) {
 		 if (bindingResult.hasErrors()) {
-			 model.addAttribute("formAction", "/creatures/create");
-			model.addAttribute("categories", categorieService.getAll());
-			model.addAttribute("attaques", attaqueService.getAll());
-			model.addAttribute("niveaux", niveauService.getAll());
-			model.addAttribute("creatures", creatureService.getAll());
+			model.addAllAttributes(generateAttributes("/creatures/create", ApplicationFactory.createEmptyCreature()));
             return "creature/createForm";
         } else {
         	CarteCreatureDTO dto = new CarteCreatureDTO();
@@ -145,9 +142,13 @@ public class CreatureController {
 	@GetMapping("/{creatureId}/update")
 	public ModelAndView updateCarteCreature(@PathVariable("creatureId") String creatureId) {
 		CarteCreatureDTO creature = creatureService.getById(creatureId);
-		CreatureCreateForm cf = ApplicationFactory.getCreatureCreateForm(creature);
+		CreatureCreateForm cf = ApplicationFactory.createCreatureCreateForm(creature);
 		List<AttaqueDTO> currentAttaque = creature.getAttaqueIds().stream().map(id -> attaqueService.getById(String.valueOf(id))).toList();
-		ModelAndView mv = new ModelAndView("creature/createForm", Map.of("formAction","/creatures/update", "createCreatureForm", cf, "categories", categorieService.getAll(), "attaques", attaqueService.getAll(), "niveaux", niveauService.getAll(), "creatures", creatureService.getAll(), "currentAttaques", currentAttaque));
+		
+		CarteCreatureDTO creatureBase = creatureService.getById(creature.getIdCreatureBase());
+		
+		ModelAndView mv = new ModelAndView("creature/createForm", generateAttributes("/creatures/update", creatureBase));
+		mv.addAllObjects(Map.of("createCreatureForm", cf, "currentAttaques", currentAttaque));
 		return mv;
 	}
 	
@@ -161,18 +162,18 @@ public class CreatureController {
 		}
 	}
 	
-	@PutMapping("/update")
+	@PostMapping("/update")
 	public String updateCarteCreatureProcessForm(
 			@Valid @ModelAttribute("createCreatureForm") CreatureCreateForm creatureForm,
 			BindingResult bindingResult,
             Model model,
             Principal principal) {
 		 if (bindingResult.hasErrors()) {
-			 model.addAttribute("formAction", "/creatures/create");
-			model.addAttribute("categories", categorieService.getAll());
-			model.addAttribute("attaques", attaqueService.getAll());
-			model.addAttribute("niveaux", niveauService.getAll());
-			model.addAttribute("creatures", creatureService.getAll());
+			CarteCreatureDTO creature = creatureService.getById(creatureForm.getId());
+			List<AttaqueDTO> currentAttaque = creature.getAttaqueIds().stream().map(id -> attaqueService.getById(String.valueOf(id))).toList();
+			CarteCreatureDTO creatureBase = creatureService.getById(creature.getIdCreatureBase());
+			model.addAllAttributes(generateAttributes("/creatures/update", creatureBase));
+			model.addAttribute("currentAttaques", currentAttaque);
             return "creature/createForm";
         } else {
         	CarteCreatureDTO dto = new CarteCreatureDTO();
@@ -205,6 +206,15 @@ public class CreatureController {
 					);
 		});
 		return attaques;
+	}
+	
+	private Map<String, Object> generateAttributes(String formAction, CarteCreatureDTO creatureBase){
+		return Map.of("formAction",formAction, 
+				"categories", categorieService.getAll(), 
+				"attaques", attaqueService.getAll(), 
+				"niveaux", niveauService.getAll(), 
+				"creatures", creatureService.getAll(),
+				"creatureBase", creatureBase);
 	}
 	
 }
