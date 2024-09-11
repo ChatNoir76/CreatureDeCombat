@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -75,8 +74,9 @@ public class CreatureController {
 	@GetMapping("/create")
 	public ModelAndView createCarteCreature() {
 		CreatureCreateForm cf = ApplicationFactory.createCreatureCreateForm();
-		ModelAndView mv = new ModelAndView("creature/createForm", generateAttributes("/creatures/create", ApplicationFactory.createEmptyCreature()));
+		ModelAndView mv = new ModelAndView("creature/createForm", generateAttributes("/creatures/create"));
 		mv.addObject("createCreatureForm", cf);	
+		mv.addObject("creatureBase", ApplicationFactory.createEmptyCreature());
 		return mv;
 	}
 	
@@ -87,7 +87,8 @@ public class CreatureController {
             Model model,
             Principal principal) {
 		 if (bindingResult.hasErrors()) {
-			model.addAllAttributes(generateAttributes("/creatures/create", ApplicationFactory.createEmptyCreature()));
+			model.addAllAttributes(generateAttributes("/creatures/create"));
+			model.addAttribute("creatureBase", ApplicationFactory.createEmptyCreature());
             return "creature/createForm";
         } else {
         	CarteCreatureDTO dto = new CarteCreatureDTO();
@@ -147,8 +148,9 @@ public class CreatureController {
 		
 		CarteCreatureDTO creatureBase = creatureService.getById(creature.getIdCreatureBase());
 		
-		ModelAndView mv = new ModelAndView("creature/createForm", generateAttributes("/creatures/update", creatureBase));
+		ModelAndView mv = new ModelAndView("creature/createForm", generateAttributes("/creatures/update"));
 		mv.addAllObjects(Map.of("createCreatureForm", cf, "currentAttaques", currentAttaque));
+		mv.addObject("creatureBase", creatureBase != null ? creatureBase : ApplicationFactory.createEmptyCreature());
 		return mv;
 	}
 	
@@ -172,8 +174,9 @@ public class CreatureController {
 			CarteCreatureDTO creature = creatureService.getById(creatureForm.getId());
 			List<AttaqueDTO> currentAttaque = creature.getAttaqueIds().stream().map(id -> attaqueService.getById(String.valueOf(id))).toList();
 			CarteCreatureDTO creatureBase = creatureService.getById(creature.getIdCreatureBase());
-			model.addAllAttributes(generateAttributes("/creatures/update", creatureBase));
+			model.addAllAttributes(generateAttributes("/creatures/update"));
 			model.addAttribute("currentAttaques", currentAttaque);
+			model.addAttribute("creatureBase", creatureBase);
             return "creature/createForm";
         } else {
         	CarteCreatureDTO dto = new CarteCreatureDTO();
@@ -208,13 +211,12 @@ public class CreatureController {
 		return attaques;
 	}
 	
-	private Map<String, Object> generateAttributes(String formAction, CarteCreatureDTO creatureBase){
+	private Map<String, Object> generateAttributes(String formAction){
 		return Map.of("formAction",formAction, 
 				"categories", categorieService.getAll(), 
 				"attaques", attaqueService.getAll(), 
 				"niveaux", niveauService.getAll(), 
-				"creatures", creatureService.getAll(),
-				"creatureBase", creatureBase);
+				"creatures", creatureService.getAll());
 	}
 	
 }

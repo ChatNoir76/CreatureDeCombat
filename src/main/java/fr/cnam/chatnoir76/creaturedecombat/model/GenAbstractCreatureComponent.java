@@ -13,6 +13,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAbstractCreatureComponent#getId <em>Id</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAbstractCreatureComponent#getPv <em>Pv</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAbstractCreatureComponent#getPvInit <em>Pv Init</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAbstractCreatureComponent#getCategorie <em>Categorie</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAbstractCreatureComponent#getAttaques <em>Attaques</em>}</li>
@@ -25,6 +27,51 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface GenAbstractCreatureComponent extends CreatureComponent, Labelled {
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(int)
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage#getAbstractCreatureComponent_Id()
+	 * @model id="true"
+	 * @generated
+	 */
+	int getId();
+
+	/**
+	 * Sets the value of the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAbstractCreatureComponent#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Pv</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pv</em>' attribute.
+	 * @see #setPv(int)
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage#getAbstractCreatureComponent_Pv()
+	 * @model default="0"
+	 * @generated
+	 */
+	int getPv();
+
+	/**
+	 * Sets the value of the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAbstractCreatureComponent#getPv <em>Pv</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pv</em>' attribute.
+	 * @see #getPv()
+	 * @generated
+	 */
+	void setPv(int value);
+
 	/**
 	 * Returns the value of the '<em><b>Pv Init</b></em>' attribute.
 	 * The default value is <code>"0"</code>.

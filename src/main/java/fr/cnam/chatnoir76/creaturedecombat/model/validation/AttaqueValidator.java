@@ -16,6 +16,8 @@ import fr.cnam.chatnoir76.creaturedecombat.model.Degat;
 public interface AttaqueValidator {
 	boolean validate();
 
+	boolean validateId(int value);
+
 	boolean validateDegatAttaque(Degat value);
 	boolean validateBesoinEnergieCategorie(int value);
 	boolean validateBesoinEnergieAutre(int value);

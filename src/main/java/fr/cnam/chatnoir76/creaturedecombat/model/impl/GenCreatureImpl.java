@@ -2,6 +2,15 @@
  */
 package fr.cnam.chatnoir76.creaturedecombat.model.impl;
 
+import fr.cnam.chatnoir76.creaturedecombat.model.Attaque;
+import fr.cnam.chatnoir76.creaturedecombat.model.Categorie;
+import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
+import fr.cnam.chatnoir76.creaturedecombat.model.CreatureComponent;
+import fr.cnam.chatnoir76.creaturedecombat.model.Degat;
+import fr.cnam.chatnoir76.creaturedecombat.model.Energie;
+import fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage;
+import fr.cnam.chatnoir76.creaturedecombat.model.Niveau;
+
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -20,15 +29,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import fr.cnam.chatnoir76.creaturedecombat.model.Attaque;
-import fr.cnam.chatnoir76.creaturedecombat.model.Categorie;
-import fr.cnam.chatnoir76.creaturedecombat.model.Creature;
-import fr.cnam.chatnoir76.creaturedecombat.model.CreatureComponent;
-import fr.cnam.chatnoir76.creaturedecombat.model.Degat;
-import fr.cnam.chatnoir76.creaturedecombat.model.Energie;
-import fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage;
-import fr.cnam.chatnoir76.creaturedecombat.model.Niveau;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Creature</b></em>'.
@@ -37,16 +37,26 @@ import fr.cnam.chatnoir76.creaturedecombat.model.Niveau;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getPv <em>Pv</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getEnergies <em>Energies</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getBase <em>Base</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getEvolution <em>Evolution</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getMaitre <em>Maitre</em>}</li>
- *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenCreatureImpl#getPv <em>Pv</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Creature {
+	/**
+	 * The default value of the '{@link #getPv() <em>Pv</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPv()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PV_EDEFAULT = 0;
+
 	/**
 	 * The cached value of the '{@link #getEnergies() <em>Energies</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -88,26 +98,6 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	protected CreatureComponent maitre;
 
 	/**
-	 * The default value of the '{@link #getPv() <em>Pv</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPv()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int PV_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getPv() <em>Pv</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPv()
-	 * @generated
-	 * @ordered
-	 */
-	protected int pv = PV_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -124,6 +114,42 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	@Override
 	protected EClass eStaticClass() {
 		return GenModelPackage.Literals.CREATURE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getId() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getPv() {
+		// TODO: implement this method to return the 'Pv' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPv(int newPv) {
+		// TODO: implement this method to set the 'Pv' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -216,29 +242,6 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	 */
 	public CreatureComponent basicGetMaitre() {
 		return maitre;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int getPv() {
-		return pv;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setPv(int newPv) {
-		int oldPv = pv;
-		pv = newPv;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.CREATURE__PV, oldPv, pv));
 	}
 
 	/**
@@ -457,6 +460,8 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case GenModelPackage.CREATURE__PV:
+				return getPv();
 			case GenModelPackage.CREATURE__ENERGIES:
 				return getEnergies();
 			case GenModelPackage.CREATURE__BASE:
@@ -467,8 +472,6 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 			case GenModelPackage.CREATURE__MAITRE:
 				if (resolve) return getMaitre();
 				return basicGetMaitre();
-			case GenModelPackage.CREATURE__PV:
-				return getPv();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -482,12 +485,12 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case GenModelPackage.CREATURE__PV:
+				setPv((Integer)newValue);
+				return;
 			case GenModelPackage.CREATURE__ENERGIES:
 				getEnergies().clear();
 				getEnergies().addAll((Collection<? extends Energie>)newValue);
-				return;
-			case GenModelPackage.CREATURE__PV:
-				setPv((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -501,11 +504,11 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GenModelPackage.CREATURE__ENERGIES:
-				getEnergies().clear();
-				return;
 			case GenModelPackage.CREATURE__PV:
 				setPv(PV_EDEFAULT);
+				return;
+			case GenModelPackage.CREATURE__ENERGIES:
+				getEnergies().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -519,6 +522,8 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case GenModelPackage.CREATURE__PV:
+				return getPv() != PV_EDEFAULT;
 			case GenModelPackage.CREATURE__ENERGIES:
 				return energies != null && !energies.isEmpty();
 			case GenModelPackage.CREATURE__BASE:
@@ -527,8 +532,6 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 				return evolution != null;
 			case GenModelPackage.CREATURE__MAITRE:
 				return maitre != null;
-			case GenModelPackage.CREATURE__PV:
-				return pv != PV_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -542,6 +545,9 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == CreatureComponent.class) {
 			switch (baseOperationID) {
+				case GenModelPackage.CREATURE_COMPONENT___GET_ID: return GenModelPackage.CREATURE___GET_ID;
+				case GenModelPackage.CREATURE_COMPONENT___GET_PV: return GenModelPackage.CREATURE___GET_PV;
+				case GenModelPackage.CREATURE_COMPONENT___SET_PV__INT: return GenModelPackage.CREATURE___SET_PV__INT;
 				case GenModelPackage.CREATURE_COMPONENT___GET_PV_INIT: return GenModelPackage.CREATURE___GET_PV_INIT;
 				case GenModelPackage.CREATURE_COMPONENT___GET_CATEGORIE: return GenModelPackage.CREATURE___GET_CATEGORIE;
 				case GenModelPackage.CREATURE_COMPONENT___GET_ATTAQUES: return GenModelPackage.CREATURE___GET_ATTAQUES;
@@ -580,6 +586,8 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 			case GenModelPackage.CREATURE___RECOIT_SOIN__INT:
 				recoitSoin((Integer)arguments.get(0));
 				return null;
+			case GenModelPackage.CREATURE___GET_ID:
+				return getId();
 			case GenModelPackage.CREATURE___GET_PV_INIT:
 				return getPvInit();
 			case GenModelPackage.CREATURE___GET_CATEGORIE:
@@ -602,22 +610,6 @@ public class GenCreatureImpl extends MinimalEObjectImpl.Container implements Cre
 				return estVisible();
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (pv: ");
-		result.append(pv);
-		result.append(')');
-		return result.toString();
 	}
 
 } //GenCreatureImpl

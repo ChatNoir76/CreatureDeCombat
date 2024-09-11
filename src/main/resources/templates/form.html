@@ -13,38 +13,48 @@
 	</p>
 	<h1>Initialisation d'un combat</h1>
 
-	<form th:action="@{/validation}" method='post' class="box" th:object="${initForm}">
-		<div class="message is-danger" th:if="${#fields.hasGlobalErrors()}" th:errors="*{global}"></div>
+	<form th:action="@{/validation}" method="post" class="box p-4" th:object="${initForm}">
+		<!-- Global Error Message -->
+		<div class="alert alert-danger" th:if="${#fields.hasGlobalErrors()}" th:errors="*{global}"></div>
 
-		<div class="field">
-			<div class="form-group">
-				<label class="label">Pseudo Joueur 1</label>
-				<input class="form-control" type="text" th:field="*{pseudo1}">
-				<div class="message is-danger" th:if="${#fields.hasErrors('pseudo1')}" th:errors="*{pseudo1}" />
-				<select class="form-control" th:field="*{deckId1}">
-					<option th:each="deck : ${decks}" th:value="${deck.id}" th:text="${deck.nom}">Deck Nom</option>
-				</select>
-				<div class="message is-danger" th:if="${#fields.hasErrors('deckId1')}" th:errors="*{deckId1}" />
-				<div class="field">
-					<div class="form-group">
-						<label class="label">Pseudo Joueur 2</label>
-						<input class="form-control" type="text" th:field="*{pseudo2}">
-						<div class="message is-danger" th:if="${#fields.hasErrors('pseudo2')}" th:errors="*{pseudo2}" />
-					</div>
-
-					<select class="form-control" th:field="*{deckId2}">
-						<option th:each="deck : ${decks}" th:value="${deck.id}" th:text="${deck.nom}">Deck Nom</option>
-					</select>
-					<div class="message is-danger" th:if="${#fields.hasErrors('deckId2')}" th:errors="*{deckId2}" />
-				</div>
-			</div>
+		<!-- Joueur 1 -->
+		<div class="form-group">
+			<label for="pseudo1" class="label">Pseudo Joueur 1</label>
+			<input id="pseudo1" class="form-control" type="text" th:field="*{pseudo1}">
+			<div class="text-danger mt-1" th:if="${#fields.hasErrors('pseudo1')}" th:errors="*{pseudo1}"></div>
 		</div>
-		<div class="field is-grouped">
-			<div class="control">
-				<button class="button is-link">Submit</button>
-			</div>
+
+		<!-- Deck Joueur 1 -->
+		<div class="form-group">
+			<label for="deckId1" class="label">Deck Joueur 1</label>
+			<select id="deckId1" class="form-control" th:field="*{deckId1}">
+				<option th:each="deck : ${decks}" th:value="${deck.id}" th:text="${deck.nom}">Deck Nom</option>
+			</select>
+			<div class="text-danger mt-1" th:if="${#fields.hasErrors('deckId1')}" th:errors="*{deckId1}"></div>
+		</div>
+
+		<!-- Joueur 2 -->
+		<div class="form-group">
+			<label for="pseudo2" class="label">Pseudo Joueur 2</label>
+			<input id="pseudo2" class="form-control" type="text" th:field="*{pseudo2}">
+			<div class="text-danger mt-1" th:if="${#fields.hasErrors('pseudo2')}" th:errors="*{pseudo2}"></div>
+		</div>
+
+		<!-- Deck Joueur 2 -->
+		<div class="form-group">
+			<label for="deckId2" class="label">Deck Joueur 2</label>
+			<select id="deckId2" class="form-control" th:field="*{deckId2}">
+				<option th:each="deck : ${decks}" th:value="${deck.id}" th:text="${deck.nom}">Deck Nom</option>
+			</select>
+			<div class="text-danger mt-1" th:if="${#fields.hasErrors('deckId2')}" th:errors="*{deckId2}"></div>
+		</div>
+
+		<!-- Submit Button -->
+		<div class="form-group text-right">
+			<button type="submit" class="btn btn-info">Submit</button>
 		</div>
 	</form>
+
 	<p>
 		<th:block th:insert=" fragments/general :: footer"></th:block>
 	</p>

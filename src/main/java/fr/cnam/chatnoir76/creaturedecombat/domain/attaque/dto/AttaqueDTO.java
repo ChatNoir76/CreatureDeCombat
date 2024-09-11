@@ -2,6 +2,8 @@ package fr.cnam.chatnoir76.creaturedecombat.domain.attaque.dto;
 
 import org.springframework.hateoas.RepresentationModel;
 
+import fr.cnam.chatnoir76.creaturedecombat.domain.degat.dto.DegatDTO;
+
 public class AttaqueDTO extends RepresentationModel<AttaqueDTO> {
 
 	private String id;
@@ -16,8 +18,15 @@ public class AttaqueDTO extends RepresentationModel<AttaqueDTO> {
 	public String getDegat() {
 		return degat;
 	}
-	public void setDegat(String degat) {
-		this.degat = degat;
+	public void setDegat(DegatDTO degat) {
+		if(degat != null) {
+			StringBuilder s = new StringBuilder(degat.getType().equals("ATTAQUE") ? "-" : "+");
+			s.append(degat.getDegat());
+			s.append(degat.getMode().equals("BASE") ? "pv" : "%");
+			this.degat = s.toString();
+		} else {
+			this.degat = "?";
+		}
 	}
 	public String getId() {
 		return id;

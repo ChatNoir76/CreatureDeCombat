@@ -14,4 +14,6 @@ package fr.cnam.chatnoir76.creaturedecombat.model.validation;
 public interface CarteValidator {
 	boolean validate();
 
+	boolean validateId(int value);
+
 }

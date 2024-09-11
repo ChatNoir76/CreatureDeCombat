@@ -8,6 +8,10 @@ import fr.cnam.chatnoir76.creaturedecombat.domain.deck.dto.DeckDTO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.degat.dto.DegatDTO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.dresseur.dto.CarteDresseurDTO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.energie.dto.CarteEnergieDTO;
+import fr.cnam.chatnoir76.creaturedecombat.domain.enumeration.dto.CalculDegatDTO;
+import fr.cnam.chatnoir76.creaturedecombat.domain.enumeration.dto.CategorieDTO;
+import fr.cnam.chatnoir76.creaturedecombat.domain.enumeration.dto.NiveauDTO;
+import fr.cnam.chatnoir76.creaturedecombat.domain.enumeration.dto.TypeDegatDTO;
 import fr.cnam.chatnoir76.creaturedecombat.domain.jeu.dto.JeuDTO;
 import fr.cnam.chatnoir76.creaturedecombat.model.AbstractCreatureComponent;
 import fr.cnam.chatnoir76.creaturedecombat.model.Attaque;
@@ -65,7 +69,11 @@ public class CoreModelFactoryImpl extends ModelFactoryImpl implements CoreModelF
 	}
 	
 	@Override
-	public Categorie createCategorie(String categorie) {
+	public Categorie createCategorie(CategorieDTO dto) {
+		return this.createCategorie(dto.getNom());
+	}
+	
+	private Categorie createCategorie(String categorie) {
 		if(categorie.toLowerCase().equals(Categorie.ADORABLE.getLiteral().toLowerCase())) {
 			return Categorie.ADORABLE;
 		} else if(categorie.toLowerCase().equals(Categorie.CLASSIQUE.getLiteral().toLowerCase())) {
@@ -80,7 +88,11 @@ public class CoreModelFactoryImpl extends ModelFactoryImpl implements CoreModelF
 	}
 	
 	@Override
-	public Niveau createNiveau(String niveau) {
+	public Niveau createNiveau(NiveauDTO dto) {
+		return this.createNiveau(dto.getNom());
+	}
+	
+	private Niveau createNiveau(String niveau) {
 		if(niveau.toLowerCase().equals(Niveau.BASE.getLiteral().toLowerCase())) {
 			return Niveau.BASE;
 		} else if(niveau.toLowerCase().equals(Niveau.EVOLUTION.getLiteral().toLowerCase())) {
@@ -91,7 +103,11 @@ public class CoreModelFactoryImpl extends ModelFactoryImpl implements CoreModelF
 	}
 	
 	@Override
-	public CalculDegat createCalculDegat(String calculDegat) {
+	public CalculDegat createCalculDegat(CalculDegatDTO dto) {
+		return this.createCalculDegat(dto.getNom());
+	}
+	
+	private CalculDegat createCalculDegat(String calculDegat) {
 		if(calculDegat.toLowerCase().equals(CalculDegat.BASE.getLiteral().toLowerCase())) {
 			return CalculDegat.BASE;
 		} else {
@@ -100,7 +116,11 @@ public class CoreModelFactoryImpl extends ModelFactoryImpl implements CoreModelF
 	}
 	
 	@Override
-	public TypeDegat createTypeDegat(String typeDegat) {
+	public TypeDegat createTypeDegat(TypeDegatDTO dto) {
+		return this.createTypeDegat(dto.getNom());
+	}
+	
+	private TypeDegat createTypeDegat(String typeDegat) {
 		if(typeDegat.toLowerCase().equals(TypeDegat.ATTAQUE.getLiteral().toLowerCase())) {
 			return TypeDegat.ATTAQUE;
 		} else {
@@ -111,6 +131,7 @@ public class CoreModelFactoryImpl extends ModelFactoryImpl implements CoreModelF
 	@Override
 	public Degat createDegat(DegatDTO dto) {
 		Degat degat = this.createDegat();
+		degat.setId(Integer.valueOf(dto.getId()));
 		degat.setChanceRattage(dto.getRattage());
 		degat.setIncertitude(dto.getPrecision());
 		degat.setDegat(dto.getDegat());
@@ -122,6 +143,7 @@ public class CoreModelFactoryImpl extends ModelFactoryImpl implements CoreModelF
 	@Override
 	public Attaque createAttaque(AttaqueDTO dto) {
 		Attaque attaque = this.createAttaque();
+		attaque.setId(Integer.valueOf(dto.getId()));
 		attaque.setNom(dto.getNom());
 		attaque.setDescription(dto.getDescription());
 		attaque.setCategorie(this.createCategorie(dto.getCategorie()));
@@ -133,6 +155,7 @@ public class CoreModelFactoryImpl extends ModelFactoryImpl implements CoreModelF
 	@Override
 	public Energie createEnergie(CarteEnergieDTO dto) {
 		Energie energie = this.createEnergie(this.createCategorie(dto.getCategorie()));
+		energie.setId(Integer.valueOf(dto.getId()));
 		energie.setNom(dto.getNom());
 		energie.setDescription(dto.getDescription());
 		return energie;
@@ -141,6 +164,7 @@ public class CoreModelFactoryImpl extends ModelFactoryImpl implements CoreModelF
 	@Override
 	public Dresseur createDresseur(CarteDresseurDTO dto) {
 		Dresseur dresseur = this.createObjet();
+		dresseur.setId(Integer.valueOf(dto.getId()));
 		dresseur.setNom(dto.getNom());
 		dresseur.setDescription(dto.getDescription());
 		return dresseur;
@@ -149,6 +173,7 @@ public class CoreModelFactoryImpl extends ModelFactoryImpl implements CoreModelF
 	@Override
 	public Deck createDeck(DeckDTO dto) {
 		Deck deck = this.createDeck();
+		deck.setId(Integer.valueOf(dto.getId()));
 		deck.setNom(dto.getNom());
 		deck.setDescription(dto.getDescription());
 		return deck;
@@ -157,8 +182,10 @@ public class CoreModelFactoryImpl extends ModelFactoryImpl implements CoreModelF
 	@Override
 	public AbstractCreatureComponent createCreatureComponent(CarteCreatureDTO dto) {
 		AbstractCreatureComponent comp = this.createCreatureComponent(this.createNiveau(dto.getNiveau()));
+		comp.setId(Integer.valueOf(dto.getId()));
 		comp.setNom(dto.getNom());
 		comp.setDescription(dto.getDescription());
+		comp.setPv(dto.getPv());
 		comp.setPvInit(dto.getPvInit());
 		comp.setCategorie(this.createCategorie(dto.getCategorie()));
 		comp.setDegatDefense(this.getDegatDefense(comp.getCategorie()));
@@ -168,6 +195,8 @@ public class CoreModelFactoryImpl extends ModelFactoryImpl implements CoreModelF
 	@Override
 	public Base createBase(CarteCreatureDTO dto) {
 		Base base = this.createBase();
+		base.setId(Integer.valueOf(dto.getId()));
+		base.setPv(dto.getPv());
 		base.setNom(dto.getNom());
 		base.setDescription(dto.getDescription());
 		base.setPvInit(dto.getPvInit());
@@ -178,6 +207,8 @@ public class CoreModelFactoryImpl extends ModelFactoryImpl implements CoreModelF
 	@Override
 	public Evolution createEvolution(CarteCreatureDTO dto) {
 		Evolution evolution = this.createEvolution();
+		evolution.setId(Integer.valueOf(dto.getId()));
+		evolution.setPv(dto.getPv());
 		evolution.setNom(dto.getNom());
 		evolution.setDescription(dto.getDescription());
 		evolution.setPvInit(dto.getPvInit());
@@ -188,6 +219,8 @@ public class CoreModelFactoryImpl extends ModelFactoryImpl implements CoreModelF
 	@Override
 	public Maitre createMaitre(CarteCreatureDTO dto) {
 		Maitre maitre = this.createMaitre();
+		maitre.setId(Integer.valueOf(dto.getId()));
+		maitre.setPv(dto.getPv());
 		maitre.setNom(dto.getNom());
 		maitre.setDescription(dto.getDescription());
 		maitre.setPvInit(dto.getPvInit());

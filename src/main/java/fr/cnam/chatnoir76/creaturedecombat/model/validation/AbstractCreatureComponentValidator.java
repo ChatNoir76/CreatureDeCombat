@@ -20,6 +20,10 @@ import fr.cnam.chatnoir76.creaturedecombat.model.Niveau;
 public interface AbstractCreatureComponentValidator {
 	boolean validate();
 
+	boolean validateId(int value);
+
+	boolean validatePv(int value);
+
 	boolean validatePvInit(int value);
 	boolean validateCategorie(Categorie value);
 	boolean validateAttaques(EList<Attaque> value);

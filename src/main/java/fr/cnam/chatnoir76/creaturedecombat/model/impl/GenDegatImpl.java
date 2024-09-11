@@ -27,6 +27,7 @@ import fr.cnam.chatnoir76.creaturedecombat.model.TypeDegat;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenDegatImpl#getId <em>Id</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenDegatImpl#getType <em>Type</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenDegatImpl#getModeCalcul <em>Mode Calcul</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenDegatImpl#getDegat <em>Degat</em>}</li>
@@ -37,6 +38,26 @@ import fr.cnam.chatnoir76.creaturedecombat.model.TypeDegat;
  * @generated
  */
 public class GenDegatImpl extends MinimalEObjectImpl.Container implements Degat {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -154,6 +175,29 @@ public class GenDegatImpl extends MinimalEObjectImpl.Container implements Degat 
 	@Override
 	protected EClass eStaticClass() {
 		return GenModelPackage.Literals.DEGAT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.DEGAT__ID, oldId, id));
 	}
 
 	/**
@@ -291,6 +335,8 @@ public class GenDegatImpl extends MinimalEObjectImpl.Container implements Degat 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case GenModelPackage.DEGAT__ID:
+				return getId();
 			case GenModelPackage.DEGAT__TYPE:
 				return getType();
 			case GenModelPackage.DEGAT__MODE_CALCUL:
@@ -313,6 +359,9 @@ public class GenDegatImpl extends MinimalEObjectImpl.Container implements Degat 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case GenModelPackage.DEGAT__ID:
+				setId((Integer)newValue);
+				return;
 			case GenModelPackage.DEGAT__TYPE:
 				setType((TypeDegat)newValue);
 				return;
@@ -340,6 +389,9 @@ public class GenDegatImpl extends MinimalEObjectImpl.Container implements Degat 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case GenModelPackage.DEGAT__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case GenModelPackage.DEGAT__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
@@ -367,6 +419,8 @@ public class GenDegatImpl extends MinimalEObjectImpl.Container implements Degat 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case GenModelPackage.DEGAT__ID:
+				return id != ID_EDEFAULT;
 			case GenModelPackage.DEGAT__TYPE:
 				return type != TYPE_EDEFAULT;
 			case GenModelPackage.DEGAT__MODE_CALCUL:
@@ -405,7 +459,9 @@ public class GenDegatImpl extends MinimalEObjectImpl.Container implements Degat 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (type: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", type: ");
 		result.append(type);
 		result.append(", modeCalcul: ");
 		result.append(modeCalcul);

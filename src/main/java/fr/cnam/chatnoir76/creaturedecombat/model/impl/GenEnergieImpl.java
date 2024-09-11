@@ -30,6 +30,7 @@ import fr.cnam.chatnoir76.creaturedecombat.model.Labelled;
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenEnergieImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenEnergieImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenEnergieImpl#getCategorie <em>Categorie</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenEnergieImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -96,6 +97,26 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 	protected Categorie categorie = CATEGORIE_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int id = ID_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -112,6 +133,29 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 	@Override
 	protected EClass eStaticClass() {
 		return GenModelPackage.Literals.ENERGIE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ENERGIE__ID, oldId, id));
 	}
 
 	/**
@@ -221,6 +265,8 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 				return getDescription();
 			case GenModelPackage.ENERGIE__CATEGORIE:
 				return getCategorie();
+			case GenModelPackage.ENERGIE__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -241,6 +287,9 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 				return;
 			case GenModelPackage.ENERGIE__CATEGORIE:
 				setCategorie((Categorie)newValue);
+				return;
+			case GenModelPackage.ENERGIE__ID:
+				setId((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -263,6 +312,9 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 			case GenModelPackage.ENERGIE__CATEGORIE:
 				setCategorie(CATEGORIE_EDEFAULT);
 				return;
+			case GenModelPackage.ENERGIE__ID:
+				setId(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -281,6 +333,8 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case GenModelPackage.ENERGIE__CATEGORIE:
 				return categorie != CATEGORIE_EDEFAULT;
+			case GenModelPackage.ENERGIE__ID:
+				return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -351,6 +405,8 @@ public class GenEnergieImpl extends MinimalEObjectImpl.Container implements Ener
 		result.append(description);
 		result.append(", categorie: ");
 		result.append(categorie);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}

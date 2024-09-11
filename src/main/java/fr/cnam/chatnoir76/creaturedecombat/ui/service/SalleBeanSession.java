@@ -2,6 +2,7 @@ package fr.cnam.chatnoir76.creaturedecombat.ui.service;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.hateoas.RepresentationModel;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -12,7 +13,7 @@ import fr.cnam.chatnoir76.creaturedecombat.domain.jeu.dto.JeuDTO;
 @Component
 @Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 @JsonIgnoreProperties({"targetSource", "advisors", "beanFactory", "beanExpressionResolver"})
-public class SalleBeanSession {
+public class SalleBeanSession extends RepresentationModel<SalleBeanSession> {
 	
 	private JeuDTO jeu1;
 	

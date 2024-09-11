@@ -13,11 +13,11 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getPv <em>Pv</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getEnergies <em>Energies</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getBase <em>Base</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getEvolution <em>Evolution</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getMaitre <em>Maitre</em>}</li>
- *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getPv <em>Pv</em>}</li>
  * </ul>
  *
  * @see fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage#getCreature()
@@ -25,6 +25,29 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface GenCreature extends Carte, CreatureComponent {
+	/**
+	 * Returns the value of the '<em><b>Pv</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pv</em>' attribute.
+	 * @see #setPv(int)
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage#getCreature_Pv()
+	 * @model default="0" volatile="true"
+	 * @generated
+	 */
+	int getPv();
+
+	/**
+	 * Sets the value of the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getPv <em>Pv</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pv</em>' attribute.
+	 * @see #getPv()
+	 * @generated
+	 */
+	void setPv(int value);
+
 	/**
 	 * Returns the value of the '<em><b>Energies</b></em>' containment reference list.
 	 * The list contents are of type {@link fr.cnam.chatnoir76.creaturedecombat.model.Energie}.
@@ -69,29 +92,6 @@ public interface GenCreature extends Carte, CreatureComponent {
 	 * @generated
 	 */
 	CreatureComponent getMaitre();
-
-	/**
-	 * Returns the value of the '<em><b>Pv</b></em>' attribute.
-	 * The default value is <code>"0"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pv</em>' attribute.
-	 * @see #setPv(int)
-	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage#getCreature_Pv()
-	 * @model default="0"
-	 * @generated
-	 */
-	int getPv();
-
-	/**
-	 * Sets the value of the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getPv <em>Pv</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pv</em>' attribute.
-	 * @see #getPv()
-	 * @generated
-	 */
-	void setPv(int value);
 
 	/**
 	 * <!-- begin-user-doc -->

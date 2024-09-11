@@ -17,5 +17,7 @@ import fr.cnam.chatnoir76.creaturedecombat.model.Carte;
 public interface DeckValidator {
 	boolean validate();
 
+	boolean validateId(int value);
+
 	boolean validateCartes(EList<Carte> value);
 }

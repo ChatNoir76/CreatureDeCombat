@@ -16,4 +16,6 @@ public interface EnergieValidator {
 	boolean validate();
 
 	boolean validateCategorie(Categorie value);
+
+	boolean validateId(int value);
 }

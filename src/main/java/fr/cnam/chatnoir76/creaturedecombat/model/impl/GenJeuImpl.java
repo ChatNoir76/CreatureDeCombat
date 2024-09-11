@@ -437,6 +437,18 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 	 * @generated
 	 */
 	@Override
+	public void ajoutCarteMain(Carte carte) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case GenModelPackage.JEU__DECK:
@@ -607,6 +619,9 @@ public class GenJeuImpl extends MinimalEObjectImpl.Container implements Jeu {
 				return battreRetraite((Carte)arguments.get(0));
 			case GenModelPackage.JEU___ATTAQUER:
 				return attaquer();
+			case GenModelPackage.JEU___AJOUT_CARTE_MAIN__GENCARTE:
+				ajoutCarteMain((Carte)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

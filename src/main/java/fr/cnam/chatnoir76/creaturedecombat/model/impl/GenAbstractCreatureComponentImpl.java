@@ -39,6 +39,8 @@ import fr.cnam.chatnoir76.creaturedecombat.model.Niveau;
  * <ul>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAbstractCreatureComponentImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAbstractCreatureComponentImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAbstractCreatureComponentImpl#getId <em>Id</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAbstractCreatureComponentImpl#getPv <em>Pv</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAbstractCreatureComponentImpl#getPvInit <em>Pv Init</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAbstractCreatureComponentImpl#getCategorie <em>Categorie</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAbstractCreatureComponentImpl#getAttaques <em>Attaques</em>}</li>
@@ -88,6 +90,46 @@ public abstract class GenAbstractCreatureComponentImpl extends MinimalEObjectImp
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPv() <em>Pv</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPv()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PV_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getPv() <em>Pv</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPv()
+	 * @generated
+	 * @ordered
+	 */
+	protected int pv = PV_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPvInit() <em>Pv Init</em>}' attribute.
@@ -232,6 +274,52 @@ public abstract class GenAbstractCreatureComponentImpl extends MinimalEObjectImp
 		description = newDescription;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ABSTRACT_CREATURE_COMPONENT__DESCRIPTION, oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ABSTRACT_CREATURE_COMPONENT__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getPv() {
+		return pv;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPv(int newPv) {
+		int oldPv = pv;
+		pv = newPv;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ABSTRACT_CREATURE_COMPONENT__PV, oldPv, pv));
 	}
 
 	/**
@@ -413,6 +501,10 @@ public abstract class GenAbstractCreatureComponentImpl extends MinimalEObjectImp
 				return getNom();
 			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__DESCRIPTION:
 				return getDescription();
+			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__ID:
+				return getId();
+			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__PV:
+				return getPv();
 			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__PV_INIT:
 				return getPvInit();
 			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__CATEGORIE:
@@ -441,6 +533,12 @@ public abstract class GenAbstractCreatureComponentImpl extends MinimalEObjectImp
 				return;
 			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__ID:
+				setId((Integer)newValue);
+				return;
+			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__PV:
+				setPv((Integer)newValue);
 				return;
 			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__PV_INIT:
 				setPvInit((Integer)newValue);
@@ -476,6 +574,12 @@ public abstract class GenAbstractCreatureComponentImpl extends MinimalEObjectImp
 			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
+			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__ID:
+				setId(ID_EDEFAULT);
+				return;
+			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__PV:
+				setPv(PV_EDEFAULT);
+				return;
 			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__PV_INIT:
 				setPvInit(PV_INIT_EDEFAULT);
 				return;
@@ -507,6 +611,10 @@ public abstract class GenAbstractCreatureComponentImpl extends MinimalEObjectImp
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__ID:
+				return id != ID_EDEFAULT;
+			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__PV:
+				return pv != PV_EDEFAULT;
 			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__PV_INIT:
 				return pvInit != PV_INIT_EDEFAULT;
 			case GenModelPackage.ABSTRACT_CREATURE_COMPONENT__CATEGORIE:
@@ -585,6 +693,10 @@ public abstract class GenAbstractCreatureComponentImpl extends MinimalEObjectImp
 		result.append(nom);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", id: ");
+		result.append(id);
+		result.append(", pv: ");
+		result.append(pv);
 		result.append(", pvInit: ");
 		result.append(pvInit);
 		result.append(", categorie: ");

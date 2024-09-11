@@ -32,7 +32,20 @@ public class JeuMapper {
 		jeu.getBanc().addAll(dto.getBanc().stream().map(c -> creatureMapper.toCore(c)).toList());
 		jeu.getCarteRecompense().addAll(CarteListToCore(dto.getRecompense()));
 		jeu.getPileDefausse().addAll(CarteListToCore(dto.getPileDefausse()));
+		jeu.setPseudo(dto.getPseudo());
 		return jeu;
+	}
+	
+	public JeuDTO toDTO(Jeu jeu) {
+		JeuDTO dto = new JeuDTO();
+		dto.setBanc(jeu.getBanc().stream().map(c -> creatureMapper.toDTO(c)).toList());
+		dto.setCreatureActive(creatureMapper.toDTO(jeu.getCreatureActive()));
+		dto.setDeck(deckMapper.toDTO(jeu.getDeck()));
+		dto.setMain(jeu.getMain().stream().map(c -> carteMapper.toDTO(c)).toList());
+		dto.setPileDefausse(jeu.getPileDefausse().stream().map(c -> carteMapper.toDTO(c)).toList());
+		dto.setPseudo(jeu.getPseudo());
+		dto.setRecompense(jeu.getCarteRecompense().stream().map(c -> carteMapper.toDTO(c)).toList());
+		return dto;
 	}
 	
 	private List<Carte> CarteListToCore(List<CarteDTO> cartes){

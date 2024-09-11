@@ -179,13 +179,22 @@ public interface GenModelPackage extends EPackage {
 	int ENERGIE__CATEGORIE = CARTE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENERGIE__ID = CARTE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Energie</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGIE_FEATURE_COUNT = CARTE_FEATURE_COUNT + 3;
+	int ENERGIE_FEATURE_COUNT = CARTE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Est Visible</em>' operation.
@@ -243,13 +252,22 @@ public interface GenModelPackage extends EPackage {
 	int ATTAQUE__DESCRIPTION = LABELLED__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTAQUE__ID = LABELLED_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Degat Attaque</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTAQUE__DEGAT_ATTAQUE = LABELLED_FEATURE_COUNT + 0;
+	int ATTAQUE__DEGAT_ATTAQUE = LABELLED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Besoin Energie Categorie</b></em>' attribute.
@@ -258,7 +276,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTAQUE__BESOIN_ENERGIE_CATEGORIE = LABELLED_FEATURE_COUNT + 1;
+	int ATTAQUE__BESOIN_ENERGIE_CATEGORIE = LABELLED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Besoin Energie Autre</b></em>' attribute.
@@ -267,7 +285,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTAQUE__BESOIN_ENERGIE_AUTRE = LABELLED_FEATURE_COUNT + 2;
+	int ATTAQUE__BESOIN_ENERGIE_AUTRE = LABELLED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Categorie</b></em>' attribute.
@@ -276,7 +294,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTAQUE__CATEGORIE = LABELLED_FEATURE_COUNT + 3;
+	int ATTAQUE__CATEGORIE = LABELLED_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Attaque</em>' class.
@@ -285,7 +303,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTAQUE_FEATURE_COUNT = LABELLED_FEATURE_COUNT + 4;
+	int ATTAQUE_FEATURE_COUNT = LABELLED_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Est Disponible</em>' operation.
@@ -334,13 +352,22 @@ public interface GenModelPackage extends EPackage {
 	int DEGAT = 3;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEGAT__ID = 0;
+
+	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEGAT__TYPE = 0;
+	int DEGAT__TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Mode Calcul</b></em>' attribute.
@@ -349,7 +376,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEGAT__MODE_CALCUL = 1;
+	int DEGAT__MODE_CALCUL = 2;
 
 	/**
 	 * The feature id for the '<em><b>Degat</b></em>' attribute.
@@ -358,7 +385,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEGAT__DEGAT = 2;
+	int DEGAT__DEGAT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Incertitude</b></em>' attribute.
@@ -367,7 +394,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEGAT__INCERTITUDE = 3;
+	int DEGAT__INCERTITUDE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Chance Rattage</b></em>' attribute.
@@ -376,7 +403,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEGAT__CHANCE_RATTAGE = 4;
+	int DEGAT__CHANCE_RATTAGE = 5;
 
 	/**
 	 * The number of structural features of the '<em>Degat</em>' class.
@@ -385,7 +412,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEGAT_FEATURE_COUNT = 5;
+	int DEGAT_FEATURE_COUNT = 6;
 
 	/**
 	 * The operation id for the '<em>Get Calcul Degat</em>' operation.
@@ -434,13 +461,22 @@ public interface GenModelPackage extends EPackage {
 	int DRESSEUR__DESCRIPTION = CARTE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DRESSEUR__ID = CARTE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Dresseur</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DRESSEUR_FEATURE_COUNT = CARTE_FEATURE_COUNT + 2;
+	int DRESSEUR_FEATURE_COUNT = CARTE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Est Visible</em>' operation.
@@ -487,6 +523,15 @@ public interface GenModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int OBJET__DESCRIPTION = DRESSEUR__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJET__ID = DRESSEUR__ID;
 
 	/**
 	 * The number of structural features of the '<em>Objet</em>' class.
@@ -544,6 +589,15 @@ public interface GenModelPackage extends EPackage {
 	int SUPPORTEUR__DESCRIPTION = DRESSEUR__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPORTEUR__ID = DRESSEUR__ID;
+
+	/**
 	 * The number of structural features of the '<em>Supporteur</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -599,13 +653,22 @@ public interface GenModelPackage extends EPackage {
 	int DECK__DESCRIPTION = LABELLED__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECK__ID = LABELLED_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Cartes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DECK__CARTES = LABELLED_FEATURE_COUNT + 0;
+	int DECK__CARTES = LABELLED_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Deck</em>' class.
@@ -614,7 +677,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DECK_FEATURE_COUNT = LABELLED_FEATURE_COUNT + 1;
+	int DECK_FEATURE_COUNT = LABELLED_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Piocher</em>' operation.
@@ -780,13 +843,22 @@ public interface GenModelPackage extends EPackage {
 	int ACTION___ABANDONNER = 8;
 
 	/**
+	 * The operation id for the '<em>Ajout Carte Main</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___AJOUT_CARTE_MAIN__GENCARTE = 9;
+
+	/**
 	 * The number of operations of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_OPERATION_COUNT = 9;
+	int ACTION_OPERATION_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenJeuImpl <em>Jeu</em>}' class.
@@ -934,6 +1006,15 @@ public interface GenModelPackage extends EPackage {
 	int JEU___ATTAQUER = ACTION___ATTAQUER;
 
 	/**
+	 * The operation id for the '<em>Ajout Carte Main</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JEU___AJOUT_CARTE_MAIN__GENCARTE = ACTION___AJOUT_CARTE_MAIN__GENCARTE;
+
+	/**
 	 * The operation id for the '<em>Fin Tour</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -980,13 +1061,22 @@ public interface GenModelPackage extends EPackage {
 	int CREATURE = 10;
 
 	/**
+	 * The feature id for the '<em><b>Pv</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATURE__PV = CARTE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Energies</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE__ENERGIES = CARTE_FEATURE_COUNT + 0;
+	int CREATURE__ENERGIES = CARTE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -995,7 +1085,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE__BASE = CARTE_FEATURE_COUNT + 1;
+	int CREATURE__BASE = CARTE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Evolution</b></em>' reference.
@@ -1004,7 +1094,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE__EVOLUTION = CARTE_FEATURE_COUNT + 2;
+	int CREATURE__EVOLUTION = CARTE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Maitre</b></em>' reference.
@@ -1013,16 +1103,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE__MAITRE = CARTE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Pv</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATURE__PV = CARTE_FEATURE_COUNT + 4;
+	int CREATURE__MAITRE = CARTE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Creature</em>' class.
@@ -1043,13 +1124,40 @@ public interface GenModelPackage extends EPackage {
 	int CREATURE___EST_VISIBLE = CARTE___EST_VISIBLE;
 
 	/**
+	 * The operation id for the '<em>Get Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATURE___GET_ID = CARTE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Pv</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATURE___GET_PV = CARTE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Set Pv</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATURE___SET_PV__INT = CARTE_OPERATION_COUNT + 2;
+
+	/**
 	 * The operation id for the '<em>Get Pv Init</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___GET_PV_INIT = CARTE_OPERATION_COUNT + 0;
+	int CREATURE___GET_PV_INIT = CARTE_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get Categorie</em>' operation.
@@ -1058,7 +1166,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___GET_CATEGORIE = CARTE_OPERATION_COUNT + 1;
+	int CREATURE___GET_CATEGORIE = CARTE_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get Attaques</em>' operation.
@@ -1067,7 +1175,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___GET_ATTAQUES = CARTE_OPERATION_COUNT + 2;
+	int CREATURE___GET_ATTAQUES = CARTE_OPERATION_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get Degat Defense</em>' operation.
@@ -1076,7 +1184,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___GET_DEGAT_DEFENSE = CARTE_OPERATION_COUNT + 3;
+	int CREATURE___GET_DEGAT_DEFENSE = CARTE_OPERATION_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get Niveau</em>' operation.
@@ -1085,7 +1193,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___GET_NIVEAU = CARTE_OPERATION_COUNT + 4;
+	int CREATURE___GET_NIVEAU = CARTE_OPERATION_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get Nom</em>' operation.
@@ -1094,7 +1202,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___GET_NOM = CARTE_OPERATION_COUNT + 5;
+	int CREATURE___GET_NOM = CARTE_OPERATION_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Get Description</em>' operation.
@@ -1103,7 +1211,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___GET_DESCRIPTION = CARTE_OPERATION_COUNT + 6;
+	int CREATURE___GET_DESCRIPTION = CARTE_OPERATION_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Get Base Evolution</em>' operation.
@@ -1112,7 +1220,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___GET_BASE_EVOLUTION = CARTE_OPERATION_COUNT + 7;
+	int CREATURE___GET_BASE_EVOLUTION = CARTE_OPERATION_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>Get Active Creature Component</em>' operation.
@@ -1121,7 +1229,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___GET_ACTIVE_CREATURE_COMPONENT = CARTE_OPERATION_COUNT + 8;
+	int CREATURE___GET_ACTIVE_CREATURE_COMPONENT = CARTE_OPERATION_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>Est Compatible Evolution</em>' operation.
@@ -1130,7 +1238,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___EST_COMPATIBLE_EVOLUTION__GENCREATURE = CARTE_OPERATION_COUNT + 9;
+	int CREATURE___EST_COMPATIBLE_EVOLUTION__GENCREATURE = CARTE_OPERATION_COUNT + 12;
 
 	/**
 	 * The operation id for the '<em>Faire Evoluer</em>' operation.
@@ -1139,7 +1247,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___FAIRE_EVOLUER__GENCREATURE = CARTE_OPERATION_COUNT + 10;
+	int CREATURE___FAIRE_EVOLUER__GENCREATURE = CARTE_OPERATION_COUNT + 13;
 
 	/**
 	 * The operation id for the '<em>Est Mort</em>' operation.
@@ -1148,7 +1256,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___EST_MORT = CARTE_OPERATION_COUNT + 11;
+	int CREATURE___EST_MORT = CARTE_OPERATION_COUNT + 14;
 
 	/**
 	 * The operation id for the '<em>Initialize</em>' operation.
@@ -1157,7 +1265,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___INITIALIZE__GENCREATURECOMPONENT = CARTE_OPERATION_COUNT + 12;
+	int CREATURE___INITIALIZE__GENCREATURECOMPONENT = CARTE_OPERATION_COUNT + 15;
 
 	/**
 	 * The operation id for the '<em>Recoit Degat</em>' operation.
@@ -1166,7 +1274,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___RECOIT_DEGAT__INT = CARTE_OPERATION_COUNT + 13;
+	int CREATURE___RECOIT_DEGAT__INT = CARTE_OPERATION_COUNT + 16;
 
 	/**
 	 * The operation id for the '<em>Recoit Soin</em>' operation.
@@ -1175,7 +1283,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE___RECOIT_SOIN__INT = CARTE_OPERATION_COUNT + 14;
+	int CREATURE___RECOIT_SOIN__INT = CARTE_OPERATION_COUNT + 17;
 
 	/**
 	 * The number of operations of the '<em>Creature</em>' class.
@@ -1184,7 +1292,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE_OPERATION_COUNT = CARTE_OPERATION_COUNT + 15;
+	int CREATURE_OPERATION_COUNT = CARTE_OPERATION_COUNT + 18;
 
 	/**
 	 * The meta object id for the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreatureComponent <em>Creature Component</em>}' class.
@@ -1206,13 +1314,40 @@ public interface GenModelPackage extends EPackage {
 	int CREATURE_COMPONENT_FEATURE_COUNT = 0;
 
 	/**
+	 * The operation id for the '<em>Get Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATURE_COMPONENT___GET_ID = 0;
+
+	/**
+	 * The operation id for the '<em>Get Pv</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATURE_COMPONENT___GET_PV = 1;
+
+	/**
+	 * The operation id for the '<em>Set Pv</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATURE_COMPONENT___SET_PV__INT = 2;
+
+	/**
 	 * The operation id for the '<em>Get Pv Init</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE_COMPONENT___GET_PV_INIT = 0;
+	int CREATURE_COMPONENT___GET_PV_INIT = 3;
 
 	/**
 	 * The operation id for the '<em>Get Categorie</em>' operation.
@@ -1221,7 +1356,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE_COMPONENT___GET_CATEGORIE = 1;
+	int CREATURE_COMPONENT___GET_CATEGORIE = 4;
 
 	/**
 	 * The operation id for the '<em>Get Attaques</em>' operation.
@@ -1230,7 +1365,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE_COMPONENT___GET_ATTAQUES = 2;
+	int CREATURE_COMPONENT___GET_ATTAQUES = 5;
 
 	/**
 	 * The operation id for the '<em>Get Degat Defense</em>' operation.
@@ -1239,7 +1374,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE_COMPONENT___GET_DEGAT_DEFENSE = 3;
+	int CREATURE_COMPONENT___GET_DEGAT_DEFENSE = 6;
 
 	/**
 	 * The operation id for the '<em>Get Niveau</em>' operation.
@@ -1248,7 +1383,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE_COMPONENT___GET_NIVEAU = 4;
+	int CREATURE_COMPONENT___GET_NIVEAU = 7;
 
 	/**
 	 * The operation id for the '<em>Get Nom</em>' operation.
@@ -1257,7 +1392,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE_COMPONENT___GET_NOM = 5;
+	int CREATURE_COMPONENT___GET_NOM = 8;
 
 	/**
 	 * The operation id for the '<em>Get Description</em>' operation.
@@ -1266,7 +1401,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE_COMPONENT___GET_DESCRIPTION = 6;
+	int CREATURE_COMPONENT___GET_DESCRIPTION = 9;
 
 	/**
 	 * The operation id for the '<em>Get Base Evolution</em>' operation.
@@ -1275,7 +1410,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE_COMPONENT___GET_BASE_EVOLUTION = 7;
+	int CREATURE_COMPONENT___GET_BASE_EVOLUTION = 10;
 
 	/**
 	 * The operation id for the '<em>Get Active Creature Component</em>' operation.
@@ -1284,7 +1419,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE_COMPONENT___GET_ACTIVE_CREATURE_COMPONENT = 8;
+	int CREATURE_COMPONENT___GET_ACTIVE_CREATURE_COMPONENT = 11;
 
 	/**
 	 * The number of operations of the '<em>Creature Component</em>' class.
@@ -1293,7 +1428,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATURE_COMPONENT_OPERATION_COUNT = 9;
+	int CREATURE_COMPONENT_OPERATION_COUNT = 12;
 
 	/**
 	 * The meta object id for the '{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAbstractCreatureComponentImpl <em>Abstract Creature Component</em>}' class.
@@ -1324,13 +1459,31 @@ public interface GenModelPackage extends EPackage {
 	int ABSTRACT_CREATURE_COMPONENT__DESCRIPTION = CREATURE_COMPONENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_CREATURE_COMPONENT__ID = CREATURE_COMPONENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Pv</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_CREATURE_COMPONENT__PV = CREATURE_COMPONENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Pv Init</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_CREATURE_COMPONENT__PV_INIT = CREATURE_COMPONENT_FEATURE_COUNT + 2;
+	int ABSTRACT_CREATURE_COMPONENT__PV_INIT = CREATURE_COMPONENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Categorie</b></em>' attribute.
@@ -1339,7 +1492,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_CREATURE_COMPONENT__CATEGORIE = CREATURE_COMPONENT_FEATURE_COUNT + 3;
+	int ABSTRACT_CREATURE_COMPONENT__CATEGORIE = CREATURE_COMPONENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Attaques</b></em>' containment reference list.
@@ -1348,7 +1501,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_CREATURE_COMPONENT__ATTAQUES = CREATURE_COMPONENT_FEATURE_COUNT + 4;
+	int ABSTRACT_CREATURE_COMPONENT__ATTAQUES = CREATURE_COMPONENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Degat Defense</b></em>' containment reference.
@@ -1357,7 +1510,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_CREATURE_COMPONENT__DEGAT_DEFENSE = CREATURE_COMPONENT_FEATURE_COUNT + 5;
+	int ABSTRACT_CREATURE_COMPONENT__DEGAT_DEFENSE = CREATURE_COMPONENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Niveau</b></em>' attribute.
@@ -1366,7 +1519,7 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_CREATURE_COMPONENT__NIVEAU = CREATURE_COMPONENT_FEATURE_COUNT + 6;
+	int ABSTRACT_CREATURE_COMPONENT__NIVEAU = CREATURE_COMPONENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Creature Component</em>' class.
@@ -1375,7 +1528,34 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_CREATURE_COMPONENT_FEATURE_COUNT = CREATURE_COMPONENT_FEATURE_COUNT + 7;
+	int ABSTRACT_CREATURE_COMPONENT_FEATURE_COUNT = CREATURE_COMPONENT_FEATURE_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Get Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_CREATURE_COMPONENT___GET_ID = CREATURE_COMPONENT___GET_ID;
+
+	/**
+	 * The operation id for the '<em>Get Pv</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_CREATURE_COMPONENT___GET_PV = CREATURE_COMPONENT___GET_PV;
+
+	/**
+	 * The operation id for the '<em>Set Pv</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_CREATURE_COMPONENT___SET_PV__INT = CREATURE_COMPONENT___SET_PV__INT;
 
 	/**
 	 * The operation id for the '<em>Get Pv Init</em>' operation.
@@ -1496,6 +1676,24 @@ public interface GenModelPackage extends EPackage {
 	int BASE__DESCRIPTION = ABSTRACT_CREATURE_COMPONENT__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE__ID = ABSTRACT_CREATURE_COMPONENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Pv</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE__PV = ABSTRACT_CREATURE_COMPONENT__PV;
+
+	/**
 	 * The feature id for the '<em><b>Pv Init</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1548,6 +1746,33 @@ public interface GenModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int BASE_FEATURE_COUNT = ABSTRACT_CREATURE_COMPONENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE___GET_ID = ABSTRACT_CREATURE_COMPONENT___GET_ID;
+
+	/**
+	 * The operation id for the '<em>Get Pv</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE___GET_PV = ABSTRACT_CREATURE_COMPONENT___GET_PV;
+
+	/**
+	 * The operation id for the '<em>Set Pv</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE___SET_PV__INT = ABSTRACT_CREATURE_COMPONENT___SET_PV__INT;
 
 	/**
 	 * The operation id for the '<em>Get Pv Init</em>' operation.
@@ -1668,6 +1893,24 @@ public interface GenModelPackage extends EPackage {
 	int EVOLUTION__DESCRIPTION = ABSTRACT_CREATURE_COMPONENT__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVOLUTION__ID = ABSTRACT_CREATURE_COMPONENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Pv</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVOLUTION__PV = ABSTRACT_CREATURE_COMPONENT__PV;
+
+	/**
 	 * The feature id for the '<em><b>Pv Init</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1729,6 +1972,33 @@ public interface GenModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int EVOLUTION_FEATURE_COUNT = ABSTRACT_CREATURE_COMPONENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVOLUTION___GET_ID = ABSTRACT_CREATURE_COMPONENT___GET_ID;
+
+	/**
+	 * The operation id for the '<em>Get Pv</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVOLUTION___GET_PV = ABSTRACT_CREATURE_COMPONENT___GET_PV;
+
+	/**
+	 * The operation id for the '<em>Set Pv</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVOLUTION___SET_PV__INT = ABSTRACT_CREATURE_COMPONENT___SET_PV__INT;
 
 	/**
 	 * The operation id for the '<em>Get Pv Init</em>' operation.
@@ -1849,6 +2119,24 @@ public interface GenModelPackage extends EPackage {
 	int MAITRE__DESCRIPTION = ABSTRACT_CREATURE_COMPONENT__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAITRE__ID = ABSTRACT_CREATURE_COMPONENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Pv</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAITRE__PV = ABSTRACT_CREATURE_COMPONENT__PV;
+
+	/**
 	 * The feature id for the '<em><b>Pv Init</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1910,6 +2198,33 @@ public interface GenModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAITRE_FEATURE_COUNT = ABSTRACT_CREATURE_COMPONENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAITRE___GET_ID = ABSTRACT_CREATURE_COMPONENT___GET_ID;
+
+	/**
+	 * The operation id for the '<em>Get Pv</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAITRE___GET_PV = ABSTRACT_CREATURE_COMPONENT___GET_PV;
+
+	/**
+	 * The operation id for the '<em>Set Pv</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAITRE___SET_PV__INT = ABSTRACT_CREATURE_COMPONENT___SET_PV__INT;
 
 	/**
 	 * The operation id for the '<em>Get Pv Init</em>' operation.
@@ -2096,6 +2411,17 @@ public interface GenModelPackage extends EPackage {
 	EAttribute getEnergie_Categorie();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenEnergie#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenEnergie#getId()
+	 * @see #getEnergie()
+	 * @generated
+	 */
+	EAttribute getEnergie_Id();
+
+	/**
 	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenEnergie#estCompatible(fr.cnam.chatnoir76.creaturedecombat.model.GenCreature) <em>Est Compatible</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2114,6 +2440,17 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAttaque();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getId()
+	 * @see #getAttaque()
+	 * @generated
+	 */
+	EAttribute getAttaque_Id();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getDegatAttaque <em>Degat Attaque</em>}'.
@@ -2198,6 +2535,17 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDegat();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenDegat#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenDegat#getId()
+	 * @see #getDegat()
+	 * @generated
+	 */
+	EAttribute getDegat_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenDegat#getType <em>Type</em>}'.
@@ -2295,6 +2643,17 @@ public interface GenModelPackage extends EPackage {
 	EClass getDresseur();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenDresseur#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenDresseur#getId()
+	 * @see #getDresseur()
+	 * @generated
+	 */
+	EAttribute getDresseur_Id();
+
+	/**
 	 * Returns the meta object for class '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenObjet <em>Objet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2323,6 +2682,17 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDeck();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenDeck#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenDeck#getId()
+	 * @see #getDeck()
+	 * @generated
+	 */
+	EAttribute getDeck_Id();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenDeck#getCartes <em>Cartes</em>}'.
@@ -2523,6 +2893,17 @@ public interface GenModelPackage extends EPackage {
 	EClass getCreature();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getPv <em>Pv</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pv</em>'.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getPv()
+	 * @see #getCreature()
+	 * @generated
+	 */
+	EAttribute getCreature_Pv();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getEnergies <em>Energies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2565,17 +2946,6 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCreature_Maitre();
-
-	/**
-	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getPv <em>Pv</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Pv</em>'.
-	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#getPv()
-	 * @see #getCreature()
-	 * @generated
-	 */
-	EAttribute getCreature_Pv();
 
 	/**
 	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreature#estCompatibleEvolution(fr.cnam.chatnoir76.creaturedecombat.model.GenCreature) <em>Est Compatible Evolution</em>}' operation.
@@ -2700,6 +3070,36 @@ public interface GenModelPackage extends EPackage {
 	EClass getCreatureComponent();
 
 	/**
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreatureComponent#getId() <em>Get Id</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Id</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenCreatureComponent#getId()
+	 * @generated
+	 */
+	EOperation getCreatureComponent__GetId();
+
+	/**
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreatureComponent#getPv() <em>Get Pv</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Pv</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenCreatureComponent#getPv()
+	 * @generated
+	 */
+	EOperation getCreatureComponent__GetPv();
+
+	/**
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreatureComponent#setPv(int) <em>Set Pv</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Pv</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenCreatureComponent#setPv(int)
+	 * @generated
+	 */
+	EOperation getCreatureComponent__SetPv__int();
+
+	/**
 	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenCreatureComponent#getPvInit() <em>Get Pv Init</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2798,6 +3198,28 @@ public interface GenModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAbstractCreatureComponent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAbstractCreatureComponent#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenAbstractCreatureComponent#getId()
+	 * @see #getAbstractCreatureComponent()
+	 * @generated
+	 */
+	EAttribute getAbstractCreatureComponent_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAbstractCreatureComponent#getPv <em>Pv</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pv</em>'.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenAbstractCreatureComponent#getPv()
+	 * @see #getAbstractCreatureComponent()
+	 * @generated
+	 */
+	EAttribute getAbstractCreatureComponent_Pv();
 
 	/**
 	 * Returns the meta object for the attribute '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAbstractCreatureComponent#getPvInit <em>Pv Init</em>}'.
@@ -2955,6 +3377,16 @@ public interface GenModelPackage extends EPackage {
 	EOperation getAction__Abandonner();
 
 	/**
+	 * Returns the meta object for the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAction#ajoutCarteMain(fr.cnam.chatnoir76.creaturedecombat.model.GenCarte) <em>Ajout Carte Main</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Ajout Carte Main</em>' operation.
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenAction#ajoutCarteMain(fr.cnam.chatnoir76.creaturedecombat.model.GenCarte)
+	 * @generated
+	 */
+	EOperation getAction__AjoutCarteMain__GenCarte();
+
+	/**
 	 * Returns the meta object for enum '{@link fr.cnam.chatnoir76.creaturedecombat.model.Niveau <em>Niveau</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3062,6 +3494,14 @@ public interface GenModelPackage extends EPackage {
 		EAttribute ENERGIE__CATEGORIE = eINSTANCE.getEnergie_Categorie();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENERGIE__ID = eINSTANCE.getEnergie_Id();
+
+		/**
 		 * The meta object literal for the '<em><b>Est Compatible</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3078,6 +3518,14 @@ public interface GenModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ATTAQUE = eINSTANCE.getAttaque();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ATTAQUE__ID = eINSTANCE.getAttaque_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Degat Attaque</b></em>' containment reference feature.
@@ -3144,6 +3592,14 @@ public interface GenModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DEGAT = eINSTANCE.getDegat();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEGAT__ID = eINSTANCE.getDegat_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -3222,6 +3678,14 @@ public interface GenModelPackage extends EPackage {
 		EClass DRESSEUR = eINSTANCE.getDresseur();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DRESSEUR__ID = eINSTANCE.getDresseur_Id();
+
+		/**
 		 * The meta object literal for the '{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenObjetImpl <em>Objet</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3250,6 +3714,14 @@ public interface GenModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DECK = eINSTANCE.getDeck();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DECK__ID = eINSTANCE.getDeck_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Cartes</b></em>' containment reference list feature.
@@ -3408,6 +3880,14 @@ public interface GenModelPackage extends EPackage {
 		EClass CREATURE = eINSTANCE.getCreature();
 
 		/**
+		 * The meta object literal for the '<em><b>Pv</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREATURE__PV = eINSTANCE.getCreature_Pv();
+
+		/**
 		 * The meta object literal for the '<em><b>Energies</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3438,14 +3918,6 @@ public interface GenModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CREATURE__MAITRE = eINSTANCE.getCreature_Maitre();
-
-		/**
-		 * The meta object literal for the '<em><b>Pv</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CREATURE__PV = eINSTANCE.getCreature_Pv();
 
 		/**
 		 * The meta object literal for the '<em><b>Est Compatible Evolution</b></em>' operation.
@@ -3552,6 +4024,30 @@ public interface GenModelPackage extends EPackage {
 		EClass CREATURE_COMPONENT = eINSTANCE.getCreatureComponent();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Id</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CREATURE_COMPONENT___GET_ID = eINSTANCE.getCreatureComponent__GetId();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Pv</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CREATURE_COMPONENT___GET_PV = eINSTANCE.getCreatureComponent__GetPv();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Pv</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CREATURE_COMPONENT___SET_PV__INT = eINSTANCE.getCreatureComponent__SetPv__int();
+
+		/**
 		 * The meta object literal for the '<em><b>Get Pv Init</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3632,6 +4128,22 @@ public interface GenModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ABSTRACT_CREATURE_COMPONENT = eINSTANCE.getAbstractCreatureComponent();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_CREATURE_COMPONENT__ID = eINSTANCE.getAbstractCreatureComponent_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Pv</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_CREATURE_COMPONENT__PV = eINSTANCE.getAbstractCreatureComponent_Pv();
 
 		/**
 		 * The meta object literal for the '<em><b>Pv Init</b></em>' attribute feature.
@@ -3754,6 +4266,14 @@ public interface GenModelPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ACTION___ABANDONNER = eINSTANCE.getAction__Abandonner();
+
+		/**
+		 * The meta object literal for the '<em><b>Ajout Carte Main</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACTION___AJOUT_CARTE_MAIN__GENCARTE = eINSTANCE.getAction__AjoutCarteMain__GenCarte();
 
 		/**
 		 * The meta object literal for the '{@link fr.cnam.chatnoir76.creaturedecombat.model.Niveau <em>Niveau</em>}' enum.

@@ -16,6 +16,8 @@ import fr.cnam.chatnoir76.creaturedecombat.model.TypeDegat;
 public interface DegatValidator {
 	boolean validate();
 
+	boolean validateId(int value);
+
 	boolean validateType(TypeDegat value);
 	boolean validateModeCalcul(CalculDegat value);
 	boolean validateDegat(int value);

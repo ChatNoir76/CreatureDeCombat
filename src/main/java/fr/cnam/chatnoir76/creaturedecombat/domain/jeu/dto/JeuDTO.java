@@ -26,8 +26,12 @@ public class JeuDTO  extends RepresentationModel<JeuDTO> {
 	private List<CarteDTO> recompense;
 	
 	public JeuDTO(String joueur, DeckDTOFull carteDeck) {
+		this();
 		this.pseudo = joueur;
 		this.deck = carteDeck;
+	}
+
+	public JeuDTO() {
 		this.pileDefausse = new ArrayList<CarteDTO>();
 		this.main = new ArrayList<CarteDTO>();
 		this.recompense = new ArrayList<CarteDTO>();

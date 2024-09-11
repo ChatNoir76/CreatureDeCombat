@@ -14,6 +14,11 @@ import fr.cnam.chatnoir76.creaturedecombat.model.Niveau;
 public class CreatureImpl extends GenCreatureImpl implements Creature
 {
 	
+	@Override
+	public CreatureComponent getBaseEvolution() {
+		return this.getActiveCreatureComponent().getBaseEvolution();
+	}
+
 	private void setBase(CreatureComponent newBase) {
 		this.base = newBase;
 		this.setPv(newBase.getPvInit());
@@ -28,8 +33,18 @@ public class CreatureImpl extends GenCreatureImpl implements Creature
 	}
 	
 	@Override
+	public int getId() {
+		return getActiveCreatureComponent().getId();
+	}
+
+	@Override
+	public int getPv() {
+		return getActiveCreatureComponent().getPv();
+	}
+
+	@Override
 	public void setPv(int newPv) {
-		super.setPv(newPv < this.getPvInit() ? newPv : this.getPvInit());
+		getActiveCreatureComponent().setPv(newPv < this.getPvInit() ? newPv : this.getPvInit());
 	}
 
 	@Override

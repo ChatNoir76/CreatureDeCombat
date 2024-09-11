@@ -73,7 +73,9 @@ public class CreatureServiceImpl implements CreatureService {
 		CreatureEntity entity = mapper.fromDTOToEntity(dto);
 		entity.setCategorie(categorieDAO.findById(Integer.valueOf(dto.getCategorieId())).get());
 		entity.setNiveau(niveauDAO.findById(Integer.valueOf(dto.getNiveauId())).get());
-		entity.setAttaques(dto.getAttaqueIds().stream().map(id -> attaqueDAO.getReferenceById(id)).collect(Collectors.toSet()));
+		entity.setAttaques(dto.getAttaqueIds().stream()
+				.filter(a -> a != null)
+				.map(id -> attaqueDAO.getReferenceById(id)).collect(Collectors.toSet()));
 		if(dto.getIdCreatureBase() != null && Integer.valueOf(dto.getNiveauId()) != 1) {
 			entity.setCreatureBase(dao.getReferenceById(Integer.valueOf(dto.getIdCreatureBase())));
 		}

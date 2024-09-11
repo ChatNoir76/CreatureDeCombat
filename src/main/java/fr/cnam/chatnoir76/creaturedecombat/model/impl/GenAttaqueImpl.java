@@ -31,6 +31,7 @@ import fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage;
  * <ul>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAttaqueImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAttaqueImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAttaqueImpl#getId <em>Id</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAttaqueImpl#getDegatAttaque <em>Degat Attaque</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAttaqueImpl#getBesoinEnergieCategorie <em>Besoin Energie Categorie</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenAttaqueImpl#getBesoinEnergieAutre <em>Besoin Energie Autre</em>}</li>
@@ -79,6 +80,26 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int id = ID_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getDegatAttaque() <em>Degat Attaque</em>}' containment reference.
@@ -213,6 +234,29 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 		description = newDescription;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ATTAQUE__DESCRIPTION, oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.ATTAQUE__ID, oldId, id));
 	}
 
 	/**
@@ -391,6 +435,8 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 				return getNom();
 			case GenModelPackage.ATTAQUE__DESCRIPTION:
 				return getDescription();
+			case GenModelPackage.ATTAQUE__ID:
+				return getId();
 			case GenModelPackage.ATTAQUE__DEGAT_ATTAQUE:
 				return getDegatAttaque();
 			case GenModelPackage.ATTAQUE__BESOIN_ENERGIE_CATEGORIE:
@@ -416,6 +462,9 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 				return;
 			case GenModelPackage.ATTAQUE__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case GenModelPackage.ATTAQUE__ID:
+				setId((Integer)newValue);
 				return;
 			case GenModelPackage.ATTAQUE__DEGAT_ATTAQUE:
 				setDegatAttaque((Degat)newValue);
@@ -447,6 +496,9 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 			case GenModelPackage.ATTAQUE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
+			case GenModelPackage.ATTAQUE__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case GenModelPackage.ATTAQUE__DEGAT_ATTAQUE:
 				setDegatAttaque((Degat)null);
 				return;
@@ -475,6 +527,8 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 			case GenModelPackage.ATTAQUE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case GenModelPackage.ATTAQUE__ID:
+				return id != ID_EDEFAULT;
 			case GenModelPackage.ATTAQUE__DEGAT_ATTAQUE:
 				return degatAttaque != null;
 			case GenModelPackage.ATTAQUE__BESOIN_ENERGIE_CATEGORIE:
@@ -520,6 +574,8 @@ public class GenAttaqueImpl extends MinimalEObjectImpl.Container implements Atta
 		result.append(nom);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", id: ");
+		result.append(id);
 		result.append(", besoinEnergieCategorie: ");
 		result.append(besoinEnergieCategorie);
 		result.append(", besoinEnergieAutre: ");

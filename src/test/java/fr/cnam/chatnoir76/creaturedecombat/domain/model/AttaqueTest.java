@@ -54,34 +54,6 @@ public class AttaqueTest {
 	}
 	
 	@Test
-	public void attaqueTest() {
-//		Base attaquant_base = ModelFactory.eINSTANCE.createBase();
-//		attaquant_base.setNom("Creature_Base_Nom");
-//		attaquant_base.setDescription("Creature_Base_Description");
-//		attaquant_base.setPvInit(100);
-//		attaquant_base.setCategorie(Categorie.ADORABLE);
-//		Creature attaquant = ModelFactory.eINSTANCE.createCreature(attaquant_base);
-//		
-//		Base defenseur_base = ModelFactory.eINSTANCE.createBase();
-//		defenseur_base.setNom("Creature_Base_Nom");
-//		defenseur_base.setDescription("Creature_Base_Description");
-//		defenseur_base.setPvInit(150);
-//		defenseur_base.setCategorie(Categorie.MALEFIQUE);
-//		defenseur_base.setDegatDefense(degat_20);
-//		Creature defenseur = ModelFactory.eINSTANCE.createCreature(defenseur_base);
-//		
-//		when(degat_20.getCalculDegat(any(Creature.class), any(Creature.class))).thenReturn(20);
-//		when(degat_50.getCalculDegat(any(Creature.class), any(Creature.class))).thenReturn(50);
-//
-//		Attaque attaque = ModelFactory.eINSTANCE.createAttaque();
-//		attaque.setDegatAttaque(degat_50);
-//		attaque.attaque(attaquant, defenseur);
-//		
-//		assertTrue(attaquant.getPv() == 80);
-//		assertTrue(defenseur.getPv() == 100);
-	}
-	
-	@Test
 	public void estDisponibleTest() {
 		when(cAdorable.getEnergies()).thenReturn(energie_Adorable);
 		when(cMalefique.getEnergies()).thenReturn(energie_Malefique);

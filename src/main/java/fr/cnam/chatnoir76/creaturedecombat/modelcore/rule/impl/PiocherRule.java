@@ -7,6 +7,11 @@ public class PiocherRule implements Rule {
 
 	@Override
 	public boolean matches(Jeu jeu) {
+		
+		
+		
+		
+		
 		return false;
 	}
 

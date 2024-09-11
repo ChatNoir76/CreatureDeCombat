@@ -8,7 +8,7 @@ public class AttaqueDTOFull extends AttaqueDTO {
 	
 	public AttaqueDTOFull (AttaqueDTO attaque) {
 		this.setCategorie(attaque.getCategorie());
-		this.setDegat(attaque.getDegat());
+		this.setDegat(null);
 		this.setDescription(attaque.getDescription());
 		this.setEnergiePrimaire(attaque.getEnergiePrimaire());
 		this.setEnergieSecondaire(attaque.getEnergieSecondaire());

@@ -16,6 +16,8 @@
             </eOperations>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="categorie" eType="#//cnam/chatnoir76/creaturedecombat/model/Categorie"
                 defaultValueLiteral="Classique"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                iD="true"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Attaque" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/Labelled">
             <eOperations name="estDisponible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -28,6 +30,8 @@
               <eParameters name="attaquant" eType="#//cnam/chatnoir76/creaturedecombat/model/Creature"/>
               <eParameters name="defenseur" eType="#//cnam/chatnoir76/creaturedecombat/model/Creature"/>
             </eOperations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                iD="true"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="degatAttaque" eType="#//cnam/chatnoir76/creaturedecombat/model/Degat"
                 containment="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="besoinEnergieCategorie"
@@ -41,6 +45,8 @@
               <eParameters name="attaquant" eType="#//cnam/chatnoir76/creaturedecombat/model/Creature"/>
               <eParameters name="defenseur" eType="#//cnam/chatnoir76/creaturedecombat/model/Creature"/>
             </eOperations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                iD="true"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//cnam/chatnoir76/creaturedecombat/model/TypeDegat"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="modeCalcul" eType="#//cnam/chatnoir76/creaturedecombat/model/CalculDegat"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="degat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -74,7 +80,10 @@
           <eClassifiers xsi:type="ecore:EClass" name="Carte" abstract="true" interface="true">
             <eOperations name="estVisible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
           </eClassifiers>
-          <eClassifiers xsi:type="ecore:EClass" name="Dresseur" abstract="true" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/Carte #//cnam/chatnoir76/creaturedecombat/model/Labelled"/>
+          <eClassifiers xsi:type="ecore:EClass" name="Dresseur" abstract="true" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/Carte #//cnam/chatnoir76/creaturedecombat/model/Labelled">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                iD="true"/>
+          </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Objet" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/Dresseur"/>
           <eClassifiers xsi:type="ecore:EClass" name="Supporteur" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/Dresseur"/>
           <eClassifiers xsi:type="ecore:EClass" name="Deck" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/Labelled">
@@ -84,6 +93,8 @@
             <eOperations name="getEnergie" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
             <eOperations name="getObjet" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
             <eOperations name="getSupporteur" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                iD="true"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="cartes" upperBound="-1"
                 eType="#//cnam/chatnoir76/creaturedecombat/model/Carte" containment="true"/>
           </eClassifiers>
@@ -123,6 +134,8 @@
             <eOperations name="recoitSoin">
               <eParameters name="soin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             </eOperations>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="pv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                volatile="true" defaultValueLiteral="0"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="energies" upperBound="-1"
                 eType="#//cnam/chatnoir76/creaturedecombat/model/Energie" containment="true"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//cnam/chatnoir76/creaturedecombat/model/CreatureComponent"
@@ -131,8 +144,6 @@
                 changeable="false"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="maitre" eType="#//cnam/chatnoir76/creaturedecombat/model/CreatureComponent"
                 changeable="false"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="pv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-                defaultValueLiteral="0"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Base" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/AbstractCreatureComponent"/>
           <eClassifiers xsi:type="ecore:EClass" name="Evolution" eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/AbstractCreatureComponent">
@@ -143,6 +154,11 @@
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="CreatureComponent" abstract="true"
               interface="true">
+            <eOperations name="getId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            <eOperations name="getPv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            <eOperations name="setPv">
+              <eParameters name="pv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            </eOperations>
             <eOperations name="getPvInit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eOperations name="getCategorie" eType="#//cnam/chatnoir76/creaturedecombat/model/Categorie"/>
             <eOperations name="getAttaques" upperBound="-1" eType="#//cnam/chatnoir76/creaturedecombat/model/Attaque"/>
@@ -155,6 +171,10 @@
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="AbstractCreatureComponent" abstract="true"
               eSuperTypes="#//cnam/chatnoir76/creaturedecombat/model/CreatureComponent #//cnam/chatnoir76/creaturedecombat/model/Labelled">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                iD="true"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="pv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                defaultValueLiteral="0"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="pvInit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
                 defaultValueLiteral="0"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="categorie" lowerBound="1"
@@ -186,6 +206,9 @@
             <eOperations name="attaquer" lowerBound="2" upperBound="2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eOperations name="finTour"/>
             <eOperations name="abandonner"/>
+            <eOperations name="ajoutCarteMain">
+              <eParameters name="carte" eType="#//cnam/chatnoir76/creaturedecombat/model/Carte"/>
+            </eOperations>
           </eClassifiers>
         </eSubpackages>
       </eSubpackages>

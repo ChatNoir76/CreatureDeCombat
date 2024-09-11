@@ -89,4 +89,12 @@ public interface GenAction extends EObject {
 	 */
 	void abandonner();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void ajoutCarteMain(Carte carte);
+
 } // GenAction

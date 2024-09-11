@@ -18,6 +18,8 @@ import fr.cnam.chatnoir76.creaturedecombat.model.Energie;
 public interface CreatureValidator {
 	boolean validate();
 
+	boolean validateId(int value);
+
 	boolean validateEnergies(EList<Energie> value);
 	boolean validateBase(CreatureComponent value);
 	boolean validateEvolution(CreatureComponent value);

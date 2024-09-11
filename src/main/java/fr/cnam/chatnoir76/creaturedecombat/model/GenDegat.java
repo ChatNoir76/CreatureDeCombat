@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenDegat#getId <em>Id</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenDegat#getType <em>Type</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenDegat#getModeCalcul <em>Mode Calcul</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenDegat#getDegat <em>Degat</em>}</li>
@@ -25,6 +26,28 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface GenDegat extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(int)
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage#getDegat_Id()
+	 * @model id="true"
+	 * @generated
+	 */
+	int getId();
+
+	/**
+	 * Sets the value of the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenDegat#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(int value);
+
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link fr.cnam.chatnoir76.creaturedecombat.model.TypeDegat}.

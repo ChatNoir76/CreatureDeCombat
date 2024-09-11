@@ -12,6 +12,7 @@ public interface ModelFactory extends GenModelFactory
 	ModelFactory eINSTANCE = ModelFactoryImpl.init();
 	
 	default public Creature createCreature(CreatureComponent creatureComp) {
+		if(creatureComp == null) return null;
 		Creature creature = this.createCreature();
 		creature.initialize(creatureComp);
 		return creature;

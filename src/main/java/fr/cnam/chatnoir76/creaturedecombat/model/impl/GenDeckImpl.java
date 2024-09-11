@@ -34,6 +34,7 @@ import fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage;
  * <ul>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenDeckImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenDeckImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenDeckImpl#getId <em>Id</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenDeckImpl#getCartes <em>Cartes</em>}</li>
  * </ul>
  *
@@ -79,6 +80,26 @@ public class GenDeckImpl extends MinimalEObjectImpl.Container implements Deck {
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int id = ID_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getCartes() <em>Cartes</em>}' containment reference list.
@@ -153,6 +174,29 @@ public class GenDeckImpl extends MinimalEObjectImpl.Container implements Deck {
 		description = newDescription;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.DECK__DESCRIPTION, oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.DECK__ID, oldId, id));
 	}
 
 	/**
@@ -266,6 +310,8 @@ public class GenDeckImpl extends MinimalEObjectImpl.Container implements Deck {
 				return getNom();
 			case GenModelPackage.DECK__DESCRIPTION:
 				return getDescription();
+			case GenModelPackage.DECK__ID:
+				return getId();
 			case GenModelPackage.DECK__CARTES:
 				return getCartes();
 		}
@@ -286,6 +332,9 @@ public class GenDeckImpl extends MinimalEObjectImpl.Container implements Deck {
 				return;
 			case GenModelPackage.DECK__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case GenModelPackage.DECK__ID:
+				setId((Integer)newValue);
 				return;
 			case GenModelPackage.DECK__CARTES:
 				getCartes().clear();
@@ -309,6 +358,9 @@ public class GenDeckImpl extends MinimalEObjectImpl.Container implements Deck {
 			case GenModelPackage.DECK__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
+			case GenModelPackage.DECK__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case GenModelPackage.DECK__CARTES:
 				getCartes().clear();
 				return;
@@ -328,6 +380,8 @@ public class GenDeckImpl extends MinimalEObjectImpl.Container implements Deck {
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 			case GenModelPackage.DECK__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case GenModelPackage.DECK__ID:
+				return id != ID_EDEFAULT;
 			case GenModelPackage.DECK__CARTES:
 				return cartes != null && !cartes.isEmpty();
 		}
@@ -372,6 +426,8 @@ public class GenDeckImpl extends MinimalEObjectImpl.Container implements Deck {
 		result.append(nom);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}

@@ -27,6 +27,7 @@ import fr.cnam.chatnoir76.creaturedecombat.model.Labelled;
  * <ul>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenDresseurImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenDresseurImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.impl.GenDresseurImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,6 +74,26 @@ public abstract class GenDresseurImpl extends MinimalEObjectImpl.Container imple
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int id = ID_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -89,6 +110,29 @@ public abstract class GenDresseurImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	protected EClass eStaticClass() {
 		return GenModelPackage.Literals.DRESSEUR;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenModelPackage.DRESSEUR__ID, oldId, id));
 	}
 
 	/**
@@ -161,6 +205,8 @@ public abstract class GenDresseurImpl extends MinimalEObjectImpl.Container imple
 				return getNom();
 			case GenModelPackage.DRESSEUR__DESCRIPTION:
 				return getDescription();
+			case GenModelPackage.DRESSEUR__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -178,6 +224,9 @@ public abstract class GenDresseurImpl extends MinimalEObjectImpl.Container imple
 				return;
 			case GenModelPackage.DRESSEUR__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case GenModelPackage.DRESSEUR__ID:
+				setId((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -197,6 +246,9 @@ public abstract class GenDresseurImpl extends MinimalEObjectImpl.Container imple
 			case GenModelPackage.DRESSEUR__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
+			case GenModelPackage.DRESSEUR__ID:
+				setId(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -213,6 +265,8 @@ public abstract class GenDresseurImpl extends MinimalEObjectImpl.Container imple
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 			case GenModelPackage.DRESSEUR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case GenModelPackage.DRESSEUR__ID:
+				return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -279,6 +333,8 @@ public abstract class GenDresseurImpl extends MinimalEObjectImpl.Container imple
 		result.append(nom);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}

@@ -12,6 +12,7 @@ package fr.cnam.chatnoir76.creaturedecombat.model;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getId <em>Id</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getDegatAttaque <em>Degat Attaque</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getBesoinEnergieCategorie <em>Besoin Energie Categorie</em>}</li>
  *   <li>{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getBesoinEnergieAutre <em>Besoin Energie Autre</em>}</li>
@@ -23,6 +24,28 @@ package fr.cnam.chatnoir76.creaturedecombat.model;
  * @generated
  */
 public interface GenAttaque extends Labelled {
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(int)
+	 * @see fr.cnam.chatnoir76.creaturedecombat.model.GenModelPackage#getAttaque_Id()
+	 * @model id="true"
+	 * @generated
+	 */
+	int getId();
+
+	/**
+	 * Sets the value of the '{@link fr.cnam.chatnoir76.creaturedecombat.model.GenAttaque#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(int value);
+
 	/**
 	 * Returns the value of the '<em><b>Degat Attaque</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

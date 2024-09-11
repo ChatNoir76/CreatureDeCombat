@@ -305,6 +305,16 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getEnergie_Id() {
+		return (EAttribute)energieEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EOperation getEnergie__EstCompatible__GenCreature() {
 		return energieEClass.getEOperations().get(0);
 	}
@@ -325,8 +335,18 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getAttaque_Id() {
+		return (EAttribute)attaqueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getAttaque_DegatAttaque() {
-		return (EReference)attaqueEClass.getEStructuralFeatures().get(0);
+		return (EReference)attaqueEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -336,16 +356,6 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 */
 	@Override
 	public EAttribute getAttaque_BesoinEnergieCategorie() {
-		return (EAttribute)attaqueEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getAttaque_BesoinEnergieAutre() {
 		return (EAttribute)attaqueEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -355,8 +365,18 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAttaque_Categorie() {
+	public EAttribute getAttaque_BesoinEnergieAutre() {
 		return (EAttribute)attaqueEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAttaque_Categorie() {
+		return (EAttribute)attaqueEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -405,7 +425,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDegat_Type() {
+	public EAttribute getDegat_Id() {
 		return (EAttribute)degatEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -415,7 +435,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDegat_ModeCalcul() {
+	public EAttribute getDegat_Type() {
 		return (EAttribute)degatEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -425,7 +445,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDegat_Degat() {
+	public EAttribute getDegat_ModeCalcul() {
 		return (EAttribute)degatEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -435,7 +455,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDegat_Incertitude() {
+	public EAttribute getDegat_Degat() {
 		return (EAttribute)degatEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -445,8 +465,18 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDegat_ChanceRattage() {
+	public EAttribute getDegat_Incertitude() {
 		return (EAttribute)degatEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDegat_ChanceRattage() {
+		return (EAttribute)degatEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -495,6 +525,16 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getDresseur_Id() {
+		return (EAttribute)dresseurEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getObjet() {
 		return objetEClass;
 	}
@@ -525,8 +565,18 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getDeck_Id() {
+		return (EAttribute)deckEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getDeck_Cartes() {
-		return (EReference)deckEClass.getEStructuralFeatures().get(0);
+		return (EReference)deckEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -715,8 +765,8 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getCreature_Energies() {
-		return (EReference)creatureEClass.getEStructuralFeatures().get(0);
+	public EAttribute getCreature_Pv() {
+		return (EAttribute)creatureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -725,7 +775,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getCreature_Base() {
+	public EReference getCreature_Energies() {
 		return (EReference)creatureEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -735,7 +785,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getCreature_Evolution() {
+	public EReference getCreature_Base() {
 		return (EReference)creatureEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -745,7 +795,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getCreature_Maitre() {
+	public EReference getCreature_Evolution() {
 		return (EReference)creatureEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -755,8 +805,8 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCreature_Pv() {
-		return (EAttribute)creatureEClass.getEStructuralFeatures().get(4);
+	public EReference getCreature_Maitre() {
+		return (EReference)creatureEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -885,7 +935,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getCreatureComponent__GetPvInit() {
+	public EOperation getCreatureComponent__GetId() {
 		return creatureComponentEClass.getEOperations().get(0);
 	}
 
@@ -895,7 +945,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getCreatureComponent__GetCategorie() {
+	public EOperation getCreatureComponent__GetPv() {
 		return creatureComponentEClass.getEOperations().get(1);
 	}
 
@@ -905,7 +955,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getCreatureComponent__GetAttaques() {
+	public EOperation getCreatureComponent__SetPv__int() {
 		return creatureComponentEClass.getEOperations().get(2);
 	}
 
@@ -915,7 +965,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getCreatureComponent__GetDegatDefense() {
+	public EOperation getCreatureComponent__GetPvInit() {
 		return creatureComponentEClass.getEOperations().get(3);
 	}
 
@@ -925,7 +975,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getCreatureComponent__GetNiveau() {
+	public EOperation getCreatureComponent__GetCategorie() {
 		return creatureComponentEClass.getEOperations().get(4);
 	}
 
@@ -935,7 +985,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getCreatureComponent__GetNom() {
+	public EOperation getCreatureComponent__GetAttaques() {
 		return creatureComponentEClass.getEOperations().get(5);
 	}
 
@@ -945,7 +995,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getCreatureComponent__GetDescription() {
+	public EOperation getCreatureComponent__GetDegatDefense() {
 		return creatureComponentEClass.getEOperations().get(6);
 	}
 
@@ -955,7 +1005,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getCreatureComponent__GetBaseEvolution() {
+	public EOperation getCreatureComponent__GetNiveau() {
 		return creatureComponentEClass.getEOperations().get(7);
 	}
 
@@ -965,8 +1015,38 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getCreatureComponent__GetActiveCreatureComponent() {
+	public EOperation getCreatureComponent__GetNom() {
 		return creatureComponentEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreatureComponent__GetDescription() {
+		return creatureComponentEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreatureComponent__GetBaseEvolution() {
+		return creatureComponentEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCreatureComponent__GetActiveCreatureComponent() {
+		return creatureComponentEClass.getEOperations().get(11);
 	}
 
 	/**
@@ -985,7 +1065,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAbstractCreatureComponent_PvInit() {
+	public EAttribute getAbstractCreatureComponent_Id() {
 		return (EAttribute)abstractCreatureComponentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -995,7 +1075,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAbstractCreatureComponent_Categorie() {
+	public EAttribute getAbstractCreatureComponent_Pv() {
 		return (EAttribute)abstractCreatureComponentEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1005,8 +1085,28 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getAbstractCreatureComponent_PvInit() {
+		return (EAttribute)abstractCreatureComponentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAbstractCreatureComponent_Categorie() {
+		return (EAttribute)abstractCreatureComponentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getAbstractCreatureComponent_Attaques() {
-		return (EReference)abstractCreatureComponentEClass.getEStructuralFeatures().get(2);
+		return (EReference)abstractCreatureComponentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1016,7 +1116,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 */
 	@Override
 	public EReference getAbstractCreatureComponent_DegatDefense() {
-		return (EReference)abstractCreatureComponentEClass.getEStructuralFeatures().get(3);
+		return (EReference)abstractCreatureComponentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1026,7 +1126,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 */
 	@Override
 	public EAttribute getAbstractCreatureComponent_Niveau() {
-		return (EAttribute)abstractCreatureComponentEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)abstractCreatureComponentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1135,6 +1235,16 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 	 * @generated
 	 */
 	@Override
+	public EOperation getAction__AjoutCarteMain__GenCarte() {
+		return actionEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getNiveau() {
 		return niveauEEnum;
 	}
@@ -1204,9 +1314,11 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 
 		energieEClass = createEClass(ENERGIE);
 		createEAttribute(energieEClass, ENERGIE__CATEGORIE);
+		createEAttribute(energieEClass, ENERGIE__ID);
 		createEOperation(energieEClass, ENERGIE___EST_COMPATIBLE__GENCREATURE);
 
 		attaqueEClass = createEClass(ATTAQUE);
+		createEAttribute(attaqueEClass, ATTAQUE__ID);
 		createEReference(attaqueEClass, ATTAQUE__DEGAT_ATTAQUE);
 		createEAttribute(attaqueEClass, ATTAQUE__BESOIN_ENERGIE_CATEGORIE);
 		createEAttribute(attaqueEClass, ATTAQUE__BESOIN_ENERGIE_AUTRE);
@@ -1216,6 +1328,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		createEOperation(attaqueEClass, ATTAQUE___ATTAQUE__GENCREATURE_GENCREATURE);
 
 		degatEClass = createEClass(DEGAT);
+		createEAttribute(degatEClass, DEGAT__ID);
 		createEAttribute(degatEClass, DEGAT__TYPE);
 		createEAttribute(degatEClass, DEGAT__MODE_CALCUL);
 		createEAttribute(degatEClass, DEGAT__DEGAT);
@@ -1227,12 +1340,14 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		createEOperation(carteEClass, CARTE___EST_VISIBLE);
 
 		dresseurEClass = createEClass(DRESSEUR);
+		createEAttribute(dresseurEClass, DRESSEUR__ID);
 
 		objetEClass = createEClass(OBJET);
 
 		supporteurEClass = createEClass(SUPPORTEUR);
 
 		deckEClass = createEClass(DECK);
+		createEAttribute(deckEClass, DECK__ID);
 		createEReference(deckEClass, DECK__CARTES);
 		createEOperation(deckEClass, DECK___PIOCHER);
 		createEOperation(deckEClass, DECK___GET_CREATURE_BASE);
@@ -1254,11 +1369,11 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		createEOperation(jeuEClass, JEU___ABANDONNER);
 
 		creatureEClass = createEClass(CREATURE);
+		createEAttribute(creatureEClass, CREATURE__PV);
 		createEReference(creatureEClass, CREATURE__ENERGIES);
 		createEReference(creatureEClass, CREATURE__BASE);
 		createEReference(creatureEClass, CREATURE__EVOLUTION);
 		createEReference(creatureEClass, CREATURE__MAITRE);
-		createEAttribute(creatureEClass, CREATURE__PV);
 		createEOperation(creatureEClass, CREATURE___EST_COMPATIBLE_EVOLUTION__GENCREATURE);
 		createEOperation(creatureEClass, CREATURE___FAIRE_EVOLUER__GENCREATURE);
 		createEOperation(creatureEClass, CREATURE___EST_MORT);
@@ -1275,6 +1390,9 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		createEReference(maitreEClass, MAITRE__EVOLUTION);
 
 		creatureComponentEClass = createEClass(CREATURE_COMPONENT);
+		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_ID);
+		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_PV);
+		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___SET_PV__INT);
 		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_PV_INIT);
 		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_CATEGORIE);
 		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_ATTAQUES);
@@ -1286,6 +1404,8 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		createEOperation(creatureComponentEClass, CREATURE_COMPONENT___GET_ACTIVE_CREATURE_COMPONENT);
 
 		abstractCreatureComponentEClass = createEClass(ABSTRACT_CREATURE_COMPONENT);
+		createEAttribute(abstractCreatureComponentEClass, ABSTRACT_CREATURE_COMPONENT__ID);
+		createEAttribute(abstractCreatureComponentEClass, ABSTRACT_CREATURE_COMPONENT__PV);
 		createEAttribute(abstractCreatureComponentEClass, ABSTRACT_CREATURE_COMPONENT__PV_INIT);
 		createEAttribute(abstractCreatureComponentEClass, ABSTRACT_CREATURE_COMPONENT__CATEGORIE);
 		createEReference(abstractCreatureComponentEClass, ABSTRACT_CREATURE_COMPONENT__ATTAQUES);
@@ -1302,6 +1422,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		createEOperation(actionEClass, ACTION___ATTAQUER);
 		createEOperation(actionEClass, ACTION___FIN_TOUR);
 		createEOperation(actionEClass, ACTION___ABANDONNER);
+		createEOperation(actionEClass, ACTION___AJOUT_CARTE_MAIN__GENCARTE);
 
 		// Create enums
 		niveauEEnum = createEEnum(NIVEAU);
@@ -1362,11 +1483,13 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 
 		initEClass(energieEClass, Energie.class, "Energie", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEnergie_Categorie(), this.getCategorie(), "categorie", "Classique", 0, 1, Energie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnergie_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Energie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getEnergie__EstCompatible__GenCreature(), ecorePackage.getEBoolean(), "estCompatible", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getCreature(), "creature", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(attaqueEClass, Attaque.class, "Attaque", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAttaque_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAttaque_DegatAttaque(), this.getDegat(), null, "degatAttaque", null, 0, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttaque_BesoinEnergieCategorie(), ecorePackage.getEInt(), "besoinEnergieCategorie", null, 0, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttaque_BesoinEnergieAutre(), ecorePackage.getEInt(), "besoinEnergieAutre", null, 0, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1383,6 +1506,7 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		addEParameter(op, this.getCreature(), "defenseur", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(degatEClass, Degat.class, "Degat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDegat_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Degat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDegat_Type(), this.getTypeDegat(), "type", null, 0, 1, Degat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDegat_ModeCalcul(), this.getCalculDegat(), "modeCalcul", null, 0, 1, Degat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDegat_Degat(), ecorePackage.getEInt(), "degat", "0", 0, 1, Degat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1398,12 +1522,14 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		initEOperation(getCarte__EstVisible(), ecorePackage.getEBoolean(), "estVisible", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dresseurEClass, Dresseur.class, "Dresseur", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDresseur_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Dresseur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(objetEClass, Objet.class, "Objet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(supporteurEClass, Supporteur.class, "Supporteur", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(deckEClass, Deck.class, "Deck", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDeck_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Deck.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeck_Cartes(), this.getCarte(), null, "cartes", null, 0, -1, Deck.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getDeck__Piocher(), this.getCarte(), "piocher", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1434,11 +1560,11 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		initEOperation(getJeu__Abandonner(), null, "abandonner", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(creatureEClass, Creature.class, "Creature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCreature_Pv(), ecorePackage.getEInt(), "pv", "0", 0, 1, Creature.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCreature_Energies(), this.getEnergie(), null, "energies", null, 0, -1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCreature_Base(), this.getCreatureComponent(), null, "base", null, 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCreature_Evolution(), this.getCreatureComponent(), null, "evolution", null, 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCreature_Maitre(), this.getCreatureComponent(), null, "maitre", null, 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCreature_Pv(), ecorePackage.getEInt(), "pv", "0", 0, 1, Creature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getCreature__EstCompatibleEvolution__GenCreature(), ecorePackage.getEBoolean(), "estCompatibleEvolution", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getCreature(), "creature", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1467,6 +1593,13 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 
 		initEClass(creatureComponentEClass, CreatureComponent.class, "CreatureComponent", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEOperation(getCreatureComponent__GetId(), ecorePackage.getEInt(), "getId", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getCreatureComponent__GetPv(), ecorePackage.getEInt(), "getPv", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCreatureComponent__SetPv__int(), null, "setPv", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "pv", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEOperation(getCreatureComponent__GetPvInit(), ecorePackage.getEInt(), "getPvInit", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getCreatureComponent__GetCategorie(), this.getCategorie(), "getCategorie", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1486,6 +1619,8 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		initEOperation(getCreatureComponent__GetActiveCreatureComponent(), this.getCreatureComponent(), "getActiveCreatureComponent", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(abstractCreatureComponentEClass, AbstractCreatureComponent.class, "AbstractCreatureComponent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAbstractCreatureComponent_Id(), ecorePackage.getEInt(), "id", null, 0, 1, AbstractCreatureComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractCreatureComponent_Pv(), ecorePackage.getEInt(), "pv", "0", 0, 1, AbstractCreatureComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractCreatureComponent_PvInit(), ecorePackage.getEInt(), "pvInit", "0", 0, 1, AbstractCreatureComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractCreatureComponent_Categorie(), this.getCategorie(), "categorie", null, 1, 1, AbstractCreatureComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractCreatureComponent_Attaques(), this.getAttaque(), null, "attaques", null, 0, -1, AbstractCreatureComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1517,6 +1652,9 @@ public class GenModelPackageImpl extends EPackageImpl implements GenModelPackage
 		initEOperation(getAction__FinTour(), null, "finTour", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getAction__Abandonner(), null, "abandonner", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getAction__AjoutCarteMain__GenCarte(), null, "ajoutCarteMain", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCarte(), "carte", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(niveauEEnum, Niveau.class, "Niveau");

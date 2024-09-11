@@ -14,4 +14,6 @@ package fr.cnam.chatnoir76.creaturedecombat.model.validation;
 public interface DresseurValidator {
 	boolean validate();
 
+	boolean validateId(int value);
+
 }

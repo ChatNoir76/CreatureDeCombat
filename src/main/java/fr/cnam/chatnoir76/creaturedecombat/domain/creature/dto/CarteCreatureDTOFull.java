@@ -13,16 +13,20 @@ public class CarteCreatureDTOFull extends CarteCreatureDTO {
 	
 	public CarteCreatureDTOFull(CarteCreatureDTO creature) {
 		this.setCategorie(creature.getCategorie());
+		this.setCategorieId(creature.getCategorieId());
 		this.setDescription(creature.getDescription());
 		this.setId(creature.getId());
 		this.setIdCreatureBase(creature.getIdCreatureBase());
 		this.setImage(creature.getImage());
 		this.setNiveau(creature.getNiveau());
+		this.setNiveauId(creature.getNiveauId());
 		this.setNom(creature.getNom());
 		this.setNomCreatureBase(creature.getNomCreatureBase());
+		this.setIdCreatureBase(creature.getIdCreatureBase());
 		this.setPv(creature.getPv());
 		this.setPvInit(creature.getPvInit());
 		this.setVisible(creature.isVisible());
+		this.setAttaqueIds(creature.getAttaqueIds());
 	}
 
 	public DegatDTO getDegatDefense() {
